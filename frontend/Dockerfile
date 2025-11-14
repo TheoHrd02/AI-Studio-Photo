@@ -1,15 +1,19 @@
-FROM node:20-alpine AS development
+FROM oven/bun:1-alpine
 
 WORKDIR /app
 
-# Dépendances
-COPY package*.json ./
-RUN npm ci
+# Copier les fichiers de dépendances
+COPY package.json ./
+COPY bun.lockb* ./
 
-# Code
+# Installer les dépendances
+RUN bun install
+
+# Copier le reste du code
 COPY . .
 
 # Exposer le port
 EXPOSE 3000
 
-# Nuxt dev démarre via docker-compose command
+# Lancer le serveur de dev
+CMD ["bun", "run", "dev"]
