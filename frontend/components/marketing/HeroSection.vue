@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { heroVideos, videoRotationInterval } from '~/config/hero.config'
-
-// Extrait uniquement les URLs des vidéos pour le composant carousel
-const videoUrls = heroVideos.map(video => video.url)
+import { saasConfig } from '~/config/saas.config'
 
 // Arguments marketing pour le carousel - utilise les clés directement
 const marketingKeys = ['hero.carousel.arg1', 'hero.carousel.arg2', 'hero.carousel.arg3', 'hero.carousel.arg4']
@@ -21,7 +19,7 @@ onMounted(() => {
 <template>
   <section class="relative h-screen min-h-[600px] overflow-hidden">
     <!-- Video Carousel Background -->
-    <FeaturesVideoCarousel :videos="videoUrls" :interval="videoRotationInterval" />
+    <FeaturesVideoCarousel :videos="heroVideos" :interval="videoRotationInterval" />
     
     <!-- Contenu Hero (au-dessus de la vidéo) -->
     <div class="relative z-20 flex h-full items-center">
@@ -39,14 +37,14 @@ onMounted(() => {
 
         <!-- CTA Buttons -->
         <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <NuxtLink
-            to="/signup"
-            class="inline-flex items-center justify-center rounded-lg bg-[#912efb] px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#7e1fe0] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#912efb] w-full sm:w-auto"
+          <a
+            :href="saasConfig.signupUrl"
+            class="inline-flex items-center justify-center rounded-lg bg-primary-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-primary-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500 w-full sm:w-auto"
           >
             {{ $t('hero.ctaPrimary') }}
-          </NuxtLink>
-          <NuxtLink
-            to="/login"
+          </a>
+          <a
+            :href="saasConfig.loginUrl"
             class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-white/20 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent w-full sm:w-auto"
           >
             <svg class="h-5 w-5" viewBox="0 0 24 24">
@@ -68,7 +66,7 @@ onMounted(() => {
               />
             </svg>
             {{ $t('hero.ctaSecondary') }}
-          </NuxtLink>
+          </a>
         </div>
 
         <!-- Marketing Arguments Carousel -->
