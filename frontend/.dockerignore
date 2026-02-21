@@ -1,5 +1,9 @@
 node_modules
 .nuxt
+# Lockfiles parasites (pnpm only)
+bun.lock
+package-lock.json
+yarn.lock
 .output
 .env
 .DS_Store

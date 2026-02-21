@@ -1,19 +1,20 @@
-FROM oven/bun:1-alpine
+FROM node:20-alpine
+
+# Enable Corepack and activate pnpm from packageManager field
+RUN corepack enable && corepack prepare pnpm@9.15.0 --activate
 
 WORKDIR /app
 
-# Copier les fichiers de dépendances
-COPY package.json ./
-COPY bun.lock* ./
+# Copy dependency files
+COPY package.json pnpm-lock.yaml ./
 
-# Installer les dépendances
-RUN bun install
+# Install dependencies (frozen lockfile for reproducibility)
+RUN pnpm install --frozen-lockfile
 
-# Copier le reste du code
+# Copy application code
 COPY . .
 
-# Exposer le port
 EXPOSE 3000
 
-# Lancer le serveur de dev
-CMD ["bun", "run", "dev"]
+# Start dev server (docker-compose may override with volumes)
+CMD ["pnpm", "run", "dev"]
