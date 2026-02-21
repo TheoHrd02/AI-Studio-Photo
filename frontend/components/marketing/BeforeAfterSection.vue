@@ -2,18 +2,20 @@
 import { beforeAfterExamples } from '~/config/visual-proof.config'
 import { saasConfig } from '~/config/saas.config'
 
-const { t } = useI18n()
+useI18n()
 </script>
 
 <template>
   <section class="relative overflow-hidden bg-white py-12 md:py-16">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-6xl">
-
         <!-- Section header -->
         <div class="text-center mb-12">
           <div class="inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/8 px-4 py-1.5 text-sm font-semibold text-primary-600 mb-6">
-            <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-500" aria-hidden="true" />
+            <span
+              class="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-500"
+              aria-hidden="true"
+            />
             {{ $t('beforeAfter.badge') }}
           </div>
           <h2 class="text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
@@ -54,14 +56,25 @@ const { t } = useI18n()
                   :alt="example.before.alt"
                   class="aspect-[4/3] w-full object-cover"
                   loading="lazy"
-                />
+                >
               </div>
 
               <!-- Arrow (desktop) -->
               <div class="hidden md:flex flex-shrink-0 items-center justify-center">
                 <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 text-white shadow-xl">
-                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
                   </svg>
                 </div>
               </div>
@@ -76,7 +89,7 @@ const { t } = useI18n()
                   :alt="example.after.alt"
                   class="aspect-[4/3] w-full object-cover"
                   loading="lazy"
-                />
+                >
               </div>
             </div>
           </div>
@@ -91,14 +104,25 @@ const { t } = useI18n()
             class="inline-flex items-center gap-2 rounded-xl bg-primary-500 px-8 py-4 text-base font-semibold text-white shadow-lg transition-all hover:bg-primary-600 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
           >
             {{ $t('cta.primary') }}
-            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            <svg
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
             </svg>
           </a>
-          <p class="mt-3 text-sm text-gray-500">{{ $t('cta.clarification') }}</p>
+          <p class="mt-3 text-sm text-gray-500">
+            {{ $t('cta.clarification') }}
+          </p>
           <CommonRiskReversalChips class="mt-4" />
         </div>
-
       </div>
     </div>
   </section>

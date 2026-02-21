@@ -2,4 +2,3 @@
 export const useI18n = () => {
   return useTranslation()
 }
-

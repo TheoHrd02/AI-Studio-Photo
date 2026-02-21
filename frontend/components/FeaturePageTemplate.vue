@@ -6,7 +6,7 @@ export interface BenefitItem {
   text: string
 }
 
-const props = defineProps<{
+defineProps<{
   // Hero
   icon: string
   badge: string
@@ -60,20 +60,26 @@ const trustChips = computed(() => [
 
 <template>
   <div class="min-h-screen bg-white">
-
     <!-- ─── Hero ──────────────────────────────────────────────── -->
     <section class="relative overflow-hidden pt-28 pb-20">
-
       <!-- Background gradient -->
-      <div class="absolute inset-0 bg-gradient-to-b from-primary-50/70 via-white to-white pointer-events-none" aria-hidden="true" />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-primary-50/70 via-white to-white pointer-events-none"
+        aria-hidden="true"
+      />
 
       <!-- Background blobs -->
-      <div class="absolute -top-32 right-0 h-[500px] w-[500px] rounded-full bg-primary-500/8 blur-3xl pointer-events-none" aria-hidden="true" />
-      <div class="absolute bottom-0 -left-24 h-80 w-80 rounded-full bg-primary-300/6 blur-3xl pointer-events-none" aria-hidden="true" />
+      <div
+        class="absolute -top-32 right-0 h-[500px] w-[500px] rounded-full bg-primary-500/8 blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        class="absolute bottom-0 -left-24 h-80 w-80 rounded-full bg-primary-300/6 blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
 
       <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
-
           <!-- Eyebrow badge (above icon for clear hierarchy) -->
           <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-1.5 text-sm font-semibold text-primary-600">
             <span class="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-primary-500" />
@@ -82,9 +88,15 @@ const trustChips = computed(() => [
 
           <!-- Icon with glow ring — vertically centered block -->
           <div class="relative mx-auto mb-6 flex justify-center">
-            <div class="absolute inset-0 scale-[2] rounded-full bg-primary-500/15 blur-2xl" aria-hidden="true" />
+            <div
+              class="absolute inset-0 scale-[2] rounded-full bg-primary-500/15 blur-2xl"
+              aria-hidden="true"
+            />
             <div class="relative flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-3xl bg-gradient-to-br from-primary-500 to-primary-700 shadow-2xl shadow-primary-500/30">
-              <UIcon :name="icon" class="h-10 w-10 text-white" />
+              <UIcon
+                :name="icon"
+                class="h-10 w-10 text-white"
+              />
             </div>
           </div>
 
@@ -110,11 +122,23 @@ const trustChips = computed(() => [
                 <span class="whitespace-nowrap text-base font-bold leading-tight text-white sm:text-lg">{{ $t('cta.featureButtonLine1') }}</span>
                 <span class="mt-0.5 whitespace-nowrap text-xs font-medium leading-tight text-white/90 sm:text-sm">{{ $t('cta.featureButtonLine2') }}</span>
               </span>
-              <svg class="h-4 w-4 flex-shrink-0 text-white/90 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              <svg
+                class="h-4 w-4 flex-shrink-0 text-white/90 transition-transform group-hover:translate-x-0.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                />
               </svg>
             </a>
-            <p class="text-sm text-gray-500">{{ $t('cta.clarification') }}</p>
+            <p class="text-sm text-gray-500">
+              {{ $t('cta.clarification') }}
+            </p>
             <NuxtLink
               to="/pricing"
               class="text-xs font-medium text-gray-400 hover:text-primary-600 transition-colors"
@@ -131,7 +155,10 @@ const trustChips = computed(() => [
               :key="chip.label"
               class="flex items-center gap-2 text-sm text-gray-400"
             >
-              <UIcon :name="chip.icon" class="h-4 w-4 text-primary-500/70" />
+              <UIcon
+                :name="chip.icon"
+                class="h-4 w-4 text-primary-500/70"
+              />
               {{ chip.label }}
             </div>
           </div>
@@ -147,7 +174,6 @@ const trustChips = computed(() => [
     >
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2">
-
           <!-- Text side -->
           <div>
             <p class="mb-3 text-xs font-bold uppercase tracking-widest text-primary-500">
@@ -157,16 +183,28 @@ const trustChips = computed(() => [
               {{ whatIsTitle }}
             </h2>
             <!-- eslint-disable-next-line vue/no-v-html -->
-            <p class="mt-5 text-lg leading-relaxed text-gray-600" v-html="whatIsText1" />
-            <p v-if="whatIsText2" class="mt-4 text-base italic leading-relaxed text-gray-400">
+            <p
+              class="mt-5 text-lg leading-relaxed text-gray-600"
+              v-html="whatIsText1"
+            />
+            <p
+              v-if="whatIsText2"
+              class="mt-4 text-base italic leading-relaxed text-gray-400"
+            >
               {{ whatIsText2 }}
             </p>
           </div>
 
           <!-- Visual proof — output result or before/after -->
           <div class="relative">
-            <div class="absolute -inset-4 rounded-3xl bg-primary-500/8 blur-2xl" aria-hidden="true" />
-            <div v-if="beforeImageUrl" class="relative grid grid-cols-2 gap-3">
+            <div
+              class="absolute -inset-4 rounded-3xl bg-primary-500/8 blur-2xl"
+              aria-hidden="true"
+            />
+            <div
+              v-if="beforeImageUrl"
+              class="relative grid grid-cols-2 gap-3"
+            >
               <!-- Before -->
               <div class="relative overflow-hidden rounded-2xl shadow-xl ring-1 ring-gray-200/50">
                 <img
@@ -174,7 +212,7 @@ const trustChips = computed(() => [
                   :alt="beforeImageAlt ?? $t('beforeAfter.before')"
                   class="aspect-[4/3] w-full object-cover"
                   loading="lazy"
-                />
+                >
                 <div class="absolute bottom-3 inset-x-3 flex justify-center">
                   <div class="inline-flex items-center gap-2 rounded-full bg-gray-900/80 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
                     {{ $t('beforeAfter.before') }}
@@ -188,31 +226,39 @@ const trustChips = computed(() => [
                   :alt="conceptImageAlt ?? title"
                   class="aspect-[4/3] w-full object-cover"
                   loading="lazy"
-                />
+                >
                 <div class="absolute bottom-3 inset-x-3 flex justify-center">
                   <div class="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-gray-800 shadow-lg backdrop-blur-sm">
-                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
+                    <span
+                      class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"
+                      aria-hidden="true"
+                    />
                     {{ $t('beforeAfter.after') }}
                   </div>
                 </div>
               </div>
             </div>
-            <div v-else class="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-gray-200/50">
+            <div
+              v-else
+              class="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-gray-200/50"
+            >
               <img
                 :src="conceptImageUrl"
                 :alt="conceptImageAlt ?? title"
                 class="aspect-[4/3] w-full object-cover"
                 loading="lazy"
-              />
+              >
               <div class="absolute bottom-4 inset-x-4 flex justify-center">
                 <div class="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-gray-800 shadow-lg backdrop-blur-sm">
-                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
+                  <span
+                    class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"
+                    aria-hidden="true"
+                  />
                   {{ $t('featurePageSection.outputLabel') }}
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -224,7 +270,6 @@ const trustChips = computed(() => [
     >
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-6xl">
-
           <!-- Section header -->
           <div
             :class="[
@@ -232,7 +277,9 @@ const trustChips = computed(() => [
               r2.revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
             ]"
           >
-            <p class="mb-2 text-xs font-bold uppercase tracking-widest text-primary-500">{{ $t('featurePageSection.sectionBenefits') }}</p>
+            <p class="mb-2 text-xs font-bold uppercase tracking-widest text-primary-500">
+              {{ $t('featurePageSection.sectionBenefits') }}
+            </p>
             <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               {{ whyTitle }}
             </h2>
@@ -251,12 +298,16 @@ const trustChips = computed(() => [
               :style="`transition-delay: ${i * 120}ms`"
             >
               <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500/15 to-primary-500/5 ring-1 ring-primary-500/10 transition-colors group-hover:from-primary-500/25 group-hover:to-primary-500/10">
-                <UIcon :name="benefit.icon" class="h-6 w-6 text-primary-600" />
+                <UIcon
+                  :name="benefit.icon"
+                  class="h-6 w-6 text-primary-600"
+                />
               </div>
-              <p class="text-base font-medium leading-relaxed text-gray-700">{{ benefit.text }}</p>
+              <p class="text-base font-medium leading-relaxed text-gray-700">
+                {{ benefit.text }}
+              </p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -269,12 +320,12 @@ const trustChips = computed(() => [
     >
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-6xl">
-
           <div class="grid items-center gap-14 lg:grid-cols-2 lg:grid-flow-dense">
-
             <!-- Steps side (right col on desktop) -->
             <div class="lg:col-start-2">
-              <p class="mb-3 text-xs font-bold uppercase tracking-widest text-primary-500">{{ $t('featurePageSection.sectionHowToUse') }}</p>
+              <p class="mb-3 text-xs font-bold uppercase tracking-widest text-primary-500">
+                {{ $t('featurePageSection.sectionHowToUse') }}
+              </p>
               <h2 class="mb-10 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
                 {{ howTitle }}
               </h2>
@@ -282,7 +333,10 @@ const trustChips = computed(() => [
               <!-- Timeline steps -->
               <div class="relative">
                 <!-- Vertical connector line -->
-                <div class="absolute left-5 top-5 bottom-5 w-px bg-gradient-to-b from-primary-300 via-primary-200 to-transparent hidden sm:block" aria-hidden="true" />
+                <div
+                  class="absolute left-5 top-5 bottom-5 w-px bg-gradient-to-b from-primary-300 via-primary-200 to-transparent hidden sm:block"
+                  aria-hidden="true"
+                />
 
                 <div
                   v-for="(step, i) in steps"
@@ -300,7 +354,9 @@ const trustChips = computed(() => [
                   </div>
                   <!-- Step text -->
                   <div class="pt-1.5">
-                    <p class="text-base leading-relaxed text-gray-700">{{ step }}</p>
+                    <p class="text-base leading-relaxed text-gray-700">
+                      {{ step }}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -309,24 +365,29 @@ const trustChips = computed(() => [
             <!-- Visual proof — workflow / interface -->
             <div class="lg:col-start-1 lg:row-start-1">
               <div class="relative">
-                <div class="absolute -inset-4 rounded-3xl bg-primary-500/8 blur-2xl" aria-hidden="true" />
+                <div
+                  class="absolute -inset-4 rounded-3xl bg-primary-500/8 blur-2xl"
+                  aria-hidden="true"
+                />
                 <div class="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-gray-200/50">
                   <img
                     :src="workflowImageUrl"
                     :alt="workflowImageAlt ?? howTitle"
                     class="aspect-[4/3] w-full object-cover"
                     loading="lazy"
-                  />
+                  >
                   <div class="absolute bottom-4 inset-x-4 flex justify-center">
                     <div class="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-gray-800 shadow-lg backdrop-blur-sm">
-                      <span class="h-1.5 w-1.5 rounded-full bg-primary-500 animate-pulse" aria-hidden="true" />
+                      <span
+                        class="h-1.5 w-1.5 rounded-full bg-primary-500 animate-pulse"
+                        aria-hidden="true"
+                      />
                       {{ steps.length }} {{ $t('featurePageSection.stepsLabel') }}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -339,7 +400,6 @@ const trustChips = computed(() => [
     >
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-5xl">
-
           <p
             :class="[
               'mb-10 text-center text-xs font-bold uppercase tracking-widest text-primary-500 transition-all duration-700',
@@ -361,7 +421,10 @@ const trustChips = computed(() => [
               :style="`transition-delay: ${i * 130}ms`"
             >
               <!-- Decorative quote mark -->
-              <div class="absolute top-4 right-5 text-6xl font-serif leading-none text-primary-500/10 select-none transition-colors group-hover:text-primary-500/20" aria-hidden="true">
+              <div
+                class="absolute top-4 right-5 text-6xl font-serif leading-none text-primary-500/10 select-none transition-colors group-hover:text-primary-500/20"
+                aria-hidden="true"
+              >
                 "
               </div>
 
@@ -373,7 +436,6 @@ const trustChips = computed(() => [
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -386,10 +448,15 @@ const trustChips = computed(() => [
         class="mx-auto max-w-4xl"
       >
         <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-600 via-primary-600 to-primary-800 px-8 py-16 text-center shadow-2xl shadow-primary-500/20 md:px-16">
-
           <!-- Background glows -->
-          <div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-white/6 blur-3xl" aria-hidden="true" />
-          <div class="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-white/6 blur-3xl" aria-hidden="true" />
+          <div
+            class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-white/6 blur-3xl"
+            aria-hidden="true"
+          />
+          <div
+            class="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-white/6 blur-3xl"
+            aria-hidden="true"
+          />
 
           <div class="relative">
             <h2 class="text-3xl font-extrabold text-white sm:text-4xl md:text-5xl">
@@ -410,11 +477,23 @@ const trustChips = computed(() => [
                   <span class="whitespace-nowrap text-base font-bold leading-tight text-primary-600 sm:text-lg">{{ $t('cta.featureButtonLine1') }}</span>
                   <span class="mt-0.5 whitespace-nowrap text-xs font-medium leading-tight text-primary-600/80 sm:text-sm">{{ $t('cta.featureButtonLine2') }}</span>
                 </span>
-                <svg class="h-4 w-4 flex-shrink-0 text-primary-600/80 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                <svg
+                  class="h-4 w-4 flex-shrink-0 text-primary-600/80 transition-transform group-hover:translate-x-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  />
                 </svg>
               </a>
-              <p class="text-sm text-primary-100">{{ $t('cta.clarification') }}</p>
+              <p class="text-sm text-primary-100">
+                {{ $t('cta.clarification') }}
+              </p>
               <NuxtLink
                 to="/pricing"
                 class="text-xs font-medium text-white/60 hover:text-white/90 transition-colors"
@@ -422,11 +501,13 @@ const trustChips = computed(() => [
                 {{ finalCtaBtnSecondary }}
               </NuxtLink>
             </div>
-            <CommonRiskReversalChips variant="light" class="mt-6" />
+            <CommonRiskReversalChips
+              variant="light"
+              class="mt-6"
+            />
           </div>
         </div>
       </div>
     </section>
-
   </div>
 </template>

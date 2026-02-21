@@ -35,7 +35,11 @@ const suggestedQuestions = [
 <template>
   <div class="bg-white">
     <!-- Chatbot Section - Plein écran -->
-    <section ref="chatSectionRef" id="chat" class="min-h-screen relative">
+    <section
+      id="chat"
+      ref="chatSectionRef"
+      class="min-h-screen relative"
+    >
       <div class="h-screen pt-16">
         <FeaturesChatInterface
           :suggested-questions="suggestedQuestions"
@@ -44,11 +48,21 @@ const suggestedQuestions = [
           empty-state-description="Posez-moi n'importe quelle question sur AI Studio Photo et je vous répondrai instantanément à partir de notre documentation."
         />
       </div>
-      
+
       <!-- Scroll Indicator -->
       <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        <svg
+          class="w-6 h-6 text-gray-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
         </svg>
       </div>
     </section>
@@ -60,8 +74,18 @@ const suggestedQuestions = [
           <!-- Header -->
           <div class="text-center mb-16">
             <div class="inline-block p-3 bg-primary-500/10 rounded-2xl mb-6">
-              <svg class="w-12 h-12 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <svg
+                class="w-12 h-12 text-primary-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
               </svg>
             </div>
             <h2 class="text-4xl font-bold text-gray-900 mb-4">
@@ -81,8 +105,18 @@ const suggestedQuestions = [
               <details class="group bg-white rounded-xl p-6 cursor-pointer">
                 <summary class="font-semibold text-gray-900 flex justify-between items-center">
                   Quels sont les délais de réponse ?
-                  <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  <svg
+                    class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </summary>
                 <p class="mt-4 text-gray-600 text-sm">
@@ -93,8 +127,18 @@ const suggestedQuestions = [
               <details class="group bg-white rounded-xl p-6 cursor-pointer">
                 <summary class="font-semibold text-gray-900 flex justify-between items-center">
                   Puis-je obtenir une démo personnalisée ?
-                  <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  <svg
+                    class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </summary>
                 <p class="mt-4 text-gray-600 text-sm">
@@ -105,8 +149,18 @@ const suggestedQuestions = [
               <details class="group bg-white rounded-xl p-6 cursor-pointer">
                 <summary class="font-semibold text-gray-900 flex justify-between items-center">
                   Proposez-vous un support en français ?
-                  <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  <svg
+                    class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </summary>
                 <p class="mt-4 text-gray-600 text-sm">
@@ -121,8 +175,18 @@ const suggestedQuestions = [
             <!-- Email Support (primary) -->
             <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-xl transition-shadow border-2 border-primary-500/40">
               <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center mb-6">
-                <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg
+                  class="w-6 h-6 text-primary-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
                 </svg>
               </div>
               <h3 class="text-xl font-semibold text-gray-900 mb-3">
@@ -131,10 +195,23 @@ const suggestedQuestions = [
               <p class="text-gray-600 mb-4 text-sm">
                 Réponse sous 24h en semaine
               </p>
-              <a href="mailto:support@aistudiophoto.com" class="text-primary-500 hover:text-primary-600 font-medium inline-flex items-center group">
+              <a
+                href="mailto:support@aistudiophoto.com"
+                class="text-primary-500 hover:text-primary-600 font-medium inline-flex items-center group"
+              >
                 support@aistudiophoto.com
-                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                <svg
+                  class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
             </div>
@@ -142,8 +219,18 @@ const suggestedQuestions = [
             <!-- Sales -->
             <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
               <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center mb-6">
-                <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                <svg
+                  class="w-6 h-6 text-primary-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                  />
                 </svg>
               </div>
               <h3 class="text-xl font-semibold text-gray-900 mb-3">
@@ -152,10 +239,23 @@ const suggestedQuestions = [
               <p class="text-gray-600 mb-4 text-sm">
                 Pour les entreprises et revendeurs
               </p>
-              <a href="mailto:sales@aistudiophoto.com" class="text-primary-500 hover:text-primary-600 font-medium inline-flex items-center group">
+              <a
+                href="mailto:sales@aistudiophoto.com"
+                class="text-primary-500 hover:text-primary-600 font-medium inline-flex items-center group"
+              >
                 sales@aistudiophoto.com
-                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                <svg
+                  class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
             </div>
@@ -163,8 +263,18 @@ const suggestedQuestions = [
             <!-- Press -->
             <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
               <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center mb-6">
-                <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                <svg
+                  class="w-6 h-6 text-primary-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+                  />
                 </svg>
               </div>
               <h3 class="text-xl font-semibold text-gray-900 mb-3">
@@ -173,10 +283,23 @@ const suggestedQuestions = [
               <p class="text-gray-600 mb-4 text-sm">
                 Relations presse et demandes média
               </p>
-              <a href="mailto:press@aistudiophoto.com" class="text-primary-500 hover:text-primary-600 font-medium inline-flex items-center group">
+              <a
+                href="mailto:press@aistudiophoto.com"
+                class="text-primary-500 hover:text-primary-600 font-medium inline-flex items-center group"
+              >
                 press@aistudiophoto.com
-                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                <svg
+                  class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </a>
             </div>
@@ -189,12 +312,22 @@ const suggestedQuestions = [
             </p>
             <button
               type="button"
-              @click="scrollToChat"
               class="inline-flex items-center px-8 py-4 bg-primary-500 text-white rounded-xl font-semibold hover:bg-primary-600 transition-colors shadow-lg hover:shadow-xl"
+              @click="scrollToChat"
             >
               {{ $t('cta.help.chat') }}
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              <svg
+                class="w-5 h-5 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                />
               </svg>
             </button>
             <p class="mt-6">

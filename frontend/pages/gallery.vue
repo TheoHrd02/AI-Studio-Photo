@@ -49,7 +49,7 @@ const galleryItems = [
           class="gallery-item"
           :class="[
             index % 7 === 0 ? 'md:col-span-2 md:row-span-2' : '',
-            index % 5 === 0 && index % 7 !== 0 ? 'md:row-span-2' : ''
+            index % 5 === 0 && index % 7 !== 0 ? 'md:row-span-2' : '',
           ]"
         >
           <div class="gallery-item-inner">
@@ -60,7 +60,7 @@ const galleryItems = [
                 :alt="item.alt"
                 class="gallery-media"
                 loading="lazy"
-              />
+              >
             </template>
 
             <!-- Vidéo -->
@@ -79,9 +79,18 @@ const galleryItems = [
             <!-- Overlay au hover -->
             <div class="gallery-overlay">
               <div class="gallery-overlay-content">
-                <p class="text-sm font-semibold text-white">{{ item.alt }}</p>
-                <span v-if="item.type === 'video'" class="mt-1 inline-flex items-center gap-1 text-xs text-white/80">
-                  <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
+                <p class="text-sm font-semibold text-white">
+                  {{ item.alt }}
+                </p>
+                <span
+                  v-if="item.type === 'video'"
+                  class="mt-1 inline-flex items-center gap-1 text-xs text-white/80"
+                >
+                  <svg
+                    class="h-3 w-3"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
                   </svg>
                   Vidéo
@@ -102,7 +111,9 @@ const galleryItems = [
         >
           {{ $t('cta.primary') }}
         </a>
-        <p class="mt-3 text-sm text-gray-500">{{ $t('cta.clarification') }}</p>
+        <p class="mt-3 text-sm text-gray-500">
+          {{ $t('cta.clarification') }}
+        </p>
         <CommonRiskReversalChips class="mt-4" />
       </div>
     </div>
@@ -210,4 +221,3 @@ const galleryItems = [
   }
 }
 </style>
-

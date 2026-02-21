@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n()
+useI18n()
 
 const useCases = computed(() => [
   { key: '1' },
@@ -12,11 +12,13 @@ const useCases = computed(() => [
   <section class="relative overflow-hidden bg-white py-12 md:py-16">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-6xl">
-
         <!-- Section header -->
         <div class="text-center mb-12">
           <div class="inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/8 px-4 py-1.5 text-sm font-semibold text-primary-600 mb-6">
-            <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-500" aria-hidden="true" />
+            <span
+              class="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-500"
+              aria-hidden="true"
+            />
             {{ $t('testimonials.badge') }}
           </div>
           <h2 class="text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
@@ -55,7 +57,6 @@ const useCases = computed(() => [
             </footer>
           </div>
         </div>
-
       </div>
     </div>
   </section>

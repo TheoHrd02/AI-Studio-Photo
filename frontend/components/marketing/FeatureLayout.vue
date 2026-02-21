@@ -10,7 +10,7 @@ interface Props {
 
 defineProps<Props>()
 
-const { t } = useI18n()
+useI18n()
 </script>
 
 <template>
@@ -20,7 +20,10 @@ const { t } = useI18n()
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
           <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-500/10">
-            <UIcon :name="icon" class="h-8 w-8 text-primary-500" />
+            <UIcon
+              :name="icon"
+              class="h-8 w-8 text-primary-500"
+            />
           </div>
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
             {{ title }}
@@ -37,7 +40,9 @@ const { t } = useI18n()
             >
               {{ $t('cta.primary') }}
             </a>
-            <p class="text-sm text-gray-500">{{ $t('cta.clarification') }}</p>
+            <p class="text-sm text-gray-500">
+              {{ $t('cta.clarification') }}
+            </p>
           </div>
         </div>
       </div>
@@ -47,7 +52,9 @@ const { t } = useI18n()
     <section class="py-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-5xl">
-          <h2 class="text-2xl font-bold text-gray-900 mb-8">{{ $t('common.mainFeatures') }}</h2>
+          <h2 class="text-2xl font-bold text-gray-900 mb-8">
+            {{ $t('common.mainFeatures') }}
+          </h2>
           <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <div
               v-for="(feature, index) in features"
@@ -55,11 +62,23 @@ const { t } = useI18n()
               class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
             >
               <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-500/10 mb-4">
-                <svg class="h-6 w-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <svg
+                  class="h-6 w-6 text-primary-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
               </div>
-              <p class="text-sm font-medium text-gray-900">{{ feature }}</p>
+              <p class="text-sm font-medium text-gray-900">
+                {{ feature }}
+              </p>
             </div>
           </div>
         </div>
@@ -85,7 +104,9 @@ const { t } = useI18n()
             >
               {{ $t('cta.primary') }}
             </a>
-            <p class="text-sm text-purple-100">{{ $t('cta.clarification') }}</p>
+            <p class="text-sm text-purple-100">
+              {{ $t('cta.clarification') }}
+            </p>
           </div>
         </div>
       </div>

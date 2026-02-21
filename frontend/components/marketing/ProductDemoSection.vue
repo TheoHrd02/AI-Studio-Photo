@@ -8,7 +8,8 @@ const togglePlay = () => {
   if (!videoRef.value) return
   if (isPlaying.value) {
     videoRef.value.pause()
-  } else {
+  }
+  else {
     videoRef.value.play()
   }
   isPlaying.value = !isPlaying.value
@@ -23,7 +24,6 @@ const onVideoEnded = () => {
   <section class="py-12 md:py-16 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-5xl">
-
         <div class="text-center mb-10">
           <div class="inline-block px-4 py-2 bg-primary-500/10 rounded-full text-primary-500 font-semibold text-sm mb-4">
             {{ $t('productDemo.badge') }}
@@ -58,7 +58,11 @@ const onVideoEnded = () => {
               class="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity group-hover:bg-black/30"
             >
               <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/95 shadow-xl transition-transform group-hover:scale-110">
-                <svg class="h-10 w-10 text-primary-500 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  class="h-10 w-10 text-primary-500 ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
@@ -66,11 +70,13 @@ const onVideoEnded = () => {
           </Transition>
 
           <!-- Duration hint -->
-          <div v-show="!isPlaying" class="absolute bottom-4 left-4 rounded-lg bg-black/60 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
+          <div
+            v-show="!isPlaying"
+            class="absolute bottom-4 left-4 rounded-lg bg-black/60 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm"
+          >
             {{ $t('productDemo.watchHint') }}
           </div>
         </div>
-
       </div>
     </div>
   </section>

@@ -44,14 +44,14 @@ export const siteConfig: SiteConfig = {
     heading: 'Inter, sans-serif',
     body: 'Inter, sans-serif',
   },
-  
+
   hero: {
     title: 'Des photos produits professionnelles, générées par l\'IA en 30 secondes',
     subtitle: 'Transformez une simple photo produit en rendu studio haut de gamme. Sans photographe, sans studio, sans délai.',
     ctaPrimary: 'Commencer gratuitement — c\'est gratuit',
     ctaSecondary: 'Déjà un compte ? Se connecter',
   },
-  
+
   features: [
     {
       title: 'Studio Virtuel',
@@ -72,14 +72,14 @@ export const siteConfig: SiteConfig = {
       icon: 'heroicons:play-circle',
     },
   ],
-  
+
   stats: {
     users: '437,822',
     generations: '5,215,977',
   },
-  
+
   navigation: [
-    { 
+    {
       label: 'Fonctionnalités',
       children: [
         {

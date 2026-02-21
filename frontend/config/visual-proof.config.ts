@@ -15,8 +15,8 @@ const img = (id: string, w = 800, h = 600) =>
 // ─── Before/After Section (Homepage) ───────────────────────────────────────
 
 export interface BeforeAfterItem {
-  before: { src: string; alt: string }
-  after: { src: string; alt: string }
+  before: { src: string, alt: string }
+  after: { src: string, alt: string }
   label?: string
 }
 

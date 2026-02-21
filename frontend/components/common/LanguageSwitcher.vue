@@ -1,14 +1,14 @@
 <script setup lang="ts">
-const { locale, locales, setLocale } = useI18n()
+const { locale, setLocale } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 
 const languages = [
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'en', name: 'English', flag: '🇬🇧' }
+  { code: 'en', name: 'English', flag: '🇬🇧' },
 ]
 
-const currentLanguage = computed(() => 
-  languages.find(lang => lang.code === locale.value)
+const currentLanguage = computed(() =>
+  languages.find(lang => lang.code === locale.value),
 )
 
 const isOpen = ref(false)
@@ -16,7 +16,7 @@ const isOpen = ref(false)
 const changeLanguage = async (code: string) => {
   setLocale(code)
   isOpen.value = false
-  
+
   // Naviguer vers la nouvelle URL localisée
   const path = switchLocalePath(code)
   await navigateTo(path)
@@ -31,9 +31,9 @@ onMounted(() => {
       isOpen.value = false
     }
   }
-  
+
   document.addEventListener('click', handleClickOutside)
-  
+
   onUnmounted(() => {
     document.removeEventListener('click', handleClickOutside)
   })
@@ -41,22 +41,30 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="dropdownRef" class="relative">
+  <div
+    ref="dropdownRef"
+    class="relative"
+  >
     <button
-      @click="isOpen = !isOpen"
       class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
       aria-label="Changer de langue"
+      @click="isOpen = !isOpen"
     >
       <span class="text-xl">{{ currentLanguage?.flag }}</span>
       <span class="hidden sm:inline">{{ currentLanguage?.name }}</span>
-      <svg 
+      <svg
         class="w-4 h-4 transition-transform"
         :class="{ 'rotate-180': isOpen }"
-        fill="none" 
-        viewBox="0 0 24 24" 
+        fill="none"
+        viewBox="0 0 24 24"
         stroke="currentColor"
       >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        />
       </svg>
     </button>
 
@@ -75,9 +83,9 @@ onMounted(() => {
         <button
           v-for="lang in languages"
           :key="lang.code"
-          @click="changeLanguage(lang.code)"
           class="flex items-center gap-3 w-full px-4 py-3 text-sm text-left hover:bg-gray-50 transition-colors"
           :class="{ 'bg-gray-100 font-semibold': locale === lang.code }"
+          @click="changeLanguage(lang.code)"
         >
           <span class="text-xl">{{ lang.flag }}</span>
           <span class="flex-1">{{ lang.name }}</span>
@@ -88,13 +96,15 @@ onMounted(() => {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            />
           </svg>
         </button>
       </div>
     </Transition>
   </div>
 </template>
-
-
-

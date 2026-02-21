@@ -8,7 +8,7 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
   title: 'Prêt à transformer vos visuels ?',
-  description: 'Créez votre compte gratuitement et obtenez 5 crédits offerts.'
+  description: 'Créez votre compte gratuitement et obtenez 5 crédits offerts.',
 })
 </script>
 
@@ -31,7 +31,9 @@ withDefaults(defineProps<Props>(), {
           >
             {{ $t('cta.primary') }}
           </a>
-          <p class="text-sm text-purple-100">{{ $t('cta.clarification') }}</p>
+          <p class="text-sm text-purple-100">
+            {{ $t('cta.clarification') }}
+          </p>
           <NuxtLink
             to="/pricing"
             class="text-xs font-medium text-white/60 hover:text-white/90 transition-colors"

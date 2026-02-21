@@ -14,25 +14,25 @@ const navigation = computed(() => [
         label: t('nav.studioVirtuel.label'),
         description: t('nav.studioVirtuel.description'),
         href: '/features/studio-virtuel',
-        icon: 'heroicons:camera'
+        icon: 'heroicons:camera',
       },
       {
         label: t('nav.mannequinVirtuel.label'),
         description: t('nav.mannequinVirtuel.description'),
         href: '/features/mannequin-virtuel',
-        icon: 'heroicons:user-circle'
+        icon: 'heroicons:user-circle',
       },
       {
         label: t('nav.motionStudio.label'),
         description: t('nav.motionStudio.description'),
         href: '/features/motion-studio',
-        icon: 'heroicons:play-circle'
-      }
-    ]
+        icon: 'heroicons:play-circle',
+      },
+    ],
   },
   { label: t('nav.gallery'), href: '/gallery' },
   { label: t('nav.pricing'), href: '/pricing' },
-  { label: t('nav.help'), href: '/help' }
+  { label: t('nav.help'), href: '/help' },
 ])
 
 const showDropdown = (label: string) => {
@@ -50,10 +50,23 @@ const hideDropdown = () => {
       <div class="mx-auto max-w-6xl rounded-2xl border border-gray-200 bg-white/95 shadow-lg backdrop-blur-sm">
         <div class="flex h-16 items-center justify-between px-6">
           <!-- Logo -->
-          <NuxtLink to="/" class="flex items-center gap-2.5">
+          <NuxtLink
+            to="/"
+            class="flex items-center gap-2.5"
+          >
             <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500">
-              <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              <svg
+                class="h-5 w-5 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
               </svg>
             </div>
             <span class="text-base font-bold text-gray-900">{{ $t('common.appName') }}</span>
@@ -61,18 +74,31 @@ const hideDropdown = () => {
 
           <!-- Desktop Navigation -->
           <nav class="hidden items-center gap-7 md:flex">
-            <template v-for="item in navigation" :key="item.label">
+            <template
+              v-for="item in navigation"
+              :key="item.label"
+            >
               <!-- Dropdown pour Fonctionnalités -->
-              <div 
-                v-if="item.children" 
+              <div
+                v-if="item.children"
                 class="relative"
                 @mouseenter="showDropdown(item.label)"
                 @mouseleave="hideDropdown"
               >
                 <button class="group flex items-center gap-1 text-[13px] font-medium text-gray-600 transition-colors hover:text-gray-900 cursor-pointer">
                   {{ item.label }}
-                  <svg class="h-4 w-4 transition-transform group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  <svg
+                    class="h-4 w-4 transition-transform group-hover:translate-y-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </button>
 
@@ -85,7 +111,7 @@ const hideDropdown = () => {
                   leave-from-class="opacity-100 translate-y-0"
                   leave-to-class="opacity-0 translate-y-1"
                 >
-                  <div 
+                  <div
                     v-show="openDropdown === item.label"
                     class="absolute left-0 top-full mt-2 w-80 p-2 bg-white rounded-lg shadow-xl border border-gray-100 z-50"
                   >
@@ -96,7 +122,10 @@ const hideDropdown = () => {
                       class="flex items-start gap-3 rounded-lg p-3 transition-all hover:bg-gray-50 hover:shadow-sm cursor-pointer group"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-500/10 transition-colors group-hover:bg-primary-500/20">
-                        <UIcon :name="child.icon" class="h-5 w-5 text-primary-500" />
+                        <UIcon
+                          :name="child.icon"
+                          class="h-5 w-5 text-primary-500"
+                        />
                       </div>
                       <div class="flex-1">
                         <p class="text-sm font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">{{ child.label }}</p>
@@ -133,16 +162,26 @@ const hideDropdown = () => {
           <!-- Mobile Menu Button -->
           <button
             class="md:hidden p-2 text-gray-600 hover:text-gray-900"
-            @click="isMenuOpen = !isMenuOpen"
             aria-label="Menu"
+            @click="isMenuOpen = !isMenuOpen"
           >
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
         </div>
       </div>
-      
+
       <!-- Free Gems Badge - Positionné sous le header blanc, aligné à droite -->
       <!-- <div class="absolute right-6 top-full mt-2 hidden md:block">
         <div class="flex items-center gap-2 rounded-lg bg-gray-900 px-3.5 py-1.5 shadow-lg transition-all hover:bg-gray-800 cursor-pointer">
@@ -161,10 +200,18 @@ const hideDropdown = () => {
         class="border-t border-gray-200 bg-white md:hidden"
       >
         <nav class="container mx-auto flex flex-col gap-2 px-4 py-4">
-          <template v-for="item in navigation" :key="item.label">
+          <template
+            v-for="item in navigation"
+            :key="item.label"
+          >
             <!-- Dropdown mobile pour Fonctionnalités -->
-            <div v-if="item.children" class="flex flex-col gap-2">
-              <p class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase">{{ item.label }}</p>
+            <div
+              v-if="item.children"
+              class="flex flex-col gap-2"
+            >
+              <p class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase">
+                {{ item.label }}
+              </p>
               <NuxtLink
                 v-for="child in item.children"
                 :key="child.href"
@@ -172,7 +219,10 @@ const hideDropdown = () => {
                 class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900"
                 @click="isMenuOpen = false"
               >
-                <UIcon :name="child.icon" class="h-4 w-4" />
+                <UIcon
+                  :name="child.icon"
+                  class="h-4 w-4"
+                />
                 {{ child.label }}
               </NuxtLink>
             </div>

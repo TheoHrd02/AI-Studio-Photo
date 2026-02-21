@@ -35,7 +35,6 @@ const steps = computed(() => [
   <section class="py-16 md:py-24 bg-surface">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-5xl">
-
         <!-- Header -->
         <div class="text-center mb-14">
           <div class="inline-block px-4 py-2 bg-primary-500/10 rounded-full text-primary-600 font-semibold text-sm mb-4">
@@ -77,7 +76,10 @@ const steps = computed(() => [
                 class="absolute inset-0 flex flex-col items-center justify-center p-6"
               >
                 <div class="w-full flex-1 rounded-lg border-2 border-dashed border-gray-300 bg-gray-50/80 flex flex-col items-center justify-center gap-2">
-                  <UIcon name="heroicons:cloud-arrow-up" class="h-10 w-10 text-gray-400" />
+                  <UIcon
+                    name="heroicons:cloud-arrow-up"
+                    class="h-10 w-10 text-gray-400"
+                  />
                   <span class="text-xs font-medium text-gray-500">{{ $t('productWalkthrough.mockup.uploadHint') }}</span>
                 </div>
               </div>
@@ -106,7 +108,10 @@ const steps = computed(() => [
                     <div class="h-full w-3/4 rounded-full bg-primary-500 animate-pulse" />
                   </div>
                   <div class="flex items-center gap-2 justify-center">
-                    <UIcon name="heroicons:sparkles" class="h-5 w-5 text-primary-500" />
+                    <UIcon
+                      name="heroicons:sparkles"
+                      class="h-5 w-5 text-primary-500"
+                    />
                     <span class="text-xs font-medium text-gray-600">{{ $t('productWalkthrough.mockup.generating') }}</span>
                   </div>
                 </div>
@@ -119,7 +124,10 @@ const steps = computed(() => [
               >
                 <div class="flex flex-col items-center gap-3">
                   <div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary-500/10">
-                    <UIcon name="heroicons:check-circle" class="h-8 w-8 text-primary-500" />
+                    <UIcon
+                      name="heroicons:check-circle"
+                      class="h-8 w-8 text-primary-500"
+                    />
                   </div>
                   <div class="h-3 w-24 rounded bg-gray-200" />
                   <div class="h-8 w-32 rounded-lg bg-primary-500/20" />
@@ -146,13 +154,24 @@ const steps = computed(() => [
             class="inline-flex items-center px-6 py-3 bg-primary-500 text-white rounded-xl font-semibold hover:bg-primary-600 transition-all shadow-lg hover:scale-105"
           >
             {{ $t('cta.primary') }}
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            <svg
+              class="w-4 h-4 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
             </svg>
           </a>
-          <p class="mt-3 text-sm text-gray-500">{{ $t('cta.clarification') }}</p>
+          <p class="mt-3 text-sm text-gray-500">
+            {{ $t('cta.clarification') }}
+          </p>
         </div>
-
       </div>
     </div>
   </section>

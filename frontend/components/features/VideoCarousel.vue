@@ -91,11 +91,17 @@ const onCanPlay = (slot: Slot) => {
  * Falls back after `timeout` ms so a slow network can't block forever.
  */
 const waitForReady = (slot: Slot, timeout = 5000): Promise<void> =>
-  new Promise(resolve => {
-    if (slotReady[slot]) { resolve(); return }
+  new Promise((resolve) => {
+    if (slotReady[slot]) {
+      resolve()
+      return
+    }
 
     const vid = getVid(slot)
-    if (!vid) { resolve(); return }
+    if (!vid) {
+      resolve()
+      return
+    }
 
     const done = () => {
       vid.removeEventListener('canplay', done)
@@ -128,7 +134,12 @@ const rotate = async () => {
   //    that was decoded by `waitForReady` is live when we reveal it.
   const nextVid = getVid(nextSlot)
   if (nextVid?.paused) {
-    try { await nextVid.play() } catch { /* autoplay blocked — ignore */ }
+    try {
+      await nextVid.play()
+    }
+    catch {
+      /* autoplay blocked — ignore */
+    }
   }
 
   // ── 3. Cross-fade ─────────────────────────────────────────────────────────
@@ -171,7 +182,10 @@ const rotate = async () => {
  */
 const onEnded = async (slot: Slot) => {
   if (slot !== activeSlot.value || rotating) return
-  if (timeoutId) { clearTimeout(timeoutId); timeoutId = null }
+  if (timeoutId) {
+    clearTimeout(timeoutId)
+    timeoutId = null
+  }
   await rotate()
   scheduleNext()
 }
@@ -198,7 +212,8 @@ onMounted(async () => {
   await nextTick()
   try {
     await videoA.value?.play()
-  } catch {
+  }
+  catch {
     // If play() is blocked (rare with muted video), the first `canplay`
     // still fires and the loading cover lifts — user sees a static first frame.
   }
@@ -213,7 +228,7 @@ onMounted(async () => {
 onUnmounted(() => {
   if (timeoutId) clearTimeout(timeoutId)
   // Release both video buffers so the browser can reclaim GPU memory
-  ;(['a', 'b'] as Slot[]).forEach(s => {
+  ;(['a', 'b'] as Slot[]).forEach((s) => {
     const v = getVid(s)
     if (!v) return
     v.pause()
@@ -225,13 +240,15 @@ onUnmounted(() => {
 
 <template>
   <div class="absolute inset-0 overflow-hidden">
-
     <!--
       Text-readability overlay.
       z-10 keeps it above both video slots (z-[1]/z-[2]) but below the
       hero content wrapper (z-20 in HeroSection.vue).
     -->
-    <div class="absolute inset-0 bg-black/40 z-10" aria-hidden="true" />
+    <div
+      class="absolute inset-0 bg-black/40 z-10"
+      aria-hidden="true"
+    />
 
     <!--
       Loading cover — masks the video layer until the first frame is decoded.
@@ -271,7 +288,6 @@ onUnmounted(() => {
       @canplay="onCanPlay('b')"
       @ended="onEnded('b')"
     />
-
   </div>
 </template>
 

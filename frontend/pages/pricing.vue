@@ -111,10 +111,10 @@ const perkIcons: Record<string, string> = {
 }
 
 const globalPerks = computed(() =>
-  perkKeys.map((key) => ({
+  perkKeys.map(key => ({
     icon: perkIcons[key],
     label: t(`pricing.perks.${key}`),
-  }))
+  })),
 )
 
 const faqOpen = ref<number | null>(null)
@@ -126,15 +126,17 @@ const faq = computed(() =>
   Array.from({ length: 5 }, (_, i) => ({
     q: t(`pricing.faq.${i}.q`),
     a: t(`pricing.faq.${i}.a`),
-  }))
+  })),
 )
 </script>
 
 <template>
   <div class="min-h-screen bg-white">
-
     <!-- Background decorations -->
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div
+      class="fixed inset-0 -z-10 overflow-hidden pointer-events-none"
+      aria-hidden="true"
+    >
       <div class="absolute -top-60 right-0 w-[700px] h-[700px] bg-primary-500/5 rounded-full blur-3xl" />
       <div class="absolute top-1/3 -left-60 w-[600px] h-[600px] bg-primary-300/4 rounded-full blur-3xl" />
       <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary-500/3 rounded-full blur-3xl" />
@@ -184,7 +186,6 @@ const faq = computed(() =>
 
         <!-- Pricing cards -->
         <div class="grid gap-6 md:grid-cols-3 md:items-start">
-
           <div
             v-for="plan in plans"
             :key="plan.id"
@@ -197,7 +198,6 @@ const faq = computed(() =>
                   : 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-100 hover:shadow-md',
             ]"
           >
-
             <!-- Popular badge -->
             <div
               v-if="plan.badge"
@@ -252,10 +252,17 @@ const faq = computed(() =>
 
             <!-- Annual billing note + savings -->
             <div class="mt-2 h-5 text-xs">
-              <span v-if="plan.annualPrice > 0 && isAnnual" :class="plan.featured ? 'text-primary-100' : plan.dark ? 'text-gray-400' : 'text-gray-400'">
+              <span
+                v-if="plan.annualPrice > 0 && isAnnual"
+                :class="plan.featured ? 'text-primary-100' : plan.dark ? 'text-gray-400' : 'text-gray-400'"
+              >
                 {{ $t('pricing.billedPrefix') }} {{ plan.annualPrice * 12 }}{{ $t('pricing.billedSuffix') }}
               </span>
-              <span v-else-if="!isAnnual && plan.annualSaving" :class="plan.featured ? 'text-primary-100' : plan.dark ? 'text-emerald-400' : 'text-emerald-600'" class="font-medium">
+              <span
+                v-else-if="!isAnnual && plan.annualSaving"
+                :class="plan.featured ? 'text-primary-100' : plan.dark ? 'text-emerald-400' : 'text-emerald-600'"
+                class="font-medium"
+              >
                 {{ $t('pricing.savingsPrefix') }} {{ plan.annualSaving }} {{ $t('pricing.savingsSuffix') }}
               </span>
             </div>
@@ -312,9 +319,16 @@ const faq = computed(() =>
                   <svg
                     class="h-3 w-3"
                     :class="plan.featured || plan.dark ? 'text-white' : 'text-primary-600'"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="3"
                   >
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                 </span>
                 <!-- Excluded -->
@@ -324,9 +338,16 @@ const faq = computed(() =>
                 >
                   <svg
                     class="h-3 w-3 text-gray-300"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="3"
                   >
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </span>
 
@@ -342,14 +363,16 @@ const faq = computed(() =>
                 </span>
               </li>
             </ul>
-
           </div>
         </div>
 
         <!-- Trust strip — reinforcement below pricing cards -->
         <div class="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center">
           <div class="inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-white/80 px-4 py-2 text-sm font-semibold text-primary-600 shadow-sm backdrop-blur-sm">
-            <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-500" aria-hidden="true" />
+            <span
+              class="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-500"
+              aria-hidden="true"
+            />
             {{ $t('pricing.trustStrip') }}
           </div>
         </div>
@@ -369,9 +392,14 @@ const faq = computed(() =>
             class="flex flex-col items-center justify-center gap-2.5 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100 transition-shadow hover:shadow-md"
           >
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-500/10">
-              <UIcon :name="perk.icon" class="h-5 w-5 text-primary-600" />
+              <UIcon
+                :name="perk.icon"
+                class="h-5 w-5 text-primary-600"
+              />
             </div>
-            <p class="text-center text-xs font-medium leading-snug text-gray-700">{{ perk.label }}</p>
+            <p class="text-center text-xs font-medium leading-snug text-gray-700">
+              {{ perk.label }}
+            </p>
           </div>
         </div>
       </div>
@@ -380,10 +408,13 @@ const faq = computed(() =>
     <!-- ─── FAQ ───────────────────────────────────────────────── -->
     <section class="px-4 py-24 bg-white">
       <div class="mx-auto max-w-2xl">
-
         <div class="mb-12 text-center">
-          <h2 class="text-3xl font-extrabold text-gray-900">{{ $t('pricing.faqTitle') }}</h2>
-          <p class="mt-3 text-gray-500">{{ $t('pricing.faqSubtitle') }}</p>
+          <h2 class="text-3xl font-extrabold text-gray-900">
+            {{ $t('pricing.faqTitle') }}
+          </h2>
+          <p class="mt-3 text-gray-500">
+            {{ $t('pricing.faqSubtitle') }}
+          </p>
         </div>
 
         <div class="space-y-3">
@@ -402,8 +433,18 @@ const faq = computed(() =>
                 class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full transition-all duration-300"
                 :class="faqOpen === i ? 'bg-primary-500 text-white rotate-45' : 'bg-gray-100 text-gray-500'"
               >
-                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                <svg
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 4v16m8-8H4"
+                  />
                 </svg>
               </span>
             </button>
@@ -416,22 +457,28 @@ const faq = computed(() =>
               leave-from-class="opacity-100 max-h-48"
               leave-to-class="opacity-0 max-h-0"
             >
-              <div v-if="faqOpen === i" class="overflow-hidden">
-                <p class="px-6 pb-5 text-sm leading-relaxed text-gray-500">{{ item.a }}</p>
+              <div
+                v-if="faqOpen === i"
+                class="overflow-hidden"
+              >
+                <p class="px-6 pb-5 text-sm leading-relaxed text-gray-500">
+                  {{ item.a }}
+                </p>
               </div>
             </Transition>
           </div>
         </div>
-
       </div>
     </section>
 
     <!-- ─── Final CTA ─────────────────────────────────────────── -->
     <section class="px-4 pb-24 bg-surface">
       <div class="mx-auto max-w-4xl overflow-hidden rounded-3xl bg-gradient-to-br from-primary-600 via-primary-600 to-primary-800 p-12 text-center shadow-2xl shadow-primary-500/20 md:p-16 relative">
-
         <!-- Background glow -->
-        <div class="absolute inset-0 overflow-hidden rounded-3xl" aria-hidden="true">
+        <div
+          class="absolute inset-0 overflow-hidden rounded-3xl"
+          aria-hidden="true"
+        >
           <div class="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
           <div class="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
         </div>
@@ -455,12 +502,26 @@ const faq = computed(() =>
               class="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-primary-600 shadow-lg transition-all hover:bg-primary-50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
             >
               {{ $t('cta.primary') }}
-              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              <svg
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                />
               </svg>
             </a>
-            <p class="text-sm text-primary-100">{{ $t('cta.clarification') }}</p>
-            <p class="text-xs text-primary-200/80">{{ $t('pricing.redirectHint') }}</p>
+            <p class="text-sm text-primary-100">
+              {{ $t('cta.clarification') }}
+            </p>
+            <p class="text-xs text-primary-200/80">
+              {{ $t('pricing.redirectHint') }}
+            </p>
             <a
               :href="saasConfig.loginUrl"
               target="_blank"
@@ -470,10 +531,13 @@ const faq = computed(() =>
               {{ $t('cta.loginShort') }} →
             </a>
           </div>
-          <CommonRiskReversalChips variant="light" :show-trial="true" class="mt-6" />
+          <CommonRiskReversalChips
+            variant="light"
+            :show-trial="true"
+            class="mt-6"
+          />
         </div>
       </div>
     </section>
-
   </div>
 </template>

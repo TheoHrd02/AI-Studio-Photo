@@ -13,7 +13,7 @@
 export const themeConfig = {
   colors: {
     primary: {
-      50:  '#f5f3ff',
+      50: '#f5f3ff',
       100: '#ede9fe',
       200: '#ddd6fe',
       300: '#c4b5fd',
@@ -31,9 +31,9 @@ export const themeConfig = {
     surface: '#eff0f0',
   },
   borderRadius: {
-    sm:   '0.5rem',
-    md:   '0.75rem',
-    lg:   '1rem',
+    sm: '0.5rem',
+    md: '0.75rem',
+    lg: '1rem',
     full: '9999px',
   },
   shadows: {

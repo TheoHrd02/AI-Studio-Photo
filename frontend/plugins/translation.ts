@@ -3,8 +3,7 @@ export default defineNuxtPlugin(() => {
 
   return {
     provide: {
-      t
-    }
+      t,
+    },
   }
 })
-

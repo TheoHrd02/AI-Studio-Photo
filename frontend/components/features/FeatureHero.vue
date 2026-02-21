@@ -17,11 +17,17 @@ defineProps<Props>()
       <div class="mx-auto max-w-4xl text-center">
         <!-- Icon -->
         <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-primary-500 shadow-lg">
-          <UIcon :name="icon" class="h-10 w-10 text-white" />
+          <UIcon
+            :name="icon"
+            class="h-10 w-10 text-white"
+          />
         </div>
 
         <!-- Accent Text -->
-        <p v-if="accentText" class="mb-4 text-sm font-semibold uppercase tracking-wider text-primary-500">
+        <p
+          v-if="accentText"
+          class="mb-4 text-sm font-semibold uppercase tracking-wider text-primary-500"
+        >
           {{ accentText }}
         </p>
 
@@ -45,13 +51,18 @@ defineProps<Props>()
           >
             {{ $t('cta.primary') }}
           </a>
-          <p class="text-sm text-gray-500">{{ $t('cta.clarification') }}</p>
+          <p class="text-sm text-gray-500">
+            {{ $t('cta.clarification') }}
+          </p>
         </div>
       </div>
     </div>
 
     <!-- Decorative elements -->
-    <div class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl" aria-hidden="true">
+    <div
+      class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl"
+      aria-hidden="true"
+    >
       <div class="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-primary-500 to-primary-600 opacity-20" />
     </div>
   </section>

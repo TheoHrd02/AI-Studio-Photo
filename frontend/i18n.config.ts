@@ -7,62 +7,61 @@ export default defineI18nConfig(() => ({
       currency: {
         style: 'currency',
         currency: 'EUR',
-        notation: 'standard'
+        notation: 'standard',
       },
       decimal: {
         style: 'decimal',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        maximumFractionDigits: 2,
       },
       percent: {
         style: 'percent',
-        useGrouping: false
-      }
+        useGrouping: false,
+      },
     },
     en: {
       currency: {
         style: 'currency',
         currency: 'USD',
-        notation: 'standard'
+        notation: 'standard',
       },
       decimal: {
         style: 'decimal',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        maximumFractionDigits: 2,
       },
       percent: {
         style: 'percent',
-        useGrouping: false
-      }
-    }
+        useGrouping: false,
+      },
+    },
   },
   datetimeFormats: {
     fr: {
       short: {
         year: 'numeric',
         month: 'short',
-        day: 'numeric'
+        day: 'numeric',
       },
       long: {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-        weekday: 'long'
-      }
+        weekday: 'long',
+      },
     },
     en: {
       short: {
         year: 'numeric',
         month: 'short',
-        day: 'numeric'
+        day: 'numeric',
       },
       long: {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-        weekday: 'long'
-      }
-    }
-  }
+        weekday: 'long',
+      },
+    },
+  },
 }))
-

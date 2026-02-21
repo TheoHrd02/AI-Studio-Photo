@@ -15,13 +15,16 @@ defineProps<Props>()
           {{ title }}
         </h3>
         <ul class="space-y-4">
-          <li 
-            v-for="(item, index) in items" 
+          <li
+            v-for="(item, index) in items"
             :key="index"
             class="flex items-start gap-3"
           >
             <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-500/10 mt-0.5">
-              <UIcon name="heroicons:check" class="h-4 w-4 text-primary-500" />
+              <UIcon
+                name="heroicons:check"
+                class="h-4 w-4 text-primary-500"
+              />
             </div>
             <span class="text-lg text-gray-700">{{ item }}</span>
           </li>

@@ -37,11 +37,14 @@ export const useChatbot = () => {
       })
 
       return response.answer
-    } catch (err: any) {
-      const errorMessage = err?.data?.error || err?.message || 'Une erreur est survenue'
+    }
+    catch (err: unknown) {
+      const errObj = err as { data?: { error?: string }, message?: string }
+      const errorMessage = errObj?.data?.error || errObj?.message || 'Une erreur est survenue'
       error.value = errorMessage
       throw new Error(errorMessage)
-    } finally {
+    }
+    finally {
       isLoading.value = false
     }
   }

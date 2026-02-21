@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n()
+useI18n()
 </script>
 
 <template>
