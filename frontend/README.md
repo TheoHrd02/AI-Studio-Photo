@@ -1,75 +1,40 @@
-# Nuxt Minimal Starter
+# AI Studio Photo — Frontend (Nuxt 4)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+**Package manager : pnpm uniquement.** Voir [docs/audit/PNPM_ONLY.md](../../docs/audit/PNPM_ONLY.md) pour la politique du projet.
 
-## Setup
+## Prérequis
 
-Make sure to install dependencies:
+- Node.js 18+
+- [pnpm](https://pnpm.io/installation) (ou `corepack enable` pour activer)
+
+## Installation
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Développement
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Serveur sur `http://localhost:3000` (ou `0.0.0.0:3000` en Docker).
 
-Build the application for production:
+## Build
 
 ```bash
-# npm
-npm run build
-
-# pnpm
 pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+## Preview (build production)
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
 pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Génération statique
+
+```bash
+pnpm generate
+```

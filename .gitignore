@@ -11,6 +11,10 @@ backend/*.out
 
 # Node
 frontend/node_modules/
+# Lockfiles parasites (pnpm only — garder pnpm-lock.yaml)
+frontend/bun.lock
+frontend/package-lock.json
+frontend/yarn.lock
 frontend/.nuxt/
 frontend/.output/
 frontend/dist/
