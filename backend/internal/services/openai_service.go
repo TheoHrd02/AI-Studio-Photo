@@ -13,9 +13,9 @@ import (
 
 // OpenAIService gère les interactions avec l'API OpenAI
 type OpenAIService struct {
-	apiKey       string
-	assistantID  string
-	httpClient   *http.Client
+	apiKey      string
+	assistantID string
+	httpClient  *http.Client
 }
 
 // ThreadRequest pour créer un thread
@@ -159,7 +159,7 @@ func (s *OpenAIService) createThread(ctx context.Context, question string) (stri
 
 	if resp.StatusCode != http.StatusOK {
 		var errResp OpenAIErrorResponse
-		json.Unmarshal(body, &errResp)
+		_ = json.Unmarshal(body, &errResp)
 		return "", fmt.Errorf("API error: %s", errResp.Error.Message)
 	}
 
@@ -205,7 +205,7 @@ func (s *OpenAIService) createRun(ctx context.Context, threadID string) (string,
 
 	if resp.StatusCode != http.StatusOK {
 		var errResp OpenAIErrorResponse
-		json.Unmarshal(body, &errResp)
+		_ = json.Unmarshal(body, &errResp)
 		return "", fmt.Errorf("API error: %s", errResp.Error.Message)
 	}
 

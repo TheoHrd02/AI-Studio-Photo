@@ -1,0 +1,9 @@
+# golangci-lint config — minimal, standard linters (v1 format)
+# https://golangci-lint.run/docs/configuration/
+
+linters:
+  default: standard
+
+run:
+  timeout: 2m
+  modules-download-mode: readonly

@@ -51,8 +51,8 @@ git commit -m "docs: pnpm only policy, README install, gitignore lockfiles paras
 
 ## Vérifications post-migration
 
-- [ ] `pnpm install` réussit
-- [ ] `pnpm build` réussit
+- [x] `pnpm install` réussit
+- [ ] `pnpm build` — erreur `route-rules.mjs` (possible bug Nuxt 4 / Vite 7, à investiguer)
 - [ ] `pnpm dev` démarre
 - [ ] `docker-compose build frontend` réussit
-- [ ] Aucun `bun.lock` ni `package-lock.json` dans le repo
+- [x] Aucun `bun.lock` ni `package-lock.json` dans le repo
