@@ -1,4 +1,31 @@
 {
+  "cta": {
+    "primary": "Start for free — no credit card",
+    "featureButtonLine1": "Start for free",
+    "featureButtonLine2": "No card required",
+    "primaryWithCredits": "Start for free — with 5 credits",
+    "clarification": "After click: free account → 5 credits → first creation in 30s",
+    "login": "Already have an account? Sign in",
+    "loginShort": "I already have an account",
+    "pricing": "View pricing",
+    "pricingLink": "View all pricing",
+    "discover": "Discover",
+    "orStartNow": "Or start now →",
+    "header": "Start for free — no credit card",
+    "plans": {
+      "free": { "label": "Start for free — no credit card", "note": "No card required" },
+      "pro": { "label": "Start trial — 7 days free", "note": "No commitment" },
+      "enterprise": { "label": "Book a demo", "note": "Free personalized call" }
+    },
+    "help": {
+      "chat": "Start a conversation",
+      "returnToProduct": "Start for free — no credit card"
+    },
+    "finalSection": {
+      "title": "Ready to create your first visuals?",
+      "subtitle": "Start for free and discover the power of AI for your creations"
+    }
+  },
   "common": {
     "appName": "AI Studio Photo",
     "loading": "Loading...",
@@ -29,7 +56,9 @@
     "startFree": "Start for free",
     "mainFeatures": "Main features",
     "readyToStart": "Ready to start?",
-    "createAccountFree": "Create your account for free and get 5 credits offered."
+    "createAccountFree": "Create your account for free and get 5 credits offered.",
+    "ctaPrimary": "Start for free — no credit card",
+    "ctaClarification": "After click: free account → 5 credits → first creation in 30s"
   },
   
   "nav": {
@@ -45,7 +74,7 @@
     "dashboard": "Dashboard",
     "myAccount": "My account",
     "gallery": "Gallery",
-    "launchApp": "Launch AI Studio Photo",
+    "launchApp": "Start for free — no credit card",
     "studioVirtuel": {
       "label": "Virtual Studio",
       "description": "Place your products in settings worthy of the greatest photo studios."
@@ -60,16 +89,93 @@
     }
   },
 
+  "pricingTeaser": {
+    "title": "Start for free. Scale without limits.",
+    "subtitle": "Free, Pro or Enterprise — choose the plan that fits you.",
+    "cta": "Start for free — no credit card",
+    "link": "View all pricing"
+  },
+
+  "productDemo": {
+    "badge": "Product demo",
+    "title": "See the product in action",
+    "subtitle": "Discover how to turn a product photo into a professional studio visual in seconds.",
+    "watchHint": "Click to play"
+  },
+
+  "productWalkthrough": {
+    "badge": "Product walkthrough",
+    "title": "Your workflow in 4 steps",
+    "subtitle": "From upload to final creation, follow the simplified journey.",
+    "framing": "Overview of how it works — final interface under development.",
+    "steps": {
+      "upload": {
+        "title": "Upload your photo",
+        "description": "Import your product photo, portrait or raw visual. Drag and drop or select from your computer."
+      },
+      "choose": {
+        "title": "Choose the scene",
+        "description": "Select from our studio backdrops or describe your vision. Predefined templates or custom creation."
+      },
+      "generate": {
+        "title": "Generate",
+        "description": "AI transforms your visual in seconds. No skills required."
+      },
+      "download": {
+        "title": "Download",
+        "description": "Get your creation in high resolution, ready to publish on your channels."
+      }
+    },
+    "mockup": {
+      "uploadHint": "Drop your image here",
+      "generating": "Generating..."
+    }
+  },
+
+  "beforeAfter": {
+    "badge": "Illustrative preview",
+    "title": "Before → After: the transformation in one click",
+    "subtitle": "A raw product photo becomes a professional studio visual. Here's what the AI can generate in 30 seconds.",
+    "illustrativeLabel": "Example-generated results — capability demonstration",
+    "before": "Before",
+    "after": "After"
+  },
+
+  "personas": {
+    "forLabel": "For: ",
+    "ecommerce": {
+      "label": "E-commerce",
+      "eyebrow": "For e-commerce brands",
+      "subtitle": "Scale your catalog visuals without photo budgets. Studio-quality renders in 30 seconds — ready for your store."
+    },
+    "fashion": {
+      "label": "Fashion",
+      "eyebrow": "For fashion & lifestyle brands",
+      "subtitle": "Virtual models, lifestyle settings, unlimited shoots. Create visual campaigns without castings or studios."
+    },
+    "creators": {
+      "label": "Creators",
+      "eyebrow": "For content creators",
+      "subtitle": "Pro content for your socials. Studio photos, animated videos — all in a few clicks."
+    },
+    "default": {
+      "eyebrow": "For e-commerce brands & content creators",
+      "subtitle": "No more expensive photoshoots. Turn any product photo into a premium studio visual — ready to publish."
+    }
+  },
+
   "hero": {
-    "title": "Ultra-Realistic Generative AI Tools",
-    "subtitle": "Train your own LoRa AI models and generate ultra-realistic content in seconds.",
-    "ctaPrimary": "Start creating for free",
-    "ctaSecondary": "Sign in",
-    "carousel": {
-      "arg1": "Create in 10 seconds",
-      "arg2": "Save 90% on costs",
-      "arg3": "100x faster",
-      "arg4": "+40% conversions"
+    "eyebrow": "Early access · 5 free credits · 30 seconds",
+    "title": "Professional product photos, AI-generated in 30 seconds",
+    "subtitle": "No more expensive photoshoots. Turn any product photo into a premium studio visual — ready to publish.",
+    "ctaPrimary": "Start for free — no credit card",
+    "ctaSecondary": "Already have an account? Sign in",
+    "trustChips": {
+      "speed": "Results in 30 seconds",
+      "free": "5 free credits — no card required",
+      "noSkills": "No skills required",
+      "cancel": "Cancel anytime",
+      "earlyAccess": "Early access — join the beta"
     }
   },
 
@@ -100,7 +206,7 @@
 
   "howItWorks": {
     "badge": "How it works",
-    "title": "From idea to result in 3 simple steps",
+    "title": "From idea to result in 4 simple steps",
     "subtitle": "Our AI does the complex work for you. Just follow these steps.",
     "steps": {
       "upload": {
@@ -110,6 +216,10 @@
       "choose": {
         "title": "Choose your style",
         "description": "Select from our templates or describe your vision in natural language."
+      },
+      "generate": {
+        "title": "Generate",
+        "description": "AI transforms your visual in seconds. No skills required."
       },
       "download": {
         "title": "Download the result",
@@ -190,10 +300,45 @@
   },
 
   "socialProof": {
-    "users": "Active creators",
-    "generations": "Generated creations",
-    "rating": "Customer satisfaction",
-    "countries": "User countries"
+    "header": "Platform",
+    "headline": "AI-powered product visuals in 30 seconds",
+    "subline": "Early access — we're building in public. Join creators testing the beta.",
+    "generationsMetric": "5.2M+",
+    "generationsLabel": "creations generated on the platform",
+    "generationsFull": "Over 5 million creations generated on the platform",
+    "trustedBy": "Trusted by"
+  },
+
+  "testimonials": {
+    "badge": "Typical use cases",
+    "title": "What you could achieve",
+    "subtitle": "Example scenarios by profile — capability demonstration.",
+    "items": {
+      "1": {
+        "quote": "Cut photo budget by 5x. Get agency-quality renders in 30 seconds instead of 3 days.",
+        "role": "Marketing Director",
+        "industry": "E-commerce",
+        "avatarLetter": "E"
+      },
+      "2": {
+        "quote": "No more castings or waiting. Iterate on campaigns in real time with Virtual Model.",
+        "role": "Founder",
+        "industry": "Fashion & lifestyle",
+        "avatarLetter": "M"
+      },
+      "3": {
+        "quote": "Take e-commerce visuals to pro level. Boost conversions with engaging visuals.",
+        "role": "E-commerce Manager",
+        "industry": "Beauty & retail",
+        "avatarLetter": "B"
+      }
+    }
+  },
+
+  "riskReversal": {
+    "noCard": "No credit card required",
+    "cancelAnytime": "Cancel anytime",
+    "freeTrial": "7-day free trial"
   },
 
   "auth": {
@@ -228,30 +373,116 @@
   },
 
   "pricing": {
+    "pageTitle": "Pricing – AI Studio Photo",
+    "pageDescription": "Discover our plans: Free, Pro and Enterprise. Start without a credit card.",
+    "heroTitle": "The plan that",
+    "heroHighlight": "fits you",
+    "heroSubtitle": "Start for free. Scale without limits. Cancel anytime.",
     "title": "Simple and transparent pricing",
     "subtitle": "Choose the plan that fits your needs",
+    "finalCtaLine": "Early access. 7-day trial. No card required.",
     "monthly": "Monthly",
     "yearly": "Yearly",
+    "annualBadge": "–20%",
+    "billingToggleAria": "Annual billing",
     "save": "Save",
-    "free": {
-      "name": "Free",
-      "description": "To discover",
-      "price": "$0",
-      "period": "/month",
-      "cta": "Get started",
-      "features": [
-        "5 free generations"
-      ]
+    "periodPerMonth": "/ month",
+    "billedPrefix": "Billed",
+    "billedSuffix": "€ / year",
+    "savingsPrefix": "↓",
+    "savingsSuffix": "with annual billing",
+    "trustStrip": "Transparent pricing · No surprises · No commitment",
+    "includedTitle": "Included in all plans",
+    "faqTitle": "Frequently asked questions",
+    "faqSubtitle": "Everything you need to know before getting started.",
+    "finalCtaEyebrow": "Ready to get started?",
+    "finalCtaTitle": "Transform your visuals",
+    "finalCtaTitleBreak": "today.",
+    "redirectHint": "You will be redirected to your account.",
+    "redirectHintEnterprise": "You will be redirected to schedule a call.",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "tagline": "To explore the power of generative AI",
+        "bestFor": "Individuals discovering AI Studio",
+        "annualSaving": null,
+        "features": [
+          "10 AI generations / month",
+          "Virtual Studio (basic access)",
+          "Standard resolution (1024px)",
+          "JPG / PNG export",
+          "30-day storage",
+          "Virtual Model",
+          "Motion Studio",
+          "4K AI Upscaler"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "For creators and brands producing at scale",
+        "bestFor": "Growing brands & creators",
+        "badge": "Most popular",
+        "annualSaving": "60€ saved / year",
+        "features": [
+          "500 AI generations / month",
+          "Full Virtual Studio",
+          "Virtual Model",
+          "Motion Studio",
+          "4K AI Upscaler included",
+          "High resolution (4096px)",
+          "Pro export formats (PNG, TIFF, WEBP)",
+          "Priority email support"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "tagline": "For teams and intensive production",
+        "bestFor": "Teams & large workflows",
+        "annualSaving": "240€ saved / year",
+        "features": [
+          "Unlimited generations",
+          "All tools included",
+          "Teams up to 20 users",
+          "API Access + Webhooks",
+          "Maximum resolution",
+          "White-label option",
+          "99.9% SLA guaranteed",
+          "Dedicated account manager"
+        ]
+      }
     },
-    "pro": {
-      "name": "Pro",
-      "description": "For active creators",
-      "price": "$29",
-      "period": "/month",
-      "badge": "Popular",
-      "cta": "Get started",
-      "features": []
-    }
+    "perks": {
+      "secureData": "Secure data & GDPR compliant",
+      "noCard": "No credit card to start",
+      "cancelAnytime": "Cancel anytime",
+      "noWatermark": "No watermark on exports",
+      "multiDevice": "Multi-device access",
+      "freeUpdates": "Free updates",
+      "frenchInterface": "100% French interface",
+      "securePayment": "Secure payment (Stripe)"
+    },
+    "faq": [
+      {
+        "q": "Can I change plans at any time?",
+        "a": "Yes. Upgrade or downgrade from your account in one click. Changes take effect immediately with prorated billing."
+      },
+      {
+        "q": "Does the free trial require a credit card?",
+        "a": "No, no card required for the 7-day trial. You only enter payment details if you choose to continue."
+      },
+      {
+        "q": "What happens if I reach my generation limit?",
+        "a": "You receive a notification at 80% usage. You can purchase additional credits or upgrade your plan instantly."
+      },
+      {
+        "q": "Do I own the generated images?",
+        "a": "Yes, you retain full rights to all content created. Commercial use is included in all plans, with no restrictions."
+      },
+      {
+        "q": "How does annual billing work?",
+        "a": "Annual billing is charged once at the start of the period. You get a 20% discount compared to monthly billing."
+      }
+    ]
   },
 
   "footer": {
@@ -296,12 +527,24 @@
     "serverError": "Server error"
   },
 
+  "featurePageSection": {
+    "sectionConcept": "01 — Concept",
+    "sectionBenefits": "02 — Benefits",
+    "sectionHowToUse": "03 — How it works",
+    "sectionOutcomes": "04 — What you get",
+    "outputLabel": "Output",
+    "stepsLabel": "simple steps"
+  },
+
   "featurePages": {
     "studioVirtuel": {
       "badge": "📸 AI Photography",
       "title": "Virtual Studio",
       "subtitle": "Place your products in settings worthy of the greatest photo studios.",
       "cta": "Try for free",
+      "conceptImageAlt": "Virtual Studio output — professional product visual",
+      "beforeImageAlt": "Raw product photo — white background, flat lighting",
+      "workflowImageAlt": "Virtual Studio interface — 4-step workflow",
       "whatIs": {
         "title": "What is it?",
         "text1": "It's your photo studio... without the studio. Upload your image, choose a setting — minimalist, design, lifestyle, or inspired by your brand — and instantly get a 4K render ready to publish.",
@@ -337,6 +580,9 @@
       "title": "Virtual Model",
       "subtitle": "Humanize your visuals with realistic and personalized models.",
       "cta": "Try for free",
+      "conceptImageAlt": "Virtual Model output — product with AI model",
+      "beforeImageAlt": "Product isolated on neutral background",
+      "workflowImageAlt": "Virtual Model interface — profile selection",
       "whatIs": {
         "title": "What is it?",
         "text1": "It's the fusion between fashion and machine. You choose the ideal profile (gender, body type, style, emotion), and the AI generates a model consistent with your image and brand universe.",
@@ -372,6 +618,9 @@
       "title": "Motion Studio",
       "subtitle": "Go from image to motion in one click.",
       "cta": "Try for free",
+      "conceptImageAlt": "Motion Studio output — animated product video",
+      "beforeImageAlt": "Static product — headphones",
+      "workflowImageAlt": "Motion Studio interface — animation style selection",
       "whatIs": {
         "title": "What is it?",
         "text1": "It's the logical next step: give breath to your visuals. Motion Studio converts your product images into realistic, cinematic or advertising videos, ready for TikTok, Instagram or your site.",

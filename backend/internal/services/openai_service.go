@@ -2,6 +2,7 @@ package services
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -78,8 +79,9 @@ func NewOpenAIService() *OpenAIService {
 	}
 }
 
-// AskQuestion envoie une question à OpenAI et retourne la réponse
-func (s *OpenAIService) AskQuestion(question string) (string, error) {
+// AskQuestion envoie une question à OpenAI et retourne la réponse.
+// Respecte l'annulation du context (timeout, client disconnect).
+func (s *OpenAIService) AskQuestion(ctx context.Context, question string) (string, error) {
 	// Validation des variables d'environnement
 	if s.apiKey == "" {
 		return "", fmt.Errorf("OPENAI_API_KEY is not set")
@@ -89,25 +91,25 @@ func (s *OpenAIService) AskQuestion(question string) (string, error) {
 	}
 
 	// Étape 1: Créer un thread
-	threadID, err := s.createThread(question)
+	threadID, err := s.createThread(ctx, question)
 	if err != nil {
 		return "", fmt.Errorf("failed to create thread: %w", err)
 	}
 
 	// Étape 2: Lancer le run
-	runID, err := s.createRun(threadID)
+	runID, err := s.createRun(ctx, threadID)
 	if err != nil {
 		return "", fmt.Errorf("failed to create run: %w", err)
 	}
 
 	// Étape 3: Attendre la complétion
-	err = s.waitForCompletion(threadID, runID)
+	err = s.waitForCompletion(ctx, threadID, runID)
 	if err != nil {
 		return "", fmt.Errorf("run failed: %w", err)
 	}
 
 	// Étape 4: Récupérer les messages
-	answer, err := s.getMessages(threadID)
+	answer, err := s.getMessages(ctx, threadID)
 	if err != nil {
 		return "", fmt.Errorf("failed to get messages: %w", err)
 	}
@@ -120,7 +122,7 @@ func (s *OpenAIService) AskQuestion(question string) (string, error) {
 }
 
 // createThread crée un nouveau thread avec le message utilisateur
-func (s *OpenAIService) createThread(question string) (string, error) {
+func (s *OpenAIService) createThread(ctx context.Context, question string) (string, error) {
 	reqBody := ThreadRequest{
 		Messages: []ThreadMessage{
 			{
@@ -135,7 +137,7 @@ func (s *OpenAIService) createThread(question string) (string, error) {
 		return "", err
 	}
 
-	req, err := http.NewRequest("POST", "https://api.openai.com/v1/threads", bytes.NewBuffer(jsonData))
+	req, err := http.NewRequestWithContext(ctx, "POST", "https://api.openai.com/v1/threads", bytes.NewBuffer(jsonData))
 	if err != nil {
 		return "", err
 	}
@@ -170,7 +172,7 @@ func (s *OpenAIService) createThread(question string) (string, error) {
 }
 
 // createRun lance un run sur le thread
-func (s *OpenAIService) createRun(threadID string) (string, error) {
+func (s *OpenAIService) createRun(ctx context.Context, threadID string) (string, error) {
 	reqBody := RunRequest{
 		AssistantID: s.assistantID,
 	}
@@ -181,7 +183,7 @@ func (s *OpenAIService) createRun(threadID string) (string, error) {
 	}
 
 	url := fmt.Sprintf("https://api.openai.com/v1/threads/%s/runs", threadID)
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
+	req, err := http.NewRequestWithContext(ctx, "POST", url, bytes.NewBuffer(jsonData))
 	if err != nil {
 		return "", err
 	}
@@ -215,14 +217,19 @@ func (s *OpenAIService) createRun(threadID string) (string, error) {
 	return runResp.ID, nil
 }
 
-// waitForCompletion attend que le run soit terminé
-func (s *OpenAIService) waitForCompletion(threadID, runID string) error {
+// waitForCompletion attend que le run soit terminé.
+// Respecte l'annulation du context à chaque itération.
+func (s *OpenAIService) waitForCompletion(ctx context.Context, threadID, runID string) error {
 	url := fmt.Sprintf("https://api.openai.com/v1/threads/%s/runs/%s", threadID, runID)
-	
-	for i := 0; i < 30; i++ { // Max 30 secondes
-		time.Sleep(1 * time.Second)
 
-		req, err := http.NewRequest("GET", url, nil)
+	for i := 0; i < 30; i++ { // Max 30 secondes
+		select {
+		case <-ctx.Done():
+			return ctx.Err()
+		case <-time.After(1 * time.Second):
+		}
+
+		req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
 		if err != nil {
 			return err
 		}
@@ -259,10 +266,10 @@ func (s *OpenAIService) waitForCompletion(threadID, runID string) error {
 }
 
 // getMessages récupère les messages du thread
-func (s *OpenAIService) getMessages(threadID string) (string, error) {
+func (s *OpenAIService) getMessages(ctx context.Context, threadID string) (string, error) {
 	url := fmt.Sprintf("https://api.openai.com/v1/threads/%s/messages", threadID)
-	
-	req, err := http.NewRequest("GET", url, nil)
+
+	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
 	if err != nil {
 		return "", err
 	}

@@ -20,8 +20,8 @@ defineProps<Props>()
             :key="index"
             class="flex items-start gap-3"
           >
-            <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#912efb]/10 mt-0.5">
-              <UIcon name="heroicons:check" class="h-4 w-4 text-[#912efb]" />
+            <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-500/10 mt-0.5">
+              <UIcon name="heroicons:check" class="h-4 w-4 text-primary-500" />
             </div>
             <span class="text-lg text-gray-700">{{ item }}</span>
           </li>

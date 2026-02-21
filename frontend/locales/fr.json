@@ -1,4 +1,31 @@
 {
+  "cta": {
+    "primary": "Commencer gratuitement — sans carte",
+    "featureButtonLine1": "Commencer gratuitement",
+    "featureButtonLine2": "Sans carte",
+    "primaryWithCredits": "Commencer gratuitement — 5 crédits offerts",
+    "clarification": "Après le clic : compte gratuit → 5 crédits → première création en 30s",
+    "login": "Déjà un compte ? Se connecter",
+    "loginShort": "J'ai déjà un compte",
+    "pricing": "Voir les tarifs",
+    "pricingLink": "Voir tous les tarifs",
+    "discover": "Découvrir",
+    "orStartNow": "Ou commencer maintenant →",
+    "header": "Commencer gratuitement — sans carte",
+    "plans": {
+      "free": { "label": "Commencer gratuitement — sans carte", "note": "Aucune carte requise" },
+      "pro": { "label": "Démarrer l'essai — 7 jours gratuits", "note": "Sans engagement" },
+      "enterprise": { "label": "Réserver une démo", "note": "Appel personnalisé offert" }
+    },
+    "help": {
+      "chat": "Démarrer une conversation",
+      "returnToProduct": "Commencer gratuitement — sans carte"
+    },
+    "finalSection": {
+      "title": "Prêt à créer vos premiers visuels ?",
+      "subtitle": "Commencez gratuitement et découvrez la puissance de l'IA pour vos créations"
+    }
+  },
   "common": {
     "appName": "AI Studio Photo",
     "loading": "Chargement...",
@@ -29,7 +56,9 @@
     "startFree": "Commencer gratuitement",
     "mainFeatures": "Fonctionnalités principales",
     "readyToStart": "Prêt à commencer ?",
-    "createAccountFree": "Créez votre compte gratuitement et obtenez 5 crédits offerts."
+    "createAccountFree": "Créez votre compte gratuitement et obtenez 5 crédits offerts.",
+    "ctaPrimary": "Commencer gratuitement — sans carte",
+    "ctaClarification": "Après le clic : compte gratuit → 5 crédits → première création en 30s"
   },
   
   "nav": {
@@ -45,7 +74,7 @@
     "dashboard": "Tableau de bord",
     "myAccount": "Mon compte",
     "gallery": "Galerie",
-    "launchApp": "Lance AI Studio Photo",
+    "launchApp": "Commencer gratuitement — sans carte",
     "studioVirtuel": {
       "label": "Studio Virtuel",
       "description": "Placez vos produits dans des décors dignes des plus grands studios photo."
@@ -60,16 +89,93 @@
     }
   },
 
+  "pricingTeaser": {
+    "title": "Commencez gratuitement. Évoluez sans contrainte.",
+    "subtitle": "Gratuit, Pro ou Entreprise — choisissez le plan qui vous correspond.",
+    "cta": "Commencer gratuitement — sans carte",
+    "link": "Voir tous les tarifs"
+  },
+
+  "productDemo": {
+    "badge": "Démo produit",
+    "title": "Voyez le produit en action",
+    "subtitle": "Découvrez comment transformer une photo produit en visuel studio professionnel en quelques secondes.",
+    "watchHint": "Cliquez pour lancer"
+  },
+
+  "productWalkthrough": {
+    "badge": "Parcours produit",
+    "title": "Votre workflow en 4 étapes",
+    "subtitle": "De l'upload à la création finale, suivez le parcours simplifié.",
+    "framing": "Aperçu du fonctionnement — interface finale en cours de développement.",
+    "steps": {
+      "upload": {
+        "title": "Uploadez votre photo",
+        "description": "Importez votre photo produit, portrait ou visuel brut. Glissez-déposez ou sélectionnez depuis votre ordinateur."
+      },
+      "choose": {
+        "title": "Choisissez la scène",
+        "description": "Sélectionnez parmi nos décors studio ou décrivez votre vision. Templates prédéfinis ou création personnalisée."
+      },
+      "generate": {
+        "title": "Générez",
+        "description": "L'IA transforme votre visuel en quelques secondes. Aucune compétence requise."
+      },
+      "download": {
+        "title": "Téléchargez",
+        "description": "Récupérez votre création en haute résolution, prête à publier sur vos canaux."
+      }
+    },
+    "mockup": {
+      "uploadHint": "Glissez votre image ici",
+      "generating": "Génération en cours..."
+    }
+  },
+
+  "beforeAfter": {
+    "badge": "Aperçu illustratif",
+    "title": "Avant → Après : la transformation en un clic",
+    "subtitle": "Une photo produit brute devient un visuel studio professionnel. Voici ce que l'IA peut générer en 30 secondes.",
+    "illustrativeLabel": "Résultats générés à titre d'exemple — démonstration des capacités",
+    "before": "Avant",
+    "after": "Après"
+  },
+
+  "personas": {
+    "forLabel": "Pour : ",
+    "ecommerce": {
+      "label": "E-commerce",
+      "eyebrow": "Pour les marques e-commerce",
+      "subtitle": "Multipliez vos visuels catalogue sans budget photo. Des rendus studio pro en 30 secondes — prêts pour votre site."
+    },
+    "fashion": {
+      "label": "Mode",
+      "eyebrow": "Pour les marques mode & lifestyle",
+      "subtitle": "Mannequins virtuels, décors lifestyle, shootings illimités. Créez des campagnes visuelles sans casting ni studio."
+    },
+    "creators": {
+      "label": "Créateurs",
+      "eyebrow": "Pour les créateurs de contenu",
+      "subtitle": "Produisez du contenu pro pour vos réseaux. Photos studio, vidéos animées — tout en quelques clics."
+    },
+    "default": {
+      "eyebrow": "Pour les marques e-commerce & créateurs de contenu",
+      "subtitle": "Fini les shootings coûteux. Transformez n'importe quelle photo produit en visuel studio haut de gamme — prêt à publier."
+    }
+  },
+
   "hero": {
-    "title": "Outils d'IA Génératifs Ultra Réalistes",
-    "subtitle": "Entrainez vos propres modèles d'IA LoRa et générez du contenu ultra-réaliste en quelques secondes.",
-    "ctaPrimary": "Commencez à créer gratuitement",
-    "ctaSecondary": "Se connecter",
-    "carousel": {
-      "arg1": "Créez en 10 secondes",
-      "arg2": "Économisez 90% des coûts",
-      "arg3": "100x plus rapide",
-      "arg4": "+40% de conversions"
+    "eyebrow": "Accès anticipé · 5 crédits offerts · 30 secondes",
+    "title": "Des photos produits professionnelles, générées par l'IA en 30 secondes",
+    "subtitle": "Fini les shootings coûteux. Transformez n'importe quelle photo produit en visuel studio haut de gamme — prêt à publier.",
+    "ctaPrimary": "Commencer gratuitement — sans carte",
+    "ctaSecondary": "Déjà un compte ? Se connecter",
+    "trustChips": {
+      "speed": "Résultat en 30 secondes",
+      "free": "5 crédits offerts — sans carte bancaire",
+      "noSkills": "Aucune compétence requise",
+      "cancel": "Annulez à tout moment",
+      "earlyAccess": "Accès anticipé — rejoignez la bêta"
     }
   },
 
@@ -100,7 +206,7 @@
 
   "howItWorks": {
     "badge": "Comment ça marche",
-    "title": "De l'idée au résultat en 3 étapes simples",
+    "title": "De l'idée au résultat en 4 étapes simples",
     "subtitle": "Notre IA fait le travail complexe pour vous. Il vous suffit de suivre ces étapes.",
     "steps": {
       "upload": {
@@ -110,6 +216,10 @@
       "choose": {
         "title": "Choisissez votre style",
         "description": "Sélectionnez parmi nos templates ou décrivez votre vision en langage naturel."
+      },
+      "generate": {
+        "title": "Générez",
+        "description": "L'IA transforme votre visuel en quelques secondes. Aucune compétence requise."
       },
       "download": {
         "title": "Téléchargez le résultat",
@@ -190,10 +300,45 @@
   },
 
   "socialProof": {
-    "users": "Créateurs actifs",
-    "generations": "Créations générées",
-    "rating": "Satisfaction client",
-    "countries": "Pays utilisateurs"
+    "header": "Plateforme",
+    "headline": "Visuels produits IA en 30 secondes",
+    "subline": "Accès anticipé — nous construisons en public. Rejoignez les créateurs qui testent la bêta.",
+    "generationsMetric": "5,2M+",
+    "generationsLabel": "créations générées sur la plateforme",
+    "generationsFull": "Plus de 5 millions de créations générées sur la plateforme",
+    "trustedBy": "Ils nous font confiance"
+  },
+
+  "testimonials": {
+    "badge": "Cas d'usage type",
+    "title": "Ce que vous pourriez accomplir",
+    "subtitle": "Exemples de scénarios selon votre profil — démonstration des capacités.",
+    "items": {
+      "1": {
+        "quote": "Diviser le budget photo par 5. Obtenir des rendus niveau agence en 30 secondes au lieu de 3 jours.",
+        "role": "Directrice Marketing",
+        "industry": "E-commerce",
+        "avatarLetter": "E"
+      },
+      "2": {
+        "quote": "Plus de castings ni d'attente. Itérer sur les campagnes en temps réel avec le Mannequin Virtuel.",
+        "role": "Fondateur",
+        "industry": "Mode & lifestyle",
+        "avatarLetter": "M"
+      },
+      "3": {
+        "quote": "Passer des visuels e-commerce au niveau pro. Augmenter les conversions avec des visuels engageants.",
+        "role": "Responsable E-commerce",
+        "industry": "Beauty & retail",
+        "avatarLetter": "B"
+      }
+    }
+  },
+
+  "riskReversal": {
+    "noCard": "Sans carte bancaire",
+    "cancelAnytime": "Annulez à tout moment",
+    "freeTrial": "Essai 7 jours gratuit"
   },
 
   "auth": {
@@ -228,30 +373,116 @@
   },
 
   "pricing": {
+    "pageTitle": "Tarifs – AI Studio Photo",
+    "pageDescription": "Découvrez nos offres : Gratuit, Pro et Entreprise. Commencez sans carte bancaire.",
+    "heroTitle": "Le plan qui",
+    "heroHighlight": "vous correspond",
+    "heroSubtitle": "Commencez gratuitement. Évoluez sans contrainte. Annulez à tout moment.",
     "title": "Tarifs simples et transparents",
     "subtitle": "Choisissez le plan qui correspond à vos besoins",
+    "finalCtaLine": "Accès anticipé. Essai 7 jours. Aucune carte requise.",
     "monthly": "Mensuel",
     "yearly": "Annuel",
+    "annualBadge": "–20%",
+    "billingToggleAria": "Facturation annuelle",
     "save": "Économisez",
-    "free": {
-      "name": "Gratuit",
-      "description": "Pour découvrir",
-      "price": "0€",
-      "period": "/mois",
-      "cta": "Commencer",
-      "features": [
-        "5 générations gratuites"
-      ]
+    "periodPerMonth": "/ mois",
+    "billedPrefix": "Facturé",
+    "billedSuffix": "€ / an",
+    "savingsPrefix": "↓",
+    "savingsSuffix": "en annuel",
+    "trustStrip": "Tarifs transparents · Sans surprise · Sans engagement",
+    "includedTitle": "Inclus dans tous les plans",
+    "faqTitle": "Questions fréquentes",
+    "faqSubtitle": "Tout ce que vous devez savoir avant de vous lancer.",
+    "finalCtaEyebrow": "Prêt à vous lancer ?",
+    "finalCtaTitle": "Transformez vos visuels",
+    "finalCtaTitleBreak": "dès aujourd'hui.",
+    "redirectHint": "Vous serez redirigé vers votre compte.",
+    "redirectHintEnterprise": "Vous serez redirigé pour planifier un appel.",
+    "plans": {
+      "free": {
+        "name": "Gratuit",
+        "tagline": "Pour explorer la puissance de l'IA générative",
+        "bestFor": "Particuliers qui découvrent AI Studio",
+        "annualSaving": null,
+        "features": [
+          "10 générations IA / mois",
+          "Studio Virtuel (accès basique)",
+          "Résolution standard (1024px)",
+          "Export JPG / PNG",
+          "Stockage 30 jours",
+          "Mannequin Virtuel",
+          "Motion Studio",
+          "Upscaler IA 4K"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Pour les créateurs et marques qui produisent à grande échelle",
+        "bestFor": "Marques et créateurs en croissance",
+        "badge": "Le plus populaire",
+        "annualSaving": "60€ économisés / an",
+        "features": [
+          "500 générations IA / mois",
+          "Studio Virtuel complet",
+          "Mannequin Virtuel",
+          "Motion Studio",
+          "Upscaler IA 4K inclus",
+          "Haute résolution (4096px)",
+          "Export formats pro (PNG, TIFF, WEBP)",
+          "Support prioritaire par email"
+        ]
+      },
+      "enterprise": {
+        "name": "Entreprise",
+        "tagline": "Pour les équipes et la production intensive",
+        "bestFor": "Équipes et workflows à grande échelle",
+        "annualSaving": "240€ économisés / an",
+        "features": [
+          "Générations illimitées",
+          "Tous les outils inclus",
+          "Équipes jusqu'à 20 utilisateurs",
+          "API Access + Webhooks",
+          "Résolution maximale",
+          "Marque blanche possible",
+          "SLA garanti 99.9%",
+          "Manager de compte dédié"
+        ]
+      }
     },
-    "pro": {
-      "name": "Pro",
-      "description": "Pour les créateurs actifs",
-      "price": "29€",
-      "period": "/mois",
-      "badge": "Populaire",
-      "cta": "Commencer",
-      "features": []
-    }
+    "perks": {
+      "secureData": "Données sécurisées & RGPD",
+      "noCard": "Sans carte bancaire pour commencer",
+      "cancelAnytime": "Annulez à tout moment",
+      "noWatermark": "Sans filigrane sur les exports",
+      "multiDevice": "Accès multi-appareils",
+      "freeUpdates": "Mises à jour gratuites",
+      "frenchInterface": "Interface 100% en français",
+      "securePayment": "Paiement sécurisé (Stripe)"
+    },
+    "faq": [
+      {
+        "q": "Puis-je changer de plan à tout moment ?",
+        "a": "Oui. Upgrade ou downgrade depuis votre espace client en un clic. Les changements prennent effet immédiatement avec un calcul au prorata."
+      },
+      {
+        "q": "L'essai gratuit nécessite-t-il une carte bancaire ?",
+        "a": "Non, aucune carte requise pour les 7 jours d'essai. Vous renseignez vos informations de paiement seulement si vous choisissez de continuer."
+      },
+      {
+        "q": "Que se passe-t-il si j'atteins ma limite de générations ?",
+        "a": "Vous recevez une notification à 80% d'utilisation. Vous pouvez acheter des crédits supplémentaires à l'unité ou upgrader votre plan instantanément."
+      },
+      {
+        "q": "Les images générées m'appartiennent-elles ?",
+        "a": "Oui, vous conservez l'intégralité des droits sur les contenus créés. L'utilisation commerciale est incluse dans tous les plans, sans restriction."
+      },
+      {
+        "q": "Comment fonctionne la facturation annuelle ?",
+        "a": "La facturation annuelle est prélevée en une fois au début de la période. Vous bénéficiez d'une remise de 20% par rapport à la facturation mensuelle."
+      }
+    ]
   },
 
   "footer": {
@@ -296,12 +527,24 @@
     "serverError": "Erreur serveur"
   },
 
+  "featurePageSection": {
+    "sectionConcept": "01 — Concept",
+    "sectionBenefits": "02 — Avantages",
+    "sectionHowToUse": "03 — Comment ça marche",
+    "sectionOutcomes": "04 — Ce que vous obtenez",
+    "outputLabel": "Résultat",
+    "stepsLabel": "étapes simples"
+  },
+
   "featurePages": {
     "studioVirtuel": {
       "badge": "📸 Photographie IA",
       "title": "Studio Virtuel",
       "subtitle": "Placez vos produits dans des décors dignes des plus grands studios photo.",
       "cta": "Essayer gratuitement",
+      "conceptImageAlt": "Résultat Studio Virtuel — visuel produit professionnel",
+      "beforeImageAlt": "Photo produit brute — fond blanc, éclairage plat",
+      "workflowImageAlt": "Interface Studio Virtuel — workflow en 4 étapes",
       "whatIs": {
         "title": "Qu'est-ce que c'est ?",
         "text1": "C'est votre studio photo… sans le studio. Téléversez votre image, choisissez un décor — minimaliste, design, lifestyle, ou inspiré de votre marque — et obtenez instantanément un rendu 4K prêt à publier.",
@@ -337,6 +580,9 @@
       "title": "Mannequin Virtuel",
       "subtitle": "Humanisez vos visuels avec des mannequins réalistes et personnalisés.",
       "cta": "Essayer gratuitement",
+      "conceptImageAlt": "Résultat Mannequin Virtuel — produit avec mannequin IA",
+      "beforeImageAlt": "Chaussure isolée sur fond neutre",
+      "workflowImageAlt": "Interface Mannequin Virtuel — sélection du profil",
       "whatIs": {
         "title": "Qu'est-ce que c'est ?",
         "text1": "C'est la fusion entre mode et machine. Vous choisissez le profil idéal (genre, morphologie, style, émotion), et l'IA génère un mannequin cohérent avec votre image et votre univers de marque.",
@@ -372,6 +618,9 @@
       "title": "Motion Studio",
       "subtitle": "Passez de l'image au mouvement en un clic.",
       "cta": "Essayer gratuitement",
+      "conceptImageAlt": "Résultat Motion Studio — vidéo produit animée",
+      "beforeImageAlt": "Produit statique — casque audio",
+      "workflowImageAlt": "Interface Motion Studio — choix du style d'animation",
       "whatIs": {
         "title": "Qu'est-ce que c'est ?",
         "text1": "C'est la suite logique : donner du souffle à vos visuels. Motion Studio convertit vos images produits en vidéos réalistes, cinématiques ou publicitaires, prêtes pour TikTok, Instagram ou votre site.",

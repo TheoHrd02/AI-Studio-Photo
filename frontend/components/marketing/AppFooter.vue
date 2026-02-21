@@ -11,7 +11,7 @@ const currentYear = new Date().getFullYear()
           <!-- About -->
           <div>
             <div class="flex items-center gap-2 mb-6">
-              <div class="w-8 h-8 bg-[#912efb] rounded-lg flex items-center justify-center">
+              <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
                 <span class="text-white font-bold text-sm">AI</span>
               </div>
               <span class="font-bold text-lg">AI Studio Photo</span>
@@ -48,7 +48,7 @@ const currentYear = new Date().getFullYear()
             <h4 class="font-semibold mb-4">Entreprise</h4>
             <ul class="space-y-3 text-sm">
               <li><a href="#" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
-              <li><NuxtLink to="/affiliation" class="text-gray-400 hover:text-white transition-colors">Affiliation</NuxtLink></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Affiliation</a></li>
               <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Carrières</a></li>
               <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
             </ul>

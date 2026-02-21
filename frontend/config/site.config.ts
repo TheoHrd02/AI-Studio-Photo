@@ -2,13 +2,6 @@ export interface SiteConfig {
   name: string
   description: string
   logo: string
-  theme: {
-    primaryColor: string
-    secondaryColor: string
-    backgroundColor: string
-    textColor: string
-    accentColor: string
-  }
   fonts: {
     heading: string
     body: string
@@ -25,6 +18,7 @@ export interface SiteConfig {
     href: string
     icon: string
   }[]
+  /** Pre-launch: do NOT use on marketing pages. Post-launch: use real metrics only. */
   stats: {
     users: string
     generations: string
@@ -43,27 +37,19 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: 'AI Studio Photo',
-  description: 'Entrainez vos propres modèles d\'IA LoRa et générez du contenu ultra-réaliste en quelques secondes.',
+  description: 'Transformez vos photos produits en visuels studio professionnels grâce à l\'IA — en 30 secondes.',
   logo: '/logo.svg',
-  
-  theme: {
-    primaryColor: '#4F46E5', // Indigo/Blue similar to Pykaso
-    secondaryColor: '#E0E7FF', // Light indigo background
-    backgroundColor: '#F8FAFC',
-    textColor: '#1E293B',
-    accentColor: '#334155',
-  },
-  
+
   fonts: {
     heading: 'Inter, sans-serif',
     body: 'Inter, sans-serif',
   },
   
   hero: {
-    title: 'Outils d\'IA Génératifs Ultra Réalistes',
-    subtitle: 'Entrainez vos propres modèles d\'IA LoRa et générez du contenu ultra-réaliste en quelques secondes.',
-    ctaPrimary: 'Commence à créer gratuitement',
-    ctaSecondary: 'Rejoins avec Google',
+    title: 'Des photos produits professionnelles, générées par l\'IA en 30 secondes',
+    subtitle: 'Transformez une simple photo produit en rendu studio haut de gamme. Sans photographe, sans studio, sans délai.',
+    ctaPrimary: 'Commencer gratuitement — c\'est gratuit',
+    ctaSecondary: 'Déjà un compte ? Se connecter',
   },
   
   features: [
@@ -116,7 +102,7 @@ export const siteConfig: SiteConfig = {
         },
       ],
     },
-    { label: 'Galery', href: '/galery' },
+    { label: 'Gallery', href: '/gallery' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'Help', href: '/help' },
   ],

@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Copier les fichiers de dépendances
 COPY package.json ./
-COPY bun.lockb* ./
+COPY bun.lock* ./
 
 # Installer les dépendances
 RUN bun install

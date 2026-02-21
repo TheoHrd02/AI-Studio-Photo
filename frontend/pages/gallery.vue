@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { saasConfig } from '~/config/saas.config'
+
 definePageMeta({
   layout: 'marketing',
 })
@@ -92,12 +94,16 @@ const galleryItems = [
 
       <!-- CTA -->
       <div class="mt-20 text-center">
-        <NuxtLink
-          to="/app"
-          class="inline-flex items-center rounded-lg bg-[#912efb] px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#7e1fe0] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#912efb] ring-offset-2"
+        <a
+          :href="saasConfig.signupUrl"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center rounded-lg bg-primary-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-primary-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 ring-offset-2"
         >
-          Créer mes propres visuels
-        </NuxtLink>
+          {{ $t('cta.primary') }}
+        </a>
+        <p class="mt-3 text-sm text-gray-500">{{ $t('cta.clarification') }}</p>
+        <CommonRiskReversalChips class="mt-4" />
       </div>
     </div>
   </div>

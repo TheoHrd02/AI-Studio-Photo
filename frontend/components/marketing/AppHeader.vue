@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { saasConfig } from '~/config/saas.config'
+
 const { t } = useI18n()
 
 const isMenuOpen = ref(false)
@@ -49,7 +51,7 @@ const hideDropdown = () => {
         <div class="flex h-16 items-center justify-between px-6">
           <!-- Logo -->
           <NuxtLink to="/" class="flex items-center gap-2.5">
-            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#912efb]">
+            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500">
               <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
@@ -93,11 +95,11 @@ const hideDropdown = () => {
                       :to="child.href"
                       class="flex items-start gap-3 rounded-lg p-3 transition-all hover:bg-gray-50 hover:shadow-sm cursor-pointer group"
                     >
-                      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#912efb]/10 transition-colors group-hover:bg-[#912efb]/20">
-                        <UIcon :name="child.icon" class="h-5 w-5 text-[#912efb]" />
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-500/10 transition-colors group-hover:bg-primary-500/20">
+                        <UIcon :name="child.icon" class="h-5 w-5 text-primary-500" />
                       </div>
                       <div class="flex-1">
-                        <p class="text-sm font-semibold text-gray-900 group-hover:text-[#912efb] transition-colors">{{ child.label }}</p>
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">{{ child.label }}</p>
                         <p class="text-xs text-gray-500 mt-0.5">{{ child.description }}</p>
                       </div>
                     </NuxtLink>
@@ -118,12 +120,14 @@ const hideDropdown = () => {
 
           <!-- CTA Button -->
           <div class="hidden items-center gap-4 md:flex">
-            <NuxtLink 
-              to="/app" 
-              class="inline-flex items-center rounded-lg bg-[#912efb] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#7e1fe0] focus:outline-none focus:ring-2 focus:ring-[#912efb] focus:ring-offset-2"
+            <a
+              :href="saasConfig.signupUrl"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center rounded-lg bg-primary-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
             >
-              {{ $t('nav.launchApp') }}
-            </NuxtLink>
+              {{ $t('cta.header') }}
+            </a>
           </div>
 
           <!-- Mobile Menu Button -->
@@ -184,13 +188,15 @@ const hideDropdown = () => {
             </NuxtLink>
           </template>
 
-          <NuxtLink
-            to="/app"
-            class="mt-4 inline-flex items-center justify-center rounded-lg bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
+          <a
+            :href="saasConfig.signupUrl"
+            target="_blank"
+            rel="noopener"
+            class="mt-4 inline-flex items-center justify-center rounded-lg bg-primary-500 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
             @click="isMenuOpen = false"
           >
-            {{ $t('nav.launchApp') }}
-          </NuxtLink>
+            {{ $t('cta.header') }}
+          </a>
         </nav>
       </div>
     </ClientOnly>

@@ -1,100 +1,46 @@
 /**
- * Configuration centralisée du thème AI Studio Photo
- * 
- * Ce fichier définit toutes les couleurs et variables de design
- * utilisées à travers l'application pour maintenir la cohérence visuelle.
- * 
- * ⚠️ Ce projet utilise uniquement le thème LIGHT (pas de dark mode)
+ * Design token reference — mirrors the CSS custom properties defined in
+ * assets/css/main.css (@theme block).
+ *
+ * Use this object when you need design values in TypeScript logic
+ * (e.g. dynamic SVG fills, canvas drawing, charting).
+ * For Tailwind/CSS usage prefer the token classes directly:
+ *   bg-primary-500, text-primary-600, bg-surface, …
+ *
+ * ⚠️  The CSS @theme block is the authoritative source of truth.
+ *     Keep this file in sync whenever a CSS variable changes.
  */
-
 export const themeConfig = {
-  /**
-   * Couleurs principales
-   */
   colors: {
-    // Couleur primaire (violet personnalisé)
     primary: {
-      DEFAULT: '#912efb',
-      hover: '#7e1fe0',
-      light: '#c179ff',
+      50:  '#f5f3ff',
+      100: '#ede9fe',
+      200: '#ddd6fe',
+      300: '#c4b5fd',
+      400: '#a78bfa',
+      /** DEFAULT brand color → var(--color-primary-500) */
+      500: '#912efb',
+      /** Hover / pressed state → var(--color-primary-600) */
+      600: '#7e1fe0',
+      700: '#6d28d9',
+      800: '#5b21b6',
+      900: '#4c1d95',
+      950: '#2e1065',
     },
-
-    // Couleur secondaire (gris clair)
-    secondary: '#eff0f0',
-
-    // Couleurs grises (pour textes et borders)
-    gray: {
-      50: '#f9fafb',
-      100: '#f3f4f6',
-      200: '#e5e7eb',
-      300: '#d1d5db',
-      400: '#9ca3af',
-      500: '#6b7280',
-      600: '#4b5563',
-      700: '#374151',
-      800: '#1f2937',
-      900: '#111827',
-    },
+    /** Secondary page background → var(--color-surface) */
+    surface: '#eff0f0',
   },
-
-  /**
-   * Backgrounds (Light mode uniquement)
-   */
-  backgrounds: {
-    primary: '#ffffff',
-    secondary: '#eff0f0',   // Couleur personnalisée
-    input: '#eff0f0',       // Couleur personnalisée
-    card: '#ffffff',
-  },
-
-  /**
-   * Borders (Light mode uniquement)
-   */
-  borders: {
-    default: '#e5e7eb',     // gray-200
-    hover: '#912efb',       // primary
-  },
-
-  /**
-   * Textes (Light mode uniquement)
-   */
-  text: {
-    primary: '#111827',     // gray-900
-    secondary: '#374151',   // gray-700
-    tertiary: '#6b7280',    // gray-500
-    placeholder: '#6b7280', // gray-500
-  },
-
-  /**
-   * Spacing
-   */
-  spacing: {
-    input: {
-      padding: '0.75rem 1rem',  // py-3 px-4
-    },
-    card: {
-      padding: '1rem 1.25rem',  // py-4 px-5
-    },
-  },
-
-  /**
-   * Border radius
-   */
   borderRadius: {
-    sm: '0.5rem',    // rounded-lg
-    md: '0.75rem',   // rounded-xl
-    lg: '1rem',      // rounded-2xl
-    full: '9999px',  // rounded-full
+    sm:   '0.5rem',
+    md:   '0.75rem',
+    lg:   '1rem',
+    full: '9999px',
   },
-
-  /**
-   * Shadows
-   */
   shadows: {
     sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
     md: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
     lg: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
   },
-}
+} as const
 
 export type ThemeConfig = typeof themeConfig

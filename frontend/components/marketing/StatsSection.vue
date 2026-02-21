@@ -9,10 +9,10 @@ import { siteConfig } from '~/config/site.config'
         <!-- Users Stats -->
         <div class="flex items-center gap-4">
           <div class="flex items-center">
-            <svg class="h-8 w-8 text-[#912efb]" fill="currentColor" viewBox="0 0 24 24">
+            <svg class="h-8 w-8 text-primary-500" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z" />
             </svg>
-            <svg class="h-8 w-8 -ml-2 text-[#7e1fe0]" fill="currentColor" viewBox="0 0 24 24">
+            <svg class="h-8 w-8 -ml-2 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z" />
             </svg>
           </div>
@@ -27,10 +27,10 @@ import { siteConfig } from '~/config/site.config'
         <!-- Generations Stats -->
         <div class="flex items-center gap-4">
           <div class="flex items-center">
-            <svg class="h-8 w-8 text-[#912efb]" fill="currentColor" viewBox="0 0 24 24">
+            <svg class="h-8 w-8 text-primary-500" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z" />
             </svg>
-            <svg class="h-8 w-8 -ml-2 text-[#7e1fe0]" fill="currentColor" viewBox="0 0 24 24">
+            <svg class="h-8 w-8 -ml-2 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z" />
             </svg>
           </div>

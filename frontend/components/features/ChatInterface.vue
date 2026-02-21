@@ -7,7 +7,7 @@
     >
       <!-- Header - Toujours visible -->
       <div class="text-center max-w-2xl mx-auto mb-6">
-        <div class="w-16 h-16 mx-auto mb-4 bg-[#912efb] rounded-2xl flex items-center justify-center">
+        <div class="w-16 h-16 mx-auto mb-4 bg-primary-500 rounded-2xl flex items-center justify-center">
           <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
           </svg>
@@ -31,10 +31,10 @@
             :key="index"
             @click="askSuggestion(suggestion)"
             :disabled="isLoading"
-            class="w-full text-left p-4 bg-[#eff0f0] border border-gray-200 rounded-xl hover:border-[#912efb] hover:bg-gray-50 hover:shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
+            class="w-full text-left p-4 bg-surface border border-gray-200 rounded-xl hover:border-primary-500 hover:bg-gray-50 hover:shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
           >
             <div class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#912efb] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-primary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span class="text-sm text-gray-700 group-hover:text-gray-900">
@@ -52,11 +52,11 @@
           <div v-if="message.role === 'user'" class="flex justify-end">
             <div class="flex items-start gap-3 max-w-[80%]">
               <div class="flex-1">
-                <div class="bg-[#912efb] text-white rounded-2xl rounded-tr-md px-5 py-3 shadow-sm">
+                <div class="bg-primary-500 text-white rounded-2xl rounded-tr-md px-5 py-3 shadow-sm">
                   <p class="text-sm leading-relaxed whitespace-pre-wrap">{{ message.content }}</p>
                 </div>
               </div>
-              <div class="w-8 h-8 rounded-full bg-[#912efb] flex items-center justify-center flex-shrink-0">
+              <div class="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center flex-shrink-0">
                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
@@ -73,7 +73,7 @@
                 </svg>
               </div>
               <div class="flex-1">
-                <div class="bg-[#eff0f0] text-gray-900 rounded-2xl rounded-tl-md px-5 py-3 shadow-sm border border-gray-200">
+                <div class="bg-surface text-gray-900 rounded-2xl rounded-tl-md px-5 py-3 shadow-sm border border-gray-200">
                   <p class="text-sm leading-relaxed whitespace-pre-wrap">{{ message.content }}</p>
                 </div>
               </div>
@@ -84,13 +84,13 @@
         <!-- Loading Indicator -->
         <div v-if="isLoading" class="flex justify-start">
           <div class="flex items-start gap-3 max-w-[80%]">
-            <div class="w-8 h-8 rounded-full bg-[#912efb] flex items-center justify-center flex-shrink-0">
+            <div class="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center flex-shrink-0">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
             </div>
             <div class="flex-1">
-              <div class="bg-[#eff0f0] rounded-2xl rounded-tl-md px-5 py-3 shadow-sm border border-gray-200">
+              <div class="bg-surface rounded-2xl rounded-tl-md px-5 py-3 shadow-sm border border-gray-200">
                 <div class="flex items-center space-x-2">
                   <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                   <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
@@ -124,13 +124,13 @@
             :disabled="isLoading"
             rows="1"
             maxlength="1000"
-            class="w-full px-4 py-3 pr-12 bg-[#eff0f0] text-gray-900 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#912efb] focus:border-transparent transition resize-none placeholder:text-gray-500"
+            class="w-full px-4 py-3 pr-12 bg-surface text-gray-900 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition resize-none placeholder:text-gray-500"
             style="min-height: 52px; max-height: 200px;"
           />
           <button
             type="submit"
             :disabled="!question.trim() || isLoading"
-            class="absolute right-2 bottom-2 p-2 bg-[#912efb] text-white rounded-lg hover:bg-[#7e1fe0] focus:outline-none focus:ring-2 focus:ring-[#912efb] disabled:opacity-50 disabled:cursor-not-allowed transition"
+            class="absolute right-2 bottom-2 p-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition"
           >
             <svg v-if="!isLoading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />

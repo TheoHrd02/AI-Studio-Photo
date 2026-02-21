@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { saasConfig } from '~/config/saas.config'
+
 interface Props {
   title: string
   description: string
@@ -17,8 +19,8 @@ const { t } = useI18n()
     <section class="pt-32 pb-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
-          <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#912efb]/10">
-            <UIcon :name="icon" class="h-8 w-8 text-[#912efb]" />
+          <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-500/10">
+            <UIcon :name="icon" class="h-8 w-8 text-primary-500" />
           </div>
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
             {{ title }}
@@ -26,13 +28,16 @@ const { t } = useI18n()
           <p class="mt-6 text-lg text-gray-600">
             {{ description }}
           </p>
-          <div class="mt-8 flex justify-center gap-4">
-            <NuxtLink
-              to="/app"
-              class="inline-flex items-center rounded-lg bg-[#912efb] px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-[#7e1fe0] focus:outline-none focus:ring-2 focus:ring-[#912efb] focus:ring-offset-2"
+          <div class="mt-8 flex flex-col items-center gap-3">
+            <a
+              :href="saasConfig.signupUrl"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center rounded-lg bg-primary-500 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
             >
-              {{ $t('common.startNow') }}
-            </NuxtLink>
+              {{ $t('cta.primary') }}
+            </a>
+            <p class="text-sm text-gray-500">{{ $t('cta.clarification') }}</p>
           </div>
         </div>
       </div>
@@ -49,8 +54,8 @@ const { t } = useI18n()
               :key="index"
               class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
             >
-              <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-[#912efb]/10 mb-4">
-                <svg class="h-6 w-6 text-[#912efb]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-500/10 mb-4">
+                <svg class="h-6 w-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -64,20 +69,23 @@ const { t } = useI18n()
     <!-- CTA Section -->
     <section class="py-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-3xl rounded-2xl bg-[#912efb] px-8 py-12 text-center">
+        <div class="mx-auto max-w-3xl rounded-2xl bg-primary-500 px-8 py-12 text-center">
           <h2 class="text-3xl font-bold text-white">
             {{ $t('common.readyToStart') }}
           </h2>
           <p class="mt-4 text-lg text-purple-100">
             {{ $t('common.createAccountFree') }}
           </p>
-          <div class="mt-8">
-            <NuxtLink
-              to="/app"
-              class="inline-flex items-center rounded-lg bg-white px-6 py-3 text-base font-semibold text-[#912efb] shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#912efb]"
+          <div class="mt-8 flex flex-col items-center gap-3">
+            <a
+              :href="saasConfig.signupUrl"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center rounded-lg bg-white px-6 py-3 text-base font-semibold text-primary-500 shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500"
             >
-              {{ $t('common.startFree') }}
-            </NuxtLink>
+              {{ $t('cta.primary') }}
+            </a>
+            <p class="text-sm text-purple-100">{{ $t('cta.clarification') }}</p>
           </div>
         </div>
       </div>

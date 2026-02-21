@@ -1,3 +1,7 @@
 export default defineAppConfig({
-  // Configuration Nuxt UI
+  ui: {
+    colors: {
+      primary: 'primary',
+    },
+  },
 })

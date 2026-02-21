@@ -1,6 +1,8 @@
 package handlers
 
 import (
+	"context"
+	"errors"
 	"log"
 	"net/http"
 
@@ -46,6 +48,13 @@ func (h *ChatbotHandler) Ask(c *gin.Context) {
 
 	// Validation de la requête
 	if err := c.ShouldBindJSON(&req); err != nil {
+		var maxBytesErr *http.MaxBytesError
+		if errors.As(err, &maxBytesErr) {
+			c.JSON(http.StatusRequestEntityTooLarge, gin.H{
+				"error": "Request body too large",
+			})
+			return
+		}
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": "Le champ 'q' (question) est requis",
 		})
@@ -70,11 +79,16 @@ func (h *ChatbotHandler) Ask(c *gin.Context) {
 	// Log de la question (sans données sensibles)
 	log.Printf("📬 Question reçue (longueur: %d caractères)", len(req.Question))
 
-	// Appel du service OpenAI
-	answer, err := h.openaiService.AskQuestion(req.Question)
+	// Appel du service OpenAI (respecte l'annulation du context / timeout)
+	answer, err := h.openaiService.AskQuestion(c.Request.Context(), req.Question)
 	if err != nil {
+		if errors.Is(err, context.DeadlineExceeded) || errors.Is(err, context.Canceled) {
+			c.JSON(http.StatusGatewayTimeout, gin.H{
+				"error": "Request timeout",
+			})
+			return
+		}
 		log.Printf("❌ Erreur OpenAI: %v", err)
-		// En cas d'erreur, on retourne une réponse par défaut
 		c.JSON(http.StatusOK, AskResponse{
 			Answer: "Je ne sais pas.",
 		})
