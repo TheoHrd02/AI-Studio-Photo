@@ -67,8 +67,7 @@ const steps = computed(() => [
 
             <!-- Illustrative UI preview (conceptual mockup) -->
             <div
-              class="relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm ring-1 ring-gray-100 transition-all duration-300 group-hover:shadow-md group-hover:ring-primary-500/20 mb-4"
-              :class="{ 'aspect-[4/3]': step.key !== 'generate', 'aspect-[4/3]': step.key === 'generate' }"
+              class="relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm ring-1 ring-gray-100 transition-all duration-300 group-hover:shadow-md group-hover:ring-primary-500/20 mb-4 aspect-[4/3]"
             >
               <!-- Upload mockup -->
               <div
@@ -147,27 +146,15 @@ const steps = computed(() => [
 
         <!-- CTA -->
         <div class="mt-14 text-center">
-          <a
+          <CommonCTAButton
             :href="saasConfig.signupUrl"
-            target="_blank"
-            rel="noopener"
-            class="inline-flex items-center px-6 py-3 bg-primary-500 text-white rounded-xl font-semibold hover:bg-primary-600 transition-all shadow-lg hover:scale-105"
+            variant="primary"
+            size="md"
+            rounded="xl"
+            show-arrow
           >
             {{ $t('cta.primary') }}
-            <svg
-              class="w-4 h-4 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </a>
+          </CommonCTAButton>
           <p class="mt-3 text-sm text-gray-500">
             {{ $t('cta.clarification') }}
           </p>

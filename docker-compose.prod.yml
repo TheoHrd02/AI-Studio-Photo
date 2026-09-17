@@ -1,0 +1,42 @@
+# Production compose — multi-stage builds, env via .env
+# Usage: docker compose -f docker-compose.prod.yml up --build
+#
+# Required .env (copy from .env.example.prod):
+#   NUXT_PUBLIC_API_BASE   — URL client uses for API (e.g. https://api.example.com/api/v1)
+#   NUXT_GO_API_URL        — URL frontend server uses to call backend (http://backend:8080/api/v1)
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    container_name: aistudio-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      PORT: 8080
+      GIN_MODE: release
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+      args:
+        NUXT_PUBLIC_API_BASE: ${NUXT_PUBLIC_API_BASE:-http://localhost:8080/api/v1}
+        NUXT_PUBLIC_SITE_URL: ${NUXT_PUBLIC_SITE_URL:-https://aistudiophoto.com}
+    container_name: aistudio-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      PORT: 3000
+      NUXT_PUBLIC_API_BASE: ${NUXT_PUBLIC_API_BASE}
+      NUXT_PUBLIC_SITE_URL: ${NUXT_PUBLIC_SITE_URL:-https://aistudiophoto.com}
+      NUXT_GO_API_URL: ${NUXT_GO_API_URL:-http://backend:8080/api/v1}
+    depends_on:
+      - backend

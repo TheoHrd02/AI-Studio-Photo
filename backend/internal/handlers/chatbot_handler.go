@@ -3,10 +3,12 @@ package handlers
 import (
 	"context"
 	"errors"
+	"fmt"
 	"log"
 	"net/http"
 
-	"github.com/TheoHrd02/nuxt-go-boilerplate/internal/services"
+	"github.com/TheoHrd02/ai-studio-photo/internal/config"
+	"github.com/TheoHrd02/ai-studio-photo/internal/services"
 	"github.com/gin-gonic/gin"
 )
 
@@ -69,9 +71,9 @@ func (h *ChatbotHandler) Ask(c *gin.Context) {
 		return
 	}
 
-	if len(req.Question) > 1000 {
+	if len(req.Question) > config.MaxChatQuestionLength {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "La question est trop longue (max 1000 caractères)",
+			"error": fmt.Sprintf("La question est trop longue (max %d caractères)", config.MaxChatQuestionLength),
 		})
 		return
 	}

@@ -24,17 +24,30 @@ const productionSecurityHeaders = {
 const securityHeaders = isProduction ? productionSecurityHeaders : {}
 
 export default defineNuxtConfig({
-
+  srcDir: '.',
   modules: [
-    '@pinia/nuxt',
     '@nuxt/ui',
     '@nuxt/image',
     '@nuxt/eslint',
+    '@nuxtjs/sitemap',
   ],
+
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://aistudiophoto.com',
+    name: 'AI Studio Photo',
+  },
+
+  sitemap: {
+    sources: ['/api/__sitemap__/urls'],
+    excludeAppSources: true,
+    autoLastmod: true,
+  },
+
   devtools: { enabled: true },
 
   app: {
     head: {
+      htmlAttrs: { lang: 'fr' },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: 'AI Studio Photo - Photos Produits Professionnelles par IA',
@@ -75,17 +88,35 @@ export default defineNuxtConfig({
 
   nitro: {
     routeRules: {
-      '/**': {
-        headers: securityHeaders,
-      },
-      '/api/**': {
-        cors: true,
-        headers: {
-          ...securityHeaders,
-          'Access-Control-Allow-Credentials': 'true',
-        },
+      '/**': { headers: securityHeaders },
+      '/api/**': { cors: true, headers: { ...securityHeaders, 'Access-Control-Allow-Credentials': 'true' } },
+    },
+  },
+
+  vite: {
+    server: {
+      hmr: {
+        clientPort: 3000,
+        port: 24679,
       },
     },
+    // Workaround: Nuxt 4.3 + Vite on Windows — #build/route-rules.mjs virtual module can be missing during build.
+    // See https://github.com/nuxt/nuxt/pull/34347
+    plugins: [
+      {
+        name: 'route-rules-fallback',
+        resolveId(id) {
+          if (id === '#build/route-rules.mjs' || id.endsWith('route-rules.mjs')) {
+            return '\0route-rules-fallback'
+          }
+        },
+        load(id) {
+          if (id === '\0route-rules-fallback') {
+            return 'export default function routeRulesMatcher() { return {} }'
+          }
+        },
+      },
+    ],
   },
 
   eslint: {

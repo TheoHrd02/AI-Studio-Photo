@@ -23,23 +23,23 @@ withDefaults(defineProps<Props>(), {
           {{ description }}
         </p>
         <div class="mt-10 flex flex-col items-center gap-3">
-          <a
+          <CommonCTAButton
             :href="saasConfig.signupUrl"
-            target="_blank"
-            rel="noopener"
-            class="inline-flex items-center rounded-lg bg-white px-8 py-4 text-lg font-semibold text-primary-500 shadow-lg transition-all hover:bg-gray-50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500"
+            variant="primary-inverted"
+            size="lg"
           >
             {{ $t('cta.primary') }}
-          </a>
+          </CommonCTAButton>
           <p class="text-sm text-purple-100">
             {{ $t('cta.clarification') }}
           </p>
-          <NuxtLink
+          <CommonCTAButton
             to="/pricing"
-            class="text-xs font-medium text-white/60 hover:text-white/90 transition-colors"
+            variant="ghost-light"
+            size="xs"
           >
             {{ $t('cta.pricingLink') }}
-          </NuxtLink>
+          </CommonCTAButton>
         </div>
       </div>
     </div>

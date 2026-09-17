@@ -3,6 +3,8 @@
  * @module useChatbot
  */
 
+import { MAX_CHAT_QUESTION_LENGTH } from '~/config/app-limits'
+
 export const useChatbot = () => {
   const config = useRuntimeConfig()
   const apiBase = config.public.apiBase || 'http://localhost:8080/api/v1'
@@ -23,8 +25,8 @@ export const useChatbot = () => {
       throw new Error('La question ne peut pas être vide')
     }
 
-    if (question.length > 1000) {
-      throw new Error('La question est trop longue (max 1000 caractères)')
+    if (question.length > MAX_CHAT_QUESTION_LENGTH) {
+      throw new Error(`La question est trop longue (max ${MAX_CHAT_QUESTION_LENGTH} caractères)`)
     }
 
     isLoading.value = true

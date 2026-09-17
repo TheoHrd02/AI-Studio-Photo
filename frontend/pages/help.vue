@@ -331,12 +331,14 @@ const suggestedQuestions = [
               </svg>
             </button>
             <p class="mt-6">
-              <a
+              <CommonCTAButton
                 :href="saasConfig.signupUrl"
-                class="text-primary-500 hover:text-primary-600 font-medium text-sm"
+                variant="ghost"
+                size="xs"
+                class="text-primary-500 hover:text-primary-600 text-sm"
               >
                 {{ $t('cta.help.returnToProduct') }} →
-              </a>
+              </CommonCTAButton>
             </p>
           </div>
         </div>

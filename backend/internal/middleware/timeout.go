@@ -8,13 +8,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-const (
-	// DefaultRequestTimeout is the default request timeout (20 seconds).
-	// Allows OpenAI Assistants API to complete typical queries while
-	// preventing runaway requests from exhausting resources.
-	DefaultRequestTimeout = 20 * time.Second
-)
-
 // RequestTimeout returns Gin middleware that cancels the request context
 // after the given duration. Handlers and downstream HTTP calls using
 // c.Request.Context() will receive cancellation and should return promptly.

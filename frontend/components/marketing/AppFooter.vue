@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { siteConfig } from '~/config/site.config'
+
 const currentYear = new Date().getFullYear()
 </script>
 
@@ -14,136 +16,62 @@ const currentYear = new Date().getFullYear()
               <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
                 <span class="text-white font-bold text-sm">AI</span>
               </div>
-              <span class="font-bold text-lg">AI Studio Photo</span>
+              <span class="font-bold text-lg">{{ $t('common.appName') }}</span>
             </div>
             <p class="text-gray-400 text-sm leading-relaxed">
-              La plateforme d'IA générative pour créer des photos studio professionnelles en quelques secondes.
+              {{ $t('footer.description') }}
             </p>
           </div>
 
-          <!-- Product -->
-          <div>
-            <h4 class="font-semibold mb-4">
-              Produit
-            </h4>
-            <ul class="space-y-3 text-sm">
-              <li>
-                <NuxtLink
-                  to="/features"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >Fonctionnalités</NuxtLink>
-              </li>
-              <li>
-                <NuxtLink
-                  to="/pricing"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >Tarifs</NuxtLink>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >API</a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >Changelog</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Resources -->
-          <div>
-            <h4 class="font-semibold mb-4">
-              Ressources
-            </h4>
-            <ul class="space-y-3 text-sm">
-              <li>
-                <NuxtLink
-                  to="/help"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >Centre d'aide</NuxtLink>
-              </li>
-              <li>
-                <NuxtLink
-                  to="/blog"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >Blog</NuxtLink>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >Documentation</a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >Tutoriels</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Company -->
-          <div>
-            <h4 class="font-semibold mb-4">
-              Entreprise
-            </h4>
-            <ul class="space-y-3 text-sm">
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >À propos</a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >Affiliation</a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >Carrières</a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >Contact</a>
-              </li>
-            </ul>
-          </div>
+          <!-- Product / Resources / Company columns from site.config -->
+          <template
+            v-for="column in siteConfig.footer.columns"
+            :key="column.id"
+          >
+            <div>
+              <h4 class="font-semibold mb-4">
+                {{ $t(`footer.${column.id}`) }}
+              </h4>
+              <ul class="space-y-3 text-sm">
+                <li
+                  v-for="link in column.links"
+                  :key="link.id"
+                >
+                  <NuxtLink
+                    v-if="link.href.startsWith('/')"
+                    :to="link.href"
+                    class="text-gray-400 hover:text-white transition-colors"
+                  >
+                    {{ $t(`footer.${column.id}Links.${link.id}`) }}
+                  </NuxtLink>
+                  <a
+                    v-else
+                    :href="link.href"
+                    class="text-gray-400 hover:text-white transition-colors"
+                  >
+                    {{ $t(`footer.${column.id}Links.${link.id}`) }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </template>
         </div>
 
         <!-- Bottom Footer -->
         <div class="border-t border-gray-800 pt-8">
           <div class="flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-gray-400 text-sm">
-              © {{ currentYear }} AI Studio Photo. Tous droits réservés.
+              © {{ currentYear }} {{ $t('common.appName') }}. {{ $t('footer.allRightsReserved') }}.
             </p>
             <div class="flex items-center gap-6 text-sm">
               <a
-                href="#"
+                v-for="item in siteConfig.footer.legal"
+                :key="item.id"
+                :href="item.href"
                 class="text-gray-400 hover:text-white transition-colors"
-              >Mentions légales</a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white transition-colors"
-              >Confidentialité</a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white transition-colors"
-              >CGU</a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white transition-colors"
-              >Cookies</a>
+              >
+                {{ $t(`footer.legalLinks.${item.id}`) }}
+              </a>
             </div>
             <div class="flex items-center gap-4">
               <a

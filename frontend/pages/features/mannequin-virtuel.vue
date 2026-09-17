@@ -5,7 +5,15 @@ const { t } = useI18n()
 
 definePageMeta({ layout: 'marketing' })
 
-useHead({ title: 'Mannequin Virtuel – AI Studio Photo' })
+useHead({
+  title: 'Mannequin Virtuel – AI Studio Photo',
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => t('featurePages.mannequinVirtuel.subtitle')),
+    },
+  ],
+})
 
 const visuals = featureVisuals.mannequinVirtuel!
 
@@ -35,7 +43,6 @@ const quotes = computed(() => [
     :badge="$t('featurePages.mannequinVirtuel.badge')"
     :title="$t('featurePages.mannequinVirtuel.title')"
     :subtitle="$t('featurePages.mannequinVirtuel.subtitle')"
-    :cta-label="$t('cta.primary')"
     :what-is-title="$t('featurePages.mannequinVirtuel.whatIs.title')"
     :what-is-text1="$t('featurePages.mannequinVirtuel.whatIs.text1')"
     :what-is-text2="$t('featurePages.mannequinVirtuel.whatIs.text2')"

@@ -65,7 +65,6 @@
 - `vue` ^3.5.22
 - `@nuxt/ui` 4.0.1
 - `@nuxt/image` 1.11.0
-- `@pinia/nuxt` ^0.11.2
 - `typescript` ^5.6.3
 - Pas de `eslint`, `vitest`, `prettier` dans package.json (présents via lockfile transitivement)
 

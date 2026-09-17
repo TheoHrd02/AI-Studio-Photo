@@ -1,9 +1,21 @@
 <script setup lang="ts">
-import { siteConfig } from '~/config/site.config'
+import { navFeatures } from '~/config/site.config'
 import { saasConfig } from '~/config/saas.config'
+
+const { t } = useI18n()
 
 definePageMeta({
   layout: 'marketing',
+})
+
+useHead({
+  title: computed(() => `${t('features.index.title')} – AI Studio Photo`),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => t('features.index.subtitle')),
+    },
+  ],
 })
 </script>
 
@@ -12,39 +24,30 @@ definePageMeta({
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-4xl text-center">
         <h1 class="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-          Nos Fonctionnalités
+          {{ $t('features.index.title') }}
         </h1>
         <p class="mt-6 text-xl text-gray-600">
-          Découvrez nos outils d'IA pour transformer vos visuels
+          {{ $t('features.index.subtitle') }}
         </p>
       </div>
 
       <div class="mx-auto mt-16 grid max-w-5xl gap-8 md:grid-cols-3">
         <div
-          v-for="feature in siteConfig.features"
+          v-for="feature in navFeatures"
           :key="feature.href"
           class="group rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:border-primary-500 hover:shadow-xl"
         >
           <div class="flex h-16 w-16 items-center justify-center rounded-xl bg-primary-500/10 transition-colors group-hover:bg-primary-500/20">
-            <svg
+            <UIcon
+              :name="feature.icon"
               class="h-8 w-8 text-primary-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"
-              />
-            </svg>
+            />
           </div>
           <h3 class="mt-6 text-xl font-bold text-gray-900 transition-colors group-hover:text-primary-500">
-            {{ feature.title }}
+            {{ $t(`nav.${feature.id}.label`) }}
           </h3>
           <p class="mt-4 text-gray-600">
-            {{ feature.description }}
+            {{ $t(`nav.${feature.id}.description`) }}
           </p>
           <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1">
             <NuxtLink
@@ -66,14 +69,14 @@ definePageMeta({
                 />
               </svg>
             </NuxtLink>
-            <a
+            <CommonCTAButton
               :href="saasConfig.signupUrl"
-              target="_blank"
-              rel="noopener"
-              class="text-sm font-medium text-gray-500 hover:text-primary-500 transition-colors"
+              variant="ghost"
+              size="xs"
+              class="text-sm text-gray-500 hover:text-primary-500"
             >
               {{ $t('cta.orStartNow') }}
-            </a>
+            </CommonCTAButton>
           </div>
         </div>
       </div>

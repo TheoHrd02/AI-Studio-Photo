@@ -32,14 +32,13 @@ useI18n()
             {{ description }}
           </p>
           <div class="mt-8 flex flex-col items-center gap-3">
-            <a
+            <CommonCTAButton
               :href="saasConfig.signupUrl"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center rounded-lg bg-primary-500 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+              variant="primary"
+              size="md"
             >
               {{ $t('cta.primary') }}
-            </a>
+            </CommonCTAButton>
             <p class="text-sm text-gray-500">
               {{ $t('cta.clarification') }}
             </p>
@@ -96,14 +95,13 @@ useI18n()
             {{ $t('common.createAccountFree') }}
           </p>
           <div class="mt-8 flex flex-col items-center gap-3">
-            <a
+            <CommonCTAButton
               :href="saasConfig.signupUrl"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center rounded-lg bg-white px-6 py-3 text-base font-semibold text-primary-500 shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500"
+              variant="primary-inverted"
+              size="md"
             >
               {{ $t('cta.primary') }}
-            </a>
+            </CommonCTAButton>
             <p class="text-sm text-purple-100">
               {{ $t('cta.clarification') }}
             </p>

@@ -214,7 +214,7 @@
             :placeholder="placeholder"
             :disabled="isLoading"
             rows="1"
-            maxlength="1000"
+            :maxlength="MAX_CHAT_QUESTION_LENGTH"
             class="w-full px-4 py-3 pr-12 bg-surface text-gray-900 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition resize-none placeholder:text-gray-500"
             style="min-height: 52px; max-height: 200px;"
             @keydown.enter.exact.prevent="handleSubmit"
@@ -263,7 +263,7 @@
 
         <!-- Character Counter -->
         <div class="mt-2 text-xs text-gray-500 text-right">
-          {{ question.length }} / 1000
+          {{ question.length }} / {{ MAX_CHAT_QUESTION_LENGTH }}
         </div>
       </div>
     </div>
@@ -271,6 +271,8 @@
 </template>
 
 <script setup lang="ts">
+import { MAX_CHAT_QUESTION_LENGTH } from '~/config/app-limits'
+
 interface Message {
   role: 'user' | 'bot'
   content: string

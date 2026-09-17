@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { VIDEO_ROTATION_INTERVAL_MS } from '~/config/app-limits'
+
 /**
  * VideoCarousel — seamless background video player.
  *
@@ -33,7 +35,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  interval: 6000,
+  interval: VIDEO_ROTATION_INTERVAL_MS,
 })
 
 // ─── Types & helpers ──────────────────────────────────────────────────────────

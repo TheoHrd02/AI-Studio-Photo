@@ -43,14 +43,13 @@ defineProps<Props>()
 
         <!-- CTA -->
         <div class="mt-10 flex flex-col items-center gap-3">
-          <a
+          <CommonCTAButton
             :href="saasConfig.signupUrl"
-            target="_blank"
-            rel="noopener"
-            class="inline-flex items-center rounded-lg bg-primary-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-primary-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+            variant="primary"
+            size="lg"
           >
             {{ $t('cta.primary') }}
-          </a>
+          </CommonCTAButton>
           <p class="text-sm text-gray-500">
             {{ $t('cta.clarification') }}
           </p>

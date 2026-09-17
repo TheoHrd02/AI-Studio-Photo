@@ -5,9 +5,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/TheoHrd02/nuxt-go-boilerplate/internal/handlers"
-	"github.com/TheoHrd02/nuxt-go-boilerplate/internal/middleware"
-	"github.com/TheoHrd02/nuxt-go-boilerplate/internal/services"
+	"github.com/TheoHrd02/ai-studio-photo/internal/config"
+	"github.com/TheoHrd02/ai-studio-photo/internal/handlers"
+	"github.com/TheoHrd02/ai-studio-photo/internal/middleware"
+	"github.com/TheoHrd02/ai-studio-photo/internal/services"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
@@ -57,7 +58,7 @@ func main() {
 
 	v1 := router.Group("/api/v1")
 	{
-		v1.POST("/ask", middleware.RateLimiter(15), middleware.MaxBodySize(middleware.DefaultMaxBodySize), middleware.RequestTimeout(middleware.DefaultRequestTimeout), chatbotHandler.Ask)
+		v1.POST("/ask", middleware.RateLimiter(config.RateLimitRequestsPerMinute), middleware.MaxBodySize(config.MaxBodySizeBytes), middleware.RequestTimeout(config.RequestTimeout), chatbotHandler.Ask)
 	}
 
 	log.Printf("🚀 Server starting on port %s", port)

@@ -53,7 +53,6 @@ npm install
 
 # Dépendances additionnelles
 npm install -D @nuxtjs/tailwindcss
-npm install @pinia/nuxt pinia
 
 # Structure
 mkdir -p composables types middleware server/api
@@ -364,8 +363,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   
   modules: [
-    '@nuxtjs/tailwindcss',
-    '@pinia/nuxt'
+    '@nuxtjs/tailwindcss'
   ],
 
   runtimeConfig: {
@@ -424,6 +422,20 @@ docker-compose down
 # Arrêter + supprimer volumes
 docker-compose down -v
 ```
+
+### Production (images multi-stage, optimisées)
+
+```bash
+# Copier la config env
+cp .env.example.prod .env
+# Éditer .env (NUXT_PUBLIC_API_BASE, etc.)
+
+# Build + run
+make prod-up
+# ou: docker compose -f docker-compose.prod.yml up --build
+```
+
+Voir [docs/DOCKER_PROD.md](docs/DOCKER_PROD.md) pour les détails.
 
 ## 14. Appliquer les Migrations
 
