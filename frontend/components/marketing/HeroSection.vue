@@ -1,16 +1,10 @@
 <script setup lang="ts">
-import { heroVideos, firstVideoUrl, videoRotationInterval } from '~/config/hero.config'
+import { heroVideos, videoRotationInterval } from '~/config/hero.config'
 import { saasConfig } from '~/config/saas.config'
 
 const videoUrls = heroVideos.map(v => v.url)
 
 const personaKeys = ['ecommerce', 'fashion', 'creators'] as const
-
-useHead({
-  link: [
-    { rel: 'preload', as: 'video', href: firstVideoUrl, type: 'video/mp4' },
-  ],
-})
 </script>
 
 <template>

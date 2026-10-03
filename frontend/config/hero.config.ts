@@ -44,7 +44,7 @@ export const heroVideos: HeroVideoConfig[] = [
   { url: opt(RAW_VIDEOS[3]), alt: 'Démonstration IA génération photo 4' },
 ]
 
-/** URL of the first video — exported for SSR preload hint in HeroSection */
+/** URL of the first video — reused as the product demo video */
 export const firstVideoUrl = heroVideos[0].url
 
 /** Rotation interval in ms — from app-limits */

@@ -9,11 +9,11 @@ definePageMeta({
 })
 
 useHead({
-  title: computed(() => `${t('features.index.title')} – AI Studio Photo`),
+  title: computed(() => `${t('featurePages.index.title')} – AI Studio Photo`),
   meta: [
     {
       name: 'description',
-      content: computed(() => t('features.index.subtitle')),
+      content: computed(() => t('featurePages.index.subtitle')),
     },
   ],
 })
@@ -24,10 +24,10 @@ useHead({
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-4xl text-center">
         <h1 class="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-          {{ $t('features.index.title') }}
+          {{ $t('featurePages.index.title') }}
         </h1>
         <p class="mt-6 text-xl text-gray-600">
-          {{ $t('features.index.subtitle') }}
+          {{ $t('featurePages.index.subtitle') }}
         </p>
       </div>
 

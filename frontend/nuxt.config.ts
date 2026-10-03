@@ -6,42 +6,19 @@ const productionSecurityHeaders = {
   'X-Content-Type-Options': 'nosniff',
   'Referrer-Policy': 'strict-origin-when-cross-origin',
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=(), usb=()',
-  'Content-Security-Policy': [
-    'default-src \'self\'',
-    'script-src \'self\'',
-    'style-src \'self\' \'unsafe-inline\' https://fonts.googleapis.com',
-    'font-src \'self\' https://fonts.gstatic.com',
-    'img-src \'self\' data: blob: https://res.cloudinary.com https://images.unsplash.com https://placehold.co',
-    'media-src \'self\' blob: https://res.cloudinary.com https://videos.pexels.com',
-    'connect-src \'self\' https://*.aistudiophoto.com https://api.iconify.design',
-    'frame-ancestors \'none\'',
-    'base-uri \'self\'',
-    'form-action \'self\'',
-    'object-src \'none\'',
-  ].join('; '),
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+  // Content-Security-Policy: set per request with a nonce in server/plugins/csp.ts
 }
 
 const securityHeaders = isProduction ? productionSecurityHeaders : {}
 
 export default defineNuxtConfig({
-  srcDir: '.',
   modules: [
     '@nuxt/ui',
     '@nuxt/image',
     '@nuxt/eslint',
     '@nuxtjs/sitemap',
   ],
-
-  site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://aistudiophoto.com',
-    name: 'AI Studio Photo',
-  },
-
-  sitemap: {
-    sources: ['/api/__sitemap__/urls'],
-    excludeAppSources: true,
-    autoLastmod: true,
-  },
 
   devtools: { enabled: true },
 
@@ -68,6 +45,11 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://aistudiophoto.com',
+    name: 'AI Studio Photo',
+  },
+
   runtimeConfig: {
     // Private keys (server-only)
     goApiUrl: process.env.NUXT_GO_API_URL,
@@ -79,6 +61,8 @@ export default defineNuxtConfig({
     },
   },
 
+  srcDir: '.',
+
   devServer: {
     host: '0.0.0.0',
     port: 3000,
@@ -89,7 +73,7 @@ export default defineNuxtConfig({
   nitro: {
     routeRules: {
       '/**': { headers: securityHeaders },
-      '/api/**': { cors: true, headers: { ...securityHeaders, 'Access-Control-Allow-Credentials': 'true' } },
+      '/api/**': { cors: true, headers: securityHeaders },
     },
   },
 
@@ -100,28 +84,17 @@ export default defineNuxtConfig({
         port: 24679,
       },
     },
-    // Workaround: Nuxt 4.3 + Vite on Windows — #build/route-rules.mjs virtual module can be missing during build.
-    // See https://github.com/nuxt/nuxt/pull/34347
-    plugins: [
-      {
-        name: 'route-rules-fallback',
-        resolveId(id) {
-          if (id === '#build/route-rules.mjs' || id.endsWith('route-rules.mjs')) {
-            return '\0route-rules-fallback'
-          }
-        },
-        load(id) {
-          if (id === '\0route-rules-fallback') {
-            return 'export default function routeRulesMatcher() { return {} }'
-          }
-        },
-      },
-    ],
   },
 
   eslint: {
     config: {
       stylistic: true,
     },
+  },
+
+  sitemap: {
+    sources: ['/api/__sitemap__/urls'],
+    excludeAppSources: true,
+    autoLastmod: true,
   },
 })

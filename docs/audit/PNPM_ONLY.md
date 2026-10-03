@@ -32,7 +32,7 @@ pnpm install
 
 ## Fichiers de configuration
 
-- `frontend/package.json` : champ `packageManager: "pnpm@9.15.0"` (Corepack)
+- `frontend/package.json` : champ `packageManager: "pnpm@10.28.2"` (Corepack)
 - `frontend/.npmrc` : `engine-strict=true` (respect des engines)
 - `frontend/pnpm-lock.yaml` : lockfile unique (commité)
 

@@ -170,11 +170,12 @@ const trustChips = computed(() => [
             <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               {{ whatIsTitle }}
             </h2>
-            <!-- eslint-disable-next-line vue/no-v-html -->
+            <!-- eslint-disable vue/no-v-html -- trusted i18n string -->
             <p
               class="mt-5 text-lg leading-relaxed text-gray-600"
               v-html="whatIsText1"
             />
+            <!-- eslint-enable vue/no-v-html -->
             <p
               v-if="whatIsText2"
               class="mt-4 text-base italic leading-relaxed text-gray-400"
