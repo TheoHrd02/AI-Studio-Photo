@@ -27,8 +27,12 @@ export default defineNuxtConfig({
       // lang, hreflang, canonical, default title/description: app.vue (per locale)
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+      meta: [{ name: 'theme-color', content: '#912efb' }],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', sizes: '32x32' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' },
         // Video CDN — resolves DNS + opens TCP+TLS before any JS runs
         { rel: 'preconnect', href: 'https://res.cloudinary.com' },
         { rel: 'dns-prefetch', href: 'https://res.cloudinary.com' },

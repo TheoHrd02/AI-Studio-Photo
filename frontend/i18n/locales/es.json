@@ -647,5 +647,12 @@
         }
       }
     }
+  },
+  "errorPage": {
+    "notFoundTitle": "Página no encontrada",
+    "notFoundText": "La página que buscas no existe o ha sido movida.",
+    "errorTitle": "Se ha producido un error",
+    "errorText": "Vuelve a intentarlo en unos instantes.",
+    "backHome": "Volver al inicio"
   }
 }

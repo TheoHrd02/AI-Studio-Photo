@@ -647,5 +647,12 @@
         }
       }
     }
+  },
+  "errorPage": {
+    "notFoundTitle": "Page not found",
+    "notFoundText": "The page you are looking for doesn't exist or has been moved.",
+    "errorTitle": "Something went wrong",
+    "errorText": "Please try again in a moment.",
+    "backHome": "Back to home"
   }
 }

@@ -31,6 +31,10 @@ const contactCards = [
 <template>
   <div class="bg-white">
     <!-- Chatbot Section - Plein écran -->
+    <h1 class="sr-only">
+      {{ $t('help.meta.title') }}
+    </h1>
+
     <section
       id="chat"
       ref="chatSectionRef"

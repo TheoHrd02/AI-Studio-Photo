@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locales, localeProperties } = useI18n()
+const ogLocale = (language?: string) => language?.replace('-', '_')
 const { public: { siteUrl } } = useRuntimeConfig()
 
 // lang + dir on <html>, hreflang alternates, canonical (baseUrl from nuxt.config i18n), og:locale
@@ -12,6 +13,7 @@ const jsonLd = () => [
     '@type': 'Organization',
     'name': 'AI Studio Photo',
     'url': siteUrl,
+    'logo': `${siteUrl}/icon-512.png`,
     'description': t('meta.description'),
     'sameAs': [],
   },
@@ -42,6 +44,11 @@ useHead(() => ({
 // TODO(content): replace public/og-image.png (1200x630 placeholder)
 useSeoMeta({
   ogType: 'website',
+  ogLocale: () => ogLocale(localeProperties.value.language),
+  ogLocaleAlternate: () => locales.value
+    .filter(l => l.code !== localeProperties.value.code)
+    .map(l => ogLocale(l.language))
+    .filter((l): l is string => !!l),
   ogSiteName: 'AI Studio Photo',
   ogUrl: () => i18nHead.value.link?.find(l => l.rel === 'canonical')?.href,
   ogImage: `${siteUrl}/og-image.png`,

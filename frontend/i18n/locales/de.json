@@ -647,5 +647,12 @@
         }
       }
     }
+  },
+  "errorPage": {
+    "notFoundTitle": "Seite nicht gefunden",
+    "notFoundText": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "errorTitle": "Ein Fehler ist aufgetreten",
+    "errorText": "Bitte versuche es gleich noch einmal.",
+    "backHome": "Zur Startseite"
   }
 }
