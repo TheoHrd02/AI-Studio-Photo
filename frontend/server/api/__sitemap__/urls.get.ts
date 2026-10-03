@@ -1,4 +1,3 @@
-import { defineSitemapEventHandler } from '#imports'
 import { SITEMAP_URLS } from '~/config/sitemap-urls'
 
 export default defineSitemapEventHandler(() => {

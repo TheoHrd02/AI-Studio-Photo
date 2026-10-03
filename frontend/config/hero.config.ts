@@ -35,7 +35,7 @@ const RAW_VIDEOS = [
   'https://res.cloudinary.com/dfk9cemb0/video/upload/v1760031098/hero-3_cz26fe.mp4',
   'https://res.cloudinary.com/dfk9cemb0/video/upload/v1760031098/hero-4_upmywa.mp4',
   'https://res.cloudinary.com/dfk9cemb0/video/upload/v1760031099/hero-5_jbzkkb.mp4',
-]
+] as const
 
 export const heroVideos: HeroVideoConfig[] = [
   { url: opt(RAW_VIDEOS[0]), alt: 'Démonstration IA génération photo 1' },
@@ -45,7 +45,7 @@ export const heroVideos: HeroVideoConfig[] = [
 ]
 
 /** URL of the first video — reused as the product demo video */
-export const firstVideoUrl = heroVideos[0].url
+export const firstVideoUrl = opt(RAW_VIDEOS[0])
 
 /** Rotation interval in ms — from app-limits */
 export const videoRotationInterval = VIDEO_ROTATION_INTERVAL_MS

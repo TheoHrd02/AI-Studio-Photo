@@ -355,11 +355,7 @@ const handleSubmit = async () => {
     scrollToBottom()
   }
   catch {
-    // En cas d'erreur, ajouter un message d'erreur
-    messages.value.push({
-      role: 'bot',
-      content: 'Désolé, une erreur s\'est produite. Veuillez réessayer.',
-    })
+    // Le message d'erreur est affiché par la bannière (useChatbot.error)
     scrollToBottom()
   }
 }

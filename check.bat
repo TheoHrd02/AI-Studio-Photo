@@ -1,25 +1,9 @@
 @echo off
-REM Check unifié (lint + typecheck + build) — équivalent de make check sur Windows
-setlocal
-
-echo [1/2] Backend: go build...
-cd backend
-go build ./...
-if errorlevel 1 (
-  echo Backend build FAILED
-  exit /b 1
-)
-cd ..
-
-echo [2/2] Frontend: pnpm check...
+REM Check unifie (lint + typecheck + build) - equivalent de make check sur Windows
 cd frontend
 call pnpm check
 if errorlevel 1 (
-  echo Frontend check FAILED
+  echo Check FAILED
   exit /b 1
 )
-cd ..
-
-echo.
 echo OK - Tous les checks ont reussi.
-exit /b 0

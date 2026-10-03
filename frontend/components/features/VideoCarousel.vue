@@ -163,7 +163,7 @@ const rotate = async () => {
   //    buffer the next video in the background.
   const nextNextIdx = (slotIdx[nextSlot] + 1) % props.videos.length
   slotIdx[oldSlot] = nextNextIdx
-  slotSrc[oldSlot] = props.videos[nextNextIdx]
+  slotSrc[oldSlot] = props.videos[nextNextIdx] ?? ''
   slotReady[oldSlot] = false
 
   // Wait one tick for Vue to update the src attribute, then trigger loading.

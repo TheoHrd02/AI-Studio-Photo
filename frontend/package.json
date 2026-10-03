@@ -16,7 +16,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "eslint . --fix",
-    "typecheck": "vue-tsc --noEmit",
+    "typecheck": "nuxt typecheck",
     "check": "pnpm lint && pnpm typecheck && pnpm run build"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.15.1",
+    "@types/node": "^24.19.1",
     "@vueuse/nuxt": "^14.2.1",
     "eslint": "^10.0.1",
     "vue-tsc": "^3.2.5"

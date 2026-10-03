@@ -1,53 +1,35 @@
 # Production Docker
 
-Images multi-stage, optimisées pour la production.
-
-## Prérequis
-
-- Docker & Docker Compose
-- Fichier `.env` à la racine (copier depuis `.env.example.prod`)
+Une seule image : Nuxt (SSR) — pages + route serveur du chatbot (`/api/ask`).
 
 ## Configuration
 
 ```bash
-cp .env.example.prod .env
-# Éditer .env et renseigner les variables
+cp .env.example .env
+# Renseigner les variables
 ```
 
-### Variables obligatoires
+| Variable | Obligatoire | Description |
+|----------|-------------|-------------|
+| `NUXT_OPENAI_API_KEY` | oui (chatbot) | Clé OpenAI, côté serveur uniquement. Fixer une limite de budget sur le projet OpenAI. |
+| `NUXT_OPENAI_VECTOR_STORE_ID` | oui (chatbot) | Vector store de la doc support (`vs_...`). |
+| `NUXT_PUBLIC_SITE_URL` | non | Défaut `https://aistudiophoto.com`. Lu au build (sitemap, canonicals). |
+| `NUXT_OPENAI_MODEL` | non | Défaut `gpt-4.1-mini`. |
+| `NUXT_CHAT_DAILY_LIMIT` | non | Plafond global de questions / jour. Défaut 500. |
+| `NUXT_TRUST_PROXY` | non | `true` uniquement derrière un reverse proxy qui réécrit `X-Forwarded-For` (sinon la limite par IP est contournable). |
 
-| Variable | Description |
-|----------|-------------|
-| `NUXT_PUBLIC_API_BASE` | URL utilisée par le navigateur pour appeler l'API (ex: `http://localhost:8080/api/v1` en local) |
-| `NUXT_GO_API_URL` | URL utilisée par le serveur frontend pour appeler le backend (ex: `http://backend:8080/api/v1`) |
-
-### Variables optionnelles
-
-| Variable | Défaut |
-|----------|--------|
-| `NUXT_PUBLIC_SITE_URL` | `https://aistudiophoto.com` |
+Sans les variables OpenAI, le site fonctionne ; le chatbot répond 503.
 
 ## Lancement
 
 ```bash
-# Build + run
 make prod-up
-
-# Ou directement
+# ou
 docker compose -f docker-compose.prod.yml up --build
 ```
 
-## Build seul
+## Notes
 
-```bash
-make prod
-# ou
-docker compose -f docker-compose.prod.yml build
-```
-
-## Architecture
-
-- **Frontend** : Node 20 Alpine, build Nuxt → runtime minimal (`.output` uniquement) — ~350 MB
-- **Backend** : Go build → image distroless (~2 MB binaire) — ~34 MB
-
-Les images prod sont nettement plus petites que les images dev (sans node_modules, sans outils de build).
+- Node 24 Alpine, runtime minimal (`.output` uniquement), utilisateur non-root.
+- La CSP utilise un nonce par requête (`server/plugins/csp.ts`) : rendu SSR requis, pas de `nuxt generate`.
+- Limites du chatbot en mémoire (15 questions/min/IP + plafond journalier) : valables pour une seule instance.

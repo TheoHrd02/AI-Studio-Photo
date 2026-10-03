@@ -1,29 +1,12 @@
+# Dev — hot reload. Variables : frontend/.env (copier depuis frontend/.env.example)
 services:
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: nuxt_go_backend
-    ports:
-      - "8080:8080"
-    env_file:
-      - ./backend/.env
-    volumes:
-      - ./backend:/app
-    command: ["air", "-c", ".air.toml"]
-
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: nuxt_go_frontend
+    container_name: aistudio-frontend-dev
     ports:
       - "3000:3000"
-    environment:
-      NUXT_PUBLIC_API_BASE: http://localhost:8080/api/v1
-      NUXT_GO_API_URL: http://backend:8080/api/v1
-    depends_on:
-      - backend
     volumes:
       - ./frontend:/app
       - /app/node_modules

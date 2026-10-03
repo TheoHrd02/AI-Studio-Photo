@@ -10,10 +10,8 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-# Build args for public env (baked at build; override at runtime via NUXT_*)
-ARG NUXT_PUBLIC_API_BASE
+# Site URL baked at build (sitemap/canonicals); other NUXT_* vars are read at runtime
 ARG NUXT_PUBLIC_SITE_URL
-ENV NUXT_PUBLIC_API_BASE=${NUXT_PUBLIC_API_BASE}
 ENV NUXT_PUBLIC_SITE_URL=${NUXT_PUBLIC_SITE_URL}
 
 RUN pnpm run build
@@ -24,7 +22,8 @@ FROM node:24-alpine AS runtime
 WORKDIR /app
 
 # Copy built output only (no dev deps, no source)
-COPY --from=builder /app/.output ./.output
+COPY --from=builder --chown=node:node /app/.output ./.output
+USER node
 
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0

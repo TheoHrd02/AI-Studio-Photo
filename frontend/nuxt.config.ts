@@ -51,12 +51,15 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    // Private keys (server-only)
-    goApiUrl: process.env.NUXT_GO_API_URL,
+    // Server-only, overridden at runtime by NUXT_* env vars (see .env.example)
+    openaiApiKey: '',
+    openaiVectorStoreId: '',
+    openaiModel: 'gpt-4.1-mini',
+    chatDailyLimit: 500,
+    trustProxy: false,
 
     // Public keys (exposed to client)
     public: {
-      apiBase: process.env.NUXT_PUBLIC_API_BASE,
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://aistudiophoto.com',
     },
   },
@@ -73,7 +76,6 @@ export default defineNuxtConfig({
   nitro: {
     routeRules: {
       '/**': { headers: securityHeaders },
-      '/api/**': { cors: true, headers: securityHeaders },
     },
   },
 

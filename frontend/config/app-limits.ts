@@ -1,13 +1,11 @@
 /**
  * Limites applicatives — centralisées pour éviter les modifications dispersées.
  * Chaque constante est documentée avec son "pourquoi".
- *
- * IMPORTANT: Garder aligné avec backend/internal/config/limits.go pour les limites partagées.
  */
 
 /** Longueur max d'une question chatbot (caractères).
  *  Pourquoi: limite raisonnable pour une question support, évite les abus et les payloads excessifs.
- *  Doit être aligné avec le backend (internal/config/limits.go). */
+ *  Partagée client + serveur (server/api/ask.post.ts). */
 export const MAX_CHAT_QUESTION_LENGTH = 1000
 
 /** Intervalle de rotation du hero carousel (ms).

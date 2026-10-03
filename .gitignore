@@ -3,12 +3,6 @@
 *.env
 !.env.example
 
-# Go
-backend/tmp/
-backend/*.exe
-backend/*.test
-backend/*.out
-
 # Node
 frontend/node_modules/
 # Lockfiles parasites (pnpm only — garder pnpm-lock.yaml)

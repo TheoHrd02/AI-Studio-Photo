@@ -6,9 +6,6 @@
 import { MAX_CHAT_QUESTION_LENGTH } from '~/config/app-limits'
 
 export const useChatbot = () => {
-  const config = useRuntimeConfig()
-  const apiBase = config.public.apiBase || 'http://localhost:8080/api/v1'
-
   /**
    * État du chatbot
    */
@@ -26,23 +23,26 @@ export const useChatbot = () => {
     }
 
     if (question.length > MAX_CHAT_QUESTION_LENGTH) {
-      throw new Error(`La question est trop longue (max ${MAX_CHAT_QUESTION_LENGTH} caractères)`)
+      error.value = `La question est trop longue (max ${MAX_CHAT_QUESTION_LENGTH} caractères)`
+      throw new Error(error.value)
     }
 
     isLoading.value = true
     error.value = null
 
     try {
-      const response = await $fetch<{ answer: string }>(`${apiBase}/ask`, {
+      // Same-origin Nuxt server route (server/api/ask.post.ts)
+      const response = await $fetch<{ answer: string }>('/api/ask', {
         method: 'POST',
         body: { q: question },
+        timeout: 30_000,
       })
 
       return response.answer
     }
     catch (err: unknown) {
-      const errObj = err as { data?: { error?: string }, message?: string }
-      const errorMessage = errObj?.data?.error || errObj?.message || 'Une erreur est survenue'
+      const errObj = err as { data?: { message?: string } }
+      const errorMessage = errObj?.data?.message || 'Une erreur est survenue, réessayez plus tard'
       error.value = errorMessage
       throw new Error(errorMessage)
     }

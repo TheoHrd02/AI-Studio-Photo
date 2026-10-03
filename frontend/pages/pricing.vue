@@ -139,7 +139,7 @@ const perkKeys = [
   'securePayment',
 ] as const
 
-const perkIcons: Record<string, string> = {
+const perkIcons: Record<(typeof perkKeys)[number], string> = {
   secureData: 'heroicons:shield-check',
   noCard: 'heroicons:check-circle',
   cancelAnytime: 'heroicons:x-circle',
