@@ -155,7 +155,7 @@ const hideDropdown = () => {
           <!-- Mobile Menu Button -->
           <button
             class="md:hidden p-2 text-gray-600 hover:text-gray-900"
-            aria-label="Menu"
+            :aria-label="$t('common.menu')"
             @click="isMenuOpen = !isMenuOpen"
           >
             <svg

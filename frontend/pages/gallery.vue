@@ -53,7 +53,7 @@ function onVideoError(index: number) {
             <template v-if="item.type === 'image' || videoLoadFailed.has(index)">
               <img
                 :src="item.type === 'image' ? item.src : FALLBACK_IMAGE"
-                :alt="item.alt"
+                :alt="$t(`gallery.${item.type}Alt`, { n: index + 1 })"
                 class="gallery-media"
                 loading="lazy"
                 @error="onImageError"
@@ -77,7 +77,7 @@ function onVideoError(index: number) {
             <div class="gallery-overlay">
               <div class="gallery-overlay-content">
                 <p class="text-sm font-semibold text-white">
-                  {{ item.alt }}
+                  {{ $t(`gallery.${item.type}Alt`, { n: index + 1 }) }}
                 </p>
                 <span
                   v-if="item.type === 'video'"

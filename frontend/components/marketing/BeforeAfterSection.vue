@@ -38,10 +38,10 @@ useI18n()
           >
             <!-- Optional label -->
             <p
-              v-if="example.label"
+              v-if="example.key"
               class="mb-4 text-sm font-semibold uppercase tracking-widest text-primary-500"
             >
-              {{ example.label }}
+              {{ $t(`nav.${example.key}.label`) }}
             </p>
 
             <!-- Side-by-side comparison -->
@@ -52,8 +52,8 @@ useI18n()
                   {{ $t('beforeAfter.before') }}
                 </div>
                 <img
-                  :src="example.before.src"
-                  :alt="example.before.alt"
+                  :src="example.before"
+                  :alt="$t(`beforeAfter.examples.${example.key}.before`)"
                   class="aspect-[4/3] w-full object-cover"
                   loading="lazy"
                 >
@@ -85,8 +85,8 @@ useI18n()
                   {{ $t('beforeAfter.after') }}
                 </div>
                 <img
-                  :src="example.after.src"
-                  :alt="example.after.alt"
+                  :src="example.after"
+                  :alt="$t(`beforeAfter.examples.${example.key}.after`)"
                   class="aspect-[4/3] w-full object-cover"
                   loading="lazy"
                 >

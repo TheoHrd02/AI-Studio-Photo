@@ -37,7 +37,8 @@
   },
   "common": {
     "appName": "AI Studio Photo",
-    "language": "Langue"
+    "language": "Langue",
+    "menu": "Menu"
   },
   "nav": {
     "home": "Accueil",
@@ -110,7 +111,21 @@
     "subtitle": "Une photo produit brute devient un visuel studio professionnel. Voici ce que l'IA peut générer en 30 secondes.",
     "illustrativeLabel": "Résultats générés à titre d'exemple — démonstration des capacités",
     "before": "Avant",
-    "after": "Après"
+    "after": "Après",
+    "examples": {
+      "studioVirtuel": {
+        "before": "Photo produit brute — fond blanc, éclairage plat",
+        "after": "Résultat AI Studio — décor studio, éclairage professionnel"
+      },
+      "mannequinVirtuel": {
+        "before": "Chaussure isolée sur fond neutre",
+        "after": "Chaussure en scène lifestyle avec mannequin"
+      },
+      "motionStudio": {
+        "before": "Produit statique — casque audio",
+        "after": "Produit en mouvement — animation vidéo IA"
+      }
+    }
   },
   "personas": {
     "forLabel": "Pour : ",
@@ -470,7 +485,9 @@
   "gallery": {
     "title": "Galerie de créations",
     "subtitle": "Découvrez ce que nos utilisateurs créent",
-    "videoBadge": "Vidéo"
+    "videoBadge": "Vidéo",
+    "imageAlt": "Création produit {n}",
+    "videoAlt": "Vidéo produit {n}"
   },
   "help": {
     "meta": {

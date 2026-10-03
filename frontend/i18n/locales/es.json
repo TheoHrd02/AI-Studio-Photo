@@ -37,7 +37,8 @@
   },
   "common": {
     "appName": "AI Studio Photo",
-    "language": "Idioma"
+    "language": "Idioma",
+    "menu": "Menú"
   },
   "nav": {
     "home": "Inicio",
@@ -110,7 +111,21 @@
     "subtitle": "Una foto de producto en bruto se convierte en un visual de estudio profesional. Esto es lo que la IA puede generar en 30 segundos.",
     "illustrativeLabel": "Resultados generados a modo de ejemplo — demostración de las capacidades",
     "before": "Antes",
-    "after": "Después"
+    "after": "Después",
+    "examples": {
+      "studioVirtuel": {
+        "before": "Foto de producto en bruto — fondo blanco, luz plana",
+        "after": "Resultado de AI Studio — escenario de estudio, luz profesional"
+      },
+      "mannequinVirtuel": {
+        "before": "Zapato aislado sobre fondo neutro",
+        "after": "Zapato en una escena lifestyle con modelo"
+      },
+      "motionStudio": {
+        "before": "Producto estático — auriculares",
+        "after": "Producto en movimiento — animación de vídeo IA"
+      }
+    }
   },
   "personas": {
     "forLabel": "Para: ",
@@ -470,7 +485,9 @@
   "gallery": {
     "title": "Galería de creaciones",
     "subtitle": "Descubre lo que crean nuestros usuarios",
-    "videoBadge": "Vídeo"
+    "videoBadge": "Vídeo",
+    "imageAlt": "Creación de producto {n}",
+    "videoAlt": "Vídeo de producto {n}"
   },
   "help": {
     "meta": {
