@@ -64,14 +64,14 @@ const currentYear = new Date().getFullYear()
               © {{ currentYear }} {{ $t('common.appName') }}. {{ $t('footer.allRightsReserved') }}.
             </p>
             <div class="flex items-center gap-6 text-sm">
-              <a
+              <NuxtLink
                 v-for="item in siteConfig.footer.legal"
                 :key="item.id"
-                :href="item.href"
+                :to="item.href"
                 class="text-gray-400 hover:text-white transition-colors"
               >
                 {{ $t(`footer.legalLinks.${item.id}`) }}
-              </a>
+              </NuxtLink>
             </div>
             <div class="flex items-center gap-4">
               <a

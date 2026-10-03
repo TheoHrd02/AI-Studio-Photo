@@ -68,7 +68,10 @@ const suggestedQuestions = [
     </section>
 
     <!-- Contact Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section
+      id="contact"
+      class="py-20 bg-gradient-to-br from-gray-50 to-white scroll-mt-20"
+    >
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <!-- Header -->
