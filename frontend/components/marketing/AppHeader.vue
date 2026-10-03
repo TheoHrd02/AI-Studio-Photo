@@ -221,7 +221,7 @@ const hideDropdown = () => {
             </NuxtLinkLocale>
           </template>
 
-          <CommonLanguageSelect class="mt-2 self-start" />
+          <CommonLanguageSelect class="mt-2 self-start px-2" />
 
           <CommonCTAButton
             :href="saasConfig.signupUrl"

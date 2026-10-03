@@ -22,4 +22,4 @@ prod:
 
 ## Build and run production stack. Requires .env (copy from .env.example)
 prod-up:
-	docker compose -f docker-compose.prod.yml up --build
+	docker compose -f docker-compose.prod.yml up -d --build

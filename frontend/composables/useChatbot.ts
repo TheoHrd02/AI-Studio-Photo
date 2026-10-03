@@ -49,7 +49,7 @@ export const useChatbot = () => {
         : status === 503
           ? t('help.chat.errors.unavailable')
           : t('help.chat.errors.generic')
-      throw new Error(error.value)
+      throw new Error(error.value, { cause: err })
     }
     finally {
       isLoading.value = false

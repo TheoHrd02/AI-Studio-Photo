@@ -1,5 +1,7 @@
-# Production — docker compose -f docker-compose.prod.yml up --build
-# Variables : .env à la racine (copier depuis .env.example)
+# Production (VPS) — Caddy (HTTPS) devant Nuxt
+#   cp .env.example .env   # puis renseigner les variables
+#   docker compose -f docker-compose.prod.yml up -d --build
+# Voir docs/DEPLOY.md
 
 services:
   frontend:
@@ -7,15 +9,42 @@ services:
       context: ./frontend
       dockerfile: Dockerfile.prod
       args:
-        NUXT_PUBLIC_SITE_URL: ${NUXT_PUBLIC_SITE_URL:-https://aistudiophoto.com}
+        NUXT_PUBLIC_SITE_URL: https://${DOMAIN:?DOMAIN manquant dans .env}
     container_name: aistudio-frontend
     restart: unless-stopped
-    ports:
-      - "3000:3000"
+    # Pas de port publié : seul Caddy est exposé
+    expose:
+      - "3000"
     env_file:
       - .env
+    environment:
+      NUXT_PUBLIC_SITE_URL: https://${DOMAIN}
+      NUXT_TRUST_PROXY: "true"
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/"]
       interval: 30s
       timeout: 5s
       retries: 3
+      start_period: 15s
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: aistudio-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      frontend:
+        condition: service_healthy
+
+volumes:
+  caddy_data:
+  caddy_config:

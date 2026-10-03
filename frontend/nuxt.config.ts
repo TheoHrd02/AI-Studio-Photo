@@ -15,7 +15,6 @@ const securityHeaders = isProduction ? productionSecurityHeaders : {}
 export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
-    '@nuxt/image',
     '@nuxt/eslint',
     '@nuxtjs/sitemap',
     '@nuxtjs/i18n',
@@ -70,15 +69,6 @@ export default defineNuxtConfig({
   nitro: {
     routeRules: {
       '/**': { headers: securityHeaders },
-    },
-  },
-
-  vite: {
-    server: {
-      hmr: {
-        clientPort: 3000,
-        port: 24679,
-      },
     },
   },
 
