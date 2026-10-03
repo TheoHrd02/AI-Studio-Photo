@@ -6,7 +6,7 @@ const props = withDefaults(
   defineProps<{
     /** External URL — renders <a> with target="_blank" rel="noopener" */
     href?: string
-    /** Internal route — renders <NuxtLink> */
+    /** Internal route — renders <NuxtLinkLocale> */
     to?: string
     variant?: Variant
     size?: Size
@@ -99,7 +99,7 @@ function onClick() {
 </script>
 
 <template>
-  <NuxtLink
+  <NuxtLinkLocale
     v-if="props.to"
     v-bind="linkProps"
     :class="buttonClasses"
@@ -121,7 +121,7 @@ function onClick() {
         d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
       />
     </svg>
-  </NuxtLink>
+  </NuxtLinkLocale>
   <a
     v-else
     v-bind="linkProps"

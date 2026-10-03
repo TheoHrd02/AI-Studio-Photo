@@ -6,6 +6,8 @@
 import { MAX_CHAT_QUESTION_LENGTH } from '~/config/app-limits'
 
 export const useChatbot = () => {
+  const { t } = useI18n()
+
   /**
    * État du chatbot
    */
@@ -19,11 +21,11 @@ export const useChatbot = () => {
    */
   const ask = async (question: string): Promise<string> => {
     if (!question.trim()) {
-      throw new Error('La question ne peut pas être vide')
+      throw new Error('Empty question')
     }
 
     if (question.length > MAX_CHAT_QUESTION_LENGTH) {
-      error.value = `La question est trop longue (max ${MAX_CHAT_QUESTION_LENGTH} caractères)`
+      error.value = t('help.chat.errors.tooLong', { max: MAX_CHAT_QUESTION_LENGTH })
       throw new Error(error.value)
     }
 
@@ -38,13 +40,16 @@ export const useChatbot = () => {
         timeout: 30_000,
       })
 
-      return response.answer
+      return response.answer || t('help.chat.noAnswer', { email: 'support@aistudiophoto.com' })
     }
     catch (err: unknown) {
-      const errObj = err as { data?: { message?: string } }
-      const errorMessage = errObj?.data?.message || 'Une erreur est survenue, réessayez plus tard'
-      error.value = errorMessage
-      throw new Error(errorMessage)
+      const status = (err as { statusCode?: number }).statusCode
+      error.value = status === 429
+        ? t('help.chat.errors.rateLimited')
+        : status === 503
+          ? t('help.chat.errors.unavailable')
+          : t('help.chat.errors.generic')
+      throw new Error(error.value)
     }
     finally {
       isLoading.value = false

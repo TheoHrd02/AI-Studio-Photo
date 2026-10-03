@@ -9,7 +9,7 @@ definePageMeta({
 })
 
 useHead({
-  title: computed(() => `${t('featurePages.index.title')} – AI Studio Photo`),
+  title: computed(() => t('featurePages.index.title')),
   meta: [
     {
       name: 'description',
@@ -50,7 +50,7 @@ useHead({
             {{ $t(`nav.${feature.id}.description`) }}
           </p>
           <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1">
-            <NuxtLink
+            <NuxtLinkLocale
               :to="feature.href"
               class="inline-flex items-center text-primary-500 font-semibold text-sm hover:text-primary-600"
             >
@@ -68,7 +68,7 @@ useHead({
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </NuxtLink>
+            </NuxtLinkLocale>
             <CommonCTAButton
               :href="saasConfig.signupUrl"
               variant="ghost"

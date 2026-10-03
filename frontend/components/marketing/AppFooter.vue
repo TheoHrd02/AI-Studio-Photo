@@ -37,13 +37,13 @@ const currentYear = new Date().getFullYear()
                   v-for="link in column.links"
                   :key="link.id"
                 >
-                  <NuxtLink
+                  <NuxtLinkLocale
                     v-if="link.href.startsWith('/')"
                     :to="link.href"
                     class="text-gray-400 hover:text-white transition-colors"
                   >
                     {{ $t(`footer.${column.id}Links.${link.id}`) }}
-                  </NuxtLink>
+                  </NuxtLinkLocale>
                   <a
                     v-else
                     :href="link.href"
@@ -64,14 +64,14 @@ const currentYear = new Date().getFullYear()
               © {{ currentYear }} {{ $t('common.appName') }}. {{ $t('footer.allRightsReserved') }}.
             </p>
             <div class="flex items-center gap-6 text-sm">
-              <NuxtLink
+              <NuxtLinkLocale
                 v-for="item in siteConfig.footer.legal"
                 :key="item.id"
                 :to="item.href"
                 class="text-gray-400 hover:text-white transition-colors"
               >
                 {{ $t(`footer.legalLinks.${item.id}`) }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </div>
             <div class="flex items-center gap-4">
               <a

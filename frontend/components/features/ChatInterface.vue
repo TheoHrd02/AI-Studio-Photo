@@ -37,7 +37,7 @@
       >
         <div class="space-y-3">
           <p class="text-sm font-medium text-gray-700 mb-4 text-center">
-            Questions suggérées :
+            {{ $t('help.chat.suggestedLabel') }}
           </p>
           <button
             v-for="(suggestion, index) in suggestedQuestions"
@@ -280,16 +280,13 @@ interface Message {
 
 interface Props {
   suggestedQuestions?: string[]
-  placeholder?: string
-  emptyStateTitle?: string
-  emptyStateDescription?: string
+  placeholder: string
+  emptyStateTitle: string
+  emptyStateDescription: string
 }
 
 withDefaults(defineProps<Props>(), {
   suggestedQuestions: () => [],
-  placeholder: 'Posez votre question...',
-  emptyStateTitle: 'Comment puis-je vous aider ?',
-  emptyStateDescription: 'Posez-moi n\'importe quelle question sur AI Studio Photo',
 })
 
 const { ask, isLoading, error, clearError } = useChatbot()

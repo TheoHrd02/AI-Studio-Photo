@@ -39,7 +39,7 @@ const hideDropdown = () => {
       <div class="mx-auto max-w-6xl rounded-2xl border border-gray-200 bg-white/95 shadow-lg backdrop-blur-sm">
         <div class="flex h-16 items-center justify-between px-6">
           <!-- Logo -->
-          <NuxtLink
+          <NuxtLinkLocale
             to="/"
             class="flex items-center gap-2.5"
           >
@@ -59,7 +59,7 @@ const hideDropdown = () => {
               </svg>
             </div>
             <span class="text-base font-bold text-gray-900">{{ $t('common.appName') }}</span>
-          </NuxtLink>
+          </NuxtLinkLocale>
 
           <!-- Desktop Navigation -->
           <nav class="hidden items-center gap-7 md:flex">
@@ -104,7 +104,7 @@ const hideDropdown = () => {
                     v-show="openDropdown === item.id"
                     class="absolute left-0 top-full mt-2 w-80 p-2 bg-white rounded-lg shadow-xl border border-gray-100 z-50"
                   >
-                    <NuxtLink
+                    <NuxtLinkLocale
                       v-for="child in item.children"
                       :key="child.href"
                       :to="child.href"
@@ -117,27 +117,32 @@ const hideDropdown = () => {
                         />
                       </div>
                       <div class="flex-1">
-                        <p class="text-sm font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">{{ child.label }}</p>
-                        <p class="text-xs text-gray-500 mt-0.5">{{ child.description }}</p>
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">
+                          {{ child.label }}
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          {{ child.description }}
+                        </p>
                       </div>
-                    </NuxtLink>
+                    </NuxtLinkLocale>
                   </div>
                 </Transition>
               </div>
 
               <!-- Liens normaux -->
-              <NuxtLink
+              <NuxtLinkLocale
                 v-else
                 :to="item.href"
                 class="text-[13px] font-medium text-gray-600 transition-colors hover:text-gray-900"
               >
                 {{ item.label }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </template>
           </nav>
 
           <!-- CTA Button -->
-          <div class="hidden items-center gap-4 md:flex">
+          <div class="hidden items-center gap-2 md:flex">
+            <CommonLanguageSelect />
             <CommonCTAButton
               :href="saasConfig.signupUrl"
               variant="primary"
@@ -190,7 +195,7 @@ const hideDropdown = () => {
               <p class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase">
                 {{ item.label }}
               </p>
-              <NuxtLink
+              <NuxtLinkLocale
                 v-for="child in item.children"
                 :key="child.href"
                 :to="child.href"
@@ -202,19 +207,21 @@ const hideDropdown = () => {
                   class="h-4 w-4"
                 />
                 {{ child.label }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </div>
 
             <!-- Liens normaux mobile -->
-            <NuxtLink
+            <NuxtLinkLocale
               v-else
               :to="item.href"
               class="rounded-lg px-4 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900"
               @click="isMenuOpen = false"
             >
               {{ item.label }}
-            </NuxtLink>
+            </NuxtLinkLocale>
           </template>
+
+          <CommonLanguageSelect class="mt-2 self-start" />
 
           <CommonCTAButton
             :href="saasConfig.signupUrl"

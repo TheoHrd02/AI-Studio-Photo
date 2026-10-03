@@ -13,9 +13,18 @@
     "orStartNow": "Or start now →",
     "header": "Start for free — no credit card",
     "plans": {
-      "free": { "label": "Start for free — no credit card", "note": "No card required" },
-      "pro": { "label": "Start trial — 7 days free", "note": "No commitment" },
-      "enterprise": { "label": "Book a demo", "note": "Free personalized call" }
+      "free": {
+        "label": "Start for free — no credit card",
+        "note": "No card required"
+      },
+      "pro": {
+        "label": "Start trial — 7 days free",
+        "note": "No commitment"
+      },
+      "enterprise": {
+        "label": "Book a demo",
+        "note": "Free personalized call"
+      }
     },
     "help": {
       "chat": "Start a conversation",
@@ -28,39 +37,10 @@
   },
   "common": {
     "appName": "AI Studio Photo",
-    "loading": "Loading...",
-    "error": "Error",
-    "success": "Success",
-    "cancel": "Cancel",
-    "confirm": "Confirm",
-    "save": "Save",
-    "delete": "Delete",
-    "edit": "Edit",
-    "close": "Close",
-    "back": "Back",
-    "next": "Next",
-    "previous": "Previous",
-    "search": "Search",
-    "filter": "Filter",
-    "sort": "Sort",
-    "download": "Download",
-    "upload": "Upload",
-    "share": "Share",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "viewMore": "View more",
-    "viewLess": "View less",
-    "discover": "Discover",
-    "or": "Or",
-    "startNow": "Start now",
-    "startFree": "Start for free",
     "mainFeatures": "Main features",
     "readyToStart": "Ready to start?",
-    "createAccountFree": "Create your account for free and get 5 credits offered.",
-    "ctaPrimary": "Start for free — no credit card",
-    "ctaClarification": "After click: free account → 5 credits → first creation in 30s"
+    "createAccountFree": "Create your account for free and get 5 credits offered."
   },
-  
   "nav": {
     "home": "Home",
     "features": "Features",
@@ -88,21 +68,16 @@
       "description": "Go from image to motion in one click."
     }
   },
-
   "pricingTeaser": {
     "title": "Start for free. Scale without limits.",
-    "subtitle": "Free, Pro or Enterprise — choose the plan that fits you.",
-    "cta": "Start for free — no credit card",
-    "link": "View all pricing"
+    "subtitle": "Free, Pro or Enterprise — choose the plan that fits you."
   },
-
   "productDemo": {
     "badge": "Product demo",
     "title": "See the product in action",
     "subtitle": "Discover how to turn a product photo into a professional studio visual in seconds.",
     "watchHint": "Click to play"
   },
-
   "productWalkthrough": {
     "badge": "Product walkthrough",
     "title": "Your workflow in 4 steps",
@@ -131,7 +106,6 @@
       "generating": "Generating..."
     }
   },
-
   "beforeAfter": {
     "badge": "Illustrative preview",
     "title": "Before → After: the transformation in one click",
@@ -140,36 +114,24 @@
     "before": "Before",
     "after": "After"
   },
-
   "personas": {
     "forLabel": "For: ",
     "ecommerce": {
-      "label": "E-commerce",
-      "eyebrow": "For e-commerce brands",
-      "subtitle": "Scale your catalog visuals without photo budgets. Studio-quality renders in 30 seconds — ready for your store."
+      "label": "E-commerce"
     },
     "fashion": {
-      "label": "Fashion",
-      "eyebrow": "For fashion & lifestyle brands",
-      "subtitle": "Virtual models, lifestyle settings, unlimited shoots. Create visual campaigns without castings or studios."
+      "label": "Fashion"
     },
     "creators": {
-      "label": "Creators",
-      "eyebrow": "For content creators",
-      "subtitle": "Pro content for your socials. Studio photos, animated videos — all in a few clicks."
+      "label": "Creators"
     },
     "default": {
-      "eyebrow": "For e-commerce brands & content creators",
       "subtitle": "No more expensive photoshoots. Turn any product photo into a premium studio visual — ready to publish."
     }
   },
-
   "hero": {
     "eyebrow": "Early access · 5 free credits · 30 seconds",
     "title": "Professional product photos, AI-generated in 30 seconds",
-    "subtitle": "No more expensive photoshoots. Turn any product photo into a premium studio visual — ready to publish.",
-    "ctaPrimary": "Start for free — no credit card",
-    "ctaSecondary": "Already have an account? Sign in",
     "trustChips": {
       "speed": "Results in 30 seconds",
       "free": "5 free credits — no card required",
@@ -178,7 +140,6 @@
       "earlyAccess": "Early access — join the beta"
     }
   },
-
   "features": {
     "badge": "Our AI Solutions",
     "title": "Powerful tools for every need",
@@ -200,10 +161,8 @@
       "description": "Transform your images into dynamic videos. Smooth animations and professional effects for your campaigns and social media.",
       "stats": "1 click",
       "statsLabel": "to animate"
-    },
-    "discover": "Discover"
+    }
   },
-
   "howItWorks": {
     "badge": "How it works",
     "title": "From idea to result in 4 simple steps",
@@ -225,90 +184,13 @@
         "title": "Download the result",
         "description": "Get your professional creation in seconds, ready to use."
       }
-    },
-    "cta": "Try now",
-    "benefits": {
-      "cost": {
-        "title": "Save up to 90% on your production costs",
-        "description": "No more expensive photo studios, professional models and endless sessions.",
-        "metric": "-90%",
-        "metricLabel": "costs"
-      },
-      "speed": {
-        "title": "Create 100x faster than traditional methods",
-        "description": "What took days now takes minutes. Iterate quickly and test multiple variants.",
-        "metric": "100x",
-        "metricLabel": "faster"
-      },
-      "conversion": {
-        "title": "Increase your conversions by 40% on average",
-        "description": "Professional and engaging visuals that captivate your audience and boost your sales.",
-        "metric": "+40%",
-        "metricLabel": "conversions"
-      }
     }
   },
-
-  "tutorial": {
-    "badge": "Complete Guide",
-    "title": "How does it work?",
-    "subtitle": "Create professional visuals in a few simple steps",
-    "steps": {
-      "step1": {
-        "title": "Upload your image",
-        "description": "Import your product photo, portrait or any other visual you want to transform. Accepted formats: JPG, PNG, WebP.",
-        "features": [
-          "Drag and drop or select from your computer",
-          "Support for images up to 10 MB",
-          "Instant preview"
-        ]
-      },
-      "step2": {
-        "title": "Choose your transformation",
-        "description": "Select the type of creation you want: virtual studio, AI model, or video animation.",
-        "features": [
-          "Professional ready-to-use templates",
-          "Advanced parameter customization",
-          "Real-time preview"
-        ]
-      },
-      "step3": {
-        "title": "Adjust the settings",
-        "description": "Refine your creation with our intuitive tools. Modify lighting, background, colors and much more.",
-        "features": [
-          "Intuitive and easy-to-use interface",
-          "Precise control of each element",
-          "AI smart suggestions"
-        ]
-      },
-      "step4": {
-        "title": "Download and share",
-        "description": "Your creation is ready! Download it in high resolution and use it immediately for your projects.",
-        "features": [
-          "Export in HD and 4K",
-          "Formats optimized for web and print",
-          "Direct sharing on social networks"
-        ]
-      }
-    },
-    "cta": {
-      "title": "Ready to create your first visuals?",
-      "subtitle": "Start for free and discover the power of AI for your creations",
-      "buttonPrimary": "Start for free",
-      "buttonSecondary": "View pricing"
-    }
-  },
-
   "socialProof": {
     "header": "Platform",
     "headline": "AI-powered product visuals in 30 seconds",
-    "subline": "Early access — we're building in public. Join creators testing the beta.",
-    "generationsMetric": "5.2M+",
-    "generationsLabel": "creations generated on the platform",
-    "generationsFull": "Over 5 million creations generated on the platform",
-    "trustedBy": "Trusted by"
+    "subline": "Early access — we're building in public. Join creators testing the beta."
   },
-
   "testimonials": {
     "badge": "Typical use cases",
     "title": "What you could achieve",
@@ -334,58 +216,22 @@
       }
     }
   },
-
   "riskReversal": {
     "noCard": "No credit card required",
     "cancelAnytime": "Cancel anytime",
     "freeTrial": "7-day free trial"
   },
-
-  "auth": {
-    "login": {
-      "title": "Login",
-      "subtitle": "Don't have an account yet?",
-      "signupLink": "Create an account",
-      "email": "Email",
-      "password": "Password",
-      "forgotPassword": "Forgot password?",
-      "submit": "Log in",
-      "loading": "Logging in...",
-      "withGoogle": "Continue with Google"
-    },
-    "signup": {
-      "title": "Create an account",
-      "subtitle": "Already registered?",
-      "loginLink": "Log in",
-      "name": "Name (optional)",
-      "email": "Email",
-      "password": "Password",
-      "confirmPassword": "Confirm password",
-      "passwordHint": "Minimum 8 characters",
-      "submit": "Create my account",
-      "loading": "Creating...",
-      "terms": "By creating an account, you accept our",
-      "termsLink": "terms of use",
-      "and": "and our",
-      "privacyLink": "privacy policy",
-      "withGoogle": "Sign up with Google"
-    }
-  },
-
   "pricing": {
-    "pageTitle": "Pricing – AI Studio Photo",
+    "pageTitle": "Pricing",
     "pageDescription": "Discover our plans: Free, Pro and Enterprise. Start without a credit card.",
     "heroTitle": "The plan that",
     "heroHighlight": "fits you",
     "heroSubtitle": "Start for free. Scale without limits. Cancel anytime.",
-    "title": "Simple and transparent pricing",
-    "subtitle": "Choose the plan that fits your needs",
     "finalCtaLine": "Early access. 7-day trial. No card required.",
     "monthly": "Monthly",
     "yearly": "Yearly",
     "annualBadge": "–20%",
     "billingToggleAria": "Annual billing",
-    "save": "Save",
     "periodPerMonth": "/ month",
     "billedPrefix": "Billed",
     "billedSuffix": "€ / year",
@@ -405,7 +251,6 @@
         "name": "Free",
         "tagline": "To explore the power of generative AI",
         "bestFor": "Individuals discovering AI Studio",
-        "annualSaving": null,
         "features": [
           "10 AI generations / month",
           "Virtual Studio (basic access)",
@@ -484,7 +329,6 @@
       }
     ]
   },
-
   "footer": {
     "description": "The generative AI platform to create professional studio photos in seconds.",
     "product": "Product",
@@ -518,15 +362,6 @@
       "cookies": "Cookies"
     }
   },
-
-  "errors": {
-    "generic": "An error occurred",
-    "network": "Connection error",
-    "unauthorized": "Unauthorized",
-    "notFound": "Page not found",
-    "serverError": "Server error"
-  },
-
   "featurePageSection": {
     "sectionConcept": "01 — Concept",
     "sectionBenefits": "02 — Benefits",
@@ -535,13 +370,11 @@
     "outputLabel": "Output",
     "stepsLabel": "simple steps"
   },
-
   "featurePages": {
     "studioVirtuel": {
       "badge": "📸 AI Photography",
       "title": "Virtual Studio",
       "subtitle": "Place your products in settings worthy of the greatest photo studios.",
-      "cta": "Try for free",
       "conceptImageAlt": "Virtual Studio output — professional product visual",
       "beforeImageAlt": "Raw product photo — white background, flat lighting",
       "workflowImageAlt": "Virtual Studio interface — 4-step workflow",
@@ -567,19 +400,12 @@
         "quote1": "Your photo studio, now in the cloud.",
         "quote2": "From concept to final render, in less than a minute.",
         "quote3": "Images worthy of a photographer, without a photographer."
-      },
-      "finalCta": {
-        "title": "Ready to transform your visuals?",
-        "subtitle": "Create your account for free and get 5 credits offered.",
-        "buttonPrimary": "Start for free",
-        "buttonSecondary": "View pricing"
       }
     },
     "mannequinVirtuel": {
       "badge": "👩‍🎨 AI Modeling",
       "title": "Virtual Model",
       "subtitle": "Humanize your visuals with realistic and personalized models.",
-      "cta": "Try for free",
       "conceptImageAlt": "Virtual Model output — product with AI model",
       "beforeImageAlt": "Product isolated on neutral background",
       "workflowImageAlt": "Virtual Model interface — profile selection",
@@ -605,19 +431,12 @@
         "quote1": "Visuals that breathe life, without a human model.",
         "quote2": "Say goodbye to castings, hello to creativity.",
         "quote3": "The ideal model exists. It awaits your prompt."
-      },
-      "finalCta": {
-        "title": "Ready to transform your visuals?",
-        "subtitle": "Create your account for free and get 5 credits offered.",
-        "buttonPrimary": "Start for free",
-        "buttonSecondary": "View pricing"
       }
     },
     "motionStudio": {
       "badge": "🎥 AI Video",
       "title": "Motion Studio",
       "subtitle": "Go from image to motion in one click.",
-      "cta": "Try for free",
       "conceptImageAlt": "Motion Studio output — animated product video",
       "beforeImageAlt": "Static product — headphones",
       "workflowImageAlt": "Motion Studio interface — animation style selection",
@@ -643,12 +462,6 @@
         "quote1": "Your images come to life.",
         "quote2": "From photo to advertising spot, in one click.",
         "quote3": "Motion is emotion."
-      },
-      "finalCta": {
-        "title": "Ready to transform your visuals?",
-        "subtitle": "Create your account for free and get 5 credits offered.",
-        "buttonPrimary": "Start for free",
-        "buttonSecondary": "View pricing"
       }
     },
     "index": {
@@ -656,33 +469,183 @@
       "subtitle": "Discover our AI tools to transform your visuals"
     }
   },
-
-  "help": {
-    "title": "Help Center",
-    "subtitle": "How can we help you?",
-    "searchPlaceholder": "Search in help...",
-    "chatbot": {
-      "title": "AI Assistant",
-      "placeholder": "Ask your question...",
-      "emptyTitle": "How can I help you?",
-      "emptyDescription": "Ask me anything about AI Studio Photo",
-      "suggestedQuestions": [
-        "How to create my first visual?",
-        "What image formats are accepted?",
-        "How does the credit system work?"
-      ]
-    }
-  },
-
   "gallery": {
     "title": "Creations Gallery",
     "subtitle": "Discover what our users create",
-    "filters": {
-      "all": "All",
-      "studio": "Studio",
-      "model": "Model",
-      "motion": "Motion"
+    "videoBadge": "Video"
+  },
+  "help": {
+    "meta": {
+      "title": "Help",
+      "description": "Ask our AI assistant your questions and get instant answers about AI Studio Photo."
     },
-    "cta": "Create my own visuals"
+    "suggestedQuestions": {
+      "howItWorks": "How does AI Studio Photo work?",
+      "pricing": "What are the prices and available plans?",
+      "studioPhoto": "How do I create a professional studio photo?",
+      "mannequins": "Can I add virtual models to my photos?",
+      "animations": "How do I create animations and promotional videos?",
+      "formats": "Which file formats are supported?"
+    },
+    "chat": {
+      "placeholder": "Ask your question about AI Studio Photo...",
+      "emptyTitle": "How can I help you?",
+      "emptyDescription": "Ask me anything about AI Studio Photo and I'll answer instantly from our documentation.",
+      "suggestedLabel": "Suggested questions:",
+      "noAnswer": "I couldn't find the answer in our documentation. Contact us at {email}.",
+      "errors": {
+        "tooLong": "Your question is too long (max {max} characters)",
+        "rateLimited": "Too many questions, please try again in a minute.",
+        "unavailable": "The assistant is temporarily unavailable.",
+        "generic": "The assistant isn't responding, please try again later."
+      }
+    },
+    "contact": {
+      "title": "Need more help?",
+      "subtitle": "Our team is here to help. Feel free to contact us directly.",
+      "chatPrompt": "Prefer to chat live?",
+      "cards": {
+        "support": {
+          "title": "Email support",
+          "description": "Reply within 24h on weekdays"
+        },
+        "sales": {
+          "title": "Sales & Partnerships",
+          "description": "For businesses and resellers"
+        },
+        "press": {
+          "title": "Press & Media",
+          "description": "Press relations and media inquiries"
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "responseTime": {
+        "q": "How fast do you reply?",
+        "a": "Our team usually replies within 24h on weekdays. For urgent questions, email us directly."
+      },
+      "demo": {
+        "q": "Can I get a personalized demo?",
+        "a": "Absolutely! Contact our sales team to schedule a demo tailored to your needs."
+      },
+      "language": {
+        "q": "Do you offer support in English?",
+        "a": "Yes! Our support is available in French and English, 7 days a week."
+      }
+    }
+  },
+  "meta": {
+    "title": "AI Studio Photo – Professional product photos with AI",
+    "description": "Turn your product photos into professional studio visuals with AI — in 30 seconds. No photographer, no studio.",
+    "appDescription": "Generative AI platform to create professional studio photos from product photos."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "News, tutorials and inspiration",
+    "empty": "Articles coming soon..."
+  },
+  "legal": {
+    "updatedAt": "Last updated:",
+    "legalNotice": {
+      "title": "Legal notice",
+      "description": "Legal information about the publisher and host of the AI Studio Photo website.",
+      "updatedAt": "[date]",
+      "sections": {
+        "publisher": {
+          "title": "Publisher",
+          "body": "The aistudiophoto.com website is published by [company name, legal form], with a share capital of [amount], registered under number [registration number], with its registered office at [address].\n\n- VAT number: [VAT number]\n- Email: [contact email]\n- Publication director: [name]"
+        },
+        "hosting": {
+          "title": "Hosting",
+          "body": "The website is hosted by [hosting provider], [address], [phone or website]."
+        },
+        "ip": {
+          "title": "Intellectual property",
+          "body": "All content on this website (texts, visuals, videos, logos, trademarks) is the property of [company name] or its partners. Any full or partial reproduction or representation without prior written permission is prohibited."
+        },
+        "data": {
+          "title": "Personal data",
+          "body": "The processing of personal data is described in the privacy policy, linked at the bottom of every page."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "description": "How AI Studio Photo collects and processes the personal data of website visitors.",
+      "updatedAt": "[date]",
+      "sections": {
+        "controller": {
+          "title": "Data controller",
+          "body": "[company name], [address]. Contact for any question about your data: [email].\n\nThis policy covers the aistudiophoto.com marketing website. Use of the AI Studio Photo application is governed by its own privacy policy."
+        },
+        "data": {
+          "title": "Data processed on this website",
+          "body": "- **Questions asked to the assistant (Help page)**: the question text is sent to OpenAI to generate the answer. It is not stored by this website and retention on OpenAI's side is disabled [check current OpenAI terms]. Do not enter personal data.\n- **IP address**: used temporarily in memory to limit the number of questions per minute (abuse prevention). It is not stored.\n- **Host technical logs**: [nature and retention period according to the host].\n- **Emails**: if you write to us, your address and message are used to reply and kept for [duration].\n\nThis website uses no analytics tool and no advertising cookies (see the cookie policy)."
+        },
+        "legalBasis": {
+          "title": "Legal basis",
+          "body": "Legitimate interest: operation and security of the website, answering support requests [to be validated]."
+        },
+        "recipients": {
+          "title": "Recipients and processors",
+          "body": "- Hosting: [host, country]\n- Assistant: OpenAI (United States) — [transfer safeguards: standard contractual clauses / DPF]\n- Image and video delivery: Cloudinary — [country, safeguards]"
+        },
+        "rights": {
+          "title": "Your rights",
+          "body": "You have the right to access, rectify, erase, object to, restrict and port your data. To exercise these rights: [email].\n\nYou may also lodge a complaint with the competent supervisory authority [authority of the country of the registered office or of your country of residence]."
+        }
+      }
+    },
+    "terms": {
+      "title": "Terms of use",
+      "description": "Terms of use of the AI Studio Photo marketing website.",
+      "updatedAt": "[date]",
+      "sections": {
+        "purpose": {
+          "title": "Purpose",
+          "body": "These terms govern the use of the aistudiophoto.com website, published by [company name] (see the legal notice). Subscription to and use of the AI Studio Photo application are governed by separate terms, accepted at sign-up [link to the application's terms]."
+        },
+        "access": {
+          "title": "Access to the website",
+          "body": "The website is free to access. The publisher strives to keep it available but may interrupt it at any time, in particular for maintenance."
+        },
+        "assistant": {
+          "title": "Support assistant",
+          "body": "The assistant's answers are generated automatically from the product documentation. They are provided for information only and may contain errors; they do not constitute a contractual commitment."
+        },
+        "ip": {
+          "title": "Intellectual property",
+          "body": "The website content is protected. Any reuse without prior permission is prohibited."
+        },
+        "liability": {
+          "title": "Liability and external links",
+          "body": "The publisher cannot be held liable for the content of third-party websites linked from this website, nor for damages resulting from use of the website that does not comply with these terms."
+        },
+        "law": {
+          "title": "Governing law",
+          "body": "These terms are governed by the laws of [country]. [Competent jurisdiction]."
+        }
+      }
+    },
+    "cookies": {
+      "title": "Cookie policy",
+      "description": "Cookies and local storage used by the AI Studio Photo website.",
+      "updatedAt": "[date]",
+      "sections": {
+        "used": {
+          "title": "Cookies used",
+          "body": "This website uses no analytics, advertising or social media cookies. That is why no consent banner is shown."
+        },
+        "storage": {
+          "title": "Local storage",
+          "body": "Your browser may remember your display preference (light or dark theme) in its local storage. This information stays on your device and is not transmitted."
+        },
+        "changes": {
+          "title": "Changes",
+          "body": "If an analytics tool or a third-party service setting cookies is added, this page will be updated and your consent will be requested beforehand where required by law."
+        }
+      }
+    }
   }
 }

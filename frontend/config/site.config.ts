@@ -16,24 +16,6 @@ export interface FooterColumn {
 }
 
 export interface SiteConfig {
-  name: string
-  description: string
-  logo: string
-  fonts: {
-    heading: string
-    body: string
-  }
-  hero: {
-    title: string
-    subtitle: string
-    ctaPrimary: string
-    ctaSecondary: string
-  }
-  /** Pre-launch: do NOT use on marketing pages. Post-launch: use real metrics only. */
-  stats: {
-    users: string
-    generations: string
-  }
   /** Single source of truth for header nav. Labels from i18n nav.* */
   navigation: NavItem[]
   /** Footer structure. Labels from i18n footer.* */
@@ -44,27 +26,6 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: 'AI Studio Photo',
-  description: 'Transformez vos photos produits en visuels studio professionnels grâce à l\'IA — en 30 secondes.',
-  logo: '/logo.svg',
-
-  fonts: {
-    heading: 'Inter, sans-serif',
-    body: 'Inter, sans-serif',
-  },
-
-  hero: {
-    title: 'Des photos produits professionnelles, générées par l\'IA en 30 secondes',
-    subtitle: 'Transformez une simple photo produit en rendu studio haut de gamme. Sans photographe, sans studio, sans délai.',
-    ctaPrimary: 'Commencer gratuitement — c\'est gratuit',
-    ctaSecondary: 'Déjà un compte ? Se connecter',
-  },
-
-  stats: {
-    users: '437,822',
-    generations: '5,215,977',
-  },
-
   navigation: [
     {
       id: 'features',

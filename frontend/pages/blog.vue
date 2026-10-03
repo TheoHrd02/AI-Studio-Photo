@@ -3,9 +3,12 @@ definePageMeta({
   layout: 'marketing',
 })
 
-useHead({
-  title: 'Blog - AI Studio Photo',
-})
+const { t } = useI18n()
+
+useHead(() => ({
+  title: t('blog.title'),
+  meta: [{ name: 'description', content: t('blog.subtitle') }],
+}))
 </script>
 
 <template>
@@ -13,15 +16,15 @@ useHead({
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <h1 class="text-4xl font-bold text-gray-900">
-          Blog
+          {{ $t('blog.title') }}
         </h1>
         <p class="mt-4 text-xl text-gray-600">
-          Actualités, tutoriels et inspirations
+          {{ $t('blog.subtitle') }}
         </p>
       </div>
 
       <div class="mt-16 text-center text-gray-500">
-        <p>Articles à venir...</p>
+        <p>{{ $t('blog.empty') }}</p>
       </div>
     </div>
   </div>

@@ -1,14 +1,17 @@
 <script setup lang="ts">
-const route = useRoute()
-const { public: { siteUrl } } = useRuntimeConfig()
+const { t } = useI18n()
 
-// Canonical global — recalculé à chaque navigation (SSR + client).
-// route.path exclut les query params : /pricing, /features/studio-virtuel, etc.
-// La page peut surcharger via son propre useHead si besoin (ex. pages paginées).
+// lang + dir on <html>, hreflang alternates, canonical (baseUrl from nuxt.config i18n), og:locale
+const i18nHead = useLocaleHead({ seo: true })
+
 useHead(() => ({
-  link: [
-    { rel: 'canonical', href: `${siteUrl}${route.path}` },
+  htmlAttrs: i18nHead.value.htmlAttrs,
+  link: i18nHead.value.link,
+  meta: [
+    ...(i18nHead.value.meta ?? []),
+    { name: 'description', content: t('meta.description') },
   ],
+  titleTemplate: (title?: string) => title ? `${title} – AI Studio Photo` : t('meta.title'),
 }))
 </script>
 

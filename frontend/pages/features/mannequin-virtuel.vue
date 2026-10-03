@@ -5,15 +5,10 @@ const { t } = useI18n()
 
 definePageMeta({ layout: 'marketing' })
 
-useHead({
-  title: 'Mannequin Virtuel – AI Studio Photo',
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => t('featurePages.mannequinVirtuel.subtitle')),
-    },
-  ],
-})
+useHead(() => ({
+  title: t('featurePages.mannequinVirtuel.title'),
+  meta: [{ name: 'description', content: t('featurePages.mannequinVirtuel.subtitle') }],
+}))
 
 const visuals = featureVisuals.mannequinVirtuel!
 

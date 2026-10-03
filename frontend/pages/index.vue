@@ -1,19 +1,16 @@
 <script setup lang="ts">
-import { siteConfig } from '~/config/site.config'
 import { saasConfig } from '~/config/saas.config'
 
 definePageMeta({
   layout: 'marketing',
 })
 
-useHead({
-  title: siteConfig.hero.title,
-  meta: [
-    { name: 'description', content: siteConfig.description },
-  ],
-})
-
 const { t } = useI18n()
+
+// No page title: app.vue falls back to the localized home title
+useHead(() => ({
+  meta: [{ name: 'description', content: t('meta.description') }],
+}))
 
 const features = computed(() => [
   {
@@ -186,7 +183,7 @@ const steps = computed(() => [
               {{ feature.description }}
             </p>
             <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-              <NuxtLink
+              <NuxtLinkLocale
                 :to="feature.href"
                 class="inline-flex items-center text-primary-500 font-semibold text-sm hover:text-primary-600"
               >
@@ -204,7 +201,7 @@ const steps = computed(() => [
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </NuxtLink>
+              </NuxtLinkLocale>
               <a
                 :href="saasConfig.signupUrl"
                 target="_blank"

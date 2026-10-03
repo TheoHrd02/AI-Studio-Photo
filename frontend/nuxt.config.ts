@@ -18,19 +18,16 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/eslint',
     '@nuxtjs/sitemap',
+    '@nuxtjs/i18n',
   ],
 
   devtools: { enabled: true },
 
   app: {
     head: {
-      htmlAttrs: { lang: 'fr' },
+      // lang, hreflang, canonical, default title/description: app.vue (per locale)
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'AI Studio Photo - Photos Produits Professionnelles par IA',
-      meta: [
-        { name: 'description', content: 'Transformez vos photos produits en visuels studio professionnels grâce à l\'IA — en 30 secondes. Sans photographe, sans studio.' },
-      ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -92,6 +89,23 @@ export default defineNuxtConfig({
     config: {
       stylistic: true,
     },
+  },
+
+  i18n: {
+    // Files: i18n/locales/*.json. FR at /, others prefixed (/en, /de, /it, /es).
+    defaultLocale: 'fr',
+    strategy: 'prefix_except_default',
+    baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://aistudiophoto.com',
+    locales: [
+      { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr.json' },
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+      { code: 'de', language: 'de-DE', name: 'Deutsch', file: 'de.json' },
+      { code: 'it', language: 'it-IT', name: 'Italiano', file: 'it.json' },
+      { code: 'es', language: 'es-ES', name: 'Español', file: 'es.json' },
+    ],
+    // No auto-redirect on browser language: avoids a cookie; hreflang lets search engines
+    // serve the right version, and the header switcher covers the rest.
+    detectBrowserLanguage: false,
   },
 
   sitemap: {

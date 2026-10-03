@@ -1,37 +1,65 @@
 <script setup lang="ts">
 /**
- * Layout partagé des pages légales.
- * Les passages entre <mark> sont des champs à compléter avant la mise en ligne.
+ * Page légale rendue depuis les traductions : legal.{page}.title / description / updatedAt / sections.
+ * Mini-format du texte des sections (pas de HTML dans les traductions) :
+ *   paragraphes séparés par une ligne vide, lignes "- " = liste,
+ *   **gras**, [à compléter] = champ surligné à remplir avant la mise en ligne.
  */
 const props = defineProps<{
-  title: string
-  description: string
-  /** Date de dernière mise à jour, ex. "3 octobre 2026" */
-  updatedAt: string
+  page: 'legalNotice' | 'privacy' | 'terms' | 'cookies'
 }>()
 
-useHead({ title: `${props.title} – AI Studio Photo` })
-useSeoMeta({ description: props.description })
+const { t, tm } = useI18n()
+
+const sectionKeys = computed(() => Object.keys(tm(`legal.${props.page}.sections`) as Record<string, unknown>))
+
+const escapeHtml = (s: string) =>
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+
+const inline = (s: string) =>
+  escapeHtml(s)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\[([^\]]+)\]/g, '<mark>[$1]</mark>')
+
+const render = (text: string) =>
+  text.split(/\n\s*\n/).map((block) => {
+    const lines = block.trim().split('\n')
+    return lines.every(l => l.startsWith('- '))
+      ? `<ul>${lines.map(l => `<li>${inline(l.slice(2))}</li>`).join('')}</ul>`
+      : `<p>${inline(lines.join(' '))}</p>`
+  }).join('')
+
+useHead(() => ({
+  title: t(`legal.${props.page}.title`),
+  meta: [{ name: 'description', content: t(`legal.${props.page}.description`) }],
+}))
 </script>
 
 <template>
   <div class="bg-white pt-32 pb-20">
     <article class="legal mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <h1 class="text-4xl font-bold tracking-tight text-gray-900">
-        {{ title }}
+        {{ $t(`legal.${page}.title`) }}
       </h1>
       <p class="mt-3 text-sm text-gray-500">
-        Dernière mise à jour : {{ updatedAt }}
+        {{ $t('legal.updatedAt') }} {{ $t(`legal.${page}.updatedAt`) }}
       </p>
       <div class="mt-10 space-y-10 text-gray-700 leading-relaxed">
-        <slot />
+        <section
+          v-for="key in sectionKeys"
+          :key="key"
+        >
+          <h2>{{ $t(`legal.${page}.sections.${key}.title`) }}</h2>
+          <!-- eslint-disable-next-line vue/no-v-html -- escaped in render() -->
+          <div v-html="render($t(`legal.${page}.sections.${key}.body`))" />
+        </section>
       </div>
     </article>
   </div>
 </template>
 
 <style>
-/* Non scopé : stylise le contenu fourni par les pages via le slot */
+/* Non scopé : le contenu des sections est injecté via v-html */
 .legal h2 {
   font-size: 1.25rem;
   font-weight: 700;
@@ -48,11 +76,6 @@ useSeoMeta({ description: props.description })
 .legal ul {
   list-style: disc;
   padding-left: 1.5rem;
-}
-
-.legal a {
-  color: var(--color-primary-600);
-  text-decoration: underline;
 }
 
 .legal mark {
