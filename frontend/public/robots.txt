@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://aistudiophoto.com/sitemap.xml
+Sitemap: https://aistudiophoto.com/sitemap_index.xml

@@ -1,0 +1,651 @@
+{
+  "cta": {
+    "primary": "Inizia gratis — senza carta",
+    "featureButtonLine1": "Inizia gratis",
+    "featureButtonLine2": "Senza carta",
+    "primaryWithCredits": "Inizia gratis — 5 crediti in regalo",
+    "clarification": "Dopo il clic: account gratuito → 5 crediti → prima creazione in 30s",
+    "login": "Hai già un account? Accedi",
+    "loginShort": "Ho già un account",
+    "pricing": "Vedi i prezzi",
+    "pricingLink": "Vedi tutti i prezzi",
+    "discover": "Scopri",
+    "orStartNow": "Oppure inizia ora →",
+    "header": "Inizia gratis — senza carta",
+    "plans": {
+      "free": {
+        "label": "Inizia gratis — senza carta",
+        "note": "Nessuna carta richiesta"
+      },
+      "pro": {
+        "label": "Avvia la prova — 7 giorni gratis",
+        "note": "Senza vincoli"
+      },
+      "enterprise": {
+        "label": "Prenota una demo",
+        "note": "Chiamata personalizzata offerta"
+      }
+    },
+    "help": {
+      "chat": "Avvia una conversazione",
+      "returnToProduct": "Inizia gratis — senza carta"
+    },
+    "finalSection": {
+      "title": "Pronto a creare i tuoi primi visual?",
+      "subtitle": "Inizia gratis e scopri la potenza dell'IA per le tue creazioni"
+    }
+  },
+  "common": {
+    "appName": "AI Studio Photo",
+    "mainFeatures": "Funzionalità principali",
+    "readyToStart": "Pronto a iniziare?",
+    "createAccountFree": "Crea il tuo account gratuitamente e ricevi 5 crediti in regalo."
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Funzionalità",
+    "pricing": "Prezzi",
+    "help": "Aiuto",
+    "blog": "Blog",
+    "affiliation": "Affiliazione",
+    "login": "Accedi",
+    "signup": "Registrati",
+    "logout": "Esci",
+    "dashboard": "Dashboard",
+    "myAccount": "Il mio account",
+    "gallery": "Galleria",
+    "launchApp": "Inizia gratis — senza carta",
+    "studioVirtuel": {
+      "label": "Studio Virtuale",
+      "description": "Inserisci i tuoi prodotti in ambientazioni degne dei migliori studi fotografici."
+    },
+    "mannequinVirtuel": {
+      "label": "Modella Virtuale",
+      "description": "Dai un volto ai tuoi visual con modelle realistiche e personalizzate."
+    },
+    "motionStudio": {
+      "label": "Motion Studio",
+      "description": "Passa dall'immagine al movimento con un clic."
+    }
+  },
+  "pricingTeaser": {
+    "title": "Inizia gratis. Cresci senza limiti.",
+    "subtitle": "Gratuito, Pro o Enterprise — scegli il piano più adatto a te."
+  },
+  "productDemo": {
+    "badge": "Demo del prodotto",
+    "title": "Guarda il prodotto in azione",
+    "subtitle": "Scopri come trasformare una foto prodotto in un visual da studio professionale in pochi secondi.",
+    "watchHint": "Clicca per avviare"
+  },
+  "productWalkthrough": {
+    "badge": "Percorso prodotto",
+    "title": "Il tuo workflow in 4 passaggi",
+    "subtitle": "Dal caricamento alla creazione finale, segui il percorso semplificato.",
+    "framing": "Anteprima del funzionamento — interfaccia definitiva in fase di sviluppo.",
+    "steps": {
+      "upload": {
+        "title": "Carica la tua foto",
+        "description": "Importa la tua foto prodotto, il ritratto o un visual grezzo. Trascina e rilascia oppure selezionalo dal tuo computer."
+      },
+      "choose": {
+        "title": "Scegli la scena",
+        "description": "Seleziona tra le nostre ambientazioni da studio o descrivi la tua idea. Template predefiniti o creazione personalizzata."
+      },
+      "generate": {
+        "title": "Genera",
+        "description": "L'IA trasforma il tuo visual in pochi secondi. Nessuna competenza richiesta."
+      },
+      "download": {
+        "title": "Scarica",
+        "description": "Ottieni la tua creazione in alta risoluzione, pronta da pubblicare sui tuoi canali."
+      }
+    },
+    "mockup": {
+      "uploadHint": "Trascina qui la tua immagine",
+      "generating": "Generazione in corso..."
+    }
+  },
+  "beforeAfter": {
+    "badge": "Anteprima illustrativa",
+    "title": "Prima → Dopo: la trasformazione con un clic",
+    "subtitle": "Una foto prodotto grezza diventa un visual da studio professionale. Ecco cosa può generare l'IA in 30 secondi.",
+    "illustrativeLabel": "Risultati generati a titolo di esempio — dimostrazione delle capacità",
+    "before": "Prima",
+    "after": "Dopo"
+  },
+  "personas": {
+    "forLabel": "Per: ",
+    "ecommerce": {
+      "label": "E-commerce"
+    },
+    "fashion": {
+      "label": "Moda"
+    },
+    "creators": {
+      "label": "Creator"
+    },
+    "default": {
+      "subtitle": "Basta shooting costosi. Trasforma qualsiasi foto prodotto in un visual da studio di alto livello — pronto da pubblicare."
+    }
+  },
+  "hero": {
+    "eyebrow": "Accesso anticipato · 5 crediti in regalo · 30 secondi",
+    "title": "Foto prodotto professionali, generate dall'IA in 30 secondi",
+    "trustChips": {
+      "speed": "Risultato in 30 secondi",
+      "free": "5 crediti in regalo — senza carta di credito",
+      "noSkills": "Nessuna competenza richiesta",
+      "cancel": "Disdici in qualsiasi momento",
+      "earlyAccess": "Accesso anticipato — unisciti alla beta"
+    }
+  },
+  "features": {
+    "badge": "Le nostre soluzioni IA",
+    "title": "Strumenti potenti per ogni esigenza",
+    "subtitle": "Studio fotografico virtuale, modelle IA, animazioni... tutto ciò che ti serve per creare contenuti professionali.",
+    "studioVirtuel": {
+      "title": "Studio Virtuale",
+      "description": "Trasforma le tue foto prodotto in visual da studio professionali. Sfondi, illuminazioni e atmosfere realistiche generati dall'IA.",
+      "stats": "10 secondi",
+      "statsLabel": "per creazione"
+    },
+    "mannequinVirtuel": {
+      "title": "Modella Virtuale",
+      "description": "Aggiungi ai tuoi prodotti modelle IA ultra-realistiche. Personalizza aspetto, posa ed espressione per massimizzare il coinvolgimento.",
+      "stats": "100% IA",
+      "statsLabel": "nessuno shooting"
+    },
+    "motionStudio": {
+      "title": "Motion Studio",
+      "description": "Trasforma le tue immagini in video dinamici. Animazioni fluide ed effetti professionali per le tue campagne e i tuoi social.",
+      "stats": "1 clic",
+      "statsLabel": "per animare"
+    }
+  },
+  "howItWorks": {
+    "badge": "Come funziona",
+    "title": "Dall'idea al risultato in 4 semplici passaggi",
+    "subtitle": "La nostra IA fa il lavoro complesso al posto tuo. Ti basta seguire questi passaggi.",
+    "steps": {
+      "upload": {
+        "title": "Carica la tua foto",
+        "description": "Importa semplicemente la tua foto prodotto, il ritratto o un visual grezzo."
+      },
+      "choose": {
+        "title": "Scegli il tuo stile",
+        "description": "Seleziona tra i nostri template o descrivi la tua idea in linguaggio naturale."
+      },
+      "generate": {
+        "title": "Genera",
+        "description": "L'IA trasforma il tuo visual in pochi secondi. Nessuna competenza richiesta."
+      },
+      "download": {
+        "title": "Scarica il risultato",
+        "description": "Ottieni la tua creazione professionale in pochi secondi, pronta all'uso."
+      }
+    }
+  },
+  "socialProof": {
+    "header": "Piattaforma",
+    "headline": "Visual prodotto con IA in 30 secondi",
+    "subline": "Accesso anticipato — costruiamo in pubblico. Unisciti ai creator che stanno testando la beta."
+  },
+  "testimonials": {
+    "badge": "Caso d'uso tipico",
+    "title": "Cosa potresti ottenere",
+    "subtitle": "Esempi di scenari in base al tuo profilo — dimostrazione delle capacità.",
+    "items": {
+      "1": {
+        "quote": "Dividere per 5 il budget fotografico. Ottenere render da agenzia in 30 secondi invece di 3 giorni.",
+        "role": "Direttrice Marketing",
+        "industry": "E-commerce",
+        "avatarLetter": "E"
+      },
+      "2": {
+        "quote": "Niente più casting né attese. Iterare sulle campagne in tempo reale con la Modella Virtuale.",
+        "role": "Fondatore",
+        "industry": "Moda e lifestyle",
+        "avatarLetter": "M"
+      },
+      "3": {
+        "quote": "Portare i visual e-commerce a un livello professionale. Aumentare le conversioni con visual coinvolgenti.",
+        "role": "Responsabile E-commerce",
+        "industry": "Beauty e retail",
+        "avatarLetter": "B"
+      }
+    }
+  },
+  "riskReversal": {
+    "noCard": "Senza carta di credito",
+    "cancelAnytime": "Disdici in qualsiasi momento",
+    "freeTrial": "Prova gratuita di 7 giorni"
+  },
+  "pricing": {
+    "pageTitle": "Prezzi",
+    "pageDescription": "Scopri le nostre offerte: Gratuito, Pro ed Enterprise. Inizia senza carta di credito.",
+    "heroTitle": "Il piano che",
+    "heroHighlight": "fa per te",
+    "heroSubtitle": "Inizia gratis. Cresci senza limiti. Disdici in qualsiasi momento.",
+    "finalCtaLine": "Accesso anticipato. Prova di 7 giorni. Nessuna carta richiesta.",
+    "monthly": "Mensile",
+    "yearly": "Annuale",
+    "annualBadge": "–20%",
+    "billingToggleAria": "Fatturazione annuale",
+    "periodPerMonth": "/ mese",
+    "billedPrefix": "Fatturato",
+    "billedSuffix": "€ / anno",
+    "savingsPrefix": "↓",
+    "savingsSuffix": "su base annua",
+    "trustStrip": "Prezzi trasparenti · Nessuna sorpresa · Senza vincoli",
+    "includedTitle": "Incluso in tutti i piani",
+    "faqTitle": "Domande frequenti",
+    "faqSubtitle": "Tutto quello che devi sapere prima di iniziare.",
+    "finalCtaEyebrow": "Pronto a partire?",
+    "finalCtaTitle": "Trasforma i tuoi visual",
+    "finalCtaTitleBreak": "da oggi.",
+    "redirectHint": "Verrai reindirizzato al tuo account.",
+    "redirectHintEnterprise": "Verrai reindirizzato per pianificare una chiamata.",
+    "plans": {
+      "free": {
+        "name": "Gratuito",
+        "tagline": "Per scoprire la potenza dell'IA generativa",
+        "bestFor": "Privati che scoprono AI Studio",
+        "features": [
+          "10 generazioni IA / mese",
+          "Studio Virtuale (accesso base)",
+          "Risoluzione standard (1024px)",
+          "Esportazione JPG / PNG",
+          "Archiviazione 30 giorni",
+          "Modella Virtuale",
+          "Motion Studio",
+          "Upscaler IA 4K"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Per creator e brand che producono su larga scala",
+        "bestFor": "Brand e creator in crescita",
+        "badge": "Il più popolare",
+        "annualSaving": "60€ risparmiati / anno",
+        "features": [
+          "500 generazioni IA / mese",
+          "Studio Virtuale completo",
+          "Modella Virtuale",
+          "Motion Studio",
+          "Upscaler IA 4K incluso",
+          "Alta risoluzione (4096px)",
+          "Esportazione in formati pro (PNG, TIFF, WEBP)",
+          "Supporto prioritario via email"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "tagline": "Per team e produzione intensiva",
+        "bestFor": "Team e workflow su larga scala",
+        "annualSaving": "240€ risparmiati / anno",
+        "features": [
+          "Generazioni illimitate",
+          "Tutti gli strumenti inclusi",
+          "Team fino a 20 utenti",
+          "Accesso API + Webhook",
+          "Risoluzione massima",
+          "White label possibile",
+          "SLA garantito 99.9%",
+          "Account manager dedicato"
+        ]
+      }
+    },
+    "perks": {
+      "secureData": "Dati protetti e conformi al GDPR",
+      "noCard": "Nessuna carta di credito per iniziare",
+      "cancelAnytime": "Disdici in qualsiasi momento",
+      "noWatermark": "Nessuna filigrana sulle esportazioni",
+      "multiDevice": "Accesso da più dispositivi",
+      "freeUpdates": "Aggiornamenti gratuiti",
+      "frenchInterface": "Interfaccia 100% in francese",
+      "securePayment": "Pagamento sicuro (Stripe)"
+    },
+    "faq": [
+      {
+        "q": "Posso cambiare piano in qualsiasi momento?",
+        "a": "Sì. Fai upgrade o downgrade dalla tua area clienti con un clic. Le modifiche hanno effetto immediato con un calcolo proporzionale."
+      },
+      {
+        "q": "La prova gratuita richiede una carta di credito?",
+        "a": "No, nessuna carta richiesta per i 7 giorni di prova. Inserisci i dati di pagamento solo se decidi di continuare."
+      },
+      {
+        "q": "Cosa succede se raggiungo il limite di generazioni?",
+        "a": "Ricevi una notifica all'80% di utilizzo. Puoi acquistare crediti aggiuntivi singolarmente oppure fare l'upgrade del piano all'istante."
+      },
+      {
+        "q": "Le immagini generate sono di mia proprietà?",
+        "a": "Sì, conservi tutti i diritti sui contenuti creati. L'uso commerciale è incluso in tutti i piani, senza restrizioni."
+      },
+      {
+        "q": "Come funziona la fatturazione annuale?",
+        "a": "La fatturazione annuale viene addebitata in un'unica soluzione all'inizio del periodo. Ottieni uno sconto del 20% rispetto alla fatturazione mensile."
+      }
+    ]
+  },
+  "footer": {
+    "description": "La piattaforma di IA generativa per creare foto da studio professionali in pochi secondi.",
+    "product": "Prodotto",
+    "resources": "Risorse",
+    "company": "Azienda",
+    "legal": "Note legali",
+    "followUs": "Seguici",
+    "allRightsReserved": "Tutti i diritti riservati",
+    "productLinks": {
+      "features": "Funzionalità",
+      "pricing": "Prezzi",
+      "api": "API",
+      "changelog": "Changelog"
+    },
+    "resourcesLinks": {
+      "helpCenter": "Centro assistenza",
+      "blog": "Blog",
+      "documentation": "Documentazione",
+      "tutorials": "Tutorial"
+    },
+    "companyLinks": {
+      "about": "Chi siamo",
+      "affiliation": "Affiliazione",
+      "careers": "Lavora con noi",
+      "contact": "Contatti"
+    },
+    "legalLinks": {
+      "terms": "Note legali",
+      "privacy": "Privacy",
+      "tos": "Termini d'uso",
+      "cookies": "Cookie"
+    }
+  },
+  "featurePageSection": {
+    "sectionConcept": "01 — Concept",
+    "sectionBenefits": "02 — Vantaggi",
+    "sectionHowToUse": "03 — Come funziona",
+    "sectionOutcomes": "04 — Cosa ottieni",
+    "outputLabel": "Risultato",
+    "stepsLabel": "semplici passaggi"
+  },
+  "featurePages": {
+    "studioVirtuel": {
+      "badge": "📸 Fotografia IA",
+      "title": "Studio Virtuale",
+      "subtitle": "Inserisci i tuoi prodotti in ambientazioni degne dei migliori studi fotografici.",
+      "conceptImageAlt": "Risultato Studio Virtuale — visual prodotto professionale",
+      "beforeImageAlt": "Foto prodotto grezza — sfondo bianco, illuminazione piatta",
+      "workflowImageAlt": "Interfaccia Studio Virtuale — workflow in 4 passaggi",
+      "whatIs": {
+        "title": "Che cos'è?",
+        "text1": "È il tuo studio fotografico… senza lo studio. Carica la tua immagine, scegli un'ambientazione — minimalista, di design, lifestyle o ispirata al tuo brand — e ottieni all'istante un render 4K pronto da pubblicare.",
+        "text2": "Basta luci, fondali bianchi e riflessi da correggere per tre ore."
+      },
+      "whyAdopt": {
+        "title": "Perché adottarlo?",
+        "benefit1": "Risparmia giorni di shooting: niente più affitto di un set né attese per un fotografo.",
+        "benefit2": "Riduci i costi di produzione: generare un'immagine da studio costa 0,08 $, contro centinaia di euro per uno scatto reale.",
+        "benefit3": "Uniforma i tuoi visual: uno stile coerente per tutto il catalogo, senza fatica."
+      },
+      "howToUse": {
+        "title": "Come si usa?",
+        "step1": "Carica la tua foto prodotto.",
+        "step2": "Scegli un'ambientazione da studio o un contesto lifestyle.",
+        "step3": "Lascia che la nostra IA bilanci luce, prospettiva e ombre.",
+        "step4": "Scarica l'immagine finale, pronta all'uso."
+      },
+      "quotes": {
+        "quote1": "Il tuo studio fotografico, ora nel cloud.",
+        "quote2": "Dal concept al render finale, in meno di un minuto.",
+        "quote3": "Immagini degne di un fotografo, senza fotografo."
+      }
+    },
+    "mannequinVirtuel": {
+      "badge": "👩‍🎨 Modellazione IA",
+      "title": "Modella Virtuale",
+      "subtitle": "Dai un volto ai tuoi visual con modelle realistiche e personalizzate.",
+      "conceptImageAlt": "Risultato Modella Virtuale — prodotto con modella IA",
+      "beforeImageAlt": "Scarpa isolata su sfondo neutro",
+      "workflowImageAlt": "Interfaccia Modella Virtuale — selezione del profilo",
+      "whatIs": {
+        "title": "Che cos'è?",
+        "text1": "È la fusione tra moda e macchina. Scegli il profilo ideale (genere, corporatura, stile, emozione) e l'IA genera una modella coerente con la tua immagine e il tuo universo di brand.",
+        "text2": "Niente più casting né ritocchi interminabili."
+      },
+      "whyAdopt": {
+        "title": "Perché adottarla?",
+        "benefit1": "Crea identificazione: un volto, una postura, un'atmosfera. I tuoi prodotti prendono vita.",
+        "benefit2": "Varia all'infinito: cambia modella, look e ambientazione in pochi clic.",
+        "benefit3": "Resta coerente: mantieni uno stile visivo uniforme in tutte le tue campagne."
+      },
+      "howToUse": {
+        "title": "Come si usa?",
+        "step1": "Scegli il tuo prodotto o la tua immagine generata.",
+        "step2": "Seleziona il tipo di modella: età, origine, posa, stile di abbigliamento.",
+        "step3": "Regola luce e posizione, lascia che l'IA armonizzi il tutto.",
+        "step4": "Esporta i tuoi render fotorealistici."
+      },
+      "quotes": {
+        "quote1": "Visual che respirano vita, senza modelli in carne e ossa.",
+        "quote2": "Di' addio ai casting, benvenuta creatività.",
+        "quote3": "La modella ideale esiste. Aspetta il tuo prompt."
+      }
+    },
+    "motionStudio": {
+      "badge": "🎥 Video IA",
+      "title": "Motion Studio",
+      "subtitle": "Passa dall'immagine al movimento con un clic.",
+      "conceptImageAlt": "Risultato Motion Studio — video prodotto animato",
+      "beforeImageAlt": "Prodotto statico — cuffie audio",
+      "workflowImageAlt": "Interfaccia Motion Studio — scelta dello stile di animazione",
+      "whatIs": {
+        "title": "Che cos'è?",
+        "text1": "È il passo successivo: dare respiro ai tuoi visual. Motion Studio converte le immagini dei tuoi prodotti in video realistici, cinematografici o pubblicitari, pronti per TikTok, Instagram o il tuo sito.",
+        "text2": "Dallo statico al dinamico, in pochi secondi."
+      },
+      "whyAdopt": {
+        "title": "Perché adottarlo?",
+        "benefit1": "Moltiplica i formati: una sola immagine diventa un video, uno spot o una story.",
+        "benefit2": "Cattura l'attenzione: i video ottengono 3× più coinvolgimento delle immagini statiche.",
+        "benefit3": "Semplifica la produzione: niente team, niente camera, solo un'idea."
+      },
+      "howToUse": {
+        "title": "Come si usa?",
+        "step1": "Importa la tua immagine o la scena creata in AI Studio.",
+        "step2": "Scegli uno stile di movimento (cinematografico, slow motion, panoramica, reveal, ecc.).",
+        "step3": "Lascia che l'IA generi una clip fluida e realistica.",
+        "step4": "Scarica in 4K, pronta per le tue campagne."
+      },
+      "quotes": {
+        "quote1": "Le tue immagini prendono vita.",
+        "quote2": "Dalla foto allo spot pubblicitario, con un clic.",
+        "quote3": "Il movimento è emozione."
+      }
+    },
+    "index": {
+      "title": "Le nostre funzionalità",
+      "subtitle": "Scopri i nostri strumenti di IA per trasformare i tuoi visual"
+    }
+  },
+  "gallery": {
+    "title": "Galleria delle creazioni",
+    "subtitle": "Scopri cosa creano i nostri utenti",
+    "videoBadge": "Video"
+  },
+  "help": {
+    "meta": {
+      "title": "Aiuto",
+      "description": "Fai le tue domande al nostro assistente IA e ottieni risposte immediate su AI Studio Photo."
+    },
+    "suggestedQuestions": {
+      "howItWorks": "Come funziona AI Studio Photo?",
+      "pricing": "Quali sono i prezzi e i piani disponibili?",
+      "studioPhoto": "Come creare una foto da studio professionale?",
+      "mannequins": "Posso aggiungere modelle virtuali alle mie foto?",
+      "animations": "Come creare animazioni e video promozionali?",
+      "formats": "Quali formati di file sono supportati?"
+    },
+    "chat": {
+      "placeholder": "Fai la tua domanda su AI Studio Photo...",
+      "emptyTitle": "Come posso aiutarti?",
+      "emptyDescription": "Fammi qualsiasi domanda su AI Studio Photo e ti risponderò all'istante a partire dalla nostra documentazione.",
+      "suggestedLabel": "Domande suggerite:",
+      "noAnswer": "Non ho trovato la risposta nella nostra documentazione. Contattaci all'indirizzo {email}.",
+      "errors": {
+        "tooLong": "La domanda è troppo lunga (max {max} caratteri)",
+        "rateLimited": "Troppe domande, riprova tra un minuto.",
+        "unavailable": "L'assistente è momentaneamente non disponibile.",
+        "generic": "L'assistente non risponde, riprova più tardi."
+      }
+    },
+    "contact": {
+      "title": "Hai bisogno di ulteriore aiuto?",
+      "subtitle": "Il nostro team è qui per supportarti. Non esitare a contattarci direttamente.",
+      "chatPrompt": "Preferisci parlare in diretta?",
+      "cards": {
+        "support": {
+          "title": "Supporto via email",
+          "description": "Risposta entro 24h nei giorni lavorativi"
+        },
+        "sales": {
+          "title": "Vendite e partnership",
+          "description": "Per aziende e rivenditori"
+        },
+        "press": {
+          "title": "Stampa e media",
+          "description": "Rapporti con la stampa e richieste media"
+        }
+      }
+    },
+    "faq": {
+      "title": "Domande frequenti",
+      "responseTime": {
+        "q": "Quali sono i tempi di risposta?",
+        "a": "Il nostro team risponde generalmente entro 24h nei giorni lavorativi. Per le domande urgenti, contattaci direttamente via email."
+      },
+      "demo": {
+        "q": "Posso ottenere una demo personalizzata?",
+        "a": "Assolutamente! Contatta il nostro team commerciale per pianificare una dimostrazione adatta alle tue esigenze."
+      },
+      "language": {
+        "q": "In quali lingue offrite supporto?",
+        "a": "Il nostro supporto è disponibile in francese e inglese, 7 giorni su 7."
+      }
+    }
+  },
+  "meta": {
+    "title": "AI Studio Photo – Foto prodotto professionali con IA",
+    "description": "Trasforma le tue foto prodotto in visual da studio professionali grazie all'IA — in 30 secondi. Senza fotografo, senza studio.",
+    "appDescription": "Piattaforma di IA generativa per creare foto da studio professionali a partire da foto prodotto."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Novità, tutorial e ispirazioni",
+    "empty": "Articoli in arrivo..."
+  },
+  "legal": {
+    "updatedAt": "Ultimo aggiornamento:",
+    "legalNotice": {
+      "title": "Note legali",
+      "description": "Informazioni legali sull'editore e sul fornitore di hosting del sito AI Studio Photo.",
+      "updatedAt": "[data]",
+      "sections": {
+        "publisher": {
+          "title": "Editore del sito",
+          "body": "Il sito aistudiophoto.com è edito da [ragione sociale, forma giuridica], con capitale sociale di [importo], iscritta con il numero [n. di iscrizione], con sede in [indirizzo].\n\n- Partita IVA intracomunitaria: [n. partita IVA]\n- Email: [email di contatto]\n- Direttore responsabile: [nome]"
+        },
+        "hosting": {
+          "title": "Hosting",
+          "body": "Il sito è ospitato da [nome del fornitore di hosting], [indirizzo], [telefono o sito web]."
+        },
+        "ip": {
+          "title": "Proprietà intellettuale",
+          "body": "Tutti i contenuti del sito (testi, immagini, video, loghi, marchi) sono di proprietà di [ragione sociale] o dei suoi partner. È vietata qualsiasi riproduzione o rappresentazione, totale o parziale, senza previa autorizzazione scritta."
+        },
+        "data": {
+          "title": "Dati personali",
+          "body": "Il trattamento dei dati personali è descritto nell'informativa sulla privacy, accessibile in fondo a ogni pagina."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Informativa sulla privacy",
+      "description": "Come AI Studio Photo raccoglie e tratta i dati personali dei visitatori del sito.",
+      "updatedAt": "[data]",
+      "sections": {
+        "controller": {
+          "title": "Titolare del trattamento",
+          "body": "[ragione sociale], [indirizzo]. Contatto per qualsiasi domanda relativa ai dati dell'utente: [email].\n\nLa presente informativa riguarda il sito vetrina aistudiophoto.com. L'utilizzo dell'applicazione AI Studio Photo è disciplinato da una propria informativa sulla privacy."
+        },
+        "data": {
+          "title": "Dati trattati su questo sito",
+          "body": "- **Domande poste all'assistente (pagina Aiuto)**: il testo della domanda viene trasmesso a OpenAI per generare la risposta. Non viene registrato da questo sito e la conservazione presso OpenAI è disattivata [verificare le condizioni OpenAI in vigore]. Si raccomanda di non inserire dati personali.\n- **Indirizzo IP**: utilizzato temporaneamente in memoria per limitare il numero di domande al minuto (prevenzione degli abusi). Non viene registrato.\n- **Log tecnici del fornitore di hosting**: [natura e durata di conservazione secondo il fornitore di hosting].\n- **Email**: in caso di contatto via email, l'indirizzo e il messaggio dell'utente sono utilizzati per rispondere e conservati per [durata].\n\nIl sito non utilizza né strumenti di misurazione dell'audience né cookie pubblicitari (cfr. la cookie policy)."
+        },
+        "legalBasis": {
+          "title": "Basi giuridiche",
+          "body": "Legittimo interesse: funzionamento e sicurezza del sito, risposta alle richieste di assistenza [da convalidare]."
+        },
+        "recipients": {
+          "title": "Destinatari e responsabili del trattamento",
+          "body": "- Hosting: [fornitore di hosting, paese]\n- Assistente: OpenAI (Stati Uniti) — [garanzie per il trasferimento: clausole contrattuali tipo / DPF]\n- Distribuzione di immagini e video: Cloudinary — [paese, garanzie]"
+        },
+        "rights": {
+          "title": "Diritti dell'utente",
+          "body": "L'utente ha diritto di accesso, rettifica, cancellazione, opposizione, limitazione e portabilità dei propri dati. Per esercitarli: [email].\n\nL'utente può inoltre proporre reclamo all'autorità di controllo competente [autorità del paese della sede o del paese di residenza dell'utente]."
+        }
+      }
+    },
+    "terms": {
+      "title": "Termini e condizioni d'uso",
+      "description": "Condizioni d'uso del sito vetrina AI Studio Photo.",
+      "updatedAt": "[data]",
+      "sections": {
+        "purpose": {
+          "title": "Oggetto",
+          "body": "Le presenti condizioni disciplinano l'utilizzo del sito aistudiophoto.com, edito da [ragione sociale] (v. note legali). L'abbonamento e l'utilizzo dell'applicazione AI Studio Photo sono disciplinati da condizioni distinte, accettate al momento della registrazione [link alle condizioni generali dell'applicazione]."
+        },
+        "access": {
+          "title": "Accesso al sito",
+          "body": "Il sito è accessibile gratuitamente. L'editore si adopera per garantirne la disponibilità, ma può interromperlo in qualsiasi momento, in particolare per manutenzione."
+        },
+        "assistant": {
+          "title": "Assistente di supporto",
+          "body": "Le risposte dell'assistente sono generate automaticamente a partire dalla documentazione del prodotto. Sono fornite a titolo indicativo e possono contenere errori; non costituiscono un impegno contrattuale."
+        },
+        "ip": {
+          "title": "Proprietà intellettuale",
+          "body": "I contenuti del sito sono protetti. È vietato qualsiasi riutilizzo senza previa autorizzazione."
+        },
+        "liability": {
+          "title": "Responsabilità e link esterni",
+          "body": "L'editore non può essere ritenuto responsabile dei contenuti dei siti di terzi a cui il sito rimanda, né dei danni derivanti da un utilizzo del sito non conforme alle presenti condizioni."
+        },
+        "law": {
+          "title": "Legge applicabile",
+          "body": "Le presenti condizioni sono soggette alla legge [paese]. [Foro competente]."
+        }
+      }
+    },
+    "cookies": {
+      "title": "Cookie policy",
+      "description": "Cookie e archiviazione locale utilizzati dal sito AI Studio Photo.",
+      "updatedAt": "[data]",
+      "sections": {
+        "used": {
+          "title": "Cookie utilizzati",
+          "body": "Questo sito non utilizza cookie di misurazione dell'audience, pubblicitari o di social network. Per questo motivo non viene mostrato alcun banner di consenso."
+        },
+        "storage": {
+          "title": "Archiviazione locale",
+          "body": "Il browser può memorizzare la preferenza di visualizzazione dell'utente (tema chiaro o scuro) nella propria archiviazione locale. Tale informazione resta sul dispositivo dell'utente e non viene trasmessa."
+        },
+        "changes": {
+          "title": "Modifiche",
+          "body": "Qualora venga aggiunto uno strumento di misurazione dell'audience o un servizio di terzi che installa cookie, la presente pagina sarà aggiornata e il consenso dell'utente sarà raccolto preventivamente ove richiesto dalla legge."
+        }
+      }
+    }
+  }
+}
