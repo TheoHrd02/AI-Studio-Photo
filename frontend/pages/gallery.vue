@@ -1,31 +1,27 @@
 <script setup lang="ts">
 import { saasConfig } from '~/config/saas.config'
+import { galleryItems, FALLBACK_IMAGE } from '~/config/visual-proof.config'
 
 definePageMeta({
   layout: 'marketing',
 })
 
-useHead({
-  title: 'Galerie - AI Studio Photo',
-})
+const { t } = useI18n()
 
-// Mélange d'images et vidéos pour la galerie
-const galleryItems = [
-  { type: 'image', src: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=800&fit=crop', alt: 'Produit 1' },
-  { type: 'video', src: 'https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4', alt: 'Vidéo produit 1' },
-  { type: 'image', src: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=800&fit=crop', alt: 'Produit 2' },
-  { type: 'video', src: 'https://res.cloudinary.com/dfk9cemb0/video/upload/v1760031099/hero-2_wx3qic.mp4', alt: 'Produit 3' },
-  { type: 'video', src: 'https://res.cloudinary.com/dfk9cemb0/video/upload/v1760031098/hero-3_cz26fe.mp4', alt: 'Vidéo produit 2' },
-  { type: 'image', src: 'https://images.unsplash.com/photo-1560343090-f0409e92791a?w=600&h=800&fit=crop', alt: 'Produit 4' },
-  { type: 'image', src: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=800&fit=crop', alt: 'Produit 5' },
-  { type: 'image', src: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=800&fit=crop', alt: 'Produit 6' },
-  { type: 'video', src: 'https://res.cloudinary.com/dfk9cemb0/video/upload/v1760031099/hero-2_wx3qic.mp4', alt: 'Vidéo produit 3' },
-  { type: 'image', src: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=800&fit=crop', alt: 'Produit 7' },
-  { type: 'image', src: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600&h=800&fit=crop', alt: 'Produit 8' },
-  { type: 'image', src: 'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=600&h=800&fit=crop', alt: 'Produit 9' },
-  { type: 'video', src: 'https://res.cloudinary.com/dfk9cemb0/video/upload/v1760031098/hero-4_upmywa.mp4', alt: 'Produit 10' },
-  { type: 'video', src: 'https://res.cloudinary.com/dfk9cemb0/video/upload/v1760031099/hero-2_wx3qic.mp4', alt: 'Produit 11' },
-]
+usePageSeo(() => ({ title: t('gallery.title'), description: t('gallery.subtitle') }))
+
+const videoLoadFailed = ref<Set<number>>(new Set())
+
+function onImageError(e: Event) {
+  const el = e.target as HTMLImageElement
+  if (el && el.src !== FALLBACK_IMAGE) {
+    el.src = FALLBACK_IMAGE
+  }
+}
+
+function onVideoError(index: number) {
+  videoLoadFailed.value = new Set([...videoLoadFailed.value, index])
+}
 </script>
 
 <template>
@@ -34,10 +30,10 @@ const galleryItems = [
       <!-- Hero Title -->
       <div class="mx-auto max-w-4xl text-center mb-16">
         <h1 class="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
-          Retrouvez des exemples de nos photos
+          {{ $t('gallery.title') }}
         </h1>
         <p class="mt-6 text-xl text-gray-600">
-          Découvrez la qualité de nos créations IA
+          {{ $t('gallery.subtitle') }}
         </p>
       </div>
 
@@ -53,13 +49,14 @@ const galleryItems = [
           ]"
         >
           <div class="gallery-item-inner">
-            <!-- Image -->
-            <template v-if="item.type === 'image'">
+            <!-- Image (ou fallback si vidéo en erreur) -->
+            <template v-if="item.type === 'image' || videoLoadFailed.has(index)">
               <img
-                :src="item.src"
+                :src="item.type === 'image' ? item.src : FALLBACK_IMAGE"
                 :alt="item.alt"
                 class="gallery-media"
                 loading="lazy"
+                @error="onImageError"
               >
             </template>
 
@@ -67,12 +64,12 @@ const galleryItems = [
             <template v-else>
               <video
                 :src="item.src"
-                :alt="item.alt"
                 class="gallery-media"
                 autoplay
                 loop
                 muted
                 playsinline
+                @error="() => onVideoError(index)"
               />
             </template>
 
@@ -93,7 +90,7 @@ const galleryItems = [
                   >
                     <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
                   </svg>
-                  Vidéo
+                  {{ $t('gallery.videoBadge') }}
                 </span>
               </div>
             </div>
@@ -103,14 +100,13 @@ const galleryItems = [
 
       <!-- CTA -->
       <div class="mt-20 text-center">
-        <a
+        <CommonCTAButton
           :href="saasConfig.signupUrl"
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center rounded-lg bg-primary-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-primary-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 ring-offset-2"
+          variant="primary"
+          size="lg"
         >
           {{ $t('cta.primary') }}
-        </a>
+        </CommonCTAButton>
         <p class="mt-3 text-sm text-gray-500">
           {{ $t('cta.clarification') }}
         </p>

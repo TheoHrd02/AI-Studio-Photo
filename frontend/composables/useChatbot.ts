@@ -3,9 +3,10 @@
  * @module useChatbot
  */
 
+import { MAX_CHAT_QUESTION_LENGTH } from '~/config/app-limits'
+
 export const useChatbot = () => {
-  const config = useRuntimeConfig()
-  const apiBase = config.public.apiBase || 'http://localhost:8080/api/v1'
+  const { t } = useI18n()
 
   /**
    * État du chatbot
@@ -20,29 +21,35 @@ export const useChatbot = () => {
    */
   const ask = async (question: string): Promise<string> => {
     if (!question.trim()) {
-      throw new Error('La question ne peut pas être vide')
+      throw new Error('Empty question')
     }
 
-    if (question.length > 1000) {
-      throw new Error('La question est trop longue (max 1000 caractères)')
+    if (question.length > MAX_CHAT_QUESTION_LENGTH) {
+      error.value = t('help.chat.errors.tooLong', { max: MAX_CHAT_QUESTION_LENGTH })
+      throw new Error(error.value)
     }
 
     isLoading.value = true
     error.value = null
 
     try {
-      const response = await $fetch<{ answer: string }>(`${apiBase}/ask`, {
+      // Same-origin Nuxt server route (server/api/ask.post.ts)
+      const response = await $fetch<{ answer: string }>('/api/ask', {
         method: 'POST',
         body: { q: question },
+        timeout: 30_000,
       })
 
-      return response.answer
+      return response.answer || t('help.chat.noAnswer', { email: 'support@aistudiophoto.com' })
     }
     catch (err: unknown) {
-      const errObj = err as { data?: { error?: string }, message?: string }
-      const errorMessage = errObj?.data?.error || errObj?.message || 'Une erreur est survenue'
-      error.value = errorMessage
-      throw new Error(errorMessage)
+      const status = (err as { statusCode?: number }).statusCode
+      error.value = status === 429
+        ? t('help.chat.errors.rateLimited')
+        : status === 503
+          ? t('help.chat.errors.unavailable')
+          : t('help.chat.errors.generic')
+      throw new Error(error.value, { cause: err })
     }
     finally {
       isLoading.value = false

@@ -3,12 +3,6 @@
 *.env
 !.env.example
 
-# Go
-backend/tmp/
-backend/*.exe
-backend/*.test
-backend/*.out
-
 # Node
 frontend/node_modules/
 # Lockfiles parasites (pnpm only — garder pnpm-lock.yaml)
@@ -32,3 +26,6 @@ Thumbs.db
 
 # Docker
 docker/postgres/data/
+
+# Brag/launch video output (local)
+brag-output/

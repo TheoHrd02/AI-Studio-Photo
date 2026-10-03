@@ -1,19 +1,14 @@
 <script setup lang="ts">
-import { siteConfig } from '~/config/site.config'
 import { saasConfig } from '~/config/saas.config'
 
 definePageMeta({
   layout: 'marketing',
 })
 
-useHead({
-  title: siteConfig.hero.title,
-  meta: [
-    { name: 'description', content: siteConfig.description },
-  ],
-})
-
 const { t } = useI18n()
+
+// No page title: app.vue falls back to the localized home title
+usePageSeo(() => ({ description: t('meta.description') }))
 
 const features = computed(() => [
   {
@@ -135,27 +130,15 @@ const steps = computed(() => [
         </div>
 
         <div class="text-center">
-          <a
+          <CommonCTAButton
             :href="saasConfig.signupUrl"
-            target="_blank"
-            rel="noopener"
-            class="inline-flex items-center px-6 py-3 bg-primary-500 text-white rounded-xl font-semibold hover:bg-primary-600 transition-all shadow-lg hover:scale-105"
+            variant="primary"
+            size="md"
+            rounded="xl"
+            show-arrow
           >
             {{ $t('cta.primary') }}
-            <svg
-              class="w-4 h-4 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </a>
+          </CommonCTAButton>
           <p class="mt-3 text-sm text-gray-500">
             {{ $t('cta.clarification') }}
           </p>
@@ -198,7 +181,7 @@ const steps = computed(() => [
               {{ feature.description }}
             </p>
             <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-              <NuxtLink
+              <NuxtLinkLocale
                 :to="feature.href"
                 class="inline-flex items-center text-primary-500 font-semibold text-sm hover:text-primary-600"
               >
@@ -216,7 +199,7 @@ const steps = computed(() => [
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </NuxtLink>
+              </NuxtLinkLocale>
               <a
                 :href="saasConfig.signupUrl"
                 target="_blank"
@@ -249,36 +232,25 @@ const steps = computed(() => [
             {{ $t('cta.finalSection.subtitle') }}
           </p>
           <div class="mt-8 flex flex-col items-center gap-3">
-            <a
+            <CommonCTAButton
               :href="saasConfig.signupUrl"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-500 rounded-xl font-bold hover:bg-gray-50 transition-all shadow-lg hover:scale-105"
+              variant="primary-inverted"
+              size="lg"
+              rounded="xl"
+              show-arrow
             >
               {{ $t('cta.primary') }}
-              <svg
-                class="w-5 h-5 ml-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </a>
+            </CommonCTAButton>
             <p class="text-sm text-white/80">
               {{ $t('cta.clarification') }}
             </p>
-            <NuxtLink
+            <CommonCTAButton
               to="/pricing"
-              class="text-xs text-white/60 hover:text-white/90 transition-colors"
+              variant="ghost-light"
+              size="xs"
             >
               {{ $t('cta.pricing') }}
-            </NuxtLink>
+            </CommonCTAButton>
           </div>
           <CommonRiskReversalChips
             variant="light"

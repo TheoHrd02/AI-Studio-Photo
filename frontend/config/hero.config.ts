@@ -2,6 +2,11 @@
  * Configuration des vidéos du hero carousel.
  *
  * Performance notes:
+ */
+
+import { VIDEO_ROTATION_INTERVAL_MS } from '~/config/app-limits'
+
+/**
  * - Format: MP4 (H.264) — maximum compatibility
  * - Résolution: 1920×1080 max (enforced via Cloudinary c_limit)
  * - Taille cible: < 3 MB / vidéo (q_auto:good réduit de ~40–60%)
@@ -11,7 +16,6 @@
  * On first request Cloudinary transcodes on-the-fly then caches on CDN.
  * Warm up all URLs in production before launch to avoid the first-hit penalty.
  */
-
 export interface HeroVideoConfig {
   url: string
   alt?: string
@@ -31,7 +35,7 @@ const RAW_VIDEOS = [
   'https://res.cloudinary.com/dfk9cemb0/video/upload/v1760031098/hero-3_cz26fe.mp4',
   'https://res.cloudinary.com/dfk9cemb0/video/upload/v1760031098/hero-4_upmywa.mp4',
   'https://res.cloudinary.com/dfk9cemb0/video/upload/v1760031099/hero-5_jbzkkb.mp4',
-]
+] as const
 
 export const heroVideos: HeroVideoConfig[] = [
   { url: opt(RAW_VIDEOS[0]), alt: 'Démonstration IA génération photo 1' },
@@ -40,8 +44,8 @@ export const heroVideos: HeroVideoConfig[] = [
   { url: opt(RAW_VIDEOS[3]), alt: 'Démonstration IA génération photo 4' },
 ]
 
-/** URL of the first video — exported for SSR preload hint in HeroSection */
-export const firstVideoUrl = heroVideos[0].url
+/** URL of the first video — reused as the product demo video */
+export const firstVideoUrl = opt(RAW_VIDEOS[0])
 
-/** Rotation interval in ms */
-export const videoRotationInterval = 6000
+/** Rotation interval in ms — from app-limits */
+export const videoRotationInterval = VIDEO_ROTATION_INTERVAL_MS

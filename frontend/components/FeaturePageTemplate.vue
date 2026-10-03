@@ -12,8 +12,6 @@ defineProps<{
   badge: string
   title: string
   subtitle: string
-  /** @deprecated Use cta.primary from i18n — kept for prop compatibility */
-  ctaLabel?: string
   // Section 01 — Concept
   whatIsTitle: string
   whatIsText1: string
@@ -112,39 +110,29 @@ const trustChips = computed(() => [
 
           <!-- CTAs -->
           <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:items-center">
-            <a
+            <CommonCTAButton
               :href="saasConfig.signupUrl"
-              target="_blank"
-              rel="noopener"
-              class="group inline-flex items-center gap-3 rounded-xl bg-primary-500 px-6 py-3.5 shadow-lg shadow-primary-500/25 transition-all hover:bg-primary-600 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary-500/30 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+              variant="primary"
+              size="md"
+              rounded="xl"
+              show-arrow
+              class="group gap-3 px-6 py-3.5 shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30"
             >
               <span class="flex flex-col items-start text-left">
                 <span class="whitespace-nowrap text-base font-bold leading-tight text-white sm:text-lg">{{ $t('cta.featureButtonLine1') }}</span>
                 <span class="mt-0.5 whitespace-nowrap text-xs font-medium leading-tight text-white/90 sm:text-sm">{{ $t('cta.featureButtonLine2') }}</span>
               </span>
-              <svg
-                class="h-4 w-4 flex-shrink-0 text-white/90 transition-transform group-hover:translate-x-0.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2.5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </a>
+            </CommonCTAButton>
             <p class="text-sm text-gray-500">
               {{ $t('cta.clarification') }}
             </p>
-            <NuxtLink
+            <CommonCTAButton
               to="/pricing"
-              class="text-xs font-medium text-gray-400 hover:text-primary-600 transition-colors"
+              variant="ghost"
+              size="xs"
             >
               {{ $t('cta.pricing') }}
-            </NuxtLink>
+            </CommonCTAButton>
             <CommonRiskReversalChips class="mt-4" />
           </div>
 
@@ -182,11 +170,12 @@ const trustChips = computed(() => [
             <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               {{ whatIsTitle }}
             </h2>
-            <!-- eslint-disable-next-line vue/no-v-html -->
+            <!-- eslint-disable vue/no-v-html -- trusted i18n string -->
             <p
               class="mt-5 text-lg leading-relaxed text-gray-600"
               v-html="whatIsText1"
             />
+            <!-- eslint-enable vue/no-v-html -->
             <p
               v-if="whatIsText2"
               class="mt-4 text-base italic leading-relaxed text-gray-400"
@@ -467,39 +456,29 @@ const trustChips = computed(() => [
             </p>
 
             <div class="mt-10 flex flex-col items-center gap-3">
-              <a
+              <CommonCTAButton
                 :href="saasConfig.signupUrl"
-                target="_blank"
-                rel="noopener"
-                class="group inline-flex items-center gap-3 rounded-xl bg-white px-6 py-3.5 shadow-lg transition-all hover:bg-primary-50 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
+                variant="primary-inverted"
+                size="md"
+                rounded="xl"
+                show-arrow
+                class="group gap-3 px-6 py-3.5"
               >
                 <span class="flex flex-col items-start text-left">
                   <span class="whitespace-nowrap text-base font-bold leading-tight text-primary-600 sm:text-lg">{{ $t('cta.featureButtonLine1') }}</span>
                   <span class="mt-0.5 whitespace-nowrap text-xs font-medium leading-tight text-primary-600/80 sm:text-sm">{{ $t('cta.featureButtonLine2') }}</span>
                 </span>
-                <svg
-                  class="h-4 w-4 flex-shrink-0 text-primary-600/80 transition-transform group-hover:translate-x-0.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </a>
+              </CommonCTAButton>
               <p class="text-sm text-primary-100">
                 {{ $t('cta.clarification') }}
               </p>
-              <NuxtLink
+              <CommonCTAButton
                 to="/pricing"
-                class="text-xs font-medium text-white/60 hover:text-white/90 transition-colors"
+                variant="ghost-light"
+                size="xs"
               >
                 {{ finalCtaBtnSecondary }}
-              </NuxtLink>
+              </CommonCTAButton>
             </div>
             <CommonRiskReversalChips
               variant="light"

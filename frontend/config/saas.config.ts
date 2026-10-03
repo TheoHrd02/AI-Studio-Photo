@@ -18,9 +18,6 @@ export const saasConfig = {
   /** Sends existing users to the login page */
   loginUrl: `${SAAS_BASE_URL}/login`,
 
-  /** Sends authenticated users to their main dashboard */
-  dashboardUrl: `${SAAS_BASE_URL}/dashboard`,
-
   /** Enterprise: calendar booking or contact form (Calendly, HubSpot, etc.) */
   enterpriseContactUrl: 'https://calendly.com/aistudiophoto/enterprise',
 } as const

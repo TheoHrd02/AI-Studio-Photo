@@ -9,14 +9,47 @@ const { t } = useI18n()
 const pageTitle = computed(() => t('pricing.pageTitle'))
 const pageDescription = computed(() => t('pricing.pageDescription'))
 
-useHead({
-  title: pageTitle,
-  meta: [
+const config = useRuntimeConfig().public
+const siteUrl = config.siteUrl || 'https://aistudiophoto.com'
+const localePath = useLocalePath()
+
+const pricingSchema = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  'name': 'AI Studio Photo',
+  'description': pageDescription.value,
+  'url': `${siteUrl}${localePath('/pricing')}`,
+  'offers': [
     {
-      name: 'description',
-      content: pageDescription,
+      '@type': 'Offer',
+      'name': t('pricing.plans.free.name'),
+      'price': '0',
+      'priceCurrency': 'EUR',
+    },
+    {
+      '@type': 'Offer',
+      'name': t('pricing.plans.pro.name'),
+      'price': '29',
+      'priceCurrency': 'EUR',
+    },
+    {
+      '@type': 'Offer',
+      'name': t('pricing.plans.enterprise.name'),
+      'price': '99',
+      'priceCurrency': 'EUR',
     },
   ],
+}))
+
+usePageSeo(() => ({ title: pageTitle.value, description: pageDescription.value }))
+
+useHead({
+  script: computed(() => [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(pricingSchema.value),
+    },
+  ]),
 })
 
 const isAnnual = ref(false)
@@ -99,7 +132,7 @@ const perkKeys = [
   'securePayment',
 ] as const
 
-const perkIcons: Record<string, string> = {
+const perkIcons: Record<(typeof perkKeys)[number], string> = {
   secureData: 'heroicons:shield-check',
   noCard: 'heroicons:check-circle',
   cancelAnytime: 'heroicons:x-circle',
@@ -495,41 +528,30 @@ const faq = computed(() =>
           </p>
 
           <div class="mt-8 flex flex-col items-center gap-3">
-            <a
+            <CommonCTAButton
               :href="saasConfig.signupUrl"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-primary-600 shadow-lg transition-all hover:bg-primary-50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
+              variant="primary-inverted"
+              size="sm"
+              rounded="xl"
+              show-arrow
+              class="px-7 py-3.5"
             >
               {{ $t('cta.primary') }}
-              <svg
-                class="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2.5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </a>
+            </CommonCTAButton>
             <p class="text-sm text-primary-100">
               {{ $t('cta.clarification') }}
             </p>
             <p class="text-xs text-primary-200/80">
               {{ $t('pricing.redirectHint') }}
             </p>
-            <a
+            <CommonCTAButton
               :href="saasConfig.loginUrl"
-              target="_blank"
-              rel="noopener"
-              class="text-xs font-medium text-primary-200/80 hover:text-white transition-colors"
+              variant="ghost-light"
+              size="xs"
+              class="text-primary-200/80 hover:text-white"
             >
               {{ $t('cta.loginShort') }} →
-            </a>
+            </CommonCTAButton>
           </div>
           <CommonRiskReversalChips
             variant="light"

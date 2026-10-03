@@ -1,5 +1,5 @@
 /**
- * Visual proof configuration — single source of truth for before/after and feature screenshots.
+ * Visual proof configuration — single source of truth for before/after, feature screenshots, and gallery.
  *
  * PRE-LAUNCH: Current values use Unsplash demo images to illustrate the transformation.
  * All visuals are framed as "Illustrative preview" / "capability demonstration" in the UI.
@@ -8,9 +8,14 @@
  */
 
 const UNSPLASH_BASE = 'https://images.unsplash.com'
+const PEXELS_VIDEO = 'https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4'
+const CLOUDINARY_BASE = 'https://res.cloudinary.com/dfk9cemb0/video/upload'
 
 const img = (id: string, w = 800, h = 600) =>
   `${UNSPLASH_BASE}/photo-${id}?w=${w}&h=${h}&fit=crop`
+
+/** Fallback when asset fails to load — neutral placeholder */
+export const FALLBACK_IMAGE = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800"%3E%3Crect fill="%23f3f4f6" width="600" height="800"/%3E%3Ctext fill="%239ca3af" font-family="sans-serif" font-size="24" x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle"%3EImage%3C/text%3E%3C/svg%3E'
 
 // ─── Before/After Section (Homepage) ───────────────────────────────────────
 
@@ -91,3 +96,29 @@ export const featureVisuals: Record<string, FeatureVisuals> = {
     before: img('1505740420928-5e560c06d30e'),
   },
 }
+
+// ─── Gallery (Proof page) ───────────────────────────────────────────────────
+// Mix of images and videos — config-driven, no inline URLs in gallery.vue
+
+export interface GalleryItem {
+  type: 'image' | 'video'
+  src: string
+  alt: string
+}
+
+export const galleryItems: GalleryItem[] = [
+  { type: 'image', src: img('1523275335684-37898b6baf30', 600, 800), alt: 'Produit 1' },
+  { type: 'video', src: PEXELS_VIDEO, alt: 'Vidéo produit 1' },
+  { type: 'image', src: img('1505740420928-5e560c06d30e', 600, 800), alt: 'Produit 2' },
+  { type: 'video', src: `${CLOUDINARY_BASE}/v1760031099/hero-2_wx3qic.mp4`, alt: 'Produit 3' },
+  { type: 'video', src: `${CLOUDINARY_BASE}/v1760031098/hero-3_cz26fe.mp4`, alt: 'Vidéo produit 2' },
+  { type: 'image', src: img('1560343090-f0409e92791a', 600, 800), alt: 'Produit 4' },
+  { type: 'image', src: img('1542291026-7eec264c27ff', 600, 800), alt: 'Produit 5' },
+  { type: 'image', src: img('1549298916-b41d501d3772', 600, 800), alt: 'Produit 6' },
+  { type: 'video', src: `${CLOUDINARY_BASE}/v1760031099/hero-2_wx3qic.mp4`, alt: 'Vidéo produit 3' },
+  { type: 'image', src: img('1595950653106-6c9ebd614d3a', 600, 800), alt: 'Produit 7' },
+  { type: 'image', src: img('1460353581641-37baddab0fa2', 600, 800), alt: 'Produit 8' },
+  { type: 'image', src: img('1511556532299-8f662fc26c06', 600, 800), alt: 'Produit 9' },
+  { type: 'video', src: `${CLOUDINARY_BASE}/v1760031098/hero-4_upmywa.mp4`, alt: 'Produit 10' },
+  { type: 'video', src: `${CLOUDINARY_BASE}/v1760031099/hero-2_wx3qic.mp4`, alt: 'Produit 11' },
+]

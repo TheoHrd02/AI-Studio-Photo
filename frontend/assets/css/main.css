@@ -10,6 +10,9 @@
  * Surface bg:     #eff0f0
  */
 @theme {
+  /* Self-hosted at build by @nuxt/fonts (bundled with Nuxt UI) — no request to Google */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
   /* Primary brand color scale */
   --color-primary-50:  #f5f3ff;
   --color-primary-100: #ede9fe;

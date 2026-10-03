@@ -1,42 +1,31 @@
 <script setup lang="ts">
+import { siteConfig } from '~/config/site.config'
 import { saasConfig } from '~/config/saas.config'
 
 const { t } = useI18n()
-
 const isMenuOpen = ref(false)
 const openDropdown = ref<string | null>(null)
 
-const navigation = computed(() => [
-  {
-    label: t('nav.features'),
-    children: [
-      {
-        label: t('nav.studioVirtuel.label'),
-        description: t('nav.studioVirtuel.description'),
-        href: '/features/studio-virtuel',
-        icon: 'heroicons:camera',
-      },
-      {
-        label: t('nav.mannequinVirtuel.label'),
-        description: t('nav.mannequinVirtuel.description'),
-        href: '/features/mannequin-virtuel',
-        icon: 'heroicons:user-circle',
-      },
-      {
-        label: t('nav.motionStudio.label'),
-        description: t('nav.motionStudio.description'),
-        href: '/features/motion-studio',
-        icon: 'heroicons:play-circle',
-      },
-    ],
-  },
-  { label: t('nav.gallery'), href: '/gallery' },
-  { label: t('nav.pricing'), href: '/pricing' },
-  { label: t('nav.help'), href: '/help' },
-])
+const navigation = computed(() =>
+  siteConfig.navigation.map((item) => {
+    if (item.children) {
+      return {
+        id: item.id,
+        label: t(`nav.${item.id}`),
+        children: item.children.map(child => ({
+          label: t(`nav.${child.id}.label`),
+          description: t(`nav.${child.id}.description`),
+          href: child.href,
+          icon: child.icon,
+        })),
+      }
+    }
+    return { id: item.id, label: t(`nav.${item.id}`), href: item.href }
+  }),
+)
 
-const showDropdown = (label: string) => {
-  openDropdown.value = label
+const showDropdown = (id: string) => {
+  openDropdown.value = id
 }
 
 const hideDropdown = () => {
@@ -50,7 +39,7 @@ const hideDropdown = () => {
       <div class="mx-auto max-w-6xl rounded-2xl border border-gray-200 bg-white/95 shadow-lg backdrop-blur-sm">
         <div class="flex h-16 items-center justify-between px-6">
           <!-- Logo -->
-          <NuxtLink
+          <NuxtLinkLocale
             to="/"
             class="flex items-center gap-2.5"
           >
@@ -70,19 +59,19 @@ const hideDropdown = () => {
               </svg>
             </div>
             <span class="text-base font-bold text-gray-900">{{ $t('common.appName') }}</span>
-          </NuxtLink>
+          </NuxtLinkLocale>
 
           <!-- Desktop Navigation -->
           <nav class="hidden items-center gap-7 md:flex">
             <template
               v-for="item in navigation"
-              :key="item.label"
+              :key="item.id"
             >
               <!-- Dropdown pour Fonctionnalités -->
               <div
                 v-if="item.children"
                 class="relative"
-                @mouseenter="showDropdown(item.label)"
+                @mouseenter="showDropdown(item.id)"
                 @mouseleave="hideDropdown"
               >
                 <button class="group flex items-center gap-1 text-[13px] font-medium text-gray-600 transition-colors hover:text-gray-900 cursor-pointer">
@@ -112,10 +101,10 @@ const hideDropdown = () => {
                   leave-to-class="opacity-0 translate-y-1"
                 >
                   <div
-                    v-show="openDropdown === item.label"
+                    v-show="openDropdown === item.id"
                     class="absolute left-0 top-full mt-2 w-80 p-2 bg-white rounded-lg shadow-xl border border-gray-100 z-50"
                   >
-                    <NuxtLink
+                    <NuxtLinkLocale
                       v-for="child in item.children"
                       :key="child.href"
                       :to="child.href"
@@ -128,35 +117,39 @@ const hideDropdown = () => {
                         />
                       </div>
                       <div class="flex-1">
-                        <p class="text-sm font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">{{ child.label }}</p>
-                        <p class="text-xs text-gray-500 mt-0.5">{{ child.description }}</p>
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">
+                          {{ child.label }}
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          {{ child.description }}
+                        </p>
                       </div>
-                    </NuxtLink>
+                    </NuxtLinkLocale>
                   </div>
                 </Transition>
               </div>
 
               <!-- Liens normaux -->
-              <NuxtLink
+              <NuxtLinkLocale
                 v-else
                 :to="item.href"
                 class="text-[13px] font-medium text-gray-600 transition-colors hover:text-gray-900"
               >
                 {{ item.label }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </template>
           </nav>
 
           <!-- CTA Button -->
-          <div class="hidden items-center gap-4 md:flex">
-            <a
+          <div class="hidden items-center gap-2 md:flex">
+            <CommonLanguageSelect />
+            <CommonCTAButton
               :href="saasConfig.signupUrl"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center rounded-lg bg-primary-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+              variant="primary"
+              size="sm"
             >
               {{ $t('cta.header') }}
-            </a>
+            </CommonCTAButton>
           </div>
 
           <!-- Mobile Menu Button -->
@@ -181,16 +174,6 @@ const hideDropdown = () => {
           </button>
         </div>
       </div>
-
-      <!-- Free Gems Badge - Positionné sous le header blanc, aligné à droite -->
-      <!-- <div class="absolute right-6 top-full mt-2 hidden md:block">
-        <div class="flex items-center gap-2 rounded-lg bg-gray-900 px-3.5 py-1.5 shadow-lg transition-all hover:bg-gray-800 cursor-pointer">
-          <svg class="h-3.5 w-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          <span class="text-xs font-semibold text-white">Obtiens 5 crédits gratuits</span>
-        </div>
-      </div> -->
     </div>
 
     <!-- Mobile Menu -->
@@ -202,7 +185,7 @@ const hideDropdown = () => {
         <nav class="container mx-auto flex flex-col gap-2 px-4 py-4">
           <template
             v-for="item in navigation"
-            :key="item.label"
+            :key="item.id"
           >
             <!-- Dropdown mobile pour Fonctionnalités -->
             <div
@@ -212,7 +195,7 @@ const hideDropdown = () => {
               <p class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase">
                 {{ item.label }}
               </p>
-              <NuxtLink
+              <NuxtLinkLocale
                 v-for="child in item.children"
                 :key="child.href"
                 :to="child.href"
@@ -224,29 +207,31 @@ const hideDropdown = () => {
                   class="h-4 w-4"
                 />
                 {{ child.label }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </div>
 
             <!-- Liens normaux mobile -->
-            <NuxtLink
+            <NuxtLinkLocale
               v-else
               :to="item.href"
               class="rounded-lg px-4 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900"
               @click="isMenuOpen = false"
             >
               {{ item.label }}
-            </NuxtLink>
+            </NuxtLinkLocale>
           </template>
 
-          <a
+          <CommonLanguageSelect class="mt-2 self-start px-2" />
+
+          <CommonCTAButton
             :href="saasConfig.signupUrl"
-            target="_blank"
-            rel="noopener"
-            class="mt-4 inline-flex items-center justify-center rounded-lg bg-primary-500 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+            variant="primary"
+            size="md"
+            class="mt-4 w-full justify-center"
             @click="isMenuOpen = false"
           >
             {{ $t('cta.header') }}
-          </a>
+          </CommonCTAButton>
         </nav>
       </div>
     </ClientOnly>

@@ -23,7 +23,7 @@ export function useReveal(threshold = 0.12) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           revealed.value = true
           observer.unobserve(entry.target)
         }

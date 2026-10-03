@@ -5,7 +5,7 @@ const { t } = useI18n()
 
 definePageMeta({ layout: 'marketing' })
 
-useHead({ title: 'Motion Studio – AI Studio Photo' })
+usePageSeo(() => ({ title: t('featurePages.motionStudio.title'), description: t('featurePages.motionStudio.subtitle') }))
 
 const visuals = featureVisuals.motionStudio!
 
@@ -35,7 +35,6 @@ const quotes = computed(() => [
     :badge="$t('featurePages.motionStudio.badge')"
     :title="$t('featurePages.motionStudio.title')"
     :subtitle="$t('featurePages.motionStudio.subtitle')"
-    :cta-label="$t('cta.primary')"
     :what-is-title="$t('featurePages.motionStudio.whatIs.title')"
     :what-is-text1="$t('featurePages.motionStudio.whatIs.text1')"
     :what-is-text2="$t('featurePages.motionStudio.whatIs.text2')"

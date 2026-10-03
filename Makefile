@@ -1,26 +1,25 @@
 # Makefile — AI Studio Photo
 # Usage: make <target>
 
-.PHONY: fmt-go lint-go lint-frontend typecheck-frontend
+.PHONY: dev lint typecheck check prod prod-up
 
-# ─── Backend Go ─────────────────────────────────────────────────────────────
+dev:
+	cd frontend && pnpm dev
 
-## Format Go code (gofmt)
-fmt-go:
-	cd backend && gofmt -w .
-
-## Lint Go code (golangci-lint). Requires: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-lint-go:
-	cd backend && go run github.com/golangci/golangci-lint/cmd/golangci-lint@latest run ./...
-
-## Run go vet
-vet-go:
-	cd backend && go vet ./...
-
-# ─── Frontend ────────────────────────────────────────────────────────────────
-
-lint-frontend:
+lint:
 	cd frontend && pnpm lint
 
-typecheck-frontend:
+typecheck:
 	cd frontend && pnpm typecheck
+
+## Run all checks (lint + typecheck + build). Use before merge.
+check:
+	cd frontend && pnpm check
+
+## Build production image
+prod:
+	docker compose -f docker-compose.prod.yml build
+
+## Build and run production stack. Requires .env (copy from .env.example)
+prod-up:
+	docker compose -f docker-compose.prod.yml up -d --build
