@@ -8,14 +8,14 @@ Nuxt 4 en SSR, 5 langues, chatbot de support, déployé en Docker derrière Cadd
 - **Nuxt 4** (SSR) + Vue 3, **Tailwind CSS 4**, **Nuxt UI 4** (icônes, polices auto-hébergées)
 - **@nuxtjs/i18n** : `fr` (défaut, à la racine), `en`, `de`, `it`, `es` (préfixes `/en`, `/de`…)
 - **@nuxtjs/sitemap** : un sitemap par langue avec alternates hreflang (`/sitemap_index.xml`)
-- **Chatbot** : route serveur Nuxt `/api/ask` → OpenAI Responses API + `file_search` (vector store)
+- **Chatbot** : route serveur Nuxt `/api/ask` → Claude Haiku (SDK Anthropic), documentation dans `frontend/server/assets/support-docs.md`
 - **pnpm** uniquement (version fixée par `packageManager`), Node ≥ 20 (24 en CI/Docker)
 
 ## Démarrage
 
 ```bash
 cd frontend
-cp .env.example .env   # clés OpenAI optionnelles en dev (sans elles, le chatbot répond 503)
+cp .env.example .env   # clé Anthropic optionnelle en dev (sans elle, le chatbot répond 503)
 pnpm install
 pnpm dev               # http://localhost:3000
 ```
@@ -32,7 +32,8 @@ Avant de pousser : `pnpm check` (lint + typecheck + build), aussi lancé par la 
 | `components/common/` | `CTAButton`, `LanguageSelect`, `LegalPage`… |
 | `config/` | Navigation/footer (`site.config`), URLs du SaaS (`saas.config`), médias (`hero`, `visual-proof`), limites (`app-limits`) |
 | `i18n/locales/*.json` | Tous les textes, dans les 5 langues (même structure de clés) |
-| `server/api/ask.post.ts` | Chatbot : validation, limites (15/min/IP + plafond journalier), appel OpenAI |
+| `server/api/ask.post.ts` | Chatbot : validation, limites (15/min/IP + plafond journalier), appel Claude |
+| `server/assets/support-docs.md` | Base de connaissances du chatbot (envoyée à Claude à chaque question) |
 | `server/plugins/csp.ts` | Content-Security-Policy avec nonce par requête |
 | `composables/usePageSeo.ts` | Titre, description, Open Graph/Twitter d'une page |
 | `app.vue` | `lang`, hreflang, canonical, `og:*` globaux, JSON-LD |
@@ -49,10 +50,11 @@ Avant de pousser : `pnpm check` (lint + typecheck + build), aussi lancé par la 
 
 ## Chatbot
 
-Variables serveur (voir `.env.example`) : `NUXT_OPENAI_API_KEY`, `NUXT_OPENAI_VECTOR_STORE_ID`,
-optionnelles `NUXT_OPENAI_MODEL` (défaut `gpt-4.1-mini`), `NUXT_CHAT_DAILY_LIMIT` (défaut 500).
-La documentation interrogée est celle du vector store OpenAI : la mettre à jour sur platform.openai.com.
-Mettre une limite de budget sur le projet OpenAI.
+Variables serveur (voir `.env.example`) : `NUXT_ANTHROPIC_API_KEY`, optionnelles `NUXT_ANTHROPIC_MODEL`
+(défaut `claude-haiku-4-5`) et `NUXT_CHAT_DAILY_LIMIT` (défaut 500).
+Le chatbot répond uniquement à partir de `frontend/server/assets/support-docs.md` (Markdown, envoyé en entier comme
+contexte, mis en cache par l'API au-delà d'environ 4 000 tokens) : modifier ce fichier puis redéployer.
+Mettre une limite de dépense dans la console Anthropic.
 
 ## Déploiement
 

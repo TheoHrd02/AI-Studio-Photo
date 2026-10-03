@@ -579,7 +579,7 @@
         },
         "data": {
           "title": "Data processed on this website",
-          "body": "- **Questions asked to the assistant (Help page)**: the question text is sent to OpenAI to generate the answer. It is not stored by this website and retention on OpenAI's side is disabled [check current OpenAI terms]. Do not enter personal data.\n- **IP address**: used temporarily in memory to limit the number of questions per minute (abuse prevention). It is not stored.\n- **Host technical logs**: [nature and retention period according to the host].\n- **Emails**: if you write to us, your address and message are used to reply and kept for [duration].\n\nThis website uses no analytics tool and no advertising cookies (see the cookie policy)."
+          "body": "- **Questions asked to the assistant (Help page)**: the question text is sent to Anthropic to generate the answer. It is not stored by this website and Anthropic keeps it for at most [duration per current Anthropic commercial terms], without using it to train its models [to verify]. Do not enter personal data.\n- **IP address**: used temporarily in memory to limit the number of questions per minute (abuse prevention). It is not stored.\n- **Host technical logs**: [nature and retention period according to the host].\n- **Emails**: if you write to us, your address and message are used to reply and kept for [duration].\n\nThis website uses no analytics tool and no advertising cookies (see the cookie policy)."
         },
         "legalBasis": {
           "title": "Legal basis",
@@ -587,7 +587,7 @@
         },
         "recipients": {
           "title": "Recipients and processors",
-          "body": "- Hosting: [host, country]\n- Assistant: OpenAI (United States) — [transfer safeguards: standard contractual clauses / DPF]\n- Image and video delivery: Cloudinary — [country, safeguards]"
+          "body": "- Hosting: [host, country]\n- Assistant: Anthropic (United States) — [transfer safeguards: standard contractual clauses / DPF]\n- Image and video delivery: Cloudinary — [country, safeguards]"
         },
         "rights": {
           "title": "Your rights",

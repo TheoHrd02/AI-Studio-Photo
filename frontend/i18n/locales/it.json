@@ -579,7 +579,7 @@
         },
         "data": {
           "title": "Dati trattati su questo sito",
-          "body": "- **Domande poste all'assistente (pagina Aiuto)**: il testo della domanda viene trasmesso a OpenAI per generare la risposta. Non viene registrato da questo sito e la conservazione presso OpenAI è disattivata [verificare le condizioni OpenAI in vigore]. Si raccomanda di non inserire dati personali.\n- **Indirizzo IP**: utilizzato temporaneamente in memoria per limitare il numero di domande al minuto (prevenzione degli abusi). Non viene registrato.\n- **Log tecnici del fornitore di hosting**: [natura e durata di conservazione secondo il fornitore di hosting].\n- **Email**: in caso di contatto via email, l'indirizzo e il messaggio dell'utente sono utilizzati per rispondere e conservati per [durata].\n\nIl sito non utilizza né strumenti di misurazione dell'audience né cookie pubblicitari (cfr. la cookie policy)."
+          "body": "- **Domande poste all'assistente (pagina Aiuto)**: il testo della domanda viene trasmesso a Anthropic per generare la risposta. Non viene registrato da questo sito e Anthropic lo conserva al massimo [durata secondo le condizioni commerciali Anthropic in vigore], senza utilizzarlo per addestrare i propri modelli [da verificare]. Si raccomanda di non inserire dati personali.\n- **Indirizzo IP**: utilizzato temporaneamente in memoria per limitare il numero di domande al minuto (prevenzione degli abusi). Non viene registrato.\n- **Log tecnici del fornitore di hosting**: [natura e durata di conservazione secondo il fornitore di hosting].\n- **Email**: in caso di contatto via email, l'indirizzo e il messaggio dell'utente sono utilizzati per rispondere e conservati per [durata].\n\nIl sito non utilizza né strumenti di misurazione dell'audience né cookie pubblicitari (cfr. la cookie policy)."
         },
         "legalBasis": {
           "title": "Basi giuridiche",
@@ -587,7 +587,7 @@
         },
         "recipients": {
           "title": "Destinatari e responsabili del trattamento",
-          "body": "- Hosting: [fornitore di hosting, paese]\n- Assistente: OpenAI (Stati Uniti) — [garanzie per il trasferimento: clausole contrattuali tipo / DPF]\n- Distribuzione di immagini e video: Cloudinary — [paese, garanzie]"
+          "body": "- Hosting: [fornitore di hosting, paese]\n- Assistente: Anthropic (Stati Uniti) — [garanzie per il trasferimento: clausole contrattuali tipo / DPF]\n- Distribuzione di immagini e video: Cloudinary — [paese, garanzie]"
         },
         "rights": {
           "title": "Diritti dell'utente",

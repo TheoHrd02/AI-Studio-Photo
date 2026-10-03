@@ -14,7 +14,7 @@ Fichiers : `docker-compose.prod.yml`, `Caddyfile`, `frontend/Dockerfile.prod`, `
 ```bash
 git clone git@github.com:TheoHrd02/AI-Studio-Photo.git aistudio && cd aistudio
 cp .env.example .env
-nano .env   # DOMAIN, NUXT_OPENAI_API_KEY, NUXT_OPENAI_VECTOR_STORE_ID
+nano .env   # DOMAIN, NUXT_ANTHROPIC_API_KEY
 docker compose -f docker-compose.prod.yml up -d --build
 ```
 
@@ -25,12 +25,12 @@ Caddy obtient le certificat au premier démarrage (DNS déjà propagé requis). 
 | Variable | Obligatoire | Description |
 |----------|-------------|-------------|
 | `DOMAIN` | oui | Domaine sans `https://`. Sert à Caddy et à l'URL du site (sitemap, canonicals, hreflang, og:url). |
-| `NUXT_OPENAI_API_KEY` | chatbot | Clé OpenAI, côté serveur uniquement. **Fixer une limite de budget** sur le projet OpenAI. |
-| `NUXT_OPENAI_VECTOR_STORE_ID` | chatbot | Vector store de la doc support (`vs_...`). |
-| `NUXT_OPENAI_MODEL` | non | Défaut `gpt-4.1-mini`. |
+| `NUXT_ANTHROPIC_API_KEY` | chatbot | Clé API Anthropic, côté serveur uniquement. **Fixer une limite de dépense** dans la console Anthropic. |
+| `NUXT_ANTHROPIC_MODEL` | non | Défaut `claude-haiku-4-5`. |
 | `NUXT_CHAT_DAILY_LIMIT` | non | Plafond global de questions par jour. Défaut 500. |
 
-Sans les variables OpenAI le site fonctionne ; le chatbot affiche « indisponible » (HTTP 503).
+Sans clé Anthropic le site fonctionne ; le chatbot affiche « indisponible » (HTTP 503).
+La doc du chatbot (`frontend/server/assets/support-docs.md`) est intégrée à l'image : la modifier demande un rebuild.
 `NUXT_TRUST_PROXY=true` est fixé par le compose : Caddy réécrit `X-Forwarded-For` avec l'IP réelle, la limite par IP du chatbot est donc fiable.
 
 ## Mise à jour

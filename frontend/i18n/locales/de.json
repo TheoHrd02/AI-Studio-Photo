@@ -579,7 +579,7 @@
         },
         "data": {
           "title": "Auf dieser Website verarbeitete Daten",
-          "body": "- **An den Assistenten gestellte Fragen (Seite Hilfe)**: Der Text der Frage wird an OpenAI übermittelt, um die Antwort zu generieren. Er wird von dieser Website nicht gespeichert, und die Speicherung bei OpenAI ist deaktiviert [aktuelle OpenAI-Bedingungen prüfen]. Geben Sie dort keine personenbezogenen Daten ein.\n- **IP-Adresse**: Wird vorübergehend im Arbeitsspeicher verwendet, um die Anzahl der Fragen pro Minute zu begrenzen (Missbrauchsprävention). Sie wird nicht gespeichert.\n- **Technische Protokolle des Hostinganbieters**: [Art und Dauer der Speicherung je nach Hostinganbieter].\n- **E-Mails**: Wenn Sie uns schreiben, werden Ihre Adresse und Ihre Nachricht verwendet, um Ihnen zu antworten, und für [Dauer] gespeichert.\n\nDie Website verwendet weder Tools zur Reichweitenmessung noch Werbe-Cookies (siehe Cookie-Richtlinie)."
+          "body": "- **An den Assistenten gestellte Fragen (Seite Hilfe)**: Der Text der Frage wird an Anthropic übermittelt, um die Antwort zu generieren. Er wird von dieser Website nicht gespeichert, und Anthropic speichert ihn höchstens [Dauer gemäß den aktuellen kommerziellen Bedingungen von Anthropic], ohne ihn zum Training seiner Modelle zu verwenden [zu prüfen]. Geben Sie dort keine personenbezogenen Daten ein.\n- **IP-Adresse**: Wird vorübergehend im Arbeitsspeicher verwendet, um die Anzahl der Fragen pro Minute zu begrenzen (Missbrauchsprävention). Sie wird nicht gespeichert.\n- **Technische Protokolle des Hostinganbieters**: [Art und Dauer der Speicherung je nach Hostinganbieter].\n- **E-Mails**: Wenn Sie uns schreiben, werden Ihre Adresse und Ihre Nachricht verwendet, um Ihnen zu antworten, und für [Dauer] gespeichert.\n\nDie Website verwendet weder Tools zur Reichweitenmessung noch Werbe-Cookies (siehe Cookie-Richtlinie)."
         },
         "legalBasis": {
           "title": "Rechtsgrundlagen",
@@ -587,7 +587,7 @@
         },
         "recipients": {
           "title": "Empfänger und Auftragsverarbeiter",
-          "body": "- Hosting: [Hostinganbieter, Land]\n- Assistent: OpenAI (USA) — [Garantien für die Datenübermittlung: Standardvertragsklauseln / DPF]\n- Auslieferung von Bildern und Videos: Cloudinary — [Land, Garantien]"
+          "body": "- Hosting: [Hostinganbieter, Land]\n- Assistent: Anthropic (USA) — [Garantien für die Datenübermittlung: Standardvertragsklauseln / DPF]\n- Auslieferung von Bildern und Videos: Cloudinary — [Land, Garantien]"
         },
         "rights": {
           "title": "Ihre Rechte",

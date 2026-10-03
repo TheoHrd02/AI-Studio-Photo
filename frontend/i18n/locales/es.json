@@ -579,7 +579,7 @@
         },
         "data": {
           "title": "Datos tratados en este sitio",
-          "body": "- **Preguntas formuladas al asistente (página Ayuda)**: el texto de la pregunta se transmite a OpenAI para generar la respuesta. Este sitio no lo registra y la conservación por parte de OpenAI está desactivada [verificar las condiciones vigentes de OpenAI]. No introduzca en él datos personales.\n- **Dirección IP**: se utiliza temporalmente en memoria para limitar el número de preguntas por minuto (prevención de abusos). No se registra.\n- **Registros técnicos del proveedor de alojamiento**: [naturaleza y plazo de conservación según el proveedor].\n- **Correos electrónicos**: si nos escribe, su dirección y su mensaje se utilizan para responderle y se conservan durante [plazo].\n\nEl sitio no utiliza ninguna herramienta de medición de audiencia ni cookies publicitarias (véase la política de cookies)."
+          "body": "- **Preguntas formuladas al asistente (página Ayuda)**: el texto de la pregunta se transmite a Anthropic para generar la respuesta. Este sitio no lo registra y Anthropic lo conserva como máximo [duración según las condiciones comerciales vigentes de Anthropic], sin utilizarlo para entrenar sus modelos [por verificar]. No introduzca en él datos personales.\n- **Dirección IP**: se utiliza temporalmente en memoria para limitar el número de preguntas por minuto (prevención de abusos). No se registra.\n- **Registros técnicos del proveedor de alojamiento**: [naturaleza y plazo de conservación según el proveedor].\n- **Correos electrónicos**: si nos escribe, su dirección y su mensaje se utilizan para responderle y se conservan durante [plazo].\n\nEl sitio no utiliza ninguna herramienta de medición de audiencia ni cookies publicitarias (véase la política de cookies)."
         },
         "legalBasis": {
           "title": "Bases jurídicas",
@@ -587,7 +587,7 @@
         },
         "recipients": {
           "title": "Destinatarios y encargados del tratamiento",
-          "body": "- Alojamiento: [proveedor de alojamiento, país]\n- Asistente: OpenAI (Estados Unidos) — [garantías de transferencia: cláusulas contractuales tipo / DPF]\n- Distribución de imágenes y vídeos: Cloudinary — [país, garantías]"
+          "body": "- Alojamiento: [proveedor de alojamiento, país]\n- Asistente: Anthropic (Estados Unidos) — [garantías de transferencia: cláusulas contractuales tipo / DPF]\n- Distribución de imágenes y vídeos: Cloudinary — [país, garantías]"
         },
         "rights": {
           "title": "Sus derechos",

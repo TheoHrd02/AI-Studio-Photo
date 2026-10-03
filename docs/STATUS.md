@@ -8,7 +8,7 @@ Audit puis remise au propre du site vitrine (branche `claude/saas-site-audit-732
 | Domaine | Résumé |
 |---------|--------|
 | **Bloquants corrigés** | Le site ne s'hydratait pas en prod (CSP bloquait les scripts inline de Nuxt) → nonce par requête. Clés i18n affichées en brut (`/features`, footer). Lint en échec. Le script `typecheck` ne vérifiait aucun fichier (~20 erreurs cachées). |
-| **Chatbot** | L'Assistants API d'OpenAI est arrêtée depuis le 26/08/2026 : le chatbot ne fonctionnait plus (et le masquait). Réécrit en route Nuxt (`/api/ask`, Responses API + file_search sur le même vector store), vrais codes d'erreur, `store: false`, limite 15/min/IP non contournable, plafond journalier. **Backend Go supprimé.** |
+| **Chatbot** | L'Assistants API d'OpenAI est arrêtée depuis le 26/08/2026 : le chatbot ne fonctionnait plus (et le masquait). Réécrit en route Nuxt (`/api/ask`) sur **Claude Haiku 4.5** (SDK Anthropic), documentation dans `server/assets/support-docs.md` (contexte mis en cache), vrais codes d'erreur, limite 15/min/IP non contournable, plafond journalier. **Backend Go et dépendance OpenAI supprimés.** |
 | **Légal** | Mentions légales, confidentialité, CGU, cookies (squelettes, champs à compléter surlignés). Contact → `/help#contact`. |
 | **i18n** | `@nuxtjs/i18n`, 5 langues (fr, en, de, it, es), URLs préfixées, sélecteur de langue, hreflang, tout le texte en dur extrait. de/it/es traduits automatiquement. |
 | **SEO** | Open Graph/Twitter par page (`usePageSeo`), og:locale, canonical, JSON-LD (Organization + logo, SoftwareApplication, tarifs sans « InStock »), sitemap par langue, robots, 404 traduite, `<h1>` partout, favicon/apple-touch/manifest, blog vide en noindex. |
@@ -23,11 +23,13 @@ Audit puis remise au propre du site vitrine (branche `claude/saas-site-audit-732
 ### Actions manuelles (toi)
 
 1. **Relire puis fusionner** la branche dans `main` et pousser (rien n'a été poussé).
-2. **OpenAI** : dans `.env`, `NUXT_OPENAI_API_KEY` + `NUXT_OPENAI_VECTOR_STORE_ID` (l'ancien `VSTORE_ID` de
-   `backend/.env`, qui reste sur ton disque hors git). **Mettre une limite de budget** sur le projet OpenAI.
-   Tester une vraie question sur `/help` (non testé : nécessite la clé).
-3. **VPS** : DNS de `aistudiophoto.com` et `www` → VPS, ports 80/443, puis `docs/DEPLOY.md`.
-4. Activer la **protection de branche** `main` sur GitHub (CI obligatoire) si souhaité.
+2. **Anthropic** : créer une clé sur console.anthropic.com, la mettre dans `.env` (`NUXT_ANTHROPIC_API_KEY`),
+   **fixer une limite de dépense**. Tester une vraie question sur `/help` (non testé : nécessite la clé).
+3. **Doc du chatbot** : `frontend/server/assets/support-docs.md` est une base de départ générée depuis le contenu
+   du site. Y mettre la vraie documentation (l'ancienne était dans le vector store OpenAI : récupérer les fichiers
+   sur platform.openai.com si besoin).
+4. **VPS** : DNS de `aistudiophoto.com` et `www` → VPS, ports 80/443, puis `docs/DEPLOY.md`.
+5. Activer la **protection de branche** `main` sur GitHub (CI obligatoire) si souhaité.
 
 ### Contenu
 
@@ -73,4 +75,4 @@ git stash clear
 ```
 
 Dans le dossier principal du projet : supprimer `frontend/node_modules` (liens vers l'ancien chemin) puis `pnpm install`,
-et `backend/` (dossier local non suivi, après avoir récupéré la clé OpenAI).
+et `backend/` (dossier local non suivi : contient encore une clé OpenAI, à révoquer si elle ne sert plus).

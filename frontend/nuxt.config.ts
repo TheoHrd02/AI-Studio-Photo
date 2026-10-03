@@ -49,9 +49,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     // Server-only, overridden at runtime by NUXT_* env vars (see .env.example)
-    openaiApiKey: '',
-    openaiVectorStoreId: '',
-    openaiModel: 'gpt-4.1-mini',
+    anthropicApiKey: '',
+    anthropicModel: 'claude-haiku-4-5',
     chatDailyLimit: 500,
     trustProxy: false,
 

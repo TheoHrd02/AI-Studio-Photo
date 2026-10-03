@@ -579,7 +579,7 @@
         },
         "data": {
           "title": "Données traitées sur ce site",
-          "body": "- **Questions posées à l'assistant (page Aide)** : le texte de la question est transmis à OpenAI pour générer la réponse. Il n'est pas enregistré par ce site et la conservation côté OpenAI est désactivée [vérifier les conditions OpenAI en vigueur]. N'y saisissez pas de données personnelles.\n- **Adresse IP** : utilisée temporairement en mémoire pour limiter le nombre de questions par minute (prévention des abus). Elle n'est pas enregistrée.\n- **Journaux techniques de l'hébergeur** : [nature et durée de conservation selon l'hébergeur].\n- **Emails** : si vous nous écrivez, votre adresse et votre message sont utilisés pour vous répondre et conservés [durée].\n\nLe site n'utilise ni outil de mesure d'audience, ni cookie publicitaire (voir la politique cookies)."
+          "body": "- **Questions posées à l'assistant (page Aide)** : le texte de la question est transmis à Anthropic pour générer la réponse. Il n'est pas enregistré par ce site et Anthropic le conserve au plus [durée selon les conditions commerciales Anthropic en vigueur], sans l'utiliser pour entraîner ses modèles [à vérifier]. N'y saisissez pas de données personnelles.\n- **Adresse IP** : utilisée temporairement en mémoire pour limiter le nombre de questions par minute (prévention des abus). Elle n'est pas enregistrée.\n- **Journaux techniques de l'hébergeur** : [nature et durée de conservation selon l'hébergeur].\n- **Emails** : si vous nous écrivez, votre adresse et votre message sont utilisés pour vous répondre et conservés [durée].\n\nLe site n'utilise ni outil de mesure d'audience, ni cookie publicitaire (voir la politique cookies)."
         },
         "legalBasis": {
           "title": "Bases légales",
@@ -587,7 +587,7 @@
         },
         "recipients": {
           "title": "Destinataires et sous-traitants",
-          "body": "- Hébergement : [hébergeur, pays]\n- Assistant : OpenAI (États-Unis) — [garanties de transfert : clauses contractuelles types / DPF]\n- Diffusion des images et vidéos : Cloudinary — [pays, garanties]"
+          "body": "- Hébergement : [hébergeur, pays]\n- Assistant : Anthropic (États-Unis) — [garanties de transfert : clauses contractuelles types / DPF]\n- Diffusion des images et vidéos : Cloudinary — [pays, garanties]"
         },
         "rights": {
           "title": "Vos droits",
