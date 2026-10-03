@@ -7,10 +7,7 @@ definePageMeta({
 
 const { t } = useI18n()
 
-useHead(() => ({
-  title: t('help.meta.title'),
-  meta: [{ name: 'description', content: t('help.meta.description') }],
-}))
+usePageSeo(() => ({ title: t('help.meta.title'), description: t('help.meta.description') }))
 
 const chatSectionRef = ref<HTMLElement | null>(null)
 

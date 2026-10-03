@@ -5,10 +5,8 @@ definePageMeta({
 
 const { t } = useI18n()
 
-useHead(() => ({
-  title: t('blog.title'),
-  meta: [{ name: 'description', content: t('blog.subtitle') }],
-}))
+// TODO(content): remove noindex and re-add /blog to the sitemap once articles exist
+usePageSeo(() => ({ title: t('blog.title'), description: t('blog.subtitle'), noindex: true }))
 </script>
 
 <template>

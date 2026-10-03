@@ -8,15 +8,7 @@ definePageMeta({
   layout: 'marketing',
 })
 
-useHead({
-  title: computed(() => t('featurePages.index.title')),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => t('featurePages.index.subtitle')),
-    },
-  ],
-})
+usePageSeo(() => ({ title: t('featurePages.index.title'), description: t('featurePages.index.subtitle') }))
 </script>
 
 <template>

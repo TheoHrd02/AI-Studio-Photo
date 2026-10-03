@@ -11,46 +11,39 @@ const pageDescription = computed(() => t('pricing.pageDescription'))
 
 const config = useRuntimeConfig().public
 const siteUrl = config.siteUrl || 'https://aistudiophoto.com'
+const localePath = useLocalePath()
 
 const pricingSchema = computed(() => ({
   '@context': 'https://schema.org',
   '@type': 'Product',
   'name': 'AI Studio Photo',
   'description': pageDescription.value,
-  'url': `${siteUrl}/pricing`,
+  'url': `${siteUrl}${localePath('/pricing')}`,
   'offers': [
     {
       '@type': 'Offer',
       'name': t('pricing.plans.free.name'),
       'price': '0',
       'priceCurrency': 'EUR',
-      'availability': 'https://schema.org/InStock',
     },
     {
       '@type': 'Offer',
       'name': t('pricing.plans.pro.name'),
       'price': '29',
       'priceCurrency': 'EUR',
-      'availability': 'https://schema.org/InStock',
     },
     {
       '@type': 'Offer',
       'name': t('pricing.plans.enterprise.name'),
       'price': '99',
       'priceCurrency': 'EUR',
-      'availability': 'https://schema.org/InStock',
     },
   ],
 }))
 
+usePageSeo(() => ({ title: pageTitle.value, description: pageDescription.value }))
+
 useHead({
-  title: pageTitle,
-  meta: [
-    {
-      name: 'description',
-      content: pageDescription,
-    },
-  ],
   script: computed(() => [
     {
       type: 'application/ld+json',

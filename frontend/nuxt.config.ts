@@ -30,9 +30,6 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap' },
         // Video CDN — resolves DNS + opens TCP+TLS before any JS runs
         { rel: 'preconnect', href: 'https://res.cloudinary.com' },
         { rel: 'dns-prefetch', href: 'https://res.cloudinary.com' },
@@ -106,6 +103,12 @@ export default defineNuxtConfig({
     // No auto-redirect on browser language: avoids a cookie; hreflang lets search engines
     // serve the right version, and the header switcher covers the rest.
     detectBrowserLanguage: false,
+  },
+
+  // Icons from installed @iconify-json/* collections, bundled — no runtime call to api.iconify.design
+  icon: {
+    clientBundle: { scan: true },
+    fallbackToApi: false,
   },
 
   sitemap: {

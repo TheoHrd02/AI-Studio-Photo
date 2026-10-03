@@ -37,6 +37,19 @@ useHead(() => ({
   script: jsonLd().map(schema => ({ type: 'application/ld+json', innerHTML: JSON.stringify(schema) })),
   titleTemplate: (title?: string) => title ? `${title} – AI Studio Photo` : t('meta.title'),
 }))
+
+// Open Graph / Twitter defaults; per-page title/description come from usePageSeo
+// TODO(content): replace public/og-image.png (1200x630 placeholder)
+useSeoMeta({
+  ogType: 'website',
+  ogSiteName: 'AI Studio Photo',
+  ogUrl: () => i18nHead.value.link?.find(l => l.rel === 'canonical')?.href,
+  ogImage: `${siteUrl}/og-image.png`,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  twitterCard: 'summary_large_image',
+  twitterImage: `${siteUrl}/og-image.png`,
+})
 </script>
 
 <template>

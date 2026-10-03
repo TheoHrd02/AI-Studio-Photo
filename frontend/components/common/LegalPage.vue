@@ -29,10 +29,7 @@ const render = (text: string) =>
       : `<p>${inline(lines.join(' '))}</p>`
   }).join('')
 
-useHead(() => ({
-  title: t(`legal.${props.page}.title`),
-  meta: [{ name: 'description', content: t(`legal.${props.page}.description`) }],
-}))
+usePageSeo(() => ({ title: t(`legal.${props.page}.title`), description: t(`legal.${props.page}.description`) }))
 </script>
 
 <template>

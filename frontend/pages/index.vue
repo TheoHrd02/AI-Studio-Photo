@@ -8,9 +8,7 @@ definePageMeta({
 const { t } = useI18n()
 
 // No page title: app.vue falls back to the localized home title
-useHead(() => ({
-  meta: [{ name: 'description', content: t('meta.description') }],
-}))
+usePageSeo(() => ({ description: t('meta.description') }))
 
 const features = computed(() => [
   {

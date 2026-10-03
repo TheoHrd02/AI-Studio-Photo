@@ -8,10 +8,7 @@ definePageMeta({
 
 const { t } = useI18n()
 
-useHead(() => ({
-  title: t('gallery.title'),
-  meta: [{ name: 'description', content: t('gallery.subtitle') }],
-}))
+usePageSeo(() => ({ title: t('gallery.title'), description: t('gallery.subtitle') }))
 
 const videoLoadFailed = ref<Set<number>>(new Set())
 
