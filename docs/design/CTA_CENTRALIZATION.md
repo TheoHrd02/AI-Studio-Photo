@@ -2,7 +2,7 @@
 
 ## Chosen Approach: **Option A (i18n)**
 
-**Rationale:** The project already uses `@nuxtjs/i18n` with `locales/fr.json` and `locales/en.json`. All marketing copy is i18n-driven. A dedicated `cta` namespace in i18n provides:
+**Rationale:** The project already uses `@nuxtjs/i18n` with `i18n/locales/fr.json` and `i18n/locales/en.json`. All marketing copy is i18n-driven. A dedicated `cta` namespace in i18n provides:
 - Single source of truth for all CTA copy
 - Built-in FR/EN support
 - No additional config layer
@@ -12,7 +12,7 @@
 
 ## New i18n Structure: `cta` Namespace
 
-All CTA copy lives under the `cta` key in `locales/fr.json` and `locales/en.json`:
+All CTA copy lives under the `cta` key in `i18n/locales/fr.json` and `i18n/locales/en.json`:
 
 ```json
 {
@@ -94,8 +94,8 @@ All CTA copy lives under the `cta` key in `locales/fr.json` and `locales/en.json
 
 | File | Changes |
 |------|---------|
-| `locales/fr.json` | Added `cta` namespace |
-| `locales/en.json` | Added `cta` namespace |
+| `i18n/locales/fr.json` | Added `cta` namespace |
+| `i18n/locales/en.json` | Added `cta` namespace |
 | `components/marketing/AppHeader.vue` | `nav.launchApp` → `cta.header` |
 | `components/marketing/HeroSection.vue` | `hero.ctaPrimary` → `cta.primary`, `hero.ctaSecondary` → `cta.login`, `common.ctaClarification` → `cta.clarification` |
 | `pages/index.vue` | All CTAs → `cta.*` keys |
@@ -126,7 +126,7 @@ All CTA copy lives under the `cta` key in `locales/fr.json` and `locales/en.json
 
 ## How to Edit CTA Copy
 
-1. Open `frontend/locales/fr.json` or `frontend/locales/en.json`
+1. Open `frontend/i18n/locales/fr.json` or `frontend/i18n/locales/en.json`
 2. Edit the `cta` object at the root
 3. All CTAs across the site update automatically
 

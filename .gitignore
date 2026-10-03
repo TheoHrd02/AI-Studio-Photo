@@ -26,3 +26,6 @@ Thumbs.db
 
 # Docker
 docker/postgres/data/
+
+# Brag/launch video output (local)
+brag-output/

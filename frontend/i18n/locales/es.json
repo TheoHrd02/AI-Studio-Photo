@@ -37,9 +37,7 @@
   },
   "common": {
     "appName": "AI Studio Photo",
-    "mainFeatures": "Funcionalidades principales",
-    "readyToStart": "¿Listo para empezar?",
-    "createAccountFree": "Crea tu cuenta gratis y consigue 5 créditos de regalo."
+    "language": "Idioma"
   },
   "nav": {
     "home": "Inicio",

@@ -6,7 +6,7 @@ const directives = (nonce: string) => [
   `script-src 'self' 'nonce-${nonce}'`,
   'style-src \'self\' \'unsafe-inline\'',
   'font-src \'self\'',
-  'img-src \'self\' data: blob: https://res.cloudinary.com https://images.unsplash.com https://placehold.co',
+  'img-src \'self\' data: blob: https://res.cloudinary.com https://images.unsplash.com',
   'media-src \'self\' blob: https://res.cloudinary.com https://videos.pexels.com',
   'connect-src \'self\'',
   'frame-ancestors \'none\'',

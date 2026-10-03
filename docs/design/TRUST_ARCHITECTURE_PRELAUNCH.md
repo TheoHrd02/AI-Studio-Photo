@@ -90,7 +90,7 @@
 
 ### Tier B (Structure Prepared)
 
-- **trust.config.ts**: `TrustConfig` with `preLaunch`, `founder`, `roadmapUrl`, `showEarlyAccessBadge`
+- ~~**trust.config.ts**~~ (supprimé en 2026-10 : jamais utilisé par le code)
 - Ready for founder/philosophy content when available
 
 ### Tier C (Structure Prepared)

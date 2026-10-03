@@ -12,7 +12,7 @@ const onChange = (e: Event) => setLocale((e.target as HTMLSelectElement).value a
     />
     <select
       :value="locale"
-      aria-label="Language"
+      :aria-label="$t('common.language')"
       class="cursor-pointer appearance-none rounded-lg bg-transparent py-1.5 pl-8 pr-7 text-[13px] font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
       @change="onChange"
     >

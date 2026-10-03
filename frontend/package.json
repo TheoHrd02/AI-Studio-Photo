@@ -17,7 +17,8 @@
     "lint:fix": "eslint . --fix",
     "format": "eslint . --fix",
     "typecheck": "nuxt typecheck",
-    "check": "pnpm lint && pnpm typecheck && pnpm run build"
+    "check": "pnpm lint && pnpm check:i18n && pnpm typecheck && pnpm run build",
+    "check:i18n": "node scripts/check-i18n.mjs"
   },
   "dependencies": {
     "@nuxt/ui": "4.11.3",
