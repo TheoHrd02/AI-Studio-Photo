@@ -6,7 +6,7 @@ Fichiers : `docker-compose.prod.yml`, `Caddyfile`, `frontend/Dockerfile.prod`, `
 ## Prérequis (une fois)
 
 1. VPS Linux avec Docker + plugin Compose (`docker compose version`).
-2. DNS : enregistrements A (et AAAA si IPv6) de `aistudiophoto.com` **et** `www.aistudiophoto.com` → IP du VPS.
+2. DNS : enregistrements A (et AAAA si IPv6) de `glintstudio.ai` **et** `www.glintstudio.ai` → IP du VPS.
 3. Pare-feu : ports **80** et **443** (TCP, + 443/UDP pour HTTP/3) ouverts. Le port 3000 n'a pas à l'être.
 
 ## Installation
@@ -46,8 +46,8 @@ docker image prune -f
 ## Vérifications après déploiement
 
 ```bash
-curl -sI https://aistudiophoto.com | grep -iE "HTTP/|strict-transport|content-security"
-curl -s https://aistudiophoto.com/sitemap_index.xml | head
+curl -sI https://glintstudio.ai | grep -iE "HTTP/|strict-transport|content-security"
+curl -s https://glintstudio.ai/sitemap_index.xml | head
 docker compose -f docker-compose.prod.yml ps   # frontend doit être "healthy"
 ```
 

@@ -6,7 +6,7 @@
  * Every redirect on the marketing site derives from this single file.
  */
 
-const SAAS_BASE_URL = 'https://app.aistudiophoto.com'
+const SAAS_BASE_URL = 'https://app.glintstudio.ai'
 
 export const saasConfig = {
   /** Root of the SaaS application */
@@ -19,7 +19,7 @@ export const saasConfig = {
   loginUrl: `${SAAS_BASE_URL}/login`,
 
   /** Enterprise: calendar booking or contact form (Calendly, HubSpot, etc.) */
-  enterpriseContactUrl: 'https://calendly.com/aistudiophoto/enterprise',
+  enterpriseContactUrl: 'https://calendly.com/glintstudio/enterprise',
 } as const
 
 export type SaasConfig = typeof saasConfig

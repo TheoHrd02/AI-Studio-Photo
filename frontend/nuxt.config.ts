@@ -43,8 +43,8 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://aistudiophoto.com',
-    name: 'AI Studio Photo',
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://glintstudio.ai',
+    name: 'Glint Studio',
   },
 
   runtimeConfig: {
@@ -56,7 +56,7 @@ export default defineNuxtConfig({
 
     // Public keys (exposed to client)
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://aistudiophoto.com',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://glintstudio.ai',
     },
   },
 
@@ -85,7 +85,7 @@ export default defineNuxtConfig({
     // Files: i18n/locales/*.json. FR at /, others prefixed (/en, /de, /it, /es).
     defaultLocale: 'fr',
     strategy: 'prefix_except_default',
-    baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://aistudiophoto.com',
+    baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://glintstudio.ai',
     locales: [
       { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr.json' },
       { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
@@ -93,9 +93,14 @@ export default defineNuxtConfig({
       { code: 'it', language: 'it-IT', name: 'Italiano', file: 'it.json' },
       { code: 'es', language: 'es-ES', name: 'Español', file: 'es.json' },
     ],
-    // No auto-redirect on browser language: avoids a cookie; hreflang lets search engines
-    // serve the right version, and the header switcher covers the rest.
-    detectBrowserLanguage: false,
+    // First visit on / redirects to the browser language (Accept-Language), then the
+    // i18n_redirected cookie keeps the choice (also set by the header switcher).
+    // Root only + no fallbackLocale: crawlers without Accept-Language stay on FR.
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+    },
   },
 
   // Icons from installed @iconify-json/* collections, bundled — no runtime call to api.iconify.design

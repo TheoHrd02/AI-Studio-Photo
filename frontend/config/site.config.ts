@@ -36,7 +36,6 @@ export const siteConfig: SiteConfig = {
       ],
     },
     { id: 'gallery', href: '/gallery' },
-    { id: 'pricing', href: '/pricing' },
     { id: 'help', href: '/help' },
   ],
 
@@ -46,7 +45,6 @@ export const siteConfig: SiteConfig = {
         id: 'product',
         links: [
           { id: 'features', href: '/features' },
-          { id: 'pricing', href: '/pricing' },
           { id: 'api', href: '#' },
           { id: 'changelog', href: '#' },
         ],

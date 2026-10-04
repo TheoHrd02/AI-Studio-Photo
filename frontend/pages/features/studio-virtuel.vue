@@ -52,6 +52,5 @@ const quotes = computed(() => [
     :final-cta-title="$t('cta.finalSection.title')"
     :final-cta-sub="$t('cta.finalSection.subtitle')"
     :final-cta-btn-primary="$t('cta.primary')"
-    :final-cta-btn-secondary="$t('cta.pricing')"
   />
 </template>

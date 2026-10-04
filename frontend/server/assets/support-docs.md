@@ -1,4 +1,4 @@
-# Documentation support — AI Studio Photo
+# Documentation support — Glint Studio
 
 <!-- Base de connaissances du chatbot (page Aide). Générée depuis le contenu du site le 2026-10-03 :
      À COMPLÉTER / REMPLACER par la vraie documentation du produit (FAQ, guides, limites, facturation…).
@@ -45,7 +45,7 @@ C'est la suite logique : donner du souffle à vos visuels. Motion Studio convert
 Du statique au dynamique, en quelques secondes.
 
 Comment l'utiliser :
-- Importez votre image ou votre scène créée dans AI Studio.
+- Importez votre image ou votre scène créée dans Glint Studio.
 - Choisissez un style de mouvement (cinématique, ralenti, panoramique, reveal, etc.).
 - Laissez l'IA générer un clip fluide et réaliste.
 - Téléchargez en 4K, prêt pour vos campagnes.
@@ -116,6 +116,6 @@ Oui ! Notre support est disponible en français et en anglais, 7j/7.
 
 ## Contact
 
-- Support : support@aistudiophoto.com
-- Ventes et partenariats : sales@aistudiophoto.com
-- Presse : press@aistudiophoto.com
+- Support : support@glintstudio.ai
+- Ventes et partenariats : sales@glintstudio.ai
+- Presse : press@glintstudio.ai

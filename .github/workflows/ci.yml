@@ -41,4 +41,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - run: docker build -f frontend/Dockerfile.prod --build-arg NUXT_PUBLIC_SITE_URL=https://aistudiophoto.com frontend
+      - run: docker build -f frontend/Dockerfile.prod --build-arg NUXT_PUBLIC_SITE_URL=https://glintstudio.ai frontend

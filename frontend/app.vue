@@ -11,7 +11,7 @@ const jsonLd = () => [
   {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    'name': 'AI Studio Photo',
+    'name': 'Glint Studio',
     'url': siteUrl,
     'logo': `${siteUrl}/icon-512.png`,
     'description': t('meta.description'),
@@ -20,7 +20,7 @@ const jsonLd = () => [
   {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    'name': 'AI Studio Photo',
+    'name': 'Glint Studio',
     'applicationCategory': 'MultimediaApplication',
     'operatingSystem': 'Web',
     'description': t('meta.appDescription'),
@@ -37,7 +37,7 @@ useHead(() => ({
     { name: 'description', content: t('meta.description') },
   ],
   script: jsonLd().map(schema => ({ type: 'application/ld+json', innerHTML: JSON.stringify(schema) })),
-  titleTemplate: (title?: string) => title ? `${title} – AI Studio Photo` : t('meta.title'),
+  titleTemplate: (title?: string) => title ? `${title} – Glint Studio` : t('meta.title'),
 }))
 
 // Open Graph / Twitter defaults; per-page title/description come from usePageSeo
@@ -49,7 +49,7 @@ useSeoMeta({
     .filter(l => l.code !== localeProperties.value.code)
     .map(l => ogLocale(l.language))
     .filter((l): l is string => !!l),
-  ogSiteName: 'AI Studio Photo',
+  ogSiteName: 'Glint Studio',
   ogUrl: () => i18nHead.value.link?.find(l => l.rel === 'canonical')?.href,
   ogImage: `${siteUrl}/og-image.png`,
   ogImageWidth: 1200,

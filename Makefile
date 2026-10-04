@@ -1,4 +1,4 @@
-# Makefile — AI Studio Photo
+# Makefile — Glint Studio
 # Usage: make <target>
 
 .PHONY: dev lint typecheck check prod prod-up
