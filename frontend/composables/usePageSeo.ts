@@ -7,7 +7,7 @@ export const usePageSeo = (meta: () => { title?: string, description: string, no
   const { t } = useI18n()
   const fullTitle = () => {
     const title = meta().title
-    return title ? `${title} – AI Studio Photo` : t('meta.title')
+    return title ? `${title} – Glint Studio` : t('meta.title')
   }
 
   useSeoMeta({

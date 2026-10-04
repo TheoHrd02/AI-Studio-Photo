@@ -7,8 +7,6 @@
     "clarification": "Dopo il clic: account gratuito → 5 crediti → prima creazione in 30s",
     "login": "Hai già un account? Accedi",
     "loginShort": "Ho già un account",
-    "pricing": "Vedi i prezzi",
-    "pricingLink": "Vedi tutti i prezzi",
     "discover": "Scopri",
     "orStartNow": "Oppure inizia ora →",
     "header": "Inizia gratis — senza carta",
@@ -36,14 +34,13 @@
     }
   },
   "common": {
-    "appName": "AI Studio Photo",
+    "appName": "Glint Studio",
     "language": "Lingua",
     "menu": "Menu"
   },
   "nav": {
     "home": "Home",
     "features": "Funzionalità",
-    "pricing": "Prezzi",
     "help": "Aiuto",
     "blog": "Blog",
     "affiliation": "Affiliazione",
@@ -66,10 +63,6 @@
       "label": "Motion Studio",
       "description": "Passa dall'immagine al movimento con un clic."
     }
-  },
-  "pricingTeaser": {
-    "title": "Inizia gratis. Cresci senza limiti.",
-    "subtitle": "Gratuito, Pro o Enterprise — scegli il piano più adatto a te."
   },
   "productDemo": {
     "badge": "Demo del prodotto",
@@ -115,7 +108,7 @@
     "examples": {
       "studioVirtuel": {
         "before": "Foto prodotto grezza — sfondo bianco, luce piatta",
-        "after": "Risultato AI Studio — set da studio, luce professionale"
+        "after": "Risultato Glint Studio — set da studio, luce professionale"
       },
       "mannequinVirtuel": {
         "before": "Scarpa isolata su sfondo neutro",
@@ -234,114 +227,6 @@
     "cancelAnytime": "Disdici in qualsiasi momento",
     "freeTrial": "Prova gratuita di 7 giorni"
   },
-  "pricing": {
-    "pageTitle": "Prezzi",
-    "pageDescription": "Scopri le nostre offerte: Gratuito, Pro ed Enterprise. Inizia senza carta di credito.",
-    "heroTitle": "Il piano che",
-    "heroHighlight": "fa per te",
-    "heroSubtitle": "Inizia gratis. Cresci senza limiti. Disdici in qualsiasi momento.",
-    "finalCtaLine": "Accesso anticipato. Prova di 7 giorni. Nessuna carta richiesta.",
-    "monthly": "Mensile",
-    "yearly": "Annuale",
-    "annualBadge": "–20%",
-    "billingToggleAria": "Fatturazione annuale",
-    "periodPerMonth": "/ mese",
-    "billedPrefix": "Fatturato",
-    "billedSuffix": "€ / anno",
-    "savingsPrefix": "↓",
-    "savingsSuffix": "su base annua",
-    "trustStrip": "Prezzi trasparenti · Nessuna sorpresa · Senza vincoli",
-    "includedTitle": "Incluso in tutti i piani",
-    "faqTitle": "Domande frequenti",
-    "faqSubtitle": "Tutto quello che devi sapere prima di iniziare.",
-    "finalCtaEyebrow": "Pronto a partire?",
-    "finalCtaTitle": "Trasforma i tuoi visual",
-    "finalCtaTitleBreak": "da oggi.",
-    "redirectHint": "Verrai reindirizzato al tuo account.",
-    "redirectHintEnterprise": "Verrai reindirizzato per pianificare una chiamata.",
-    "plans": {
-      "free": {
-        "name": "Gratuito",
-        "tagline": "Per scoprire la potenza dell'IA generativa",
-        "bestFor": "Privati che scoprono AI Studio",
-        "features": [
-          "10 generazioni IA / mese",
-          "Studio Virtuale (accesso base)",
-          "Risoluzione standard (1024px)",
-          "Esportazione JPG / PNG",
-          "Archiviazione 30 giorni",
-          "Modella Virtuale",
-          "Motion Studio",
-          "Upscaler IA 4K"
-        ]
-      },
-      "pro": {
-        "name": "Pro",
-        "tagline": "Per creator e brand che producono su larga scala",
-        "bestFor": "Brand e creator in crescita",
-        "badge": "Il più popolare",
-        "annualSaving": "60€ risparmiati / anno",
-        "features": [
-          "500 generazioni IA / mese",
-          "Studio Virtuale completo",
-          "Modella Virtuale",
-          "Motion Studio",
-          "Upscaler IA 4K incluso",
-          "Alta risoluzione (4096px)",
-          "Esportazione in formati pro (PNG, TIFF, WEBP)",
-          "Supporto prioritario via email"
-        ]
-      },
-      "enterprise": {
-        "name": "Enterprise",
-        "tagline": "Per team e produzione intensiva",
-        "bestFor": "Team e workflow su larga scala",
-        "annualSaving": "240€ risparmiati / anno",
-        "features": [
-          "Generazioni illimitate",
-          "Tutti gli strumenti inclusi",
-          "Team fino a 20 utenti",
-          "Accesso API + Webhook",
-          "Risoluzione massima",
-          "White label possibile",
-          "SLA garantito 99.9%",
-          "Account manager dedicato"
-        ]
-      }
-    },
-    "perks": {
-      "secureData": "Dati protetti e conformi al GDPR",
-      "noCard": "Nessuna carta di credito per iniziare",
-      "cancelAnytime": "Disdici in qualsiasi momento",
-      "noWatermark": "Nessuna filigrana sulle esportazioni",
-      "multiDevice": "Accesso da più dispositivi",
-      "freeUpdates": "Aggiornamenti gratuiti",
-      "frenchInterface": "Interfaccia 100% in francese",
-      "securePayment": "Pagamento sicuro (Stripe)"
-    },
-    "faq": [
-      {
-        "q": "Posso cambiare piano in qualsiasi momento?",
-        "a": "Sì. Fai upgrade o downgrade dalla tua area clienti con un clic. Le modifiche hanno effetto immediato con un calcolo proporzionale."
-      },
-      {
-        "q": "La prova gratuita richiede una carta di credito?",
-        "a": "No, nessuna carta richiesta per i 7 giorni di prova. Inserisci i dati di pagamento solo se decidi di continuare."
-      },
-      {
-        "q": "Cosa succede se raggiungo il limite di generazioni?",
-        "a": "Ricevi una notifica all'80% di utilizzo. Puoi acquistare crediti aggiuntivi singolarmente oppure fare l'upgrade del piano all'istante."
-      },
-      {
-        "q": "Le immagini generate sono di mia proprietà?",
-        "a": "Sì, conservi tutti i diritti sui contenuti creati. L'uso commerciale è incluso in tutti i piani, senza restrizioni."
-      },
-      {
-        "q": "Come funziona la fatturazione annuale?",
-        "a": "La fatturazione annuale viene addebitata in un'unica soluzione all'inizio del periodo. Ottieni uno sconto del 20% rispetto alla fatturazione mensile."
-      }
-    ]
-  },
   "footer": {
     "description": "La piattaforma di IA generativa per creare foto da studio professionali in pochi secondi.",
     "product": "Prodotto",
@@ -352,7 +237,6 @@
     "allRightsReserved": "Tutti i diritti riservati",
     "productLinks": {
       "features": "Funzionalità",
-      "pricing": "Prezzi",
       "api": "API",
       "changelog": "Changelog"
     },
@@ -466,7 +350,7 @@
       },
       "howToUse": {
         "title": "Come si usa?",
-        "step1": "Importa la tua immagine o la scena creata in AI Studio.",
+        "step1": "Importa la tua immagine o la scena creata in Glint Studio.",
         "step2": "Scegli uno stile di movimento (cinematografico, slow motion, panoramica, reveal, ecc.).",
         "step3": "Lascia che l'IA generi una clip fluida e realistica.",
         "step4": "Scarica in 4K, pronta per le tue campagne."
@@ -492,10 +376,10 @@
   "help": {
     "meta": {
       "title": "Aiuto",
-      "description": "Fai le tue domande al nostro assistente IA e ottieni risposte immediate su AI Studio Photo."
+      "description": "Fai le tue domande al nostro assistente IA e ottieni risposte immediate su Glint Studio."
     },
     "suggestedQuestions": {
-      "howItWorks": "Come funziona AI Studio Photo?",
+      "howItWorks": "Come funziona Glint Studio?",
       "pricing": "Quali sono i prezzi e i piani disponibili?",
       "studioPhoto": "Come creare una foto da studio professionale?",
       "mannequins": "Posso aggiungere modelle virtuali alle mie foto?",
@@ -503,9 +387,9 @@
       "formats": "Quali formati di file sono supportati?"
     },
     "chat": {
-      "placeholder": "Fai la tua domanda su AI Studio Photo...",
+      "placeholder": "Fai la tua domanda su Glint Studio...",
       "emptyTitle": "Come posso aiutarti?",
-      "emptyDescription": "Fammi qualsiasi domanda su AI Studio Photo e ti risponderò all'istante a partire dalla nostra documentazione.",
+      "emptyDescription": "Fammi qualsiasi domanda su Glint Studio e ti risponderò all'istante a partire dalla nostra documentazione.",
       "suggestedLabel": "Domande suggerite:",
       "noAnswer": "Non ho trovato la risposta nella nostra documentazione. Contattaci all'indirizzo {email}.",
       "errors": {
@@ -551,7 +435,7 @@
     }
   },
   "meta": {
-    "title": "AI Studio Photo – Foto prodotto professionali con IA",
+    "title": "Glint Studio – Foto prodotto professionali con IA",
     "description": "Trasforma le tue foto prodotto in visual da studio professionali grazie all'IA — in 30 secondi. Senza fotografo, senza studio.",
     "appDescription": "Piattaforma di IA generativa per creare foto da studio professionali a partire da foto prodotto."
   },
@@ -564,12 +448,12 @@
     "updatedAt": "Ultimo aggiornamento:",
     "legalNotice": {
       "title": "Note legali",
-      "description": "Informazioni legali sull'editore e sul fornitore di hosting del sito AI Studio Photo.",
+      "description": "Informazioni legali sull'editore e sul fornitore di hosting del sito Glint Studio.",
       "updatedAt": "[data]",
       "sections": {
         "publisher": {
           "title": "Editore del sito",
-          "body": "Il sito aistudiophoto.com è edito da [ragione sociale, forma giuridica], con capitale sociale di [importo], iscritta con il numero [n. di iscrizione], con sede in [indirizzo].\n\n- Partita IVA intracomunitaria: [n. partita IVA]\n- Email: [email di contatto]\n- Direttore responsabile: [nome]"
+          "body": "Il sito glintstudio.ai è edito da [ragione sociale, forma giuridica], con capitale sociale di [importo], iscritta con il numero [n. di iscrizione], con sede in [indirizzo].\n\n- Partita IVA intracomunitaria: [n. partita IVA]\n- Email: [email di contatto]\n- Direttore responsabile: [nome]"
         },
         "hosting": {
           "title": "Hosting",
@@ -587,12 +471,12 @@
     },
     "privacy": {
       "title": "Informativa sulla privacy",
-      "description": "Come AI Studio Photo raccoglie e tratta i dati personali dei visitatori del sito.",
+      "description": "Come Glint Studio raccoglie e tratta i dati personali dei visitatori del sito.",
       "updatedAt": "[data]",
       "sections": {
         "controller": {
           "title": "Titolare del trattamento",
-          "body": "[ragione sociale], [indirizzo]. Contatto per qualsiasi domanda relativa ai dati dell'utente: [email].\n\nLa presente informativa riguarda il sito vetrina aistudiophoto.com. L'utilizzo dell'applicazione AI Studio Photo è disciplinato da una propria informativa sulla privacy."
+          "body": "[ragione sociale], [indirizzo]. Contatto per qualsiasi domanda relativa ai dati dell'utente: [email].\n\nLa presente informativa riguarda il sito vetrina glintstudio.ai. L'utilizzo dell'applicazione Glint Studio è disciplinato da una propria informativa sulla privacy."
         },
         "data": {
           "title": "Dati trattati su questo sito",
@@ -614,12 +498,12 @@
     },
     "terms": {
       "title": "Termini e condizioni d'uso",
-      "description": "Condizioni d'uso del sito vetrina AI Studio Photo.",
+      "description": "Condizioni d'uso del sito vetrina Glint Studio.",
       "updatedAt": "[data]",
       "sections": {
         "purpose": {
           "title": "Oggetto",
-          "body": "Le presenti condizioni disciplinano l'utilizzo del sito aistudiophoto.com, edito da [ragione sociale] (v. note legali). L'abbonamento e l'utilizzo dell'applicazione AI Studio Photo sono disciplinati da condizioni distinte, accettate al momento della registrazione [link alle condizioni generali dell'applicazione]."
+          "body": "Le presenti condizioni disciplinano l'utilizzo del sito glintstudio.ai, edito da [ragione sociale] (v. note legali). L'abbonamento e l'utilizzo dell'applicazione Glint Studio sono disciplinati da condizioni distinte, accettate al momento della registrazione [link alle condizioni generali dell'applicazione]."
         },
         "access": {
           "title": "Accesso al sito",
@@ -645,12 +529,12 @@
     },
     "cookies": {
       "title": "Cookie policy",
-      "description": "Cookie e archiviazione locale utilizzati dal sito AI Studio Photo.",
+      "description": "Cookie e archiviazione locale utilizzati dal sito Glint Studio.",
       "updatedAt": "[data]",
       "sections": {
         "used": {
           "title": "Cookie utilizzati",
-          "body": "Questo sito non utilizza cookie di misurazione dell'audience, pubblicitari o di social network. Per questo motivo non viene mostrato alcun banner di consenso."
+          "body": "Questo sito installa un solo cookie, «i18n_redirected», che memorizza la lingua del sito (rilevata dal browser o scelta nel selettore di lingua) per un anno. È strettamente funzionale e quindi esente dal consenso.\n\nQuesto sito non utilizza cookie di misurazione dell'audience, pubblicitari o di social network. Per questo motivo non viene mostrato alcun banner di consenso."
         },
         "storage": {
           "title": "Archiviazione locale",

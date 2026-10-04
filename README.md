@@ -1,6 +1,6 @@
-# AI Studio Photo — site vitrine
+# Glint Studio — site vitrine
 
-Site marketing du SaaS AI Studio Photo (l'application elle-même vit dans un autre dépôt).
+Site marketing du SaaS Glint Studio (nom interne : AI Studio Photo ; l'application elle-même vit dans un autre dépôt).
 Nuxt 4 en SSR, 5 langues, chatbot de support, déployé en Docker derrière Caddy sur un VPS.
 
 ## Stack
@@ -27,7 +27,7 @@ Avant de pousser : `pnpm check` (lint + typecheck + build), aussi lancé par la 
 
 | Chemin | Rôle |
 |--------|------|
-| `pages/` | Accueil, `features/*`, tarifs, galerie, aide (chatbot + contact), blog, pages légales |
+| `pages/` | Accueil, `features/*`, galerie, aide (chatbot + contact), blog, pages légales |
 | `components/marketing/` | Header, footer et sections de la page d'accueil |
 | `components/common/` | `CTAButton`, `LanguageSelect`, `LegalPage`… |
 | `config/` | Navigation/footer (`site.config`), URLs du SaaS (`saas.config`), médias (`hero`, `visual-proof`), limites (`app-limits`) |

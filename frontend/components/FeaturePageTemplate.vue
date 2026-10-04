@@ -37,7 +37,6 @@ defineProps<{
   finalCtaTitle: string
   finalCtaSub: string
   finalCtaBtnPrimary: string
-  finalCtaBtnSecondary: string
 }>()
 
 // One reveal hook per section
@@ -126,13 +125,6 @@ const trustChips = computed(() => [
             <p class="text-sm text-gray-500">
               {{ $t('cta.clarification') }}
             </p>
-            <CommonCTAButton
-              to="/pricing"
-              variant="ghost"
-              size="xs"
-            >
-              {{ $t('cta.pricing') }}
-            </CommonCTAButton>
             <CommonRiskReversalChips class="mt-4" />
           </div>
 
@@ -472,13 +464,6 @@ const trustChips = computed(() => [
               <p class="text-sm text-primary-100">
                 {{ $t('cta.clarification') }}
               </p>
-              <CommonCTAButton
-                to="/pricing"
-                variant="ghost-light"
-                size="xs"
-              >
-                {{ finalCtaBtnSecondary }}
-              </CommonCTAButton>
             </div>
             <CommonRiskReversalChips
               variant="light"

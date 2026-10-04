@@ -7,8 +7,6 @@
     "clarification": "After click: free account → 5 credits → first creation in 30s",
     "login": "Already have an account? Sign in",
     "loginShort": "I already have an account",
-    "pricing": "View pricing",
-    "pricingLink": "View all pricing",
     "discover": "Discover",
     "orStartNow": "Or start now →",
     "header": "Start for free — no credit card",
@@ -36,14 +34,13 @@
     }
   },
   "common": {
-    "appName": "AI Studio Photo",
+    "appName": "Glint Studio",
     "language": "Language",
     "menu": "Menu"
   },
   "nav": {
     "home": "Home",
     "features": "Features",
-    "pricing": "Pricing",
     "help": "Help",
     "blog": "Blog",
     "affiliation": "Affiliation",
@@ -66,10 +63,6 @@
       "label": "Motion Studio",
       "description": "Go from image to motion in one click."
     }
-  },
-  "pricingTeaser": {
-    "title": "Start for free. Scale without limits.",
-    "subtitle": "Free, Pro or Enterprise — choose the plan that fits you."
   },
   "productDemo": {
     "badge": "Product demo",
@@ -115,7 +108,7 @@
     "examples": {
       "studioVirtuel": {
         "before": "Raw product photo — white background, flat lighting",
-        "after": "AI Studio result — studio set, professional lighting"
+        "after": "Glint Studio result — studio set, professional lighting"
       },
       "mannequinVirtuel": {
         "before": "Shoe isolated on a neutral background",
@@ -234,114 +227,6 @@
     "cancelAnytime": "Cancel anytime",
     "freeTrial": "7-day free trial"
   },
-  "pricing": {
-    "pageTitle": "Pricing",
-    "pageDescription": "Discover our plans: Free, Pro and Enterprise. Start without a credit card.",
-    "heroTitle": "The plan that",
-    "heroHighlight": "fits you",
-    "heroSubtitle": "Start for free. Scale without limits. Cancel anytime.",
-    "finalCtaLine": "Early access. 7-day trial. No card required.",
-    "monthly": "Monthly",
-    "yearly": "Yearly",
-    "annualBadge": "–20%",
-    "billingToggleAria": "Annual billing",
-    "periodPerMonth": "/ month",
-    "billedPrefix": "Billed",
-    "billedSuffix": "€ / year",
-    "savingsPrefix": "↓",
-    "savingsSuffix": "with annual billing",
-    "trustStrip": "Transparent pricing · No surprises · No commitment",
-    "includedTitle": "Included in all plans",
-    "faqTitle": "Frequently asked questions",
-    "faqSubtitle": "Everything you need to know before getting started.",
-    "finalCtaEyebrow": "Ready to get started?",
-    "finalCtaTitle": "Transform your visuals",
-    "finalCtaTitleBreak": "today.",
-    "redirectHint": "You will be redirected to your account.",
-    "redirectHintEnterprise": "You will be redirected to schedule a call.",
-    "plans": {
-      "free": {
-        "name": "Free",
-        "tagline": "To explore the power of generative AI",
-        "bestFor": "Individuals discovering AI Studio",
-        "features": [
-          "10 AI generations / month",
-          "Virtual Studio (basic access)",
-          "Standard resolution (1024px)",
-          "JPG / PNG export",
-          "30-day storage",
-          "Virtual Model",
-          "Motion Studio",
-          "4K AI Upscaler"
-        ]
-      },
-      "pro": {
-        "name": "Pro",
-        "tagline": "For creators and brands producing at scale",
-        "bestFor": "Growing brands & creators",
-        "badge": "Most popular",
-        "annualSaving": "60€ saved / year",
-        "features": [
-          "500 AI generations / month",
-          "Full Virtual Studio",
-          "Virtual Model",
-          "Motion Studio",
-          "4K AI Upscaler included",
-          "High resolution (4096px)",
-          "Pro export formats (PNG, TIFF, WEBP)",
-          "Priority email support"
-        ]
-      },
-      "enterprise": {
-        "name": "Enterprise",
-        "tagline": "For teams and intensive production",
-        "bestFor": "Teams & large workflows",
-        "annualSaving": "240€ saved / year",
-        "features": [
-          "Unlimited generations",
-          "All tools included",
-          "Teams up to 20 users",
-          "API Access + Webhooks",
-          "Maximum resolution",
-          "White-label option",
-          "99.9% SLA guaranteed",
-          "Dedicated account manager"
-        ]
-      }
-    },
-    "perks": {
-      "secureData": "Secure data & GDPR compliant",
-      "noCard": "No credit card to start",
-      "cancelAnytime": "Cancel anytime",
-      "noWatermark": "No watermark on exports",
-      "multiDevice": "Multi-device access",
-      "freeUpdates": "Free updates",
-      "frenchInterface": "100% French interface",
-      "securePayment": "Secure payment (Stripe)"
-    },
-    "faq": [
-      {
-        "q": "Can I change plans at any time?",
-        "a": "Yes. Upgrade or downgrade from your account in one click. Changes take effect immediately with prorated billing."
-      },
-      {
-        "q": "Does the free trial require a credit card?",
-        "a": "No, no card required for the 7-day trial. You only enter payment details if you choose to continue."
-      },
-      {
-        "q": "What happens if I reach my generation limit?",
-        "a": "You receive a notification at 80% usage. You can purchase additional credits or upgrade your plan instantly."
-      },
-      {
-        "q": "Do I own the generated images?",
-        "a": "Yes, you retain full rights to all content created. Commercial use is included in all plans, with no restrictions."
-      },
-      {
-        "q": "How does annual billing work?",
-        "a": "Annual billing is charged once at the start of the period. You get a 20% discount compared to monthly billing."
-      }
-    ]
-  },
   "footer": {
     "description": "The generative AI platform to create professional studio photos in seconds.",
     "product": "Product",
@@ -352,7 +237,6 @@
     "allRightsReserved": "All rights reserved",
     "productLinks": {
       "features": "Features",
-      "pricing": "Pricing",
       "api": "API",
       "changelog": "Changelog"
     },
@@ -466,7 +350,7 @@
       },
       "howToUse": {
         "title": "How to use it?",
-        "step1": "Import your image or scene created in AI Studio.",
+        "step1": "Import your image or scene created in Glint Studio.",
         "step2": "Choose a motion style (cinematic, slow motion, panoramic, reveal, etc.).",
         "step3": "Let the AI generate a smooth and realistic clip.",
         "step4": "Download in 4K, ready for your campaigns."
@@ -492,10 +376,10 @@
   "help": {
     "meta": {
       "title": "Help",
-      "description": "Ask our AI assistant your questions and get instant answers about AI Studio Photo."
+      "description": "Ask our AI assistant your questions and get instant answers about Glint Studio."
     },
     "suggestedQuestions": {
-      "howItWorks": "How does AI Studio Photo work?",
+      "howItWorks": "How does Glint Studio work?",
       "pricing": "What are the prices and available plans?",
       "studioPhoto": "How do I create a professional studio photo?",
       "mannequins": "Can I add virtual models to my photos?",
@@ -503,9 +387,9 @@
       "formats": "Which file formats are supported?"
     },
     "chat": {
-      "placeholder": "Ask your question about AI Studio Photo...",
+      "placeholder": "Ask your question about Glint Studio...",
       "emptyTitle": "How can I help you?",
-      "emptyDescription": "Ask me anything about AI Studio Photo and I'll answer instantly from our documentation.",
+      "emptyDescription": "Ask me anything about Glint Studio and I'll answer instantly from our documentation.",
       "suggestedLabel": "Suggested questions:",
       "noAnswer": "I couldn't find the answer in our documentation. Contact us at {email}.",
       "errors": {
@@ -551,7 +435,7 @@
     }
   },
   "meta": {
-    "title": "AI Studio Photo – Professional product photos with AI",
+    "title": "Glint Studio – Professional product photos with AI",
     "description": "Turn your product photos into professional studio visuals with AI — in 30 seconds. No photographer, no studio.",
     "appDescription": "Generative AI platform to create professional studio photos from product photos."
   },
@@ -564,12 +448,12 @@
     "updatedAt": "Last updated:",
     "legalNotice": {
       "title": "Legal notice",
-      "description": "Legal information about the publisher and host of the AI Studio Photo website.",
+      "description": "Legal information about the publisher and host of the Glint Studio website.",
       "updatedAt": "[date]",
       "sections": {
         "publisher": {
           "title": "Publisher",
-          "body": "The aistudiophoto.com website is published by [company name, legal form], with a share capital of [amount], registered under number [registration number], with its registered office at [address].\n\n- VAT number: [VAT number]\n- Email: [contact email]\n- Publication director: [name]"
+          "body": "The glintstudio.ai website is published by [company name, legal form], with a share capital of [amount], registered under number [registration number], with its registered office at [address].\n\n- VAT number: [VAT number]\n- Email: [contact email]\n- Publication director: [name]"
         },
         "hosting": {
           "title": "Hosting",
@@ -587,12 +471,12 @@
     },
     "privacy": {
       "title": "Privacy policy",
-      "description": "How AI Studio Photo collects and processes the personal data of website visitors.",
+      "description": "How Glint Studio collects and processes the personal data of website visitors.",
       "updatedAt": "[date]",
       "sections": {
         "controller": {
           "title": "Data controller",
-          "body": "[company name], [address]. Contact for any question about your data: [email].\n\nThis policy covers the aistudiophoto.com marketing website. Use of the AI Studio Photo application is governed by its own privacy policy."
+          "body": "[company name], [address]. Contact for any question about your data: [email].\n\nThis policy covers the glintstudio.ai marketing website. Use of the Glint Studio application is governed by its own privacy policy."
         },
         "data": {
           "title": "Data processed on this website",
@@ -614,12 +498,12 @@
     },
     "terms": {
       "title": "Terms of use",
-      "description": "Terms of use of the AI Studio Photo marketing website.",
+      "description": "Terms of use of the Glint Studio marketing website.",
       "updatedAt": "[date]",
       "sections": {
         "purpose": {
           "title": "Purpose",
-          "body": "These terms govern the use of the aistudiophoto.com website, published by [company name] (see the legal notice). Subscription to and use of the AI Studio Photo application are governed by separate terms, accepted at sign-up [link to the application's terms]."
+          "body": "These terms govern the use of the glintstudio.ai website, published by [company name] (see the legal notice). Subscription to and use of the Glint Studio application are governed by separate terms, accepted at sign-up [link to the application's terms]."
         },
         "access": {
           "title": "Access to the website",
@@ -645,12 +529,12 @@
     },
     "cookies": {
       "title": "Cookie policy",
-      "description": "Cookies and local storage used by the AI Studio Photo website.",
+      "description": "Cookies and local storage used by the Glint Studio website.",
       "updatedAt": "[date]",
       "sections": {
         "used": {
           "title": "Cookies used",
-          "body": "This website uses no analytics, advertising or social media cookies. That is why no consent banner is shown."
+          "body": "This website sets a single cookie, \"i18n_redirected\", which remembers the site language (detected from your browser or chosen in the language selector) for one year. It is strictly functional and therefore exempt from consent.\n\nThis website uses no analytics, advertising or social media cookies. That is why no consent banner is shown."
         },
         "storage": {
           "title": "Local storage",

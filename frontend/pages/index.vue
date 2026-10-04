@@ -214,14 +214,11 @@ const steps = computed(() => [
       </div>
     </section>
 
-    <!-- 7. Pricing teaser -->
-    <MarketingPricingTeaser />
-
-    <!-- 8. Trust (Testimonials + Social proof) -->
+    <!-- 7. Trust (Testimonials + Social proof) -->
     <MarketingTestimonialSection />
     <MarketingSocialProofBar />
 
-    <!-- 9. Final CTA -->
+    <!-- 8. Final CTA -->
     <section class="py-16 md:py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto rounded-3xl bg-gradient-to-r from-primary-500 to-primary-600 p-10 md:p-14 text-center shadow-2xl">
@@ -244,13 +241,6 @@ const steps = computed(() => [
             <p class="text-sm text-white/80">
               {{ $t('cta.clarification') }}
             </p>
-            <CommonCTAButton
-              to="/pricing"
-              variant="ghost-light"
-              size="xs"
-            >
-              {{ $t('cta.pricing') }}
-            </CommonCTAButton>
           </div>
           <CommonRiskReversalChips
             variant="light"

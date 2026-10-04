@@ -1,5 +1,5 @@
 # Reverse proxy HTTPS (certificats Let's Encrypt automatiques).
-# DOMAIN vient de .env (ex. aistudiophoto.com) ; le DNS A/AAAA de DOMAIN et www.DOMAIN
+# DOMAIN vient de .env (ex. glintstudio.ai) ; le DNS A/AAAA de DOMAIN et www.DOMAIN
 # doit pointer vers le VPS, ports 80 et 443 ouverts.
 
 www.{$DOMAIN} {

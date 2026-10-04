@@ -10,7 +10,7 @@ const is404 = computed(() => props.error.statusCode === 404)
 
 useSeoMeta({
   // error.vue renders outside app.vue: no titleTemplate, so add the suffix here
-  title: () => `${is404.value ? t('errorPage.notFoundTitle') : t('errorPage.errorTitle')} – AI Studio Photo`,
+  title: () => `${is404.value ? t('errorPage.notFoundTitle') : t('errorPage.errorTitle')} – Glint Studio`,
   robots: 'noindex, follow',
 })
 </script>
