@@ -12,11 +12,9 @@ export const saasConfig = {
   /** Root of the SaaS application */
   baseUrl: SAAS_BASE_URL,
 
-  /** Sends visitors to the sign-up flow */
-  signupUrl: `${SAAS_BASE_URL}/signup`,
-
-  /** Sends existing users to the login page */
-  loginUrl: `${SAAS_BASE_URL}/login`,
+  /** Sign-up and login: app root (no /signup or /login route yet) */
+  signupUrl: SAAS_BASE_URL,
+  loginUrl: SAAS_BASE_URL,
 
   /** Enterprise: calendar booking or contact form (Calendly, HubSpot, etc.) */
   enterpriseContactUrl: 'https://calendly.com/glintstudio/enterprise',
