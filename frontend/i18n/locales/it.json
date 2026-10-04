@@ -37,7 +37,8 @@
   },
   "common": {
     "appName": "AI Studio Photo",
-    "language": "Lingua"
+    "language": "Lingua",
+    "menu": "Menu"
   },
   "nav": {
     "home": "Home",
@@ -110,7 +111,21 @@
     "subtitle": "Una foto prodotto grezza diventa un visual da studio professionale. Ecco cosa può generare l'IA in 30 secondi.",
     "illustrativeLabel": "Risultati generati a titolo di esempio — dimostrazione delle capacità",
     "before": "Prima",
-    "after": "Dopo"
+    "after": "Dopo",
+    "examples": {
+      "studioVirtuel": {
+        "before": "Foto prodotto grezza — sfondo bianco, luce piatta",
+        "after": "Risultato AI Studio — set da studio, luce professionale"
+      },
+      "mannequinVirtuel": {
+        "before": "Scarpa isolata su sfondo neutro",
+        "after": "Scarpa in una scena lifestyle con modella"
+      },
+      "motionStudio": {
+        "before": "Prodotto statico — cuffie",
+        "after": "Prodotto in movimento — animazione video IA"
+      }
+    }
   },
   "personas": {
     "forLabel": "Per: ",
@@ -470,7 +485,9 @@
   "gallery": {
     "title": "Galleria delle creazioni",
     "subtitle": "Scopri cosa creano i nostri utenti",
-    "videoBadge": "Video"
+    "videoBadge": "Video",
+    "imageAlt": "Creazione prodotto {n}",
+    "videoAlt": "Video prodotto {n}"
   },
   "help": {
     "meta": {

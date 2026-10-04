@@ -183,10 +183,7 @@ const personaKeys = ['ecommerce', 'fashion', 'creators'] as const
           </div>
 
           <!-- Persona labels — passive identification, low visual priority -->
-          <p
-            class="mt-8 text-xs font-medium text-white/50"
-            aria-label="Audience"
-          >
+          <p class="mt-8 text-xs font-medium text-white/50">
             {{ $t('personas.forLabel') }}
             <span
               v-for="(key, i) in personaKeys"

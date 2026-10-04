@@ -37,7 +37,8 @@
   },
   "common": {
     "appName": "AI Studio Photo",
-    "language": "Sprache"
+    "language": "Sprache",
+    "menu": "Menü"
   },
   "nav": {
     "home": "Startseite",
@@ -110,7 +111,21 @@
     "subtitle": "Aus einem rohen Produktfoto wird ein professionelles Studio-Visual. Das kann die KI in 30 Sekunden erzeugen.",
     "illustrativeLabel": "Beispielhaft generierte Ergebnisse — Demonstration der Möglichkeiten",
     "before": "Vorher",
-    "after": "Nachher"
+    "after": "Nachher",
+    "examples": {
+      "studioVirtuel": {
+        "before": "Unbearbeitetes Produktfoto — weißer Hintergrund, flaches Licht",
+        "after": "AI-Studio-Ergebnis — Studiokulisse, professionelles Licht"
+      },
+      "mannequinVirtuel": {
+        "before": "Schuh freigestellt auf neutralem Hintergrund",
+        "after": "Schuh in einer Lifestyle-Szene mit Model"
+      },
+      "motionStudio": {
+        "before": "Statisches Produkt — Kopfhörer",
+        "after": "Produkt in Bewegung — KI-Videoanimation"
+      }
+    }
   },
   "personas": {
     "forLabel": "Für: ",
@@ -470,7 +485,9 @@
   "gallery": {
     "title": "Kreationen-Galerie",
     "subtitle": "Entdecke, was unsere Nutzer erschaffen",
-    "videoBadge": "Video"
+    "videoBadge": "Video",
+    "imageAlt": "Produktkreation {n}",
+    "videoAlt": "Produktvideo {n}"
   },
   "help": {
     "meta": {

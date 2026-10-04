@@ -18,7 +18,6 @@ import { VIDEO_ROTATION_INTERVAL_MS } from '~/config/app-limits'
  */
 export interface HeroVideoConfig {
   url: string
-  alt?: string
 }
 
 /**
@@ -38,10 +37,10 @@ const RAW_VIDEOS = [
 ] as const
 
 export const heroVideos: HeroVideoConfig[] = [
-  { url: opt(RAW_VIDEOS[0]), alt: 'Démonstration IA génération photo 1' },
-  { url: opt(RAW_VIDEOS[1]), alt: 'Démonstration IA génération photo 2' },
-  { url: opt(RAW_VIDEOS[2]), alt: 'Démonstration IA génération photo 3' },
-  { url: opt(RAW_VIDEOS[3]), alt: 'Démonstration IA génération photo 4' },
+  { url: opt(RAW_VIDEOS[0]) },
+  { url: opt(RAW_VIDEOS[1]) },
+  { url: opt(RAW_VIDEOS[2]) },
+  { url: opt(RAW_VIDEOS[3]) },
 ]
 
 /** URL of the first video — reused as the product demo video */

@@ -59,20 +59,13 @@ Audit puis remise au propre du site vitrine (branche `claude/saas-site-audit-732
 - `plugins/payload-context.server.ts` : contournement d'un ancien bug Nuxt conservé faute de pouvoir le reproduire.
 - Sur des écrans très bas (< 600 px de haut), le titre du hero passe sous le header (design existant).
 
-## Ménage Git (non fait, à ta main)
+## Ménage Git (fait le 2026-10-03)
 
-Rien n'a été supprimé côté Git. Commandes suggérées, à vérifier avant exécution :
+- Branches `i18n` et `refactor/code-quality-phase-1` (déjà fusionnées dans `main`) supprimées en local et sur GitHub.
+- 3 worktrees Cursor cassés et leurs branches `2025-10-29-*` supprimés (vérifié avant : aucun travail unique,
+  seulement un ancien essai de config i18n fr/en).
+- 3 stashes périmés supprimés (suppressions de docs / `go.mod` / `frontend_original`, tout déjà dans l'historique).
+- Le dossier principal du projet est sur `main`. Restent : `main` et la branche de cette PR (à supprimer après fusion).
 
-```bash
-# Branche i18n déjà fusionnée dans main
-git branch -d i18n && git push origin --delete i18n
-# 3 worktrees Cursor cassés (pointent vers l'ancien chemin du projet)
-git worktree prune
-git branch -D 2025-10-29-04ov-bOTqO 2025-10-29-p80g-mWFF8 2025-10-29-ygfi-K21HV
-# 3 stashes périmés (suppression de docs / go.mod / frontend_original) — irréversible
-git stash list
-git stash clear
-```
-
-Dans le dossier principal du projet : supprimer `frontend/node_modules` (liens vers l'ancien chemin) puis `pnpm install`,
+Dans le dossier principal du projet, à faire toi-même : supprimer `frontend/node_modules` (liens vers l'ancien chemin) puis `pnpm install`,
 et `backend/` (dossier local non suivi : contient encore une clé OpenAI, à révoquer si elle ne sert plus).

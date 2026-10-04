@@ -37,7 +37,8 @@
   },
   "common": {
     "appName": "AI Studio Photo",
-    "language": "Language"
+    "language": "Language",
+    "menu": "Menu"
   },
   "nav": {
     "home": "Home",
@@ -110,7 +111,21 @@
     "subtitle": "A raw product photo becomes a professional studio visual. Here's what the AI can generate in 30 seconds.",
     "illustrativeLabel": "Example-generated results — capability demonstration",
     "before": "Before",
-    "after": "After"
+    "after": "After",
+    "examples": {
+      "studioVirtuel": {
+        "before": "Raw product photo — white background, flat lighting",
+        "after": "AI Studio result — studio set, professional lighting"
+      },
+      "mannequinVirtuel": {
+        "before": "Shoe isolated on a neutral background",
+        "after": "Shoe in a lifestyle scene with a model"
+      },
+      "motionStudio": {
+        "before": "Static product — headphones",
+        "after": "Product in motion — AI video animation"
+      }
+    }
   },
   "personas": {
     "forLabel": "For: ",
@@ -470,7 +485,9 @@
   "gallery": {
     "title": "Creations Gallery",
     "subtitle": "Discover what our users create",
-    "videoBadge": "Video"
+    "videoBadge": "Video",
+    "imageAlt": "Product creation {n}",
+    "videoAlt": "Product video {n}"
   },
   "help": {
     "meta": {
