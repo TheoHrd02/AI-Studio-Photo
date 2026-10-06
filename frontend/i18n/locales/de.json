@@ -442,7 +442,22 @@
   "blog": {
     "title": "Blog",
     "subtitle": "News, Tutorials und Inspiration",
-    "empty": "Artikel folgen in Kürze..."
+    "empty": "Artikel folgen in Kürze...",
+    "breadcrumb": "Brotkrumennavigation",
+    "by": "Von",
+    "published": "veröffentlicht am",
+    "updated": "aktualisiert am",
+    "takeaways": "Das Wichtigste",
+    "toc": "Inhalt",
+    "faq": "Häufig gestellte Fragen",
+    "aboutAuthor": "Über den Autor",
+    "related": "Weiterlesen",
+    "authors": {
+      "theo": {
+        "role": "Gründer von Glint Studio",
+        "bio": "Als Gründer von Glint Studio entwickelt er generative KI-Tools, mit denen Onlinehändler professionelle Produktfotos und -videos ohne Studio und ohne Fotografen erstellen."
+      }
+    }
   },
   "legal": {
     "updatedAt": "Zuletzt aktualisiert:",

@@ -21,7 +21,7 @@ function collectHrefs(): string[] {
   // Footer links (indexable only)
   for (const col of siteConfig.footer.columns) {
     for (const link of col.links) {
-      // /blog excluded while empty (noindex in pages/blog.vue)
+      // /blog and articles: added per language by server/api/__sitemap__/urls.get.ts
       if (link.href.startsWith('/') && link.href !== '/blog') hrefs.add(link.href)
     }
   }

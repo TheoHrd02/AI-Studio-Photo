@@ -12,6 +12,7 @@ Audit puis remise au propre du site vitrine (branche `claude/saas-site-audit-732
 | **Légal** | Mentions légales, confidentialité, CGU, cookies (squelettes, champs à compléter surlignés). Contact → `/help#contact`. |
 | **i18n** | `@nuxtjs/i18n`, 5 langues (fr, en, de, it, es), URLs préfixées, détection de la langue du navigateur (sur `/`, mémorisée par cookie), sélecteur de langue, hreflang, tout le texte en dur extrait. de/it/es traduits automatiquement. |
 | **SEO** | Open Graph/Twitter par page (`usePageSeo`), og:locale, canonical, JSON-LD (Organization + logo, SoftwareApplication), sitemap par langue, robots, 404 traduite, `<h1>` partout, favicon/apple-touch/manifest, blog vide en noindex. |
+| **Blog (SEO / GEO)** | Nuxt Content (Markdown dans `frontend/content/blog/{langue}/`), requêtes côté serveur uniquement (CSP intacte). Gabarit article : réponse directe, « L'essentiel », sommaire, FAQ, auteur, dates, encart produit, articles liés, JSON-LD `BlogPosting`/`BreadcrumbList`/`FAQPage`. hreflang et sitemap limités aux traductions existantes, `lastmod` réels (supprimés sur les pages statiques, où ils étaient faux). Script IndexNow. Guide : `docs/BLOG.md`, plan éditorial : `docs/BLOG-PLAN.md`. |
 | **RGPD / perf** | Police Inter auto-hébergée (avant : chargée depuis Google… et jamais appliquée). Icônes embarquées (plus d'appel à Iconify). CSP limitée au domaine. |
 | **Déploiement** | Docker Compose prod = Caddy (HTTPS auto, www→domaine, cache assets) + Nuxt non exposé, conteneur non-root, healthcheck. Testé en local. Voir `docs/DEPLOY.md`. |
 | **CI** | `.github/workflows/ci.yml` : lint, contrôle i18n, typecheck, build + build de l'image Docker. |
@@ -44,7 +45,11 @@ Audit puis remise au propre du site vitrine (branche `claude/saas-site-audit-732
   Carrières (`config/site.config.ts`). Liens réseaux sociaux retirés du footer.
 - Lien Calendly entreprise à confirmer (`config/saas.config.ts`) ; l'app est sur `app.glintstudio.ai`.
 - Page tarifs supprimée ; la doc du chatbot (`server/assets/support-docs.md`) contient encore une section « Tarifs ».
-- Blog : quand il y aura des articles, retirer `noindex` (`pages/blog.vue`) et l'exclusion dans `config/sitemap-urls.ts`.
+- Blog : relire le brouillon `frontend/content/blog/fr/photo-produit-fond-blanc.md` (TODO en tête : avant/après
+  Glint, image de couverture, vérifications), puis `draft: false`. L'index du blog sort du `noindex` tout seul dès
+  qu'un article est publié dans la langue. Compléter l'auteur (`config/blog.config.ts` : liens LinkedIn/site ;
+  bio dans `blog.authors.theo` des 5 langues).
+- Search Console + Bing Webmaster Tools : vérifier le domaine, soumettre le sitemap (`docs/BLOG.md`).
 - Engagements de la page Aide (« réponse sous 24h », « 7j/7 ») à valider.
 
 ## Limites connues (choix assumés)

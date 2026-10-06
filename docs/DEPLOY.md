@@ -53,8 +53,16 @@ docker compose -f docker-compose.prod.yml ps   # frontend doit être "healthy"
 
 Puis dans un navigateur : sélecteur de langue, page Aide (une question au chatbot), console sans erreur CSP.
 
+Si des articles du blog ont été publiés ou modifiés, signaler les URL à Bing / IndexNow (depuis `frontend/`) :
+
+```bash
+pnpm indexnow
+```
+
 ## Notes
 
 - Limites du chatbot gardées en mémoire (15 questions/min/IP + plafond journalier) : valables pour **une seule instance**. Pour plusieurs instances, passer à un stockage partagé (Redis).
+- Le blog (Nuxt Content) restaure sa base SQLite dans `/app/.data` au premier appel : dossier créé dans l'image,
+  rien à monter. Node ≥ 22.5 requis (SQLite natif).
 - La CSP utilise un nonce par requête (`frontend/server/plugins/csp.ts`) : rendu SSR requis, pas de `nuxt generate`.
 - Testé en local avec `DOMAIN=localhost` (Caddy génère alors un certificat local).
