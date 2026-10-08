@@ -20,3 +20,11 @@ export const usePageSeo = (meta: () => { title?: string, description: string, no
     robots: () => meta().noindex ? 'noindex, follow' : undefined,
   })
 }
+
+/**
+ * Pages that exist in some locales only (blog): locale code → path of each version.
+ * app.vue then limits hreflang / og:locale:alternate to these. Keyed by route path so a
+ * value left by a previous page is ignored. Unset = the page exists in every locale.
+ */
+export const usePageAlternates = () =>
+  useState<{ path: string, paths: Record<string, string> } | null>('page-alternates', () => null)

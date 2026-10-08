@@ -442,7 +442,22 @@
   "blog": {
     "title": "Blog",
     "subtitle": "Actualités, tutoriels et inspirations",
-    "empty": "Articles à venir..."
+    "empty": "Articles à venir...",
+    "breadcrumb": "Fil d'Ariane",
+    "by": "Par",
+    "published": "publié le",
+    "updated": "mis à jour le",
+    "takeaways": "L'essentiel",
+    "toc": "Sommaire",
+    "faq": "Questions fréquentes",
+    "aboutAuthor": "À propos de l'auteur",
+    "related": "À lire aussi",
+    "authors": {
+      "theo": {
+        "role": "Fondateur de Glint Studio",
+        "bio": "Fondateur de Glint Studio, il conçoit des outils d'IA générative qui permettent aux e-commerçants de produire des photos et vidéos produit professionnelles sans studio ni photographe."
+      }
+    }
   },
   "legal": {
     "updatedAt": "Dernière mise à jour :",

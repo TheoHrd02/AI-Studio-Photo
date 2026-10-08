@@ -15,6 +15,7 @@ const securityHeaders = isProduction ? productionSecurityHeaders : {}
 export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
+    '@nuxt/content',
     '@nuxt/eslint',
     '@nuxtjs/sitemap',
     '@nuxtjs/i18n',
@@ -45,6 +46,12 @@ export default defineNuxtConfig({
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'https://glintstudio.ai',
     name: 'Glint Studio',
+  },
+
+  content: {
+    // Node's built-in SQLite (Node ≥ 22.5, Docker: 24): no native addon to compile.
+    // Runtime DB in .data/ (writable by the container user, see Dockerfile.prod)
+    experimental: { sqliteConnector: 'native' },
   },
 
   runtimeConfig: {
@@ -112,6 +119,5 @@ export default defineNuxtConfig({
   sitemap: {
     sources: ['/api/__sitemap__/urls'],
     excludeAppSources: true,
-    autoLastmod: true,
   },
 })

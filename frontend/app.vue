@@ -1,21 +1,43 @@
 <script setup lang="ts">
 const { t, locales, localeProperties } = useI18n()
 const ogLocale = (language?: string) => language?.replace('-', '_')
-const { public: { siteUrl } } = useRuntimeConfig()
+const { public: { siteUrl, i18n: { defaultLocale } } } = useRuntimeConfig()
 
 // lang + dir on <html>, hreflang alternates, canonical (baseUrl from nuxt.config i18n), og:locale
 const i18nHead = useLocaleHead({ seo: true })
+
+// Pages missing in some locales (blog articles) declare their versions: keep only those alternates
+const route = useRoute()
+const pageAlternates = usePageAlternates()
+const alternatePaths = () => pageAlternates.value?.path === route.path ? pageAlternates.value.paths : null
+const hasVersion = (code: string) => !alternatePaths() || code in alternatePaths()!
+const hreflangLocale = (hreflang: string) => hreflang === 'x-default' ? defaultLocale : hreflang.split('-')[0]!
+const links = () => {
+  const paths = alternatePaths()
+  if (!paths) return i18nHead.value.link
+  return i18nHead.value.link
+    ?.filter(l => l.rel !== 'alternate' || paths[hreflangLocale(l.hreflang)])
+    .map(l => l.rel === 'alternate' ? { ...l, href: `${siteUrl}${paths[hreflangLocale(l.hreflang)]}` } : l)
+}
 
 // JSON-LD structured data (Organization + SoftwareApplication), localized
 const jsonLd = () => [
   {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${siteUrl}/#organization`, // referenced as publisher by blog articles
     'name': 'Glint Studio',
     'url': siteUrl,
     'logo': `${siteUrl}/icon-512.png`,
     'description': t('meta.description'),
     'sameAs': [],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite', // site name shown in search results
+    'name': 'Glint Studio',
+    'url': siteUrl,
+    'publisher': { '@id': `${siteUrl}/#organization` },
   },
   {
     '@context': 'https://schema.org',
@@ -31,7 +53,7 @@ const jsonLd = () => [
 
 useHead(() => ({
   htmlAttrs: i18nHead.value.htmlAttrs,
-  link: i18nHead.value.link,
+  link: links(),
   meta: [
     ...(i18nHead.value.meta ?? []),
     { name: 'description', content: t('meta.description') },
@@ -46,7 +68,7 @@ useSeoMeta({
   ogType: 'website',
   ogLocale: () => ogLocale(localeProperties.value.language),
   ogLocaleAlternate: () => locales.value
-    .filter(l => l.code !== localeProperties.value.code)
+    .filter(l => l.code !== localeProperties.value.code && hasVersion(l.code))
     .map(l => ogLocale(l.language))
     .filter((l): l is string => !!l),
   ogSiteName: 'Glint Studio',

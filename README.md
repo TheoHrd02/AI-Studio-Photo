@@ -8,8 +8,9 @@ Nuxt 4 en SSR, 5 langues, chatbot de support, déployé en Docker derrière Cadd
 - **Nuxt 4** (SSR) + Vue 3, **Tailwind CSS 4**, **Nuxt UI 4** (icônes, polices auto-hébergées)
 - **@nuxtjs/i18n** : `fr` (défaut, à la racine), `en`, `de`, `it`, `es` (préfixes `/en`, `/de`…)
 - **@nuxtjs/sitemap** : un sitemap par langue avec alternates hreflang (`/sitemap_index.xml`)
+- **@nuxt/content** : blog en Markdown (`frontend/content/blog/{langue}/`), guide de rédaction `docs/BLOG.md`
 - **Chatbot** : route serveur Nuxt `/api/ask` → Claude Haiku (SDK Anthropic), documentation dans `frontend/server/assets/support-docs.md`
-- **pnpm** uniquement (version fixée par `packageManager`), Node ≥ 20 (24 en CI/Docker)
+- **pnpm** uniquement (version fixée par `packageManager`), Node ≥ 22.5 (SQLite natif de Nuxt Content ; 24 en CI/Docker)
 
 ## Démarrage
 

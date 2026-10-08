@@ -442,7 +442,22 @@
   "blog": {
     "title": "Blog",
     "subtitle": "Novedades, tutoriales e inspiración",
-    "empty": "Próximamente, nuevos artículos..."
+    "empty": "Próximamente, nuevos artículos...",
+    "breadcrumb": "Ruta de navegación",
+    "by": "Por",
+    "published": "publicado el",
+    "updated": "actualizado el",
+    "takeaways": "Lo esencial",
+    "toc": "Índice",
+    "faq": "Preguntas frecuentes",
+    "aboutAuthor": "Sobre el autor",
+    "related": "Te puede interesar",
+    "authors": {
+      "theo": {
+        "role": "Fundador de Glint Studio",
+        "bio": "Fundador de Glint Studio, desarrolla herramientas de IA generativa que permiten a las tiendas online crear fotos y vídeos de producto profesionales sin estudio ni fotógrafo."
+      }
+    }
   },
   "legal": {
     "updatedAt": "Última actualización:",

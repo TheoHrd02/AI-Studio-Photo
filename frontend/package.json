@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@10.28.2",
   "engines": {
-    "node": ">=20",
+    "node": ">=22.5",
     "pnpm": ">=10"
   },
   "scripts": {
@@ -18,10 +18,12 @@
     "format": "eslint . --fix",
     "typecheck": "nuxt typecheck",
     "check": "pnpm lint && pnpm check:i18n && pnpm typecheck && pnpm run build",
-    "check:i18n": "node scripts/check-i18n.mjs"
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
+    "@nuxt/content": "^3.16.1",
     "@nuxt/ui": "4.11.3",
     "@nuxtjs/i18n": "^10.6.0",
     "@nuxtjs/sitemap": "^7.6.0",

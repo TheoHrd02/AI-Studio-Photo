@@ -1,5 +1,6 @@
 node_modules
 .nuxt
+.data
 # Lockfiles parasites (pnpm only)
 bun.lock
 package-lock.json
