@@ -5,6 +5,18 @@
  * All visuals are framed as "Illustrative preview" / "capability demonstration" in the UI.
  *
  * POST-LAUNCH: Replace URLs with real AI Studio outputs when available.
+ *
+ * INTERFACE SCREENSHOTS — pending, supplied by the owner (never fake ones). Drop these files, then change the lines:
+ *   frontend/public/screenshots/studio-virtuel-interface.webp     app page /dashboard/studio-virtuel
+ *   frontend/public/screenshots/mannequin-virtuel-interface.webp  app page /dashboard/mannequin-virtuel (model profile)
+ *   frontend/public/screenshots/motion-studio-interface.webp      app page /dashboard/motion-studio (animation style)
+ * Format: WebP, 1600×1200 (4:3: the feature page shows them in a 4:3 frame with object-cover, so another ratio is
+ * cropped), under ~300 KB, no personal data (real email, org name) on screen, ideally the French interface.
+ * Then, in featureVisuals below, for each studio:
+ *   interface: '/screenshots/studio-virtuel-interface.webp',
+ *   workflow: '/screenshots/studio-virtuel-interface.webp',
+ * Only `workflow` is displayed (FeaturePageTemplate, "how it works" section; alt: featurePages.{studio}.workflowImageAlt).
+ * Served by the site itself: allowed by the CSP (img-src 'self'), nothing else to configure.
  */
 
 const UNSPLASH_BASE = 'https://images.unsplash.com'

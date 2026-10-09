@@ -1,56 +1,41 @@
 {
   "cta": {
-    "primary": "Kostenlos starten — ohne Karte",
-    "featureButtonLine1": "Kostenlos starten",
-    "featureButtonLine2": "Ohne Karte",
-    "primaryWithCredits": "Kostenlos starten — 5 Credits geschenkt",
-    "clarification": "Nach dem Klick: Gratis-Konto → 5 Credits → erste Kreation in 30 s",
+    "primary": "Kostenloses Konto erstellen",
+    "featureButtonLine1": "Kostenloses Konto erstellen",
+    "featureButtonLine2": "Ohne Kreditkarte",
+    "primaryWithCredits": "Konto erstellen — Gratis-Credits inklusive",
+    "clarification": "Öffnet die App von Glint Studio: Registrierung mit einem bestehenden Konto (Google, GitHub …), Gratis-Credits, ohne Kreditkarte",
     "login": "Schon ein Konto? Anmelden",
-    "loginShort": "Ich habe schon ein Konto",
     "discover": "Entdecken",
-    "orStartNow": "Oder jetzt starten →",
-    "header": "Kostenlos starten — ohne Karte",
-    "plans": {
-      "free": {
-        "label": "Kostenlos starten — ohne Karte",
-        "note": "Keine Karte erforderlich"
-      },
-      "pro": {
-        "label": "Testphase starten — 7 Tage gratis",
-        "note": "Ohne Bindung"
-      },
-      "enterprise": {
-        "label": "Demo buchen",
-        "note": "Persönliches Gespräch inklusive"
-      }
-    },
+    "orStartNow": "Oder kostenloses Konto erstellen →",
+    "header": "Kostenloses Konto erstellen",
     "help": {
-      "chat": "Chat starten",
-      "returnToProduct": "Kostenlos starten — ohne Karte"
+      "chat": "Dem Assistenten eine Frage stellen",
+      "returnToProduct": "Kostenloses Konto erstellen"
     },
     "finalSection": {
       "title": "Bereit für deine ersten Visuals?",
       "subtitle": "Starte kostenlos und entdecke die Kraft der KI für deine Kreationen"
+    },
+    "comingSoon": {
+      "button": "Beim Start benachrichtigt werden",
+      "note": "Dieses Studio ist in der App noch nicht verfügbar: Schreib uns, um beim Start benachrichtigt zu werden.",
+      "title": "Dieses Studio kommt bald",
+      "subtitle": "Bis dahin sind Virtuelles Studio und Motion Studio bereits in der App verfügbar."
     }
   },
   "common": {
     "appName": "Glint Studio",
     "language": "Sprache",
-    "menu": "Menü"
+    "menu": "Menü",
+    "comingSoon": "Bald verfügbar"
   },
   "nav": {
     "home": "Startseite",
     "features": "Funktionen",
     "help": "Hilfe",
     "blog": "Blog",
-    "affiliation": "Partnerprogramm",
-    "login": "Anmelden",
-    "signup": "Registrieren",
-    "logout": "Abmelden",
-    "dashboard": "Dashboard",
-    "myAccount": "Mein Konto",
     "gallery": "Galerie",
-    "launchApp": "Kostenlos starten — ohne Karte",
     "studioVirtuel": {
       "label": "Virtuelles Studio",
       "description": "Platziere deine Produkte in Kulissen, die großen Fotostudios in nichts nachstehen."
@@ -95,7 +80,7 @@
     },
     "mockup": {
       "uploadHint": "Bild hierher ziehen",
-      "generating": "Wird generiert..."
+      "generating": "Wird generiert…"
     }
   },
   "beforeAfter": {
@@ -108,7 +93,7 @@
     "examples": {
       "studioVirtuel": {
         "before": "Unbearbeitetes Produktfoto — weißer Hintergrund, flaches Licht",
-        "after": "Glint-Studio-Ergebnis — Studiokulisse, professionelles Licht"
+        "after": "Ergebnis mit Glint Studio — Studiokulisse, professionelles Licht"
       },
       "mannequinVirtuel": {
         "before": "Schuh freigestellt auf neutralem Hintergrund",
@@ -136,20 +121,20 @@
     }
   },
   "hero": {
-    "eyebrow": "Early Access · 5 Credits geschenkt · 30 Sekunden",
+    "eyebrow": "Early Access · Gratis-Credits bei der Registrierung",
     "title": "Professionelle Produktfotos, in 30 Sekunden von der KI generiert",
     "trustChips": {
       "speed": "Ergebnis in 30 Sekunden",
-      "free": "5 Credits geschenkt — ohne Kreditkarte",
+      "free": "Gratis-Credits bei der Registrierung — ohne Kreditkarte",
       "noSkills": "Keine Vorkenntnisse nötig",
-      "cancel": "Jederzeit kündbar",
+      "cancel": "Abo jederzeit kündbar",
       "earlyAccess": "Early Access — werde Teil der Beta"
     }
   },
   "features": {
     "badge": "Unsere KI-Lösungen",
     "title": "Starke Tools für jeden Bedarf",
-    "subtitle": "Virtuelles Fotostudio, KI-Models, Animationen ... alles, was du für professionelle Inhalte brauchst.",
+    "subtitle": "Virtuelles Fotostudio, KI-Models, Animationen … alles, was du für professionelle Inhalte brauchst.",
     "studioVirtuel": {
       "title": "Virtuelles Studio",
       "description": "Verwandle deine Produktfotos in professionelle Studio-Visuals. Realistische Hintergründe, Beleuchtung und Stimmungen, von der KI generiert.",
@@ -224,39 +209,31 @@
   },
   "riskReversal": {
     "noCard": "Ohne Kreditkarte",
-    "cancelAnytime": "Jederzeit kündbar",
-    "freeTrial": "7 Tage gratis testen"
+    "cancelAnytime": "Abo jederzeit kündbar"
   },
   "footer": {
     "description": "Die Plattform für generative KI, um in wenigen Sekunden professionelle Studiofotos zu erstellen.",
     "product": "Produkt",
     "resources": "Ressourcen",
     "company": "Unternehmen",
-    "legal": "Rechtliches",
-    "followUs": "Folge uns",
     "allRightsReserved": "Alle Rechte vorbehalten",
     "productLinks": {
-      "features": "Funktionen",
-      "api": "API",
-      "changelog": "Changelog"
+      "features": "Funktionen"
     },
     "resourcesLinks": {
       "helpCenter": "Hilfe-Center",
-      "blog": "Blog",
-      "documentation": "Dokumentation",
-      "tutorials": "Tutorials"
+      "blog": "Blog"
     },
     "companyLinks": {
-      "about": "Über uns",
-      "affiliation": "Partnerprogramm",
-      "careers": "Karriere",
       "contact": "Kontakt"
     },
     "legalLinks": {
-      "terms": "Impressum",
+      "notice": "Impressum",
+      "terms": "Nutzungsbedingungen",
+      "sales": "Verkaufsbedingungen",
       "privacy": "Datenschutz",
-      "tos": "Nutzungsbedingungen",
-      "cookies": "Cookies"
+      "cookies": "Cookies",
+      "acceptable-use": "Zulässige Nutzung"
     }
   },
   "featurePageSection": {
@@ -387,7 +364,7 @@
       "formats": "Welche Dateiformate werden unterstützt?"
     },
     "chat": {
-      "placeholder": "Stelle deine Frage zu Glint Studio...",
+      "placeholder": "Stelle deine Frage zu Glint Studio…",
       "emptyTitle": "Wie kann ich dir helfen?",
       "emptyDescription": "Stelle mir irgendeine Frage zu Glint Studio und ich antworte dir sofort auf Basis unserer Dokumentation.",
       "suggestedLabel": "Vorgeschlagene Fragen:",
@@ -406,7 +383,7 @@
       "cards": {
         "support": {
           "title": "E-Mail-Support",
-          "description": "Antwort innerhalb von 24 h an Werktagen"
+          "description": "Fragen zur App und zu deinem Konto"
         },
         "sales": {
           "title": "Vertrieb & Partnerschaften",
@@ -421,16 +398,16 @@
     "faq": {
       "title": "Häufige Fragen",
       "responseTime": {
-        "q": "Wie schnell antwortet ihr?",
-        "a": "Unser Team antwortet in der Regel innerhalb von 24 h an Werktagen. Bei dringenden Fragen schreibe uns direkt per E-Mail."
+        "q": "Wie erreiche ich das Team?",
+        "a": "Schreib uns an die passende Adresse unten (Support, Vertrieb oder Presse)."
       },
       "demo": {
         "q": "Kann ich eine persönliche Demo bekommen?",
-        "a": "Auf jeden Fall! Kontaktiere unser Vertriebsteam, um eine auf deine Bedürfnisse zugeschnittene Demo zu vereinbaren."
+        "a": "Schreib an die Adresse „Vertrieb & Partnerschaften“ unten und beschreibe deinen Bedarf. Du kannst auch ein kostenloses Konto erstellen und Glint Studio mit den Gratis-Credits testen."
       },
       "language": {
         "q": "In welchen Sprachen bietet ihr Support an?",
-        "a": "Unser Support ist auf Französisch und Englisch erreichbar, 7 Tage die Woche."
+        "a": "Du kannst uns auf Französisch oder Englisch schreiben."
       }
     }
   },
@@ -442,7 +419,7 @@
   "blog": {
     "title": "Blog",
     "subtitle": "News, Tutorials und Inspiration",
-    "empty": "Artikel folgen in Kürze...",
+    "empty": "Artikel folgen in Kürze…",
     "breadcrumb": "Brotkrumennavigation",
     "by": "Von",
     "published": "veröffentlicht am",
@@ -456,109 +433,6 @@
       "theo": {
         "role": "Gründer von Glint Studio",
         "bio": "Als Gründer von Glint Studio entwickelt er generative KI-Tools, mit denen Onlinehändler professionelle Produktfotos und -videos ohne Studio und ohne Fotografen erstellen."
-      }
-    }
-  },
-  "legal": {
-    "updatedAt": "Zuletzt aktualisiert:",
-    "legalNotice": {
-      "title": "Impressum",
-      "description": "Rechtliche Angaben zum Anbieter und Hostinganbieter der Website Glint Studio.",
-      "updatedAt": "[Datum]",
-      "sections": {
-        "publisher": {
-          "title": "Anbieter der Website",
-          "body": "Die Website glintstudio.ai wird betrieben von [Firmenname, Rechtsform], mit einem Kapital von [Betrag], eingetragen unter der Nummer [Registernummer], mit Sitz in [Adresse].\n\n- Umsatzsteuer-Identifikationsnummer: [USt-IdNr.]\n- E-Mail: [Kontakt-E-Mail]\n- Verantwortlich für den Inhalt: [Name]"
-        },
-        "hosting": {
-          "title": "Hosting",
-          "body": "Die Website wird gehostet von [Name des Hostinganbieters], [Adresse], [Telefon oder Website]."
-        },
-        "ip": {
-          "title": "Geistiges Eigentum",
-          "body": "Sämtliche Inhalte der Website (Texte, Visuals, Videos, Logos, Marken) sind Eigentum von [Firmenname] oder seiner Partner. Jede vollständige oder teilweise Vervielfältigung oder Wiedergabe ohne vorherige schriftliche Genehmigung ist untersagt."
-        },
-        "data": {
-          "title": "Personenbezogene Daten",
-          "body": "Die Verarbeitung personenbezogener Daten ist in der Datenschutzerklärung beschrieben, die am Ende jeder Seite abrufbar ist."
-        }
-      }
-    },
-    "privacy": {
-      "title": "Datenschutzerklärung",
-      "description": "Wie Glint Studio personenbezogene Daten von Website-Besuchern erhebt und verarbeitet.",
-      "updatedAt": "[Datum]",
-      "sections": {
-        "controller": {
-          "title": "Verantwortlicher",
-          "body": "[Firmenname], [Adresse]. Kontakt bei allen Fragen zu Ihren Daten: [E-Mail].\n\nDiese Erklärung gilt für die Präsentationswebsite glintstudio.ai. Die Nutzung der Anwendung Glint Studio unterliegt einer eigenen Datenschutzerklärung."
-        },
-        "data": {
-          "title": "Auf dieser Website verarbeitete Daten",
-          "body": "- **An den Assistenten gestellte Fragen (Seite Hilfe)**: Der Text der Frage wird an Anthropic übermittelt, um die Antwort zu generieren. Er wird von dieser Website nicht gespeichert, und Anthropic speichert ihn höchstens [Dauer gemäß den aktuellen kommerziellen Bedingungen von Anthropic], ohne ihn zum Training seiner Modelle zu verwenden [zu prüfen]. Geben Sie dort keine personenbezogenen Daten ein.\n- **IP-Adresse**: Wird vorübergehend im Arbeitsspeicher verwendet, um die Anzahl der Fragen pro Minute zu begrenzen (Missbrauchsprävention). Sie wird nicht gespeichert.\n- **Technische Protokolle des Hostinganbieters**: [Art und Dauer der Speicherung je nach Hostinganbieter].\n- **E-Mails**: Wenn Sie uns schreiben, werden Ihre Adresse und Ihre Nachricht verwendet, um Ihnen zu antworten, und für [Dauer] gespeichert.\n\nDie Website verwendet weder Tools zur Reichweitenmessung noch Werbe-Cookies (siehe Cookie-Richtlinie)."
-        },
-        "legalBasis": {
-          "title": "Rechtsgrundlagen",
-          "body": "Berechtigtes Interesse: Betrieb und Sicherheit der Website, Beantwortung von Support-Anfragen [zu validieren]."
-        },
-        "recipients": {
-          "title": "Empfänger und Auftragsverarbeiter",
-          "body": "- Hosting: [Hostinganbieter, Land]\n- Assistent: Anthropic (USA) — [Garantien für die Datenübermittlung: Standardvertragsklauseln / DPF]\n- Auslieferung von Bildern und Videos: Cloudinary — [Land, Garantien]"
-        },
-        "rights": {
-          "title": "Ihre Rechte",
-          "body": "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung der Verarbeitung und Datenübertragbarkeit Ihrer Daten. Zur Ausübung: [E-Mail].\n\nSie können außerdem Beschwerde bei der zuständigen Aufsichtsbehörde einlegen [Behörde des Sitzlandes oder Ihres Wohnsitzlandes]."
-        }
-      }
-    },
-    "terms": {
-      "title": "Allgemeine Nutzungsbedingungen",
-      "description": "Nutzungsbedingungen der Präsentationswebsite Glint Studio.",
-      "updatedAt": "[Datum]",
-      "sections": {
-        "purpose": {
-          "title": "Gegenstand",
-          "body": "Diese Bedingungen regeln die Nutzung der Website glintstudio.ai, betrieben von [Firmenname] (siehe Impressum). Das Abonnement und die Nutzung der Anwendung Glint Studio unterliegen gesonderten Bedingungen, die bei der Registrierung akzeptiert werden [Link zu den AGB/Nutzungsbedingungen der Anwendung]."
-        },
-        "access": {
-          "title": "Zugang zur Website",
-          "body": "Die Website ist kostenlos zugänglich. Der Anbieter bemüht sich, ihre Verfügbarkeit sicherzustellen, kann sie jedoch jederzeit unterbrechen, insbesondere für Wartungsarbeiten."
-        },
-        "assistant": {
-          "title": "Support-Assistent",
-          "body": "Die Antworten des Assistenten werden automatisch auf Grundlage der Produktdokumentation generiert. Sie dienen nur als Orientierung, können Fehler enthalten und stellen keine vertragliche Verpflichtung dar."
-        },
-        "ip": {
-          "title": "Geistiges Eigentum",
-          "body": "Die Inhalte der Website sind geschützt. Jede Weiterverwendung ohne vorherige Genehmigung ist untersagt."
-        },
-        "liability": {
-          "title": "Haftung und externe Links",
-          "body": "Der Anbieter haftet weder für die Inhalte von Websites Dritter, auf die die Website verweist, noch für Schäden, die aus einer Nutzung der Website entstehen, die diesen Bedingungen nicht entspricht."
-        },
-        "law": {
-          "title": "Anwendbares Recht",
-          "body": "Diese Bedingungen unterliegen dem Recht von [Land]. [Zuständiger Gerichtsstand]."
-        }
-      }
-    },
-    "cookies": {
-      "title": "Cookie-Richtlinie",
-      "description": "Cookies und lokaler Speicher, die von der Website Glint Studio verwendet werden.",
-      "updatedAt": "[Datum]",
-      "sections": {
-        "used": {
-          "title": "Verwendete Cookies",
-          "body": "Diese Website setzt ein einziges Cookie, „i18n_redirected“, das die Sprache der Website (aus Ihrem Browser erkannt oder im Sprachwähler ausgewählt) ein Jahr lang speichert. Es ist rein funktional und daher nicht einwilligungspflichtig.\n\nDiese Website verwendet keine Cookies zur Reichweitenmessung, für Werbung oder von sozialen Netzwerken. Deshalb wird Ihnen kein Einwilligungsbanner angezeigt."
-        },
-        "storage": {
-          "title": "Lokaler Speicher",
-          "body": "Ihr Browser kann Ihre Anzeigepräferenz (helles oder dunkles Design) in seinem lokalen Speicher ablegen. Diese Information verbleibt auf Ihrem Gerät und wird nicht übermittelt."
-        },
-        "changes": {
-          "title": "Änderungen",
-          "body": "Wird ein Tool zur Reichweitenmessung oder ein Drittanbieterdienst hinzugefügt, der Cookies setzt, wird diese Seite aktualisiert und Ihre Einwilligung vorab eingeholt, sofern das Gesetz dies verlangt."
-        }
       }
     }
   },

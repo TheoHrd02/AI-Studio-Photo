@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { isComingSoon } from '~/config/site.config'
 import { beforeAfterExamples } from '~/config/visual-proof.config'
-import { saasConfig } from '~/config/saas.config'
+
+const { signupUrl } = useAppLinks()
 
 useI18n()
 </script>
@@ -42,6 +44,10 @@ useI18n()
               class="mb-4 text-sm font-semibold uppercase tracking-widest text-primary-500"
             >
               {{ $t(`nav.${example.key}.label`) }}
+              <CommonComingSoonBadge
+                v-if="isComingSoon(example.key)"
+                class="ml-2 align-middle normal-case tracking-normal"
+              />
             </p>
 
             <!-- Side-by-side comparison -->
@@ -98,7 +104,7 @@ useI18n()
         <!-- CTA with risk reversal -->
         <div class="mt-16 text-center">
           <CommonCTAButton
-            :href="saasConfig.signupUrl"
+            :href="signupUrl"
             variant="primary"
             size="lg"
             rounded="xl"

@@ -2,6 +2,8 @@
 import { siteConfig } from '~/config/site.config'
 
 const currentYear = new Date().getFullYear()
+const { legalUrl } = useAppLinks()
+const footerColumns = siteConfig.footer.columns.filter(column => column.links.length > 0)
 </script>
 
 <template>
@@ -12,11 +14,11 @@ const currentYear = new Date().getFullYear()
         <div class="grid md:grid-cols-4 gap-12 mb-12">
           <!-- About -->
           <div>
-            <div class="flex items-center gap-2 mb-6">
-              <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-                <span class="text-white font-bold text-sm">G</span>
-              </div>
-              <span class="font-bold text-lg">{{ $t('common.appName') }}</span>
+            <div class="mb-6 flex">
+              <CommonBrandLogo
+                :size="32"
+                class="text-lg font-bold text-white"
+              />
             </div>
             <p class="text-gray-400 text-sm leading-relaxed">
               {{ $t('footer.description') }}
@@ -25,7 +27,7 @@ const currentYear = new Date().getFullYear()
 
           <!-- Product / Resources / Company columns from site.config -->
           <template
-            v-for="column in siteConfig.footer.columns"
+            v-for="column in footerColumns"
             :key="column.id"
           >
             <div>
@@ -63,15 +65,16 @@ const currentYear = new Date().getFullYear()
             <p class="text-gray-400 text-sm">
               © {{ currentYear }} {{ $t('common.appName') }}. {{ $t('footer.allRightsReserved') }}.
             </p>
-            <div class="flex items-center gap-6 text-sm">
-              <NuxtLinkLocale
-                v-for="item in siteConfig.footer.legal"
-                :key="item.id"
-                :to="item.href"
+            <!-- Legal texts: hosted by the app (single source), in the page language -->
+            <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm md:justify-end">
+              <a
+                v-for="doc in siteConfig.footer.legal"
+                :key="doc"
+                :href="legalUrl(doc)"
                 class="text-gray-400 hover:text-white transition-colors"
               >
-                {{ $t(`footer.legalLinks.${item.id}`) }}
-              </NuxtLinkLocale>
+                {{ $t(`footer.legalLinks.${doc}`) }}
+              </a>
             </div>
           </div>
         </div>

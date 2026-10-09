@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { siteConfig } from '~/config/site.config'
-import { saasConfig } from '~/config/saas.config'
+
+const { signupUrl } = useAppLinks()
 
 const { t } = useI18n()
 const isMenuOpen = ref(false)
@@ -17,6 +18,7 @@ const navigation = computed(() =>
           description: t(`nav.${child.id}.description`),
           href: child.href,
           icon: child.icon,
+          comingSoon: child.comingSoon ?? false,
         })),
       }
     }
@@ -41,24 +43,12 @@ const hideDropdown = () => {
           <!-- Logo -->
           <NuxtLinkLocale
             to="/"
-            class="flex items-center gap-2.5"
+            class="flex items-center"
           >
-            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500">
-              <svg
-                class="h-5 w-5 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-            </div>
-            <span class="text-base font-bold text-gray-900">{{ $t('common.appName') }}</span>
+            <CommonBrandLogo
+              :size="32"
+              class="text-base font-bold text-gray-900"
+            />
           </NuxtLinkLocale>
 
           <!-- Desktop Navigation -->
@@ -117,8 +107,9 @@ const hideDropdown = () => {
                         />
                       </div>
                       <div class="flex-1">
-                        <p class="text-sm font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">
+                        <p class="flex flex-wrap items-center gap-2 text-sm font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">
                           {{ child.label }}
+                          <CommonComingSoonBadge v-if="child.comingSoon" />
                         </p>
                         <p class="text-xs text-gray-500 mt-0.5">
                           {{ child.description }}
@@ -144,7 +135,7 @@ const hideDropdown = () => {
           <div class="hidden items-center gap-2 md:flex">
             <CommonLanguageSelect />
             <CommonCTAButton
-              :href="saasConfig.signupUrl"
+              :href="signupUrl"
               variant="primary"
               size="sm"
             >
@@ -207,6 +198,7 @@ const hideDropdown = () => {
                   class="h-4 w-4"
                 />
                 {{ child.label }}
+                <CommonComingSoonBadge v-if="child.comingSoon" />
               </NuxtLinkLocale>
             </div>
 
@@ -224,7 +216,7 @@ const hideDropdown = () => {
           <CommonLanguageSelect class="mt-2 self-start px-2" />
 
           <CommonCTAButton
-            :href="saasConfig.signupUrl"
+            :href="signupUrl"
             variant="primary"
             size="md"
             class="mt-4 w-full justify-center"

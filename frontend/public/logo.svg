@@ -1,4 +1,12 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="40" height="40" rx="8" fill="#912efb"/>
-  <path d="M20 10L14 22H18L16 30L26 18H22L24 10H20Z" fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Glint Studio">
+  <!-- Glint Studio symbol: a "G" whose open terminal catches a four-point studio glint. -->
+  <defs>
+    <linearGradient id="glint-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9d3cff"/>
+      <stop offset="1" stop-color="#6527d8"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#glint-bg)"/>
+  <path d="M33.36 29.04A13 13 0 1 0 38 39H28" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M43.5 8.5Q46.1 17.9 55.5 20.5Q46.1 23.1 43.5 32.5Q40.9 23.1 31.5 20.5Q40.9 17.9 43.5 8.5Z" fill="#fff"/>
 </svg>

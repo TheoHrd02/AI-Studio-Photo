@@ -1,56 +1,41 @@
 {
   "cta": {
-    "primary": "Inizia gratis — senza carta",
-    "featureButtonLine1": "Inizia gratis",
-    "featureButtonLine2": "Senza carta",
-    "primaryWithCredits": "Inizia gratis — 5 crediti in regalo",
-    "clarification": "Dopo il clic: account gratuito → 5 crediti → prima creazione in 30s",
+    "primary": "Crea il mio account gratuito",
+    "featureButtonLine1": "Crea il mio account gratuito",
+    "featureButtonLine2": "Senza carta di credito",
+    "primaryWithCredits": "Crea il mio account — crediti in omaggio",
+    "clarification": "Apre l'app Glint Studio: registrazione con un account esistente (Google, GitHub…), crediti in omaggio, senza carta di credito",
     "login": "Hai già un account? Accedi",
-    "loginShort": "Ho già un account",
     "discover": "Scopri",
-    "orStartNow": "Oppure inizia ora →",
-    "header": "Inizia gratis — senza carta",
-    "plans": {
-      "free": {
-        "label": "Inizia gratis — senza carta",
-        "note": "Nessuna carta richiesta"
-      },
-      "pro": {
-        "label": "Avvia la prova — 7 giorni gratis",
-        "note": "Senza vincoli"
-      },
-      "enterprise": {
-        "label": "Prenota una demo",
-        "note": "Chiamata personalizzata offerta"
-      }
-    },
+    "orStartNow": "Oppure crea il mio account gratuito →",
+    "header": "Crea un account gratuito",
     "help": {
-      "chat": "Avvia una conversazione",
-      "returnToProduct": "Inizia gratis — senza carta"
+      "chat": "Fai una domanda all'assistente",
+      "returnToProduct": "Crea il mio account gratuito"
     },
     "finalSection": {
       "title": "Pronto a creare i tuoi primi visual?",
       "subtitle": "Inizia gratis e scopri la potenza dell'IA per le tue creazioni"
+    },
+    "comingSoon": {
+      "button": "Avvisami al lancio",
+      "note": "Questo studio non è ancora disponibile nell'app: scrivici per essere avvisato al lancio.",
+      "title": "Questo studio arriverà presto",
+      "subtitle": "Nel frattempo, Studio Virtuale e Motion Studio sono già disponibili nell'app."
     }
   },
   "common": {
     "appName": "Glint Studio",
     "language": "Lingua",
-    "menu": "Menu"
+    "menu": "Menu",
+    "comingSoon": "Presto disponibile"
   },
   "nav": {
     "home": "Home",
     "features": "Funzionalità",
     "help": "Aiuto",
     "blog": "Blog",
-    "affiliation": "Affiliazione",
-    "login": "Accedi",
-    "signup": "Registrati",
-    "logout": "Esci",
-    "dashboard": "Dashboard",
-    "myAccount": "Il mio account",
     "gallery": "Galleria",
-    "launchApp": "Inizia gratis — senza carta",
     "studioVirtuel": {
       "label": "Studio Virtuale",
       "description": "Inserisci i tuoi prodotti in ambientazioni degne dei migliori studi fotografici."
@@ -95,7 +80,7 @@
     },
     "mockup": {
       "uploadHint": "Trascina qui la tua immagine",
-      "generating": "Generazione in corso..."
+      "generating": "Generazione in corso…"
     }
   },
   "beforeAfter": {
@@ -136,20 +121,20 @@
     }
   },
   "hero": {
-    "eyebrow": "Accesso anticipato · 5 crediti in regalo · 30 secondi",
+    "eyebrow": "Accesso anticipato · Crediti in omaggio all'iscrizione",
     "title": "Foto prodotto professionali, generate dall'IA in 30 secondi",
     "trustChips": {
       "speed": "Risultato in 30 secondi",
-      "free": "5 crediti in regalo — senza carta di credito",
+      "free": "Crediti in omaggio all'iscrizione — senza carta di credito",
       "noSkills": "Nessuna competenza richiesta",
-      "cancel": "Disdici in qualsiasi momento",
+      "cancel": "Abbonamento disdicibile in qualsiasi momento",
       "earlyAccess": "Accesso anticipato — unisciti alla beta"
     }
   },
   "features": {
     "badge": "Le nostre soluzioni IA",
     "title": "Strumenti potenti per ogni esigenza",
-    "subtitle": "Studio fotografico virtuale, modelle IA, animazioni... tutto ciò che ti serve per creare contenuti professionali.",
+    "subtitle": "Studio fotografico virtuale, modelle IA, animazioni… tutto ciò che ti serve per creare contenuti professionali.",
     "studioVirtuel": {
       "title": "Studio Virtuale",
       "description": "Trasforma le tue foto prodotto in visual da studio professionali. Sfondi, illuminazioni e atmosfere realistiche generati dall'IA.",
@@ -224,39 +209,31 @@
   },
   "riskReversal": {
     "noCard": "Senza carta di credito",
-    "cancelAnytime": "Disdici in qualsiasi momento",
-    "freeTrial": "Prova gratuita di 7 giorni"
+    "cancelAnytime": "Abbonamento disdicibile in qualsiasi momento"
   },
   "footer": {
     "description": "La piattaforma di IA generativa per creare foto da studio professionali in pochi secondi.",
     "product": "Prodotto",
     "resources": "Risorse",
     "company": "Azienda",
-    "legal": "Note legali",
-    "followUs": "Seguici",
     "allRightsReserved": "Tutti i diritti riservati",
     "productLinks": {
-      "features": "Funzionalità",
-      "api": "API",
-      "changelog": "Changelog"
+      "features": "Funzionalità"
     },
     "resourcesLinks": {
       "helpCenter": "Centro assistenza",
-      "blog": "Blog",
-      "documentation": "Documentazione",
-      "tutorials": "Tutorial"
+      "blog": "Blog"
     },
     "companyLinks": {
-      "about": "Chi siamo",
-      "affiliation": "Affiliazione",
-      "careers": "Lavora con noi",
       "contact": "Contatti"
     },
     "legalLinks": {
-      "terms": "Note legali",
+      "notice": "Note legali",
+      "terms": "Condizioni d'uso",
+      "sales": "Condizioni di vendita",
       "privacy": "Privacy",
-      "tos": "Termini d'uso",
-      "cookies": "Cookie"
+      "cookies": "Cookie",
+      "acceptable-use": "Uso accettabile"
     }
   },
   "featurePageSection": {
@@ -387,7 +364,7 @@
       "formats": "Quali formati di file sono supportati?"
     },
     "chat": {
-      "placeholder": "Fai la tua domanda su Glint Studio...",
+      "placeholder": "Fai la tua domanda su Glint Studio…",
       "emptyTitle": "Come posso aiutarti?",
       "emptyDescription": "Fammi qualsiasi domanda su Glint Studio e ti risponderò all'istante a partire dalla nostra documentazione.",
       "suggestedLabel": "Domande suggerite:",
@@ -406,7 +383,7 @@
       "cards": {
         "support": {
           "title": "Supporto via email",
-          "description": "Risposta entro 24h nei giorni lavorativi"
+          "description": "Domande sull'app e sul tuo account"
         },
         "sales": {
           "title": "Vendite e partnership",
@@ -421,16 +398,16 @@
     "faq": {
       "title": "Domande frequenti",
       "responseTime": {
-        "q": "Quali sono i tempi di risposta?",
-        "a": "Il nostro team risponde generalmente entro 24h nei giorni lavorativi. Per le domande urgenti, contattaci direttamente via email."
+        "q": "Come posso contattare il team?",
+        "a": "Scrivici all'indirizzo qui sotto più adatto alla tua richiesta (supporto, vendite o stampa)."
       },
       "demo": {
         "q": "Posso ottenere una demo personalizzata?",
-        "a": "Assolutamente! Contatta il nostro team commerciale per pianificare una dimostrazione adatta alle tue esigenze."
+        "a": "Scrivi all'indirizzo «Vendite e partnership» qui sotto descrivendo la tua esigenza. Puoi anche creare un account gratuito e provare Glint Studio con i crediti in omaggio."
       },
       "language": {
         "q": "In quali lingue offrite supporto?",
-        "a": "Il nostro supporto è disponibile in francese e inglese, 7 giorni su 7."
+        "a": "Puoi scriverci in francese o in inglese."
       }
     }
   },
@@ -442,7 +419,7 @@
   "blog": {
     "title": "Blog",
     "subtitle": "Novità, tutorial e ispirazioni",
-    "empty": "Articoli in arrivo...",
+    "empty": "Articoli in arrivo…",
     "breadcrumb": "Percorso di navigazione",
     "by": "Di",
     "published": "pubblicato il",
@@ -456,109 +433,6 @@
       "theo": {
         "role": "Fondatore di Glint Studio",
         "bio": "Fondatore di Glint Studio, sviluppa strumenti di IA generativa che permettono agli e-commerce di creare foto e video prodotto professionali senza studio né fotografo."
-      }
-    }
-  },
-  "legal": {
-    "updatedAt": "Ultimo aggiornamento:",
-    "legalNotice": {
-      "title": "Note legali",
-      "description": "Informazioni legali sull'editore e sul fornitore di hosting del sito Glint Studio.",
-      "updatedAt": "[data]",
-      "sections": {
-        "publisher": {
-          "title": "Editore del sito",
-          "body": "Il sito glintstudio.ai è edito da [ragione sociale, forma giuridica], con capitale sociale di [importo], iscritta con il numero [n. di iscrizione], con sede in [indirizzo].\n\n- Partita IVA intracomunitaria: [n. partita IVA]\n- Email: [email di contatto]\n- Direttore responsabile: [nome]"
-        },
-        "hosting": {
-          "title": "Hosting",
-          "body": "Il sito è ospitato da [nome del fornitore di hosting], [indirizzo], [telefono o sito web]."
-        },
-        "ip": {
-          "title": "Proprietà intellettuale",
-          "body": "Tutti i contenuti del sito (testi, immagini, video, loghi, marchi) sono di proprietà di [ragione sociale] o dei suoi partner. È vietata qualsiasi riproduzione o rappresentazione, totale o parziale, senza previa autorizzazione scritta."
-        },
-        "data": {
-          "title": "Dati personali",
-          "body": "Il trattamento dei dati personali è descritto nell'informativa sulla privacy, accessibile in fondo a ogni pagina."
-        }
-      }
-    },
-    "privacy": {
-      "title": "Informativa sulla privacy",
-      "description": "Come Glint Studio raccoglie e tratta i dati personali dei visitatori del sito.",
-      "updatedAt": "[data]",
-      "sections": {
-        "controller": {
-          "title": "Titolare del trattamento",
-          "body": "[ragione sociale], [indirizzo]. Contatto per qualsiasi domanda relativa ai dati dell'utente: [email].\n\nLa presente informativa riguarda il sito vetrina glintstudio.ai. L'utilizzo dell'applicazione Glint Studio è disciplinato da una propria informativa sulla privacy."
-        },
-        "data": {
-          "title": "Dati trattati su questo sito",
-          "body": "- **Domande poste all'assistente (pagina Aiuto)**: il testo della domanda viene trasmesso a Anthropic per generare la risposta. Non viene registrato da questo sito e Anthropic lo conserva al massimo [durata secondo le condizioni commerciali Anthropic in vigore], senza utilizzarlo per addestrare i propri modelli [da verificare]. Si raccomanda di non inserire dati personali.\n- **Indirizzo IP**: utilizzato temporaneamente in memoria per limitare il numero di domande al minuto (prevenzione degli abusi). Non viene registrato.\n- **Log tecnici del fornitore di hosting**: [natura e durata di conservazione secondo il fornitore di hosting].\n- **Email**: in caso di contatto via email, l'indirizzo e il messaggio dell'utente sono utilizzati per rispondere e conservati per [durata].\n\nIl sito non utilizza né strumenti di misurazione dell'audience né cookie pubblicitari (cfr. la cookie policy)."
-        },
-        "legalBasis": {
-          "title": "Basi giuridiche",
-          "body": "Legittimo interesse: funzionamento e sicurezza del sito, risposta alle richieste di assistenza [da convalidare]."
-        },
-        "recipients": {
-          "title": "Destinatari e responsabili del trattamento",
-          "body": "- Hosting: [fornitore di hosting, paese]\n- Assistente: Anthropic (Stati Uniti) — [garanzie per il trasferimento: clausole contrattuali tipo / DPF]\n- Distribuzione di immagini e video: Cloudinary — [paese, garanzie]"
-        },
-        "rights": {
-          "title": "Diritti dell'utente",
-          "body": "L'utente ha diritto di accesso, rettifica, cancellazione, opposizione, limitazione e portabilità dei propri dati. Per esercitarli: [email].\n\nL'utente può inoltre proporre reclamo all'autorità di controllo competente [autorità del paese della sede o del paese di residenza dell'utente]."
-        }
-      }
-    },
-    "terms": {
-      "title": "Termini e condizioni d'uso",
-      "description": "Condizioni d'uso del sito vetrina Glint Studio.",
-      "updatedAt": "[data]",
-      "sections": {
-        "purpose": {
-          "title": "Oggetto",
-          "body": "Le presenti condizioni disciplinano l'utilizzo del sito glintstudio.ai, edito da [ragione sociale] (v. note legali). L'abbonamento e l'utilizzo dell'applicazione Glint Studio sono disciplinati da condizioni distinte, accettate al momento della registrazione [link alle condizioni generali dell'applicazione]."
-        },
-        "access": {
-          "title": "Accesso al sito",
-          "body": "Il sito è accessibile gratuitamente. L'editore si adopera per garantirne la disponibilità, ma può interromperlo in qualsiasi momento, in particolare per manutenzione."
-        },
-        "assistant": {
-          "title": "Assistente di supporto",
-          "body": "Le risposte dell'assistente sono generate automaticamente a partire dalla documentazione del prodotto. Sono fornite a titolo indicativo e possono contenere errori; non costituiscono un impegno contrattuale."
-        },
-        "ip": {
-          "title": "Proprietà intellettuale",
-          "body": "I contenuti del sito sono protetti. È vietato qualsiasi riutilizzo senza previa autorizzazione."
-        },
-        "liability": {
-          "title": "Responsabilità e link esterni",
-          "body": "L'editore non può essere ritenuto responsabile dei contenuti dei siti di terzi a cui il sito rimanda, né dei danni derivanti da un utilizzo del sito non conforme alle presenti condizioni."
-        },
-        "law": {
-          "title": "Legge applicabile",
-          "body": "Le presenti condizioni sono soggette alla legge [paese]. [Foro competente]."
-        }
-      }
-    },
-    "cookies": {
-      "title": "Cookie policy",
-      "description": "Cookie e archiviazione locale utilizzati dal sito Glint Studio.",
-      "updatedAt": "[data]",
-      "sections": {
-        "used": {
-          "title": "Cookie utilizzati",
-          "body": "Questo sito installa un solo cookie, «i18n_redirected», che memorizza la lingua del sito (rilevata dal browser o scelta nel selettore di lingua) per un anno. È strettamente funzionale e quindi esente dal consenso.\n\nQuesto sito non utilizza cookie di misurazione dell'audience, pubblicitari o di social network. Per questo motivo non viene mostrato alcun banner di consenso."
-        },
-        "storage": {
-          "title": "Archiviazione locale",
-          "body": "Il browser può memorizzare la preferenza di visualizzazione dell'utente (tema chiaro o scuro) nella propria archiviazione locale. Tale informazione resta sul dispositivo dell'utente e non viene trasmessa."
-        },
-        "changes": {
-          "title": "Modifiche",
-          "body": "Qualora venga aggiunto uno strumento di misurazione dell'audience o un servizio di terzi che installa cookie, la presente pagina sarà aggiornata e il consenso dell'utente sarà raccolto preventivamente ove richiesto dalla legge."
-        }
       }
     }
   },

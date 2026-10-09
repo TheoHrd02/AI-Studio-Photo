@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { saasConfig } from '~/config/saas.config'
 import { galleryItems, FALLBACK_IMAGE } from '~/config/visual-proof.config'
+
+const { signupUrl } = useAppLinks()
 
 definePageMeta({
   layout: 'marketing',
@@ -101,7 +102,7 @@ function onVideoError(index: number) {
       <!-- CTA -->
       <div class="mt-20 text-center">
         <CommonCTAButton
-          :href="saasConfig.signupUrl"
+          :href="signupUrl"
           variant="primary"
           size="lg"
         >

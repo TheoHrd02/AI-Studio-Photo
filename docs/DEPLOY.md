@@ -1,54 +1,53 @@
-# Déploiement (VPS)
+# Déploiement
 
-Stack : **Caddy** (HTTPS Let's Encrypt automatique, ports 80/443) → **Nuxt SSR** (conteneur `frontend`, port 3000 non exposé).
-Fichiers : `docker-compose.prod.yml`, `Caddyfile`, `frontend/Dockerfile.prod`, `.env`.
+La vitrine tourne en production sur la VM de l'application Glint Studio (Hetzner, `/opt/glint`), derrière le Caddy
+de l'app, sur `glintstudio.ai` (`www` redirigé vers l'apex). Rien n'est cloné ni construit sur le serveur : l'image
+est construite une fois par la CI de ce dépôt et tirée par son empreinte sha256.
 
-## Prérequis (une fois)
+**Procédure de référence** : dépôt de l'app (`TheoHrd02/AI-Studio-Photo-App`), `docs/runbook.md`, section Production,
+« Mise en ligne de la vitrine » (DNS, `.env` et `vitrine.env`, démarrage, contrôles, retour arrière, mise à jour).
+Côté app : service `vitrine` de `deploy/production/docker-compose.yml`, blocs `VITRINE_DOMAIN` de
+`deploy/production/proxy/Caddyfile`, réglages dans `deploy/production/vitrine.env.example`.
 
-1. VPS Linux avec Docker + plugin Compose (`docker compose version`).
-2. DNS : enregistrements A (et AAAA si IPv6) de `glintstudio.ai` **et** `www.glintstudio.ai` → IP du VPS.
-3. Pare-feu : ports **80** et **443** (TCP, + 443/UDP pour HTTP/3) ouverts. Le port 3000 n'a pas à l'être.
-
-## Installation
+## Publier une version
 
 ```bash
-git clone git@github.com:TheoHrd02/AI-Studio-Photo.git aistudio && cd aistudio
-cp .env.example .env
-nano .env   # DOMAIN, NUXT_ANTHROPIC_API_KEY
-docker compose -f docker-compose.prod.yml up -d --build
+git tag v1.0.0 && git push origin v1.0.0
 ```
 
-Caddy obtient le certificat au premier démarrage (DNS déjà propagé requis). Logs : `docker compose -f docker-compose.prod.yml logs -f`.
+Le workflow `.github/workflows/release.yml` construit `frontend/Dockerfile.prod` pour `https://glintstudio.ai` (URL
+intégrée au build : sitemap, canonicals, hreflang), publie `ghcr.io/theohrd02/glint/vitrine:<tag>` et joint à la
+release un `artefacts.txt` à reporter dans `/opt/glint/.env` :
 
-## Variables (`.env`)
+```
+VITRINE_IMAGE=ghcr.io/theohrd02/glint/vitrine
+VITRINE_IMAGE_DIGEST=sha256:…
+```
+
+Un tag avec tiret (`v1.0.0-rc1`) crée une pré-version. Mise à jour sur le serveur, depuis `/opt/glint` : nouvelle
+empreinte dans `.env`, puis `docker compose pull vitrine && docker compose up -d vitrine` (l'app ne redémarre pas).
+
+## Variables (`vitrine.env` sur le serveur)
 
 | Variable | Obligatoire | Description |
 |----------|-------------|-------------|
-| `DOMAIN` | oui | Domaine sans `https://`. Sert à Caddy et à l'URL du site (sitemap, canonicals, hreflang, og:url). |
-| `NUXT_ANTHROPIC_API_KEY` | chatbot | Clé API Anthropic, côté serveur uniquement. **Fixer une limite de dépense** dans la console Anthropic. |
-| `NUXT_ANTHROPIC_MODEL` | non | Défaut `claude-haiku-4-5`. |
-| `NUXT_CHAT_DAILY_LIMIT` | non | Plafond global de questions par jour. Défaut 500. |
+| `NUXT_ANTHROPIC_API_KEY` | chatbot | Clé dédiée à la vitrine, dans un workspace Anthropic à limite de dépense mensuelle (README, « Chatbot »). |
+| `NUXT_CHAT_DAILY_LIMIT` | non | Plafond global de questions par jour UTC. Défaut 200 ; 0 coupe le chatbot. |
+| `NUXT_CHAT_MONTHLY_LIMIT` | non | Plafond global de questions par mois UTC. Défaut 1000 ; 0 coupe le chatbot. |
+| `NUXT_ANTHROPIC_MODEL` | non | Modèle Haiku uniquement. Défaut `claude-haiku-4-5`. |
 
+`NUXT_PUBLIC_SITE_URL` (`https://VITRINE_DOMAIN`) et `NUXT_TRUST_PROXY=true` sont fixés par le Compose de l'app : Caddy
+réécrit `X-Forwarded-For` avec l'IP réelle, les limites par IP du chatbot sont donc fiables.
 Sans clé Anthropic le site fonctionne ; le chatbot affiche « indisponible » (HTTP 503).
-La doc du chatbot (`frontend/server/assets/support-docs.md`) est intégrée à l'image : la modifier demande un rebuild.
-`NUXT_TRUST_PROXY=true` est fixé par le compose : Caddy réécrit `X-Forwarded-For` avec l'IP réelle, la limite par IP du chatbot est donc fiable.
-
-## Mise à jour
-
-```bash
-git pull
-docker compose -f docker-compose.prod.yml up -d --build
-docker image prune -f
-```
-
-`DOMAIN` est intégré au build (sitemap, liens canoniques) : rebuild obligatoire s'il change.
+La doc du chatbot (`frontend/server/assets/support-docs.md`) est intégrée à l'image : la modifier demande une release.
 
 ## Vérifications après déploiement
 
 ```bash
-curl -sI https://glintstudio.ai | grep -iE "HTTP/|strict-transport|content-security"
+curl -sI https://glintstudio.ai | grep -iE "^HTTP/|strict-transport|content-security"
+curl -sI https://www.glintstudio.ai/en | grep -iE "^HTTP/|^location"   # 301 vers https://glintstudio.ai/en
 curl -s https://glintstudio.ai/sitemap_index.xml | head
-docker compose -f docker-compose.prod.yml ps   # frontend doit être "healthy"
+docker compose ps vitrine   # sur le serveur, dans /opt/glint : "healthy"
 ```
 
 Puis dans un navigateur : sélecteur de langue, page Aide (une question au chatbot), console sans erreur CSP.
@@ -61,8 +60,8 @@ pnpm indexnow
 
 ## Notes
 
-- Limites du chatbot gardées en mémoire (15 questions/min/IP + plafond journalier) : valables pour **une seule instance**. Pour plusieurs instances, passer à un stockage partagé (Redis).
 - Le blog (Nuxt Content) restaure sa base SQLite dans `/app/.data` au premier appel : dossier créé dans l'image,
-  rien à monter. Node ≥ 22.5 requis (SQLite natif).
+  rien à monter. Node ≥ 22.5 requis (SQLite natif). Image non-root (`node`), healthcheck par le `wget` de busybox.
 - La CSP utilise un nonce par requête (`frontend/server/plugins/csp.ts`) : rendu SSR requis, pas de `nuxt generate`.
-- Testé en local avec `DOMAIN=localhost` (Caddy génère alors un certificat local).
+- `docker-compose.prod.yml`, `Caddyfile` et `.env.example` à la racine : stack autonome (Caddy + Nuxt, build local),
+  pour un VPS séparé ou un essai local de l'image (`DOMAIN=localhost`) ; elle n'est pas utilisée en production.

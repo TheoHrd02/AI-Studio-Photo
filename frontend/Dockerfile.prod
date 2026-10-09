@@ -33,5 +33,7 @@ ENV PORT=3000
 
 EXPOSE 3000
 
-# NUXT_* env vars override runtimeConfig when container starts
+# NUXT_* env vars override runtimeConfig when container starts. NUXT_TRUST_PROXY stays false here: the Compose
+# sets it to true only behind Caddy (which overwrites X-Forwarded-For). Healthcheck: busybox wget, defined in the
+# Compose files (wget -q -O /dev/null http://127.0.0.1:3000/).
 CMD ["node", ".output/server/index.mjs"]
