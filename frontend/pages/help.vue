@@ -23,8 +23,7 @@ const faqKeys = ['responseTime', 'demo', 'language'] as const
 
 const contactCards = [
   { key: 'support', email: 'support@glint-studio.com', primary: true, icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
-  { key: 'sales', email: 'sales@glint-studio.com', primary: false, icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z' },
-  { key: 'press', email: 'press@glint-studio.com', primary: false, icon: 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z' },
+  { key: 'sales', email: 'contact@glint-studio.com', primary: false, icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z' },
 ] as const
 </script>
 

@@ -221,8 +221,7 @@ const steps = computed(() => [
       </div>
     </section>
 
-    <!-- 7. Trust (Testimonials + Social proof) -->
-    <MarketingTestimonialSection />
+    <!-- 7. Availability (no testimonials or customer figures until real ones exist) -->
     <MarketingSocialProofBar />
 
     <!-- 8. Final CTA -->

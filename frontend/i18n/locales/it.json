@@ -18,7 +18,7 @@
       "subtitle": "Inizia gratis e scopri la potenza dell'IA per le tue creazioni"
     },
     "comingSoon": {
-      "button": "Avvisami al lancio",
+      "button": "Scrivici per essere avvisato",
       "note": "Questo studio non è ancora disponibile nell'app: scrivici per essere avvisato al lancio.",
       "title": "Questo studio arriverà presto",
       "subtitle": "Nel frattempo, Studio Virtuale e Motion Studio sono già disponibili nell'app."
@@ -41,33 +41,33 @@
       "description": "Inserisci i tuoi prodotti in ambientazioni degne dei migliori studi fotografici."
     },
     "mannequinVirtuel": {
-      "label": "Modella Virtuale",
+      "label": "Modello Virtuale",
       "description": "Dai un volto ai tuoi visual con modelle realistiche e personalizzate."
     },
     "motionStudio": {
       "label": "Motion Studio",
-      "description": "Passa dall'immagine al movimento con un clic."
+      "description": "Trasforma le tue immagini in video animati."
     }
   },
   "productDemo": {
-    "badge": "Demo del prodotto",
-    "title": "Guarda il prodotto in azione",
-    "subtitle": "Scopri come trasformare una foto prodotto in un visual da studio professionale in pochi secondi.",
+    "badge": "Video",
+    "title": "Un esempio in video",
+    "subtitle": "Un video prodotto mostrato a titolo illustrativo.",
     "watchHint": "Clicca per avviare"
   },
   "productWalkthrough": {
     "badge": "Percorso prodotto",
     "title": "Il tuo workflow in 4 passaggi",
-    "subtitle": "Dal caricamento alla creazione finale, segui il percorso semplificato.",
-    "framing": "Anteprima del funzionamento — interfaccia definitiva in fase di sviluppo.",
+    "subtitle": "Dall'importazione della tua foto al visual finale, ecco i passaggi.",
+    "framing": "Panoramica del percorso, con schemi semplificati.",
     "steps": {
       "upload": {
         "title": "Carica la tua foto",
-        "description": "Importa la tua foto prodotto, il ritratto o un visual grezzo. Trascina e rilascia oppure selezionalo dal tuo computer."
+        "description": "Trascina e rilascia la tua foto prodotto oppure selezionala dal tuo computer."
       },
       "choose": {
         "title": "Scegli la scena",
-        "description": "Seleziona tra le nostre ambientazioni da studio o descrivi la tua idea. Template predefiniti o creazione personalizzata."
+        "description": "Scegli un'ambientazione dal catalogo o descrivi in poche parole il risultato che desideri."
       },
       "generate": {
         "title": "Genera",
@@ -85,23 +85,23 @@
   },
   "beforeAfter": {
     "badge": "Anteprima illustrativa",
-    "title": "Prima → Dopo: la trasformazione con un clic",
-    "subtitle": "Una foto prodotto grezza diventa un visual da studio professionale. Ecco cosa può generare l'IA in 30 secondi.",
-    "illustrativeLabel": "Risultati generati a titolo di esempio — dimostrazione delle capacità",
+    "title": "Prima → Dopo: il principio",
+    "subtitle": "Una foto prodotto grezza diventa un visual da studio, pronto da pubblicare.",
+    "illustrativeLabel": "Immagini illustrative tratte da una banca di immagini: non sono render di Glint Studio.",
     "before": "Prima",
     "after": "Dopo",
     "examples": {
       "studioVirtuel": {
         "before": "Foto prodotto grezza — sfondo bianco, luce piatta",
-        "after": "Risultato Glint Studio — set da studio, luce professionale"
+        "after": "Immagine illustrativa — prodotto in un set da studio"
       },
       "mannequinVirtuel": {
         "before": "Scarpa isolata su sfondo neutro",
-        "after": "Scarpa in una scena lifestyle con modella"
+        "after": "Immagine illustrativa — prodotto ambientato"
       },
       "motionStudio": {
         "before": "Prodotto statico — cuffie",
-        "after": "Prodotto in movimento — animazione video IA"
+        "after": "Immagine illustrativa — prodotto ambientato"
       }
     }
   },
@@ -121,28 +121,28 @@
     }
   },
   "hero": {
-    "eyebrow": "Accesso anticipato · Crediti in omaggio all'iscrizione",
-    "title": "Foto prodotto professionali, generate dall'IA in 30 secondi",
+    "eyebrow": "Disponibile ora · Crediti in omaggio all'iscrizione",
+    "title": "Foto prodotto professionali generate dall'IA, senza studio né fotografo",
     "trustChips": {
-      "speed": "Risultato in 30 secondi",
+      "speed": "Immagini generate in pochi secondi",
       "free": "Crediti in omaggio all'iscrizione — senza carta di credito",
       "noSkills": "Nessuna competenza richiesta",
       "cancel": "Abbonamento disdicibile in qualsiasi momento",
-      "earlyAccess": "Accesso anticipato — unisciti alla beta"
+      "earlyAccess": "Interfaccia in 5 lingue"
     }
   },
   "features": {
     "badge": "Le nostre soluzioni IA",
     "title": "Strumenti potenti per ogni esigenza",
-    "subtitle": "Studio fotografico virtuale, modelle IA, animazioni… tutto ciò che ti serve per creare contenuti professionali.",
+    "subtitle": "Studio fotografico virtuale, video animati e presto modelle IA: tutto ciò che ti serve per creare contenuti professionali.",
     "studioVirtuel": {
       "title": "Studio Virtuale",
       "description": "Trasforma le tue foto prodotto in visual da studio professionali. Sfondi, illuminazioni e atmosfere realistiche generati dall'IA.",
-      "stats": "10 secondi",
-      "statsLabel": "per creazione"
+      "stats": "4",
+      "statsLabel": "formati immagine"
     },
     "mannequinVirtuel": {
-      "title": "Modella Virtuale",
+      "title": "Modello Virtuale",
       "description": "Aggiungi ai tuoi prodotti modelle IA ultra-realistiche. Personalizza aspetto, posa ed espressione per massimizzare il coinvolgimento.",
       "stats": "100% IA",
       "statsLabel": "nessuno shooting"
@@ -150,8 +150,8 @@
     "motionStudio": {
       "title": "Motion Studio",
       "description": "Trasforma le tue immagini in video dinamici. Animazioni fluide ed effetti professionali per le tue campagne e i tuoi social.",
-      "stats": "1 clic",
-      "statsLabel": "per animare"
+      "stats": "5 o 10 s",
+      "statsLabel": "per video"
     }
   },
   "howItWorks": {
@@ -161,51 +161,26 @@
     "steps": {
       "upload": {
         "title": "Carica la tua foto",
-        "description": "Importa semplicemente la tua foto prodotto, il ritratto o un visual grezzo."
+        "description": "Parti da una semplice foto del tuo prodotto."
       },
       "choose": {
         "title": "Scegli il tuo stile",
-        "description": "Seleziona tra i nostri template o descrivi la tua idea in linguaggio naturale."
+        "description": "Scegli un'ambientazione predefinita o descrivi la tua idea in linguaggio naturale."
       },
       "generate": {
         "title": "Genera",
-        "description": "L'IA trasforma il tuo visual in pochi secondi. Nessuna competenza richiesta."
+        "description": "L'IA crea il tuo visual: pochi secondi per un'immagine, pochi minuti per un video."
       },
       "download": {
         "title": "Scarica il risultato",
-        "description": "Ottieni la tua creazione professionale in pochi secondi, pronta all'uso."
+        "description": "Ottieni la tua creazione, pronta all'uso."
       }
     }
   },
   "socialProof": {
     "header": "Piattaforma",
-    "headline": "Visual prodotto con IA in 30 secondi",
-    "subline": "Accesso anticipato — costruiamo in pubblico. Unisciti ai creator che stanno testando la beta."
-  },
-  "testimonials": {
-    "badge": "Caso d'uso tipico",
-    "title": "Cosa potresti ottenere",
-    "subtitle": "Esempi di scenari in base al tuo profilo — dimostrazione delle capacità.",
-    "items": {
-      "1": {
-        "quote": "Dividere per 5 il budget fotografico. Ottenere render da agenzia in 30 secondi invece di 3 giorni.",
-        "role": "Direttrice Marketing",
-        "industry": "E-commerce",
-        "avatarLetter": "E"
-      },
-      "2": {
-        "quote": "Niente più casting né attese. Iterare sulle campagne in tempo reale con la Modella Virtuale.",
-        "role": "Fondatore",
-        "industry": "Moda e lifestyle",
-        "avatarLetter": "M"
-      },
-      "3": {
-        "quote": "Portare i visual e-commerce a un livello professionale. Aumentare le conversioni con visual coinvolgenti.",
-        "role": "Responsabile E-commerce",
-        "industry": "Beauty e retail",
-        "avatarLetter": "B"
-      }
-    }
+    "headline": "Studio Virtuale e Motion Studio, disponibili fin dall'iscrizione",
+    "subline": "Crediti in omaggio alla creazione dell'account, senza carta di credito. Il Modello Virtuale arriverà presto."
   },
   "riskReversal": {
     "noCard": "Senza carta di credito",
@@ -249,18 +224,18 @@
       "badge": "📸 Fotografia IA",
       "title": "Studio Virtuale",
       "subtitle": "Inserisci i tuoi prodotti in ambientazioni degne dei migliori studi fotografici.",
-      "conceptImageAlt": "Risultato Studio Virtuale — visual prodotto professionale",
+      "conceptImageAlt": "Immagine illustrativa — prodotto in un set da studio",
       "beforeImageAlt": "Foto prodotto grezza — sfondo bianco, illuminazione piatta",
-      "workflowImageAlt": "Interfaccia Studio Virtuale — workflow in 4 passaggi",
+      "workflowImageAlt": "Illustrazione del percorso Studio Virtuale in 4 passaggi",
       "whatIs": {
         "title": "Che cos'è?",
-        "text1": "È il tuo studio fotografico… senza lo studio. Carica la tua immagine, scegli un'ambientazione — minimalista, di design, lifestyle o ispirata al tuo brand — e ottieni all'istante un render 4K pronto da pubblicare.",
+        "text1": "È il tuo studio fotografico… senza lo studio. Carica la tua immagine, scegli un'ambientazione — minimalista, di design, lifestyle o ispirata al tuo brand — e ottieni in pochi secondi un render ad alta risoluzione pronto da pubblicare.",
         "text2": "Basta luci, fondali bianchi e riflessi da correggere per tre ore."
       },
       "whyAdopt": {
         "title": "Perché adottarlo?",
         "benefit1": "Risparmia giorni di shooting: niente più affitto di un set né attese per un fotografo.",
-        "benefit2": "Riduci i costi di produzione: generare un'immagine da studio costa 0,08 $, contro centinaia di euro per uno scatto reale.",
+        "benefit2": "Riduci i costi di produzione: un'immagine consuma solo pochi crediti, molto meno di uno shooting in studio.",
         "benefit3": "Uniforma i tuoi visual: uno stile coerente per tutto il catalogo, senza fatica."
       },
       "howToUse": {
@@ -278,18 +253,18 @@
     },
     "mannequinVirtuel": {
       "badge": "👩‍🎨 Modellazione IA",
-      "title": "Modella Virtuale",
+      "title": "Modello Virtuale",
       "subtitle": "Dai un volto ai tuoi visual con modelle realistiche e personalizzate.",
-      "conceptImageAlt": "Risultato Modella Virtuale — prodotto con modella IA",
+      "conceptImageAlt": "Immagine illustrativa — prodotto ambientato",
       "beforeImageAlt": "Scarpa isolata su sfondo neutro",
-      "workflowImageAlt": "Interfaccia Modella Virtuale — selezione del profilo",
+      "workflowImageAlt": "Illustrazione del percorso Modello Virtuale",
       "whatIs": {
         "title": "Che cos'è?",
         "text1": "È la fusione tra moda e macchina. Scegli il profilo ideale (genere, corporatura, stile, emozione) e l'IA genera una modella coerente con la tua immagine e il tuo universo di brand.",
         "text2": "Niente più casting né ritocchi interminabili."
       },
       "whyAdopt": {
-        "title": "Perché adottarla?",
+        "title": "Perché adottarlo?",
         "benefit1": "Crea identificazione: un volto, una postura, un'atmosfera. I tuoi prodotti prendono vita.",
         "benefit2": "Varia all'infinito: cambia modella, look e ambientazione in pochi clic.",
         "benefit3": "Resta coerente: mantieni uno stile visivo uniforme in tutte le tue campagne."
@@ -310,31 +285,31 @@
     "motionStudio": {
       "badge": "🎥 Video IA",
       "title": "Motion Studio",
-      "subtitle": "Passa dall'immagine al movimento con un clic.",
-      "conceptImageAlt": "Risultato Motion Studio — video prodotto animato",
+      "subtitle": "Trasforma le tue immagini in video animati.",
+      "conceptImageAlt": "Immagine illustrativa — prodotto ambientato",
       "beforeImageAlt": "Prodotto statico — cuffie audio",
-      "workflowImageAlt": "Interfaccia Motion Studio — scelta dello stile di animazione",
+      "workflowImageAlt": "Illustrazione del percorso Motion Studio",
       "whatIs": {
         "title": "Che cos'è?",
         "text1": "È il passo successivo: dare respiro ai tuoi visual. Motion Studio converte le immagini dei tuoi prodotti in video realistici, cinematografici o pubblicitari, pronti per TikTok, Instagram o il tuo sito.",
-        "text2": "Dallo statico al dinamico, in pochi secondi."
+        "text2": "Dallo statico al dinamico, senza riprese."
       },
       "whyAdopt": {
         "title": "Perché adottarlo?",
         "benefit1": "Moltiplica i formati: una sola immagine diventa un video, uno spot o una story.",
-        "benefit2": "Cattura l'attenzione: i video ottengono 3× più coinvolgimento delle immagini statiche.",
+        "benefit2": "Cattura l'attenzione: il movimento si nota più di un'immagine statica in un feed.",
         "benefit3": "Semplifica la produzione: niente team, niente camera, solo un'idea."
       },
       "howToUse": {
         "title": "Come si usa?",
         "step1": "Importa la tua immagine o la scena creata in Glint Studio.",
-        "step2": "Scegli uno stile di movimento (cinematografico, slow motion, panoramica, reveal, ecc.).",
+        "step2": "Descrivi il movimento desiderato (carrellata, rotazione, rallentatore…) e scegli una durata di 5 o 10 secondi.",
         "step3": "Lascia che l'IA generi una clip fluida e realistica.",
-        "step4": "Scarica in 4K, pronta per le tue campagne."
+        "step4": "Scarica il tuo video MP4, pronto per le tue campagne."
       },
       "quotes": {
         "quote1": "Le tue immagini prendono vita.",
-        "quote2": "Dalla foto allo spot pubblicitario, con un clic.",
+        "quote2": "Da una semplice foto a uno spot video.",
         "quote3": "Il movimento è emozione."
       }
     },
@@ -344,11 +319,11 @@
     }
   },
   "gallery": {
-    "title": "Galleria delle creazioni",
-    "subtitle": "Scopri cosa creano i nostri utenti",
+    "title": "Galleria di esempi",
+    "subtitle": "Esempi di visual prodotto, mostrati a titolo illustrativo",
     "videoBadge": "Video",
-    "imageAlt": "Creazione prodotto {n}",
-    "videoAlt": "Video prodotto {n}"
+    "imageAlt": "Esempio di visual prodotto {n}",
+    "videoAlt": "Esempio di video prodotto {n}"
   },
   "help": {
     "meta": {
@@ -370,7 +345,7 @@
       "suggestedLabel": "Domande suggerite:",
       "noAnswer": "Non ho trovato la risposta nella nostra documentazione. Contattaci all'indirizzo {email}.",
       "errors": {
-        "tooLong": "La domanda è troppo lunga (max {max} caratteri)",
+        "tooLong": "La domanda è troppo lunga (max {max} caratteri).",
         "rateLimited": "Troppe domande, riprova tra un minuto.",
         "unavailable": "L'assistente è momentaneamente non disponibile.",
         "generic": "L'assistente non risponde, riprova più tardi."
@@ -379,7 +354,7 @@
     "contact": {
       "title": "Hai bisogno di ulteriore aiuto?",
       "subtitle": "Il nostro team è qui per supportarti. Non esitare a contattarci direttamente.",
-      "chatPrompt": "Preferisci parlare in diretta?",
+      "chatPrompt": "Hai una domanda veloce?",
       "cards": {
         "support": {
           "title": "Supporto via email",
@@ -388,10 +363,6 @@
         "sales": {
           "title": "Vendite e partnership",
           "description": "Per aziende e rivenditori"
-        },
-        "press": {
-          "title": "Stampa e media",
-          "description": "Rapporti con la stampa e richieste media"
         }
       }
     },
@@ -413,7 +384,7 @@
   },
   "meta": {
     "title": "Glint Studio – Foto prodotto professionali con IA",
-    "description": "Trasforma le tue foto prodotto in visual da studio professionali grazie all'IA — in 30 secondi. Senza fotografo, senza studio.",
+    "description": "Trasforma le tue foto prodotto in visual da studio professionali grazie all'IA, in pochi secondi. Senza fotografo, senza studio.",
     "appDescription": "Piattaforma di IA generativa per creare foto da studio professionali a partire da foto prodotto."
   },
   "blog": {

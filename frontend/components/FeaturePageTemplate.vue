@@ -49,8 +49,8 @@ const r5 = useReveal(0.06) // final CTA
 const { t } = useI18n()
 const { signupUrl } = useAppLinks()
 
+// No speed chip here: it is about images, and a Motion Studio video takes minutes
 const trustChips = computed(() => [
-  { icon: 'heroicons:bolt', label: t('hero.trustChips.speed') },
   { icon: 'heroicons:check-circle', label: t('hero.trustChips.noSkills') },
   { icon: 'heroicons:rocket-launch', label: t('hero.trustChips.earlyAccess') },
 ])
@@ -265,6 +265,10 @@ const trustChips = computed(() => [
                 </div>
               </div>
             </div>
+            <!-- Stock pictures (config/visual-proof.config.ts): say so until real outputs replace them -->
+            <p class="relative mt-3 text-center text-xs text-gray-500">
+              {{ $t('beforeAfter.illustrativeLabel') }}
+            </p>
           </div>
         </div>
       </div>

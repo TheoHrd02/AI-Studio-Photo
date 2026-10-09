@@ -164,7 +164,7 @@ const personaKeys = ['ecommerce', 'fashion', 'creators'] as const
             />
 
             <div class="flex items-center gap-1.5 text-sm font-medium text-white/75">
-              <!-- Early access — pre-launch positioning -->
+              <!-- hero.trustChips.earlyAccess: app interface languages (the app is live, no beta) -->
               <svg
                 class="h-4 w-4 flex-shrink-0 text-primary-400"
                 fill="none"

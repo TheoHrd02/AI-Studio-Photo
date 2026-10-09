@@ -59,12 +59,15 @@ contexte, mis en cache par l'API au-delà d'environ 4 000 tokens) : modifier ce 
 
 **Plafonds de coût** (`server/api/ask.post.ts`) : une question par appel, sans historique, modèle ni `max_tokens` venant
 du navigateur ; corps ≤ 8 Ko, question ≤ 1 000 caractères, réponse ≤ 400 tokens ; 15 questions/min et 30/h par IP ;
-plafonds globaux de 200 questions par jour et 1 000 par mois (UTC, échecs compris, 0 = chatbot coupé) ; sans clé, 503.
-Au tarif de Haiku 4.5 et avec la doc actuelle (≈ 5 Ko, coût qui grandit avec elle), une question coûte au plus
-≈ 0,5 centime : le plafond mensuel de 1 000 questions reste sous 5 $.
+plafonds globaux de 200 questions par jour et 1 000 par mois (UTC, échecs compris, 0 = chatbot coupé) ; plafond global
+atteint ou sans clé, 503 (« indisponible »).
+Au tarif de Haiku 4.5 et avec la doc actuelle (≈ 31 Ko, soit ≈ 10 000 tokens, coût qui grandit avec elle), une question
+coûte ≈ 0,3 centime quand la doc est lue depuis le cache et ≈ 1,2 centime sans cache : le plafond mensuel de
+1 000 questions reste sous 12 $.
 Ces compteurs sont **en mémoire** (une seule instance) : un redémarrage ou un redéploiement les remet à zéro. Le vrai
 garde-fou est donc côté Anthropic : clé dédiée à la vitrine, créée dans un **workspace dédié** doté d'une **limite de
-dépense mensuelle** (par exemple 5 $) ; au-delà, l'API refuse et le chatbot affiche « indisponible ».
+dépense mensuelle** (par exemple 15 $) ; au-delà, l'API refuse et le chatbot affiche « L'assistant ne répond pas,
+réessayez plus tard ».
 
 ## Déploiement
 

@@ -18,7 +18,7 @@
       "subtitle": "Starte kostenlos und entdecke die Kraft der KI für deine Kreationen"
     },
     "comingSoon": {
-      "button": "Beim Start benachrichtigt werden",
+      "button": "Schreib uns für eine Benachrichtigung",
       "note": "Dieses Studio ist in der App noch nicht verfügbar: Schreib uns, um beim Start benachrichtigt zu werden.",
       "title": "Dieses Studio kommt bald",
       "subtitle": "Bis dahin sind Virtuelles Studio und Motion Studio bereits in der App verfügbar."
@@ -46,28 +46,28 @@
     },
     "motionStudio": {
       "label": "Motion Studio",
-      "description": "Vom Bild zur Bewegung mit nur einem Klick."
+      "description": "Verwandle deine Bilder in animierte Videos."
     }
   },
   "productDemo": {
-    "badge": "Produktdemo",
-    "title": "Sieh das Produkt in Aktion",
-    "subtitle": "Erfahre, wie du ein Produktfoto in wenigen Sekunden in ein professionelles Studio-Visual verwandelst.",
+    "badge": "Video",
+    "title": "Ein Beispiel im Video",
+    "subtitle": "Ein Produktvideo, zur Veranschaulichung gezeigt.",
     "watchHint": "Zum Starten klicken"
   },
   "productWalkthrough": {
     "badge": "Produkt-Tour",
     "title": "Dein Workflow in 4 Schritten",
-    "subtitle": "Vom Upload bis zur fertigen Kreation — der vereinfachte Ablauf.",
-    "framing": "Vorschau der Funktionsweise — finale Oberfläche in Entwicklung.",
+    "subtitle": "Vom Import deines Fotos bis zum fertigen Visual: die einzelnen Schritte.",
+    "framing": "Überblick über den Ablauf, in vereinfachten Schemata.",
     "steps": {
       "upload": {
         "title": "Foto hochladen",
-        "description": "Importiere dein Produktfoto, Porträt oder rohes Bild. Per Drag-and-drop oder Auswahl vom Computer."
+        "description": "Zieh dein Produktfoto per Drag-and-drop hinein oder wähle es auf deinem Computer aus."
       },
       "choose": {
         "title": "Szene wählen",
-        "description": "Wähle aus unseren Studio-Kulissen oder beschreibe deine Vision. Fertige Vorlagen oder individuelle Kreation."
+        "description": "Wähle eine Kulisse aus dem Katalog oder beschreibe das gewünschte Ergebnis in wenigen Worten."
       },
       "generate": {
         "title": "Generieren",
@@ -85,23 +85,23 @@
   },
   "beforeAfter": {
     "badge": "Beispielhafte Vorschau",
-    "title": "Vorher → Nachher: die Verwandlung mit einem Klick",
-    "subtitle": "Aus einem rohen Produktfoto wird ein professionelles Studio-Visual. Das kann die KI in 30 Sekunden erzeugen.",
-    "illustrativeLabel": "Beispielhaft generierte Ergebnisse — Demonstration der Möglichkeiten",
+    "title": "Vorher → Nachher: das Prinzip",
+    "subtitle": "Aus einem rohen Produktfoto wird ein Studio-Visual, bereit zur Veröffentlichung.",
+    "illustrativeLabel": "Beispielbilder aus einer Bilddatenbank: Es sind keine mit Glint Studio erstellten Ergebnisse.",
     "before": "Vorher",
     "after": "Nachher",
     "examples": {
       "studioVirtuel": {
         "before": "Unbearbeitetes Produktfoto — weißer Hintergrund, flaches Licht",
-        "after": "Ergebnis mit Glint Studio — Studiokulisse, professionelles Licht"
+        "after": "Beispielbild — Produkt in einer Studiokulisse"
       },
       "mannequinVirtuel": {
         "before": "Schuh freigestellt auf neutralem Hintergrund",
-        "after": "Schuh in einer Lifestyle-Szene mit Model"
+        "after": "Beispielbild — inszeniertes Produkt"
       },
       "motionStudio": {
         "before": "Statisches Produkt — Kopfhörer",
-        "after": "Produkt in Bewegung — KI-Videoanimation"
+        "after": "Beispielbild — inszeniertes Produkt"
       }
     }
   },
@@ -121,25 +121,25 @@
     }
   },
   "hero": {
-    "eyebrow": "Early Access · Gratis-Credits bei der Registrierung",
-    "title": "Professionelle Produktfotos, in 30 Sekunden von der KI generiert",
+    "eyebrow": "Jetzt verfügbar · Gratis-Credits bei der Registrierung",
+    "title": "Professionelle Produktfotos, von der KI generiert — ohne Studio und ohne Fotografen",
     "trustChips": {
-      "speed": "Ergebnis in 30 Sekunden",
+      "speed": "Bilder in wenigen Sekunden generiert",
       "free": "Gratis-Credits bei der Registrierung — ohne Kreditkarte",
       "noSkills": "Keine Vorkenntnisse nötig",
       "cancel": "Abo jederzeit kündbar",
-      "earlyAccess": "Early Access — werde Teil der Beta"
+      "earlyAccess": "Oberfläche in 5 Sprachen"
     }
   },
   "features": {
     "badge": "Unsere KI-Lösungen",
     "title": "Starke Tools für jeden Bedarf",
-    "subtitle": "Virtuelles Fotostudio, KI-Models, Animationen … alles, was du für professionelle Inhalte brauchst.",
+    "subtitle": "Virtuelles Fotostudio, animierte Videos und bald KI-Models: alles, was du für professionelle Inhalte brauchst.",
     "studioVirtuel": {
       "title": "Virtuelles Studio",
       "description": "Verwandle deine Produktfotos in professionelle Studio-Visuals. Realistische Hintergründe, Beleuchtung und Stimmungen, von der KI generiert.",
-      "stats": "10 Sekunden",
-      "statsLabel": "pro Kreation"
+      "stats": "4",
+      "statsLabel": "Bildformate"
     },
     "mannequinVirtuel": {
       "title": "Virtuelles Model",
@@ -150,8 +150,8 @@
     "motionStudio": {
       "title": "Motion Studio",
       "description": "Verwandle deine Bilder in dynamische Videos. Flüssige Animationen und professionelle Effekte für deine Kampagnen und Social Media.",
-      "stats": "1 Klick",
-      "statsLabel": "zum Animieren"
+      "stats": "5 oder 10 s",
+      "statsLabel": "pro Video"
     }
   },
   "howItWorks": {
@@ -161,51 +161,26 @@
     "steps": {
       "upload": {
         "title": "Foto hochladen",
-        "description": "Importiere einfach dein Produktfoto, Porträt oder rohes Bild."
+        "description": "Starte mit einem einfachen Foto deines Produkts."
       },
       "choose": {
         "title": "Stil wählen",
-        "description": "Wähle aus unseren Vorlagen oder beschreibe deine Vision in natürlicher Sprache."
+        "description": "Wähle eine vordefinierte Kulisse oder beschreibe deine Vision in natürlicher Sprache."
       },
       "generate": {
         "title": "Generieren",
-        "description": "Die KI verwandelt dein Visual in wenigen Sekunden. Keine Vorkenntnisse nötig."
+        "description": "Die KI erstellt dein Visual: wenige Sekunden für ein Bild, wenige Minuten für ein Video."
       },
       "download": {
         "title": "Ergebnis herunterladen",
-        "description": "Erhalte deine professionelle Kreation in wenigen Sekunden — sofort einsatzbereit."
+        "description": "Hol dir deine Kreation — sofort einsatzbereit."
       }
     }
   },
   "socialProof": {
     "header": "Plattform",
-    "headline": "KI-Produktvisuals in 30 Sekunden",
-    "subline": "Early Access — wir bauen öffentlich. Werde Teil der Creator, die die Beta testen."
-  },
-  "testimonials": {
-    "badge": "Typischer Anwendungsfall",
-    "title": "Was du erreichen könntest",
-    "subtitle": "Beispielszenarien je nach Profil — Demonstration der Möglichkeiten.",
-    "items": {
-      "1": {
-        "quote": "Das Fotobudget durch 5 teilen. Agentur-Qualität in 30 Sekunden statt in 3 Tagen.",
-        "role": "Marketingleiterin",
-        "industry": "E-Commerce",
-        "avatarLetter": "E"
-      },
-      "2": {
-        "quote": "Keine Castings und kein Warten mehr. Kampagnen in Echtzeit iterieren mit dem Virtuellen Model.",
-        "role": "Gründer",
-        "industry": "Mode & Lifestyle",
-        "avatarLetter": "M"
-      },
-      "3": {
-        "quote": "E-Commerce-Visuals auf Profi-Niveau heben. Die Conversions mit ansprechenden Visuals steigern.",
-        "role": "E-Commerce-Manager",
-        "industry": "Beauty & Retail",
-        "avatarLetter": "B"
-      }
-    }
+    "headline": "Virtuelles Studio und Motion Studio, direkt nach der Registrierung verfügbar",
+    "subline": "Gratis-Credits beim Erstellen deines Kontos, ohne Kreditkarte. Das Virtuelle Model kommt bald."
   },
   "riskReversal": {
     "noCard": "Ohne Kreditkarte",
@@ -249,18 +224,18 @@
       "badge": "📸 KI-Fotografie",
       "title": "Virtuelles Studio",
       "subtitle": "Platziere deine Produkte in Kulissen, die großen Fotostudios in nichts nachstehen.",
-      "conceptImageAlt": "Ergebnis Virtuelles Studio — professionelles Produktvisual",
+      "conceptImageAlt": "Beispielbild — Produkt in einer Studiokulisse",
       "beforeImageAlt": "Rohes Produktfoto — weißer Hintergrund, flaches Licht",
-      "workflowImageAlt": "Oberfläche Virtuelles Studio — Workflow in 4 Schritten",
+      "workflowImageAlt": "Illustration des Ablaufs im Virtuellen Studio in 4 Schritten",
       "whatIs": {
         "title": "Was ist das?",
-        "text1": "Das ist dein Fotostudio … ohne Studio. Lade dein Bild hoch, wähle eine Kulisse — minimalistisch, designorientiert, Lifestyle oder inspiriert von deiner Marke — und erhalte sofort ein veröffentlichungsreifes 4K-Ergebnis.",
+        "text1": "Das ist dein Fotostudio … ohne Studio. Lade dein Bild hoch, wähle eine Kulisse — minimalistisch, designorientiert, Lifestyle oder inspiriert von deiner Marke — und erhalte in wenigen Sekunden ein veröffentlichungsreifes Ergebnis in hoher Auflösung.",
         "text2": "Schluss mit Lichtaufbau, weißen Hintergründen und Reflexionen, die du drei Stunden lang korrigieren musst."
       },
       "whyAdopt": {
         "title": "Warum lohnt es sich?",
         "benefit1": "Spare Tage an Shooting-Zeit: Du musst kein Set mehr mieten oder auf einen Fotografen warten.",
-        "benefit2": "Senke deine Produktionskosten: Ein Studiobild kostet 0,08 $ in der Generierung, statt Hunderte Euro bei einem echten Shooting.",
+        "benefit2": "Senke deine Produktionskosten: Ein Bild verbraucht nur wenige Credits, weit weniger, als ein Studio-Shooting kostet.",
         "benefit3": "Vereinheitliche deine Visuals: ein konsistenter Stil für dein ganzes Sortiment, ganz ohne Aufwand."
       },
       "howToUse": {
@@ -280,9 +255,9 @@
       "badge": "👩‍🎨 KI-Modeling",
       "title": "Virtuelles Model",
       "subtitle": "Verleihe deinen Visuals mit realistischen, individuellen Models ein Gesicht.",
-      "conceptImageAlt": "Ergebnis Virtuelles Model — Produkt mit KI-Model",
+      "conceptImageAlt": "Beispielbild — inszeniertes Produkt",
       "beforeImageAlt": "Freigestellter Schuh auf neutralem Hintergrund",
-      "workflowImageAlt": "Oberfläche Virtuelles Model — Profilauswahl",
+      "workflowImageAlt": "Illustration des Ablaufs beim Virtuellen Model",
       "whatIs": {
         "title": "Was ist das?",
         "text1": "Das ist die Verschmelzung von Mode und Maschine. Du wählst das ideale Profil (Geschlecht, Körperbau, Stil, Ausdruck), und die KI generiert ein Model, das zu deinem Bild und deiner Markenwelt passt.",
@@ -310,31 +285,31 @@
     "motionStudio": {
       "badge": "🎥 KI-Video",
       "title": "Motion Studio",
-      "subtitle": "Vom Bild zur Bewegung mit nur einem Klick.",
-      "conceptImageAlt": "Ergebnis Motion Studio — animiertes Produktvideo",
+      "subtitle": "Verwandle deine Bilder in animierte Videos.",
+      "conceptImageAlt": "Beispielbild — inszeniertes Produkt",
       "beforeImageAlt": "Statisches Produkt — Kopfhörer",
-      "workflowImageAlt": "Oberfläche Motion Studio — Auswahl des Animationsstils",
+      "workflowImageAlt": "Illustration des Ablaufs im Motion Studio",
       "whatIs": {
         "title": "Was ist das?",
         "text1": "Das ist der logische nächste Schritt: deinen Visuals Leben einhauchen. Motion Studio wandelt deine Produktbilder in realistische, cineastische oder werbliche Videos um — bereit für TikTok, Instagram oder deine Website.",
-        "text2": "Von statisch zu dynamisch, in wenigen Sekunden."
+        "text2": "Von statisch zu dynamisch, ganz ohne Dreh."
       },
       "whyAdopt": {
         "title": "Warum lohnt es sich?",
         "benefit1": "Vervielfache deine Formate: Aus einem einzigen Bild wird ein Video, ein Spot oder eine Story.",
-        "benefit2": "Fessle die Aufmerksamkeit: Videos erzielen 3-mal mehr Engagement als statische Bilder.",
+        "benefit2": "Fessle die Aufmerksamkeit: Bewegung fällt im Feed stärker auf als ein statisches Bild.",
         "benefit3": "Vereinfache die Produktion: kein Team, keine Kamera, nur eine Idee."
       },
       "howToUse": {
         "title": "Wie funktioniert es?",
         "step1": "Importiere dein Bild oder deine in Glint Studio erstellte Szene.",
-        "step2": "Wähle einen Bewegungsstil (cineastisch, Zeitlupe, Schwenk, Reveal usw.).",
+        "step2": "Beschreibe die gewünschte Bewegung (Kamerafahrt, Drehung, Zeitlupe …) und wähle eine Dauer von 5 oder 10 Sekunden.",
         "step3": "Lass die KI einen flüssigen, realistischen Clip generieren.",
-        "step4": "Lade ihn in 4K herunter — bereit für deine Kampagnen."
+        "step4": "Lade dein MP4-Video herunter — bereit für deine Kampagnen."
       },
       "quotes": {
         "quote1": "Deine Bilder erwachen zum Leben.",
-        "quote2": "Vom Foto zum Werbespot, mit einem Klick.",
+        "quote2": "Von einem einfachen Foto zum Videospot.",
         "quote3": "Bewegung ist Emotion."
       }
     },
@@ -344,11 +319,11 @@
     }
   },
   "gallery": {
-    "title": "Kreationen-Galerie",
-    "subtitle": "Entdecke, was unsere Nutzer erschaffen",
+    "title": "Beispielgalerie",
+    "subtitle": "Beispiele für Produktvisuals, zur Veranschaulichung gezeigt",
     "videoBadge": "Video",
-    "imageAlt": "Produktkreation {n}",
-    "videoAlt": "Produktvideo {n}"
+    "imageAlt": "Beispiel-Produktvisual {n}",
+    "videoAlt": "Beispiel-Produktvideo {n}"
   },
   "help": {
     "meta": {
@@ -370,7 +345,7 @@
       "suggestedLabel": "Vorgeschlagene Fragen:",
       "noAnswer": "Ich habe die Antwort in unserer Dokumentation nicht gefunden. Kontaktiere uns unter {email}.",
       "errors": {
-        "tooLong": "Die Frage ist zu lang (max. {max} Zeichen)",
+        "tooLong": "Die Frage ist zu lang (max. {max} Zeichen).",
         "rateLimited": "Zu viele Fragen, versuche es in einer Minute erneut.",
         "unavailable": "Der Assistent ist vorübergehend nicht verfügbar.",
         "generic": "Der Assistent antwortet nicht, versuche es später erneut."
@@ -379,7 +354,7 @@
     "contact": {
       "title": "Brauchst du weitere Hilfe?",
       "subtitle": "Unser Team ist für dich da. Melde dich gerne direkt bei uns.",
-      "chatPrompt": "Lieber live chatten?",
+      "chatPrompt": "Eine kurze Frage?",
       "cards": {
         "support": {
           "title": "E-Mail-Support",
@@ -388,10 +363,6 @@
         "sales": {
           "title": "Vertrieb & Partnerschaften",
           "description": "Für Unternehmen und Wiederverkäufer"
-        },
-        "press": {
-          "title": "Presse & Medien",
-          "description": "Pressearbeit und Medienanfragen"
         }
       }
     },
@@ -413,7 +384,7 @@
   },
   "meta": {
     "title": "Glint Studio – Professionelle Produktfotos mit KI",
-    "description": "Verwandle deine Produktfotos dank KI in 30 Sekunden in professionelle Studio-Visuals. Ohne Fotograf, ohne Studio.",
+    "description": "Verwandle deine Produktfotos dank KI in wenigen Sekunden in professionelle Studio-Visuals. Ohne Fotograf, ohne Studio.",
     "appDescription": "Plattform für generative KI, um aus Produktfotos professionelle Studiofotos zu erstellen."
   },
   "blog": {

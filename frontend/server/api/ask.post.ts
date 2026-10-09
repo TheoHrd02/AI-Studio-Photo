@@ -118,14 +118,18 @@ export default defineEventHandler(async (event) => {
 
   // X-Forwarded-For is only trusted behind a reverse proxy that overwrites it (NUXT_TRUST_PROXY=true).
   const ip = getRequestIP(event, { xForwardedFor: config.trustProxy === true }) ?? 'unknown'
+  // IPv6: one subscriber owns a whole /64, so the per-IP limit keys on its first four groups.
+  const ipKey = ip.includes(':') ? ip.split(':').slice(0, 4).join(':') : ip
   const limited = takeToken(
-    ip,
+    ipKey,
     limitFrom(config.chatDailyLimit, DEFAULT_DAILY_LIMIT),
     limitFrom(config.chatMonthlyLimit, DEFAULT_MONTHLY_LIMIT),
   )
+  if (limited === 'ip') throw createError({ statusCode: 429, message: 'Too many requests' })
   if (limited) {
-    if (limited !== 'ip') console.warn(`[ask] ${limited} limit reached`)
-    throw createError({ statusCode: 429, message: limited === 'ip' ? 'Too many requests' : 'Chatbot limit reached' })
+    // 503, not 429: the client would say "retry in a minute" while the cap holds until the next UTC day or month
+    console.warn(`[ask] ${limited} limit reached`)
+    throw createError({ statusCode: 503, message: 'Chatbot limit reached' })
   }
 
   client ??= new Anthropic({ apiKey: config.anthropicApiKey, timeout: 25_000, maxRetries: 1 })
