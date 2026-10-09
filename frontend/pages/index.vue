@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { saasConfig } from '~/config/saas.config'
+import { isComingSoon } from '~/config/site.config'
+
+const { signupUrl } = useAppLinks()
 
 definePageMeta({
   layout: 'marketing',
@@ -18,6 +20,7 @@ const features = computed(() => [
     stats: t('features.studioVirtuel.stats'),
     statsLabel: t('features.studioVirtuel.statsLabel'),
     href: '/features/studio-virtuel',
+    comingSoon: isComingSoon('studioVirtuel'),
   },
   {
     title: t('features.mannequinVirtuel.title'),
@@ -26,6 +29,7 @@ const features = computed(() => [
     stats: t('features.mannequinVirtuel.stats'),
     statsLabel: t('features.mannequinVirtuel.statsLabel'),
     href: '/features/mannequin-virtuel',
+    comingSoon: isComingSoon('mannequinVirtuel'),
   },
   {
     title: t('features.motionStudio.title'),
@@ -34,6 +38,7 @@ const features = computed(() => [
     stats: t('features.motionStudio.stats'),
     statsLabel: t('features.motionStudio.statsLabel'),
     href: '/features/motion-studio',
+    comingSoon: isComingSoon('motionStudio'),
   },
 ])
 
@@ -131,7 +136,7 @@ const steps = computed(() => [
 
         <div class="text-center">
           <CommonCTAButton
-            :href="saasConfig.signupUrl"
+            :href="signupUrl"
             variant="primary"
             size="md"
             rounded="xl"
@@ -174,8 +179,9 @@ const steps = computed(() => [
             <div class="mb-2 text-xs font-bold text-primary-500">
               {{ feature.stats }} {{ feature.statsLabel }}
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 flex flex-wrap items-center gap-2">
               {{ feature.title }}
+              <CommonComingSoonBadge v-if="feature.comingSoon" />
             </h3>
             <p class="text-gray-600 text-sm mb-4">
               {{ feature.description }}
@@ -201,7 +207,8 @@ const steps = computed(() => [
                 </svg>
               </NuxtLinkLocale>
               <a
-                :href="saasConfig.signupUrl"
+                v-if="!feature.comingSoon"
+                :href="signupUrl"
                 target="_blank"
                 rel="noopener"
                 class="text-sm font-medium text-gray-500 hover:text-primary-500 transition-colors"
@@ -214,8 +221,7 @@ const steps = computed(() => [
       </div>
     </section>
 
-    <!-- 7. Trust (Testimonials + Social proof) -->
-    <MarketingTestimonialSection />
+    <!-- 7. Availability (no testimonials or customer figures until real ones exist) -->
     <MarketingSocialProofBar />
 
     <!-- 8. Final CTA -->
@@ -230,7 +236,7 @@ const steps = computed(() => [
           </p>
           <div class="mt-8 flex flex-col items-center gap-3">
             <CommonCTAButton
-              :href="saasConfig.signupUrl"
+              :href="signupUrl"
               variant="primary-inverted"
               size="lg"
               rounded="xl"

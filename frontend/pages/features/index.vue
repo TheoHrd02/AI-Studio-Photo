@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { navFeatures } from '~/config/site.config'
-import { saasConfig } from '~/config/saas.config'
+
+const { signupUrl } = useAppLinks()
 
 const { t } = useI18n()
 
@@ -35,8 +36,9 @@ usePageSeo(() => ({ title: t('featurePages.index.title'), description: t('featur
               class="h-8 w-8 text-primary-500"
             />
           </div>
-          <h3 class="mt-6 text-xl font-bold text-gray-900 transition-colors group-hover:text-primary-500">
+          <h3 class="mt-6 flex flex-wrap items-center gap-2 text-xl font-bold text-gray-900 transition-colors group-hover:text-primary-500">
             {{ $t(`nav.${feature.id}.label`) }}
+            <CommonComingSoonBadge v-if="feature.comingSoon" />
           </h3>
           <p class="mt-4 text-gray-600">
             {{ $t(`nav.${feature.id}.description`) }}
@@ -62,7 +64,8 @@ usePageSeo(() => ({ title: t('featurePages.index.title'), description: t('featur
               </svg>
             </NuxtLinkLocale>
             <CommonCTAButton
-              :href="saasConfig.signupUrl"
+              v-if="!feature.comingSoon"
+              :href="signupUrl"
               variant="ghost"
               size="xs"
               class="text-sm text-gray-500 hover:text-primary-500"

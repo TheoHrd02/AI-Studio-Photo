@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { heroVideos, videoRotationInterval } from '~/config/hero.config'
-import { saasConfig } from '~/config/saas.config'
+
+const { signupUrl, loginUrl } = useAppLinks()
 
 const videoUrls = heroVideos.map(v => v.url)
 
@@ -46,7 +47,7 @@ const personaKeys = ['ecommerce', 'fashion', 'creators'] as const
           <!-- Single dominant CTA — no competing choices -->
           <div class="mt-10 flex flex-col items-center gap-3">
             <CommonCTAButton
-              :href="saasConfig.signupUrl"
+              :href="signupUrl"
               variant="primary"
               size="lg"
               rounded="xl"
@@ -61,7 +62,7 @@ const personaKeys = ['ecommerce', 'fashion', 'creators'] as const
 
             <!-- Returning-user login link — demoted to avoid choice paralysis -->
             <CommonCTAButton
-              :href="saasConfig.loginUrl"
+              :href="loginUrl"
               variant="ghost-light"
               size="xs"
               class="text-sm underline underline-offset-4 text-white/55 hover:text-white/85"
@@ -163,7 +164,7 @@ const personaKeys = ['ecommerce', 'fashion', 'creators'] as const
             />
 
             <div class="flex items-center gap-1.5 text-sm font-medium text-white/75">
-              <!-- Early access — pre-launch positioning -->
+              <!-- hero.trustChips.earlyAccess: app interface languages (the app is live, no beta) -->
               <svg
                 class="h-4 w-4 flex-shrink-0 text-primary-400"
                 fill="none"

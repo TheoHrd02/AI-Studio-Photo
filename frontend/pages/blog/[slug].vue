@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { articleLocale, articleSlug, blogAuthors } from '~/config/blog.config'
-import { saasConfig } from '~/config/saas.config'
 import { navFeatures } from '~/config/site.config'
+
+const { signupUrl } = useAppLinks()
 
 definePageMeta({
   layout: 'marketing',
@@ -229,13 +230,26 @@ useHead(() => ({ script: jsonLd().map(jsonLdScript) }))
       <aside class="mt-8 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 p-8 text-white">
         <p class="text-2xl font-bold">
           {{ feature ? $t(`nav.${feature.id}.label`) : $t('cta.finalSection.title') }}
+          <CommonComingSoonBadge
+            v-if="feature?.comingSoon"
+            class="ml-2 align-middle"
+          />
         </p>
         <p class="mt-2 text-white/80">
           {{ feature ? $t(`nav.${feature.id}.description`) : $t('cta.finalSection.subtitle') }}
         </p>
         <div class="mt-6 flex flex-wrap items-center gap-4">
+          <!-- Studio not open in the app yet: contact instead of sign-up -->
           <CommonCTAButton
-            :href="saasConfig.signupUrl"
+            v-if="feature?.comingSoon"
+            to="/help#contact"
+            variant="primary-inverted"
+          >
+            {{ $t('cta.comingSoon.button') }}
+          </CommonCTAButton>
+          <CommonCTAButton
+            v-else
+            :href="signupUrl"
             variant="primary-inverted"
           >
             {{ $t('cta.primary') }}

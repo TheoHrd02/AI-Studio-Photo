@@ -1,0 +1,83 @@
+name: Release
+
+# Sur un tag v*, construit une fois l'image de production de la vitrine (frontend/Dockerfile.prod), la publie sur
+# GitHub Container Registry et joint son empreinte sha256 à la release (artefacts.txt). La vitrine tourne sur la VM de
+# l'application, derrière son Caddy : le Compose de production de l'app (dépôt AI-Studio-Photo-App,
+# deploy/production/docker-compose.yml, service vitrine) la tire par empreinte, sans reconstruction sur le serveur.
+# Procédure : docs/runbook.md de l'app, section Production, « Mise en ligne de la vitrine ».
+# Aucun secret autre que le jeton de GitHub Actions ; aucune action tierce : docker, curl et jq du runner.
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions: {}
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: publication de l'image
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Construction, publication et empreinte
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.ref_name }}
+          OWNER: ${{ github.repository_owner }}
+          REPOSITORY: ${{ github.repository }}
+          ACTOR: ${{ github.actor }}
+          # URL publique intégrée au build (sitemap, canonicals, hreflang) ; égale à https://VITRINE_DOMAIN du serveur.
+          SITE_URL: https://glintstudio.ai
+        run: |
+          set -euo pipefail
+          # GHCR n'accepte que des noms en minuscules. Même espace que les images de l'app (ghcr.io/<propriétaire>/glint).
+          image="ghcr.io/${OWNER,,}/glint/vitrine"
+          source="https://github.com/$REPOSITORY"
+          printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$ACTOR" --password-stdin
+
+          docker build --pull --target runtime --label "org.opencontainers.image.source=$source" \
+            --build-arg "NUXT_PUBLIC_SITE_URL=$SITE_URL" \
+            -t "$image:$TAG" -f frontend/Dockerfile.prod frontend
+          docker push "$image:$TAG"
+
+          # Empreinte lue après la publication : c'est celle que le registre sert.
+          digest="$(docker inspect --format '{{index .RepoDigests 0}}' "$image:$TAG")"
+          digest="${digest##*@}"
+          case "$digest" in
+            sha256:*) ;;
+            *) echo "::error::empreinte introuvable pour vitrine"; exit 1 ;;
+          esac
+          {
+            echo "# Glint Studio vitrine $TAG, image publiée sur $image (site $SITE_URL)"
+            echo "# Déploiement : reporter ces deux lignes dans /opt/glint/.env du serveur de l'app (docs/runbook.md de l'app)."
+            echo "VITRINE_IMAGE=$image"
+            echo "VITRINE_IMAGE_DIGEST=$digest"
+          } > artefacts.txt
+          docker logout ghcr.io
+          cat artefacts.txt
+
+          # Release du tag, puis artefacts.txt joint.
+          prerelease=false
+          case "$TAG" in *-*) prerelease=true ;; esac
+          body="$(jq -n --arg tag "$TAG" --argjson pre "$prerelease" \
+            '{tag_name: $tag, name: $tag, generate_release_notes: true, prerelease: $pre}')"
+          release="$(curl -fsS -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$REPOSITORY/releases" -d "$body")"
+          release_id="$(jq -r .id <<< "$release")"
+          curl -fsS -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" -H "Content-Type: text/plain; charset=utf-8" \
+            --data-binary @artefacts.txt \
+            "https://uploads.github.com/repos/$REPOSITORY/releases/$release_id/assets?name=artefacts.txt" > /dev/null

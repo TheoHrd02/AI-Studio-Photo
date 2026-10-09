@@ -1,3 +1,5 @@
+import { appLegalUrl, type AppLegalDoc } from './config/saas.config'
+
 // Security headers — production only. Disabled in dev to allow Vite HMR, inline scripts, eval.
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -11,6 +13,22 @@ const productionSecurityHeaders = {
 }
 
 const securityHeaders = isProduction ? productionSecurityHeaders : {}
+
+// Legal texts live in the app only (single versioned source, see config/saas.config.ts): the former legal pages of
+// this site redirect permanently (301) to the app page in the same language, for every locale prefix.
+const siteLocales = ['fr', 'en', 'de', 'it', 'es']
+const legacyLegalPages: Record<string, AppLegalDoc> = {
+  'mentions-legales': 'notice',
+  'cgu': 'terms',
+  'confidentialite': 'privacy',
+  'cookies': 'cookies',
+}
+const legacyLegalRedirects = Object.fromEntries(
+  siteLocales.flatMap(code => Object.entries(legacyLegalPages).map(([page, doc]) => [
+    `${code === 'fr' ? '' : `/${code}`}/${page}`,
+    { redirect: { to: appLegalUrl(doc, code), statusCode: 301 } },
+  ])),
+)
 
 export default defineNuxtConfig({
   modules: [
@@ -57,8 +75,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // Server-only, overridden at runtime by NUXT_* env vars (see .env.example)
     anthropicApiKey: '',
-    anthropicModel: 'claude-haiku-4-5',
-    chatDailyLimit: 500,
+    anthropicModel: 'claude-haiku-4-5', // Haiku only (server/api/ask.post.ts)
+    // Global chatbot caps (questions, all visitors), per UTC day and month; 0 = chatbot off
+    chatDailyLimit: 200,
+    chatMonthlyLimit: 1000,
     trustProxy: false,
 
     // Public keys (exposed to client)
@@ -79,6 +99,7 @@ export default defineNuxtConfig({
   nitro: {
     routeRules: {
       '/**': { headers: securityHeaders },
+      ...legacyLegalRedirects,
     },
   },
 

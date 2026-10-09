@@ -40,7 +40,7 @@ export const useChatbot = () => {
         timeout: 30_000,
       })
 
-      return response.answer || t('help.chat.noAnswer', { email: 'support@glintstudio.ai' })
+      return response.answer || t('help.chat.noAnswer', { email: 'support@glint-studio.com' })
     }
     catch (err: unknown) {
       const status = (err as { statusCode?: number }).statusCode

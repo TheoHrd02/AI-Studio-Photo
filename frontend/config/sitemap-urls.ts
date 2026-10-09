@@ -18,11 +18,12 @@ function collectHrefs(): string[] {
     }
   }
 
-  // Footer links (indexable only)
+  // Footer links (indexable only). Legal texts live on the app (siteConfig.footer.legal): not in this sitemap.
   for (const col of siteConfig.footer.columns) {
     for (const link of col.links) {
+      const path = link.href.split('#')[0] // '/help#contact' → '/help'
       // /blog and articles: added per language by server/api/__sitemap__/urls.get.ts
-      if (link.href.startsWith('/') && link.href !== '/blog') hrefs.add(link.href)
+      if (path?.startsWith('/') && path !== '/blog') hrefs.add(path)
     }
   }
 

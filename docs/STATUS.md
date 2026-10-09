@@ -9,7 +9,8 @@ Audit puis remise au propre du site vitrine (branche `claude/saas-site-audit-732
 |---------|--------|
 | **Bloquants corrigés** | Le site ne s'hydratait pas en prod (CSP bloquait les scripts inline de Nuxt) → nonce par requête. Clés i18n affichées en brut (`/features`, footer). Lint en échec. Le script `typecheck` ne vérifiait aucun fichier (~20 erreurs cachées). |
 | **Chatbot** | L'Assistants API d'OpenAI est arrêtée depuis le 26/08/2026 : le chatbot ne fonctionnait plus (et le masquait). Réécrit en route Nuxt (`/api/ask`) sur **Claude Haiku 4.5** (SDK Anthropic), documentation dans `server/assets/support-docs.md` (contexte mis en cache), vrais codes d'erreur, limite 15/min/IP non contournable, plafond journalier. **Backend Go et dépendance OpenAI supprimés.** |
-| **Légal** | Mentions légales, confidentialité, CGU, cookies (squelettes, champs à compléter surlignés). Contact → `/help#contact`. |
+| **Légal** | Textes légaux hébergés **uniquement par l'app** (versionnés, servis par son API) : liens du footer → `app.glintstudio.ai/{langue}/legal/{notice,terms,sales,privacy,cookies,acceptable-use}`. Pages légales du site supprimées ; `/mentions-legales`, `/cgu`, `/confidentialite`, `/cookies` (toutes langues) → 301 vers l'app (`nuxt.config.ts`). Contact → `/help#contact`. |
+| **Liens et CTA** | Faux liens du footer retirés (API, Changelog, Documentation, Tutoriels, À propos, Affiliation, Carrières). Liens vers l'app centralisés (`config/saas.config.ts` + `useAppLinks()`, langue de la page) : inscription et connexion → `/signin` (OAuth ; `/signup` et `/login` n'existent pas). CTA alignés sur l'offre réelle : plan Free, crédits offerts, sans carte ; pas d'essai gratuit. Plus de « réponse sous 24h » / « 7j/7 ». Mannequin Virtuel (désactivé dans l'app) marqué « Bientôt disponible », sans CTA d'inscription. Contact : `@glint-studio.com`. |
 | **i18n** | `@nuxtjs/i18n`, 5 langues (fr, en, de, it, es), URLs préfixées, détection de la langue du navigateur (sur `/`, mémorisée par cookie), sélecteur de langue, hreflang, tout le texte en dur extrait. de/it/es traduits automatiquement. |
 | **SEO** | Open Graph/Twitter par page (`usePageSeo`), og:locale, canonical, JSON-LD (Organization + logo, SoftwareApplication), sitemap par langue, robots, 404 traduite, `<h1>` partout, favicon/apple-touch/manifest, blog vide en noindex. |
 | **Blog (SEO / GEO)** | Nuxt Content (Markdown dans `frontend/content/blog/{langue}/`), requêtes côté serveur uniquement (CSP intacte). Gabarit article : réponse directe, « L'essentiel », sommaire, FAQ, auteur, dates, encart produit, articles liés, JSON-LD `BlogPosting`/`BreadcrumbList`/`FAQPage`. hreflang et sitemap limités aux traductions existantes, `lastmod` réels (supprimés sur les pages statiques, où ils étaient faux). Script IndexNow. Guide : `docs/BLOG.md`, plan éditorial : `docs/BLOG-PLAN.md`. |
@@ -34,31 +35,39 @@ Audit puis remise au propre du site vitrine (branche `claude/saas-site-audit-732
 
 ### Contenu
 
-- **Pages légales** : compléter les champs `[…]` (raison sociale, adresse, immatriculation, hébergeur, dates…)
-  dans `legal.*` des 5 fichiers `i18n/locales/*.json`, et faire relire (traductions automatiques).
+- **Textes légaux de l'app** : ils couvrent désormais aussi le site vitrine. Vérifier que la politique de
+  confidentialité de l'app mentionne l'assistant de `/help` (questions envoyées à Anthropic, IP gardée en mémoire
+  pour la limite de débit) et Cloudinary, et que sa politique cookies mentionne le cookie `i18n_redirected` de
+  glintstudio.ai.
+- **Captures d'écran de l'interface** (en attente) : déposer `frontend/public/screenshots/studio-virtuel-interface.webp`,
+  `mannequin-virtuel-interface.webp` et `motion-studio-interface.webp` (WebP 1600×1200, cadre 4:3), puis changer les
+  lignes `interface` / `workflow` de `config/visual-proof.config.ts` (mode d'emploi en tête du fichier).
+- **Mannequin Virtuel** : quand le studio est activé dans l'app (`models.json`), retirer `comingSoon: true`
+  dans `config/site.config.ts` (badge et CTA reviennent seuls).
+- Adresses `sales@` et `press@glint-studio.com` (page Aide) : vérifier qu'elles existent (l'app ne documente que
+  `support@` et `contact@`).
+- **Chiffres marketing à valider** : « 30 secondes » (hero, meta, avant/après), « 10 secondes par création »,
+  « 0,08 $ par image », « 4K », « 3× plus d'engagement ». La galerie annonce « ce que nos utilisateurs créent » alors
+  que ce sont des images de stock. Le nombre de crédits offerts n'est volontairement pas écrit (10 par défaut,
+  `FREE_PLAN_WELCOME_CREDITS` côté app) : ne pas le mettre en dur.
 - **Traductions de/it/es** : relecture par un natif, surtout le marketing.
-- FAQ « langue du support » (`help.faq.language`) : à ajuster selon le support réel.
 - Images/vidéos provisoires (Unsplash, Pexels) dans `config/visual-proof.config.ts` ; leurs textes `alt`
   sont en français en dur → les passer en clés i18n quand le contenu final arrive.
 - `public/og-image.png` (image de partage) : visuel provisoire « Glint Studio » à remplacer (1200×630).
-- Liens du footer encore en `#` : API, Changelog, Documentation, Tutoriels, À propos, Affiliation,
-  Carrières (`config/site.config.ts`). Liens réseaux sociaux retirés du footer.
-- Lien Calendly entreprise à confirmer (`config/saas.config.ts`) ; l'app est sur `app.glintstudio.ai`.
 - Page tarifs supprimée ; la doc du chatbot (`server/assets/support-docs.md`) contient encore une section « Tarifs ».
 - Blog : relire le brouillon `frontend/content/blog/fr/photo-produit-fond-blanc.md` (TODO en tête : avant/après
   Glint, image de couverture, vérifications), puis `draft: false`. L'index du blog sort du `noindex` tout seul dès
   qu'un article est publié dans la langue. Compléter l'auteur (`config/blog.config.ts` : liens LinkedIn/site ;
   bio dans `blog.authors.theo` des 5 langues).
 - Search Console + Bing Webmaster Tools : vérifier le domaine, soumettre le sitemap (`docs/BLOG.md`).
-- Engagements de la page Aide (« réponse sous 24h », « 7j/7 ») à valider.
 
 ## Limites connues (choix assumés)
 
 - Limites du chatbot en mémoire : valables pour **une instance**. Plusieurs instances → Redis.
 - CSP à nonce : SSR obligatoire (`nuxt generate` impossible sans adaptation).
-- Les adresses des pages restent en français dans toutes les langues (`/de/mentions-legales`) ; traduisibles
+- Les adresses des pages restent en français dans toutes les langues (`/de/features/mannequin-virtuel`) ; traduisibles
   via `customRoutes` de `@nuxtjs/i18n` si besoin.
-- Détection de langue uniquement sur `/` (pas de `fallbackLocale`) : les robots sans `Accept-Language` restent sur FR. Pose le cookie fonctionnel `i18n_redirected` (documenté dans la politique cookies).
+- Détection de langue uniquement sur `/` (pas de `fallbackLocale`) : les robots sans `Accept-Language` restent sur FR. Pose le cookie fonctionnel `i18n_redirected` (à documenter dans la politique cookies de l'app, voir Contenu).
 - La CSS de Nuxt UI n'est pas importée : seul `UIcon` est utilisé. Importer `@import "@nuxt/ui";` dans
   `assets/css/main.css` avant d'utiliser d'autres composants Nuxt UI (sinon ils s'affichent mal).
 - `plugins/payload-context.server.ts` : contournement d'un ancien bug Nuxt conservé faute de pouvoir le reproduire.

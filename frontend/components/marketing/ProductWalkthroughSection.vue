@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { saasConfig } from '~/config/saas.config'
+const { signupUrl } = useAppLinks()
 
 const { t } = useI18n()
 
@@ -147,7 +147,7 @@ const steps = computed(() => [
         <!-- CTA -->
         <div class="mt-14 text-center">
           <CommonCTAButton
-            :href="saasConfig.signupUrl"
+            :href="signupUrl"
             variant="primary"
             size="md"
             rounded="xl"

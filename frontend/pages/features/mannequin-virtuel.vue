@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { isComingSoon } from '~/config/site.config'
 import { featureVisuals } from '~/config/visual-proof.config'
 
 const { t } = useI18n()
@@ -8,6 +9,9 @@ definePageMeta({ layout: 'marketing' })
 usePageSeo(() => ({ title: t('featurePages.mannequinVirtuel.title'), description: t('featurePages.mannequinVirtuel.subtitle') }))
 
 const visuals = featureVisuals.mannequinVirtuel!
+
+// Studio disabled in the app for now: badge + contact CTA instead of sign-up (config/site.config.ts)
+const comingSoon = isComingSoon('mannequinVirtuel')
 
 const benefits = computed(() => [
   { icon: 'heroicons:heart', text: t('featurePages.mannequinVirtuel.whyAdopt.benefit1') },
@@ -49,8 +53,9 @@ const quotes = computed(() => [
     :how-title="$t('featurePages.mannequinVirtuel.howToUse.title')"
     :steps="steps"
     :quotes="quotes"
-    :final-cta-title="$t('cta.finalSection.title')"
-    :final-cta-sub="$t('cta.finalSection.subtitle')"
+    :final-cta-title="comingSoon ? $t('cta.comingSoon.title') : $t('cta.finalSection.title')"
+    :final-cta-sub="comingSoon ? $t('cta.comingSoon.subtitle') : $t('cta.finalSection.subtitle')"
     :final-cta-btn-primary="$t('cta.primary')"
+    :coming-soon="comingSoon"
   />
 </template>

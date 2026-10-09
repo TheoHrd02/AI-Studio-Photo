@@ -1,56 +1,41 @@
 {
   "cta": {
-    "primary": "Kostenlos starten — ohne Karte",
-    "featureButtonLine1": "Kostenlos starten",
-    "featureButtonLine2": "Ohne Karte",
-    "primaryWithCredits": "Kostenlos starten — 5 Credits geschenkt",
-    "clarification": "Nach dem Klick: Gratis-Konto → 5 Credits → erste Kreation in 30 s",
+    "primary": "Kostenloses Konto erstellen",
+    "featureButtonLine1": "Kostenloses Konto erstellen",
+    "featureButtonLine2": "Ohne Kreditkarte",
+    "primaryWithCredits": "Konto erstellen — Gratis-Credits inklusive",
+    "clarification": "Öffnet die App von Glint Studio: Registrierung mit einem bestehenden Konto (Google, GitHub …), Gratis-Credits, ohne Kreditkarte",
     "login": "Schon ein Konto? Anmelden",
-    "loginShort": "Ich habe schon ein Konto",
     "discover": "Entdecken",
-    "orStartNow": "Oder jetzt starten →",
-    "header": "Kostenlos starten — ohne Karte",
-    "plans": {
-      "free": {
-        "label": "Kostenlos starten — ohne Karte",
-        "note": "Keine Karte erforderlich"
-      },
-      "pro": {
-        "label": "Testphase starten — 7 Tage gratis",
-        "note": "Ohne Bindung"
-      },
-      "enterprise": {
-        "label": "Demo buchen",
-        "note": "Persönliches Gespräch inklusive"
-      }
-    },
+    "orStartNow": "Oder kostenloses Konto erstellen →",
+    "header": "Kostenloses Konto erstellen",
     "help": {
-      "chat": "Chat starten",
-      "returnToProduct": "Kostenlos starten — ohne Karte"
+      "chat": "Dem Assistenten eine Frage stellen",
+      "returnToProduct": "Kostenloses Konto erstellen"
     },
     "finalSection": {
       "title": "Bereit für deine ersten Visuals?",
       "subtitle": "Starte kostenlos und entdecke die Kraft der KI für deine Kreationen"
+    },
+    "comingSoon": {
+      "button": "Schreib uns für eine Benachrichtigung",
+      "note": "Dieses Studio ist in der App noch nicht verfügbar: Schreib uns, um beim Start benachrichtigt zu werden.",
+      "title": "Dieses Studio kommt bald",
+      "subtitle": "Bis dahin sind Virtuelles Studio und Motion Studio bereits in der App verfügbar."
     }
   },
   "common": {
     "appName": "Glint Studio",
     "language": "Sprache",
-    "menu": "Menü"
+    "menu": "Menü",
+    "comingSoon": "Bald verfügbar"
   },
   "nav": {
     "home": "Startseite",
     "features": "Funktionen",
     "help": "Hilfe",
     "blog": "Blog",
-    "affiliation": "Partnerprogramm",
-    "login": "Anmelden",
-    "signup": "Registrieren",
-    "logout": "Abmelden",
-    "dashboard": "Dashboard",
-    "myAccount": "Mein Konto",
     "gallery": "Galerie",
-    "launchApp": "Kostenlos starten — ohne Karte",
     "studioVirtuel": {
       "label": "Virtuelles Studio",
       "description": "Platziere deine Produkte in Kulissen, die großen Fotostudios in nichts nachstehen."
@@ -61,28 +46,28 @@
     },
     "motionStudio": {
       "label": "Motion Studio",
-      "description": "Vom Bild zur Bewegung mit nur einem Klick."
+      "description": "Verwandle deine Bilder in animierte Videos."
     }
   },
   "productDemo": {
-    "badge": "Produktdemo",
-    "title": "Sieh das Produkt in Aktion",
-    "subtitle": "Erfahre, wie du ein Produktfoto in wenigen Sekunden in ein professionelles Studio-Visual verwandelst.",
+    "badge": "Video",
+    "title": "Ein Beispiel im Video",
+    "subtitle": "Ein Produktvideo, zur Veranschaulichung gezeigt.",
     "watchHint": "Zum Starten klicken"
   },
   "productWalkthrough": {
     "badge": "Produkt-Tour",
     "title": "Dein Workflow in 4 Schritten",
-    "subtitle": "Vom Upload bis zur fertigen Kreation — der vereinfachte Ablauf.",
-    "framing": "Vorschau der Funktionsweise — finale Oberfläche in Entwicklung.",
+    "subtitle": "Vom Import deines Fotos bis zum fertigen Visual: die einzelnen Schritte.",
+    "framing": "Überblick über den Ablauf, in vereinfachten Schemata.",
     "steps": {
       "upload": {
         "title": "Foto hochladen",
-        "description": "Importiere dein Produktfoto, Porträt oder rohes Bild. Per Drag-and-drop oder Auswahl vom Computer."
+        "description": "Zieh dein Produktfoto per Drag-and-drop hinein oder wähle es auf deinem Computer aus."
       },
       "choose": {
         "title": "Szene wählen",
-        "description": "Wähle aus unseren Studio-Kulissen oder beschreibe deine Vision. Fertige Vorlagen oder individuelle Kreation."
+        "description": "Wähle eine Kulisse aus dem Katalog oder beschreibe das gewünschte Ergebnis in wenigen Worten."
       },
       "generate": {
         "title": "Generieren",
@@ -95,28 +80,28 @@
     },
     "mockup": {
       "uploadHint": "Bild hierher ziehen",
-      "generating": "Wird generiert..."
+      "generating": "Wird generiert…"
     }
   },
   "beforeAfter": {
     "badge": "Beispielhafte Vorschau",
-    "title": "Vorher → Nachher: die Verwandlung mit einem Klick",
-    "subtitle": "Aus einem rohen Produktfoto wird ein professionelles Studio-Visual. Das kann die KI in 30 Sekunden erzeugen.",
-    "illustrativeLabel": "Beispielhaft generierte Ergebnisse — Demonstration der Möglichkeiten",
+    "title": "Vorher → Nachher: das Prinzip",
+    "subtitle": "Aus einem rohen Produktfoto wird ein Studio-Visual, bereit zur Veröffentlichung.",
+    "illustrativeLabel": "Beispielbilder aus einer Bilddatenbank: Es sind keine mit Glint Studio erstellten Ergebnisse.",
     "before": "Vorher",
     "after": "Nachher",
     "examples": {
       "studioVirtuel": {
         "before": "Unbearbeitetes Produktfoto — weißer Hintergrund, flaches Licht",
-        "after": "Glint-Studio-Ergebnis — Studiokulisse, professionelles Licht"
+        "after": "Beispielbild — Produkt in einer Studiokulisse"
       },
       "mannequinVirtuel": {
         "before": "Schuh freigestellt auf neutralem Hintergrund",
-        "after": "Schuh in einer Lifestyle-Szene mit Model"
+        "after": "Beispielbild — inszeniertes Produkt"
       },
       "motionStudio": {
         "before": "Statisches Produkt — Kopfhörer",
-        "after": "Produkt in Bewegung — KI-Videoanimation"
+        "after": "Beispielbild — inszeniertes Produkt"
       }
     }
   },
@@ -136,25 +121,25 @@
     }
   },
   "hero": {
-    "eyebrow": "Early Access · 5 Credits geschenkt · 30 Sekunden",
-    "title": "Professionelle Produktfotos, in 30 Sekunden von der KI generiert",
+    "eyebrow": "Jetzt verfügbar · Gratis-Credits bei der Registrierung",
+    "title": "Professionelle Produktfotos, von der KI generiert — ohne Studio und ohne Fotografen",
     "trustChips": {
-      "speed": "Ergebnis in 30 Sekunden",
-      "free": "5 Credits geschenkt — ohne Kreditkarte",
+      "speed": "Bilder in wenigen Sekunden generiert",
+      "free": "Gratis-Credits bei der Registrierung — ohne Kreditkarte",
       "noSkills": "Keine Vorkenntnisse nötig",
-      "cancel": "Jederzeit kündbar",
-      "earlyAccess": "Early Access — werde Teil der Beta"
+      "cancel": "Abo jederzeit kündbar",
+      "earlyAccess": "Oberfläche in 5 Sprachen"
     }
   },
   "features": {
     "badge": "Unsere KI-Lösungen",
     "title": "Starke Tools für jeden Bedarf",
-    "subtitle": "Virtuelles Fotostudio, KI-Models, Animationen ... alles, was du für professionelle Inhalte brauchst.",
+    "subtitle": "Virtuelles Fotostudio, animierte Videos und bald KI-Models: alles, was du für professionelle Inhalte brauchst.",
     "studioVirtuel": {
       "title": "Virtuelles Studio",
       "description": "Verwandle deine Produktfotos in professionelle Studio-Visuals. Realistische Hintergründe, Beleuchtung und Stimmungen, von der KI generiert.",
-      "stats": "10 Sekunden",
-      "statsLabel": "pro Kreation"
+      "stats": "4",
+      "statsLabel": "Bildformate"
     },
     "mannequinVirtuel": {
       "title": "Virtuelles Model",
@@ -165,8 +150,8 @@
     "motionStudio": {
       "title": "Motion Studio",
       "description": "Verwandle deine Bilder in dynamische Videos. Flüssige Animationen und professionelle Effekte für deine Kampagnen und Social Media.",
-      "stats": "1 Klick",
-      "statsLabel": "zum Animieren"
+      "stats": "5 oder 10 s",
+      "statsLabel": "pro Video"
     }
   },
   "howItWorks": {
@@ -176,87 +161,54 @@
     "steps": {
       "upload": {
         "title": "Foto hochladen",
-        "description": "Importiere einfach dein Produktfoto, Porträt oder rohes Bild."
+        "description": "Starte mit einem einfachen Foto deines Produkts."
       },
       "choose": {
         "title": "Stil wählen",
-        "description": "Wähle aus unseren Vorlagen oder beschreibe deine Vision in natürlicher Sprache."
+        "description": "Wähle eine vordefinierte Kulisse oder beschreibe deine Vision in natürlicher Sprache."
       },
       "generate": {
         "title": "Generieren",
-        "description": "Die KI verwandelt dein Visual in wenigen Sekunden. Keine Vorkenntnisse nötig."
+        "description": "Die KI erstellt dein Visual: wenige Sekunden für ein Bild, wenige Minuten für ein Video."
       },
       "download": {
         "title": "Ergebnis herunterladen",
-        "description": "Erhalte deine professionelle Kreation in wenigen Sekunden — sofort einsatzbereit."
+        "description": "Hol dir deine Kreation — sofort einsatzbereit."
       }
     }
   },
   "socialProof": {
     "header": "Plattform",
-    "headline": "KI-Produktvisuals in 30 Sekunden",
-    "subline": "Early Access — wir bauen öffentlich. Werde Teil der Creator, die die Beta testen."
-  },
-  "testimonials": {
-    "badge": "Typischer Anwendungsfall",
-    "title": "Was du erreichen könntest",
-    "subtitle": "Beispielszenarien je nach Profil — Demonstration der Möglichkeiten.",
-    "items": {
-      "1": {
-        "quote": "Das Fotobudget durch 5 teilen. Agentur-Qualität in 30 Sekunden statt in 3 Tagen.",
-        "role": "Marketingleiterin",
-        "industry": "E-Commerce",
-        "avatarLetter": "E"
-      },
-      "2": {
-        "quote": "Keine Castings und kein Warten mehr. Kampagnen in Echtzeit iterieren mit dem Virtuellen Model.",
-        "role": "Gründer",
-        "industry": "Mode & Lifestyle",
-        "avatarLetter": "M"
-      },
-      "3": {
-        "quote": "E-Commerce-Visuals auf Profi-Niveau heben. Die Conversions mit ansprechenden Visuals steigern.",
-        "role": "E-Commerce-Manager",
-        "industry": "Beauty & Retail",
-        "avatarLetter": "B"
-      }
-    }
+    "headline": "Virtuelles Studio und Motion Studio, direkt nach der Registrierung verfügbar",
+    "subline": "Gratis-Credits beim Erstellen deines Kontos, ohne Kreditkarte. Das Virtuelle Model kommt bald."
   },
   "riskReversal": {
     "noCard": "Ohne Kreditkarte",
-    "cancelAnytime": "Jederzeit kündbar",
-    "freeTrial": "7 Tage gratis testen"
+    "cancelAnytime": "Abo jederzeit kündbar"
   },
   "footer": {
     "description": "Die Plattform für generative KI, um in wenigen Sekunden professionelle Studiofotos zu erstellen.",
     "product": "Produkt",
     "resources": "Ressourcen",
     "company": "Unternehmen",
-    "legal": "Rechtliches",
-    "followUs": "Folge uns",
     "allRightsReserved": "Alle Rechte vorbehalten",
     "productLinks": {
-      "features": "Funktionen",
-      "api": "API",
-      "changelog": "Changelog"
+      "features": "Funktionen"
     },
     "resourcesLinks": {
       "helpCenter": "Hilfe-Center",
-      "blog": "Blog",
-      "documentation": "Dokumentation",
-      "tutorials": "Tutorials"
+      "blog": "Blog"
     },
     "companyLinks": {
-      "about": "Über uns",
-      "affiliation": "Partnerprogramm",
-      "careers": "Karriere",
       "contact": "Kontakt"
     },
     "legalLinks": {
-      "terms": "Impressum",
+      "notice": "Impressum",
+      "terms": "Nutzungsbedingungen",
+      "sales": "Verkaufsbedingungen",
       "privacy": "Datenschutz",
-      "tos": "Nutzungsbedingungen",
-      "cookies": "Cookies"
+      "cookies": "Cookies",
+      "acceptable-use": "Zulässige Nutzung"
     }
   },
   "featurePageSection": {
@@ -272,18 +224,18 @@
       "badge": "📸 KI-Fotografie",
       "title": "Virtuelles Studio",
       "subtitle": "Platziere deine Produkte in Kulissen, die großen Fotostudios in nichts nachstehen.",
-      "conceptImageAlt": "Ergebnis Virtuelles Studio — professionelles Produktvisual",
+      "conceptImageAlt": "Beispielbild — Produkt in einer Studiokulisse",
       "beforeImageAlt": "Rohes Produktfoto — weißer Hintergrund, flaches Licht",
-      "workflowImageAlt": "Oberfläche Virtuelles Studio — Workflow in 4 Schritten",
+      "workflowImageAlt": "Illustration des Ablaufs im Virtuellen Studio in 4 Schritten",
       "whatIs": {
         "title": "Was ist das?",
-        "text1": "Das ist dein Fotostudio … ohne Studio. Lade dein Bild hoch, wähle eine Kulisse — minimalistisch, designorientiert, Lifestyle oder inspiriert von deiner Marke — und erhalte sofort ein veröffentlichungsreifes 4K-Ergebnis.",
+        "text1": "Das ist dein Fotostudio … ohne Studio. Lade dein Bild hoch, wähle eine Kulisse — minimalistisch, designorientiert, Lifestyle oder inspiriert von deiner Marke — und erhalte in wenigen Sekunden ein veröffentlichungsreifes Ergebnis in hoher Auflösung.",
         "text2": "Schluss mit Lichtaufbau, weißen Hintergründen und Reflexionen, die du drei Stunden lang korrigieren musst."
       },
       "whyAdopt": {
         "title": "Warum lohnt es sich?",
         "benefit1": "Spare Tage an Shooting-Zeit: Du musst kein Set mehr mieten oder auf einen Fotografen warten.",
-        "benefit2": "Senke deine Produktionskosten: Ein Studiobild kostet 0,08 $ in der Generierung, statt Hunderte Euro bei einem echten Shooting.",
+        "benefit2": "Senke deine Produktionskosten: Ein Bild verbraucht nur wenige Credits, weit weniger, als ein Studio-Shooting kostet.",
         "benefit3": "Vereinheitliche deine Visuals: ein konsistenter Stil für dein ganzes Sortiment, ganz ohne Aufwand."
       },
       "howToUse": {
@@ -303,9 +255,9 @@
       "badge": "👩‍🎨 KI-Modeling",
       "title": "Virtuelles Model",
       "subtitle": "Verleihe deinen Visuals mit realistischen, individuellen Models ein Gesicht.",
-      "conceptImageAlt": "Ergebnis Virtuelles Model — Produkt mit KI-Model",
+      "conceptImageAlt": "Beispielbild — inszeniertes Produkt",
       "beforeImageAlt": "Freigestellter Schuh auf neutralem Hintergrund",
-      "workflowImageAlt": "Oberfläche Virtuelles Model — Profilauswahl",
+      "workflowImageAlt": "Illustration des Ablaufs beim Virtuellen Model",
       "whatIs": {
         "title": "Was ist das?",
         "text1": "Das ist die Verschmelzung von Mode und Maschine. Du wählst das ideale Profil (Geschlecht, Körperbau, Stil, Ausdruck), und die KI generiert ein Model, das zu deinem Bild und deiner Markenwelt passt.",
@@ -333,31 +285,31 @@
     "motionStudio": {
       "badge": "🎥 KI-Video",
       "title": "Motion Studio",
-      "subtitle": "Vom Bild zur Bewegung mit nur einem Klick.",
-      "conceptImageAlt": "Ergebnis Motion Studio — animiertes Produktvideo",
+      "subtitle": "Verwandle deine Bilder in animierte Videos.",
+      "conceptImageAlt": "Beispielbild — inszeniertes Produkt",
       "beforeImageAlt": "Statisches Produkt — Kopfhörer",
-      "workflowImageAlt": "Oberfläche Motion Studio — Auswahl des Animationsstils",
+      "workflowImageAlt": "Illustration des Ablaufs im Motion Studio",
       "whatIs": {
         "title": "Was ist das?",
         "text1": "Das ist der logische nächste Schritt: deinen Visuals Leben einhauchen. Motion Studio wandelt deine Produktbilder in realistische, cineastische oder werbliche Videos um — bereit für TikTok, Instagram oder deine Website.",
-        "text2": "Von statisch zu dynamisch, in wenigen Sekunden."
+        "text2": "Von statisch zu dynamisch, ganz ohne Dreh."
       },
       "whyAdopt": {
         "title": "Warum lohnt es sich?",
         "benefit1": "Vervielfache deine Formate: Aus einem einzigen Bild wird ein Video, ein Spot oder eine Story.",
-        "benefit2": "Fessle die Aufmerksamkeit: Videos erzielen 3-mal mehr Engagement als statische Bilder.",
+        "benefit2": "Fessle die Aufmerksamkeit: Bewegung fällt im Feed stärker auf als ein statisches Bild.",
         "benefit3": "Vereinfache die Produktion: kein Team, keine Kamera, nur eine Idee."
       },
       "howToUse": {
         "title": "Wie funktioniert es?",
         "step1": "Importiere dein Bild oder deine in Glint Studio erstellte Szene.",
-        "step2": "Wähle einen Bewegungsstil (cineastisch, Zeitlupe, Schwenk, Reveal usw.).",
+        "step2": "Beschreibe die gewünschte Bewegung (Kamerafahrt, Drehung, Zeitlupe …) und wähle eine Dauer von 5 oder 10 Sekunden.",
         "step3": "Lass die KI einen flüssigen, realistischen Clip generieren.",
-        "step4": "Lade ihn in 4K herunter — bereit für deine Kampagnen."
+        "step4": "Lade dein MP4-Video herunter — bereit für deine Kampagnen."
       },
       "quotes": {
         "quote1": "Deine Bilder erwachen zum Leben.",
-        "quote2": "Vom Foto zum Werbespot, mit einem Klick.",
+        "quote2": "Von einem einfachen Foto zum Videospot.",
         "quote3": "Bewegung ist Emotion."
       }
     },
@@ -367,11 +319,11 @@
     }
   },
   "gallery": {
-    "title": "Kreationen-Galerie",
-    "subtitle": "Entdecke, was unsere Nutzer erschaffen",
+    "title": "Beispielgalerie",
+    "subtitle": "Beispiele für Produktvisuals, zur Veranschaulichung gezeigt",
     "videoBadge": "Video",
-    "imageAlt": "Produktkreation {n}",
-    "videoAlt": "Produktvideo {n}"
+    "imageAlt": "Beispiel-Produktvisual {n}",
+    "videoAlt": "Beispiel-Produktvideo {n}"
   },
   "help": {
     "meta": {
@@ -387,13 +339,13 @@
       "formats": "Welche Dateiformate werden unterstützt?"
     },
     "chat": {
-      "placeholder": "Stelle deine Frage zu Glint Studio...",
+      "placeholder": "Stelle deine Frage zu Glint Studio…",
       "emptyTitle": "Wie kann ich dir helfen?",
       "emptyDescription": "Stelle mir irgendeine Frage zu Glint Studio und ich antworte dir sofort auf Basis unserer Dokumentation.",
       "suggestedLabel": "Vorgeschlagene Fragen:",
       "noAnswer": "Ich habe die Antwort in unserer Dokumentation nicht gefunden. Kontaktiere uns unter {email}.",
       "errors": {
-        "tooLong": "Die Frage ist zu lang (max. {max} Zeichen)",
+        "tooLong": "Die Frage ist zu lang (max. {max} Zeichen).",
         "rateLimited": "Zu viele Fragen, versuche es in einer Minute erneut.",
         "unavailable": "Der Assistent ist vorübergehend nicht verfügbar.",
         "generic": "Der Assistent antwortet nicht, versuche es später erneut."
@@ -402,47 +354,43 @@
     "contact": {
       "title": "Brauchst du weitere Hilfe?",
       "subtitle": "Unser Team ist für dich da. Melde dich gerne direkt bei uns.",
-      "chatPrompt": "Lieber live chatten?",
+      "chatPrompt": "Eine kurze Frage?",
       "cards": {
         "support": {
           "title": "E-Mail-Support",
-          "description": "Antwort innerhalb von 24 h an Werktagen"
+          "description": "Fragen zur App und zu deinem Konto"
         },
         "sales": {
           "title": "Vertrieb & Partnerschaften",
           "description": "Für Unternehmen und Wiederverkäufer"
-        },
-        "press": {
-          "title": "Presse & Medien",
-          "description": "Pressearbeit und Medienanfragen"
         }
       }
     },
     "faq": {
       "title": "Häufige Fragen",
       "responseTime": {
-        "q": "Wie schnell antwortet ihr?",
-        "a": "Unser Team antwortet in der Regel innerhalb von 24 h an Werktagen. Bei dringenden Fragen schreibe uns direkt per E-Mail."
+        "q": "Wie erreiche ich das Team?",
+        "a": "Schreib uns an die passende Adresse unten (Support, Vertrieb oder Presse)."
       },
       "demo": {
         "q": "Kann ich eine persönliche Demo bekommen?",
-        "a": "Auf jeden Fall! Kontaktiere unser Vertriebsteam, um eine auf deine Bedürfnisse zugeschnittene Demo zu vereinbaren."
+        "a": "Schreib an die Adresse „Vertrieb & Partnerschaften“ unten und beschreibe deinen Bedarf. Du kannst auch ein kostenloses Konto erstellen und Glint Studio mit den Gratis-Credits testen."
       },
       "language": {
         "q": "In welchen Sprachen bietet ihr Support an?",
-        "a": "Unser Support ist auf Französisch und Englisch erreichbar, 7 Tage die Woche."
+        "a": "Du kannst uns auf Französisch oder Englisch schreiben."
       }
     }
   },
   "meta": {
     "title": "Glint Studio – Professionelle Produktfotos mit KI",
-    "description": "Verwandle deine Produktfotos dank KI in 30 Sekunden in professionelle Studio-Visuals. Ohne Fotograf, ohne Studio.",
+    "description": "Verwandle deine Produktfotos dank KI in wenigen Sekunden in professionelle Studio-Visuals. Ohne Fotograf, ohne Studio.",
     "appDescription": "Plattform für generative KI, um aus Produktfotos professionelle Studiofotos zu erstellen."
   },
   "blog": {
     "title": "Blog",
     "subtitle": "News, Tutorials und Inspiration",
-    "empty": "Artikel folgen in Kürze...",
+    "empty": "Artikel folgen in Kürze…",
     "breadcrumb": "Brotkrumennavigation",
     "by": "Von",
     "published": "veröffentlicht am",
@@ -456,109 +404,6 @@
       "theo": {
         "role": "Gründer von Glint Studio",
         "bio": "Als Gründer von Glint Studio entwickelt er generative KI-Tools, mit denen Onlinehändler professionelle Produktfotos und -videos ohne Studio und ohne Fotografen erstellen."
-      }
-    }
-  },
-  "legal": {
-    "updatedAt": "Zuletzt aktualisiert:",
-    "legalNotice": {
-      "title": "Impressum",
-      "description": "Rechtliche Angaben zum Anbieter und Hostinganbieter der Website Glint Studio.",
-      "updatedAt": "[Datum]",
-      "sections": {
-        "publisher": {
-          "title": "Anbieter der Website",
-          "body": "Die Website glintstudio.ai wird betrieben von [Firmenname, Rechtsform], mit einem Kapital von [Betrag], eingetragen unter der Nummer [Registernummer], mit Sitz in [Adresse].\n\n- Umsatzsteuer-Identifikationsnummer: [USt-IdNr.]\n- E-Mail: [Kontakt-E-Mail]\n- Verantwortlich für den Inhalt: [Name]"
-        },
-        "hosting": {
-          "title": "Hosting",
-          "body": "Die Website wird gehostet von [Name des Hostinganbieters], [Adresse], [Telefon oder Website]."
-        },
-        "ip": {
-          "title": "Geistiges Eigentum",
-          "body": "Sämtliche Inhalte der Website (Texte, Visuals, Videos, Logos, Marken) sind Eigentum von [Firmenname] oder seiner Partner. Jede vollständige oder teilweise Vervielfältigung oder Wiedergabe ohne vorherige schriftliche Genehmigung ist untersagt."
-        },
-        "data": {
-          "title": "Personenbezogene Daten",
-          "body": "Die Verarbeitung personenbezogener Daten ist in der Datenschutzerklärung beschrieben, die am Ende jeder Seite abrufbar ist."
-        }
-      }
-    },
-    "privacy": {
-      "title": "Datenschutzerklärung",
-      "description": "Wie Glint Studio personenbezogene Daten von Website-Besuchern erhebt und verarbeitet.",
-      "updatedAt": "[Datum]",
-      "sections": {
-        "controller": {
-          "title": "Verantwortlicher",
-          "body": "[Firmenname], [Adresse]. Kontakt bei allen Fragen zu Ihren Daten: [E-Mail].\n\nDiese Erklärung gilt für die Präsentationswebsite glintstudio.ai. Die Nutzung der Anwendung Glint Studio unterliegt einer eigenen Datenschutzerklärung."
-        },
-        "data": {
-          "title": "Auf dieser Website verarbeitete Daten",
-          "body": "- **An den Assistenten gestellte Fragen (Seite Hilfe)**: Der Text der Frage wird an Anthropic übermittelt, um die Antwort zu generieren. Er wird von dieser Website nicht gespeichert, und Anthropic speichert ihn höchstens [Dauer gemäß den aktuellen kommerziellen Bedingungen von Anthropic], ohne ihn zum Training seiner Modelle zu verwenden [zu prüfen]. Geben Sie dort keine personenbezogenen Daten ein.\n- **IP-Adresse**: Wird vorübergehend im Arbeitsspeicher verwendet, um die Anzahl der Fragen pro Minute zu begrenzen (Missbrauchsprävention). Sie wird nicht gespeichert.\n- **Technische Protokolle des Hostinganbieters**: [Art und Dauer der Speicherung je nach Hostinganbieter].\n- **E-Mails**: Wenn Sie uns schreiben, werden Ihre Adresse und Ihre Nachricht verwendet, um Ihnen zu antworten, und für [Dauer] gespeichert.\n\nDie Website verwendet weder Tools zur Reichweitenmessung noch Werbe-Cookies (siehe Cookie-Richtlinie)."
-        },
-        "legalBasis": {
-          "title": "Rechtsgrundlagen",
-          "body": "Berechtigtes Interesse: Betrieb und Sicherheit der Website, Beantwortung von Support-Anfragen [zu validieren]."
-        },
-        "recipients": {
-          "title": "Empfänger und Auftragsverarbeiter",
-          "body": "- Hosting: [Hostinganbieter, Land]\n- Assistent: Anthropic (USA) — [Garantien für die Datenübermittlung: Standardvertragsklauseln / DPF]\n- Auslieferung von Bildern und Videos: Cloudinary — [Land, Garantien]"
-        },
-        "rights": {
-          "title": "Ihre Rechte",
-          "body": "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung der Verarbeitung und Datenübertragbarkeit Ihrer Daten. Zur Ausübung: [E-Mail].\n\nSie können außerdem Beschwerde bei der zuständigen Aufsichtsbehörde einlegen [Behörde des Sitzlandes oder Ihres Wohnsitzlandes]."
-        }
-      }
-    },
-    "terms": {
-      "title": "Allgemeine Nutzungsbedingungen",
-      "description": "Nutzungsbedingungen der Präsentationswebsite Glint Studio.",
-      "updatedAt": "[Datum]",
-      "sections": {
-        "purpose": {
-          "title": "Gegenstand",
-          "body": "Diese Bedingungen regeln die Nutzung der Website glintstudio.ai, betrieben von [Firmenname] (siehe Impressum). Das Abonnement und die Nutzung der Anwendung Glint Studio unterliegen gesonderten Bedingungen, die bei der Registrierung akzeptiert werden [Link zu den AGB/Nutzungsbedingungen der Anwendung]."
-        },
-        "access": {
-          "title": "Zugang zur Website",
-          "body": "Die Website ist kostenlos zugänglich. Der Anbieter bemüht sich, ihre Verfügbarkeit sicherzustellen, kann sie jedoch jederzeit unterbrechen, insbesondere für Wartungsarbeiten."
-        },
-        "assistant": {
-          "title": "Support-Assistent",
-          "body": "Die Antworten des Assistenten werden automatisch auf Grundlage der Produktdokumentation generiert. Sie dienen nur als Orientierung, können Fehler enthalten und stellen keine vertragliche Verpflichtung dar."
-        },
-        "ip": {
-          "title": "Geistiges Eigentum",
-          "body": "Die Inhalte der Website sind geschützt. Jede Weiterverwendung ohne vorherige Genehmigung ist untersagt."
-        },
-        "liability": {
-          "title": "Haftung und externe Links",
-          "body": "Der Anbieter haftet weder für die Inhalte von Websites Dritter, auf die die Website verweist, noch für Schäden, die aus einer Nutzung der Website entstehen, die diesen Bedingungen nicht entspricht."
-        },
-        "law": {
-          "title": "Anwendbares Recht",
-          "body": "Diese Bedingungen unterliegen dem Recht von [Land]. [Zuständiger Gerichtsstand]."
-        }
-      }
-    },
-    "cookies": {
-      "title": "Cookie-Richtlinie",
-      "description": "Cookies und lokaler Speicher, die von der Website Glint Studio verwendet werden.",
-      "updatedAt": "[Datum]",
-      "sections": {
-        "used": {
-          "title": "Verwendete Cookies",
-          "body": "Diese Website setzt ein einziges Cookie, „i18n_redirected“, das die Sprache der Website (aus Ihrem Browser erkannt oder im Sprachwähler ausgewählt) ein Jahr lang speichert. Es ist rein funktional und daher nicht einwilligungspflichtig.\n\nDiese Website verwendet keine Cookies zur Reichweitenmessung, für Werbung oder von sozialen Netzwerken. Deshalb wird Ihnen kein Einwilligungsbanner angezeigt."
-        },
-        "storage": {
-          "title": "Lokaler Speicher",
-          "body": "Ihr Browser kann Ihre Anzeigepräferenz (helles oder dunkles Design) in seinem lokalen Speicher ablegen. Diese Information verbleibt auf Ihrem Gerät und wird nicht übermittelt."
-        },
-        "changes": {
-          "title": "Änderungen",
-          "body": "Wird ein Tool zur Reichweitenmessung oder ein Drittanbieterdienst hinzugefügt, der Cookies setzt, wird diese Seite aktualisiert und Ihre Einwilligung vorab eingeholt, sofern das Gesetz dies verlangt."
-        }
       }
     }
   },

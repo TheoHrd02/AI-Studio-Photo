@@ -4,13 +4,11 @@ useI18n()
 interface Props {
   /** Light text for dark backgrounds (e.g. hero, CTA banner) */
   variant?: 'light' | 'dark'
-  /** Include free trial chip (for Pro plan CTAs) */
-  showTrial?: boolean
 }
 
+// No free-trial chip: the app has no trial (free plan + welcome credits only)
 const props = withDefaults(defineProps<Props>(), {
   variant: 'dark',
-  showTrial: false,
 })
 
 const textClass = computed(() =>
@@ -61,27 +59,6 @@ const textClass = computed(() =>
         />
       </svg>
       {{ $t('riskReversal.cancelAnytime') }}
-    </span>
-    <span
-      v-if="showTrial"
-      :class="textClass"
-      class="inline-flex items-center gap-1.5"
-    >
-      <svg
-        class="h-4 w-4 flex-shrink-0 text-primary-500"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-      {{ $t('riskReversal.freeTrial') }}
     </span>
   </div>
 </template>

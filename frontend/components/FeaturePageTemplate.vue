@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { saasConfig } from '~/config/saas.config'
-
 export interface BenefitItem {
   icon: string
   text: string
@@ -37,6 +35,8 @@ defineProps<{
   finalCtaTitle: string
   finalCtaSub: string
   finalCtaBtnPrimary: string
+  /** Studio not open in the app yet: "coming soon" badge, contact CTA instead of sign-up */
+  comingSoon?: boolean
 }>()
 
 // One reveal hook per section
@@ -47,9 +47,10 @@ const r4 = useReveal() // quotes
 const r5 = useReveal(0.06) // final CTA
 
 const { t } = useI18n()
+const { signupUrl } = useAppLinks()
 
+// No speed chip here: it is about images, and a Motion Studio video takes minutes
 const trustChips = computed(() => [
-  { icon: 'heroicons:bolt', label: t('hero.trustChips.speed') },
   { icon: 'heroicons:check-circle', label: t('hero.trustChips.noSkills') },
   { icon: 'heroicons:rocket-launch', label: t('hero.trustChips.earlyAccess') },
 ])
@@ -82,6 +83,10 @@ const trustChips = computed(() => [
             <span class="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-primary-500" />
             {{ badge }}
           </div>
+          <CommonComingSoonBadge
+            v-if="comingSoon"
+            class="mb-6 ml-2 align-top"
+          />
 
           <!-- Icon with glow ring — vertically centered block -->
           <div class="relative mx-auto mb-6 flex justify-center">
@@ -108,9 +113,30 @@ const trustChips = computed(() => [
           </p>
 
           <!-- CTAs -->
-          <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:items-center">
+          <div
+            v-if="comingSoon"
+            class="mt-10 flex flex-col items-center gap-4"
+          >
             <CommonCTAButton
-              :href="saasConfig.signupUrl"
+              to="/help#contact"
+              variant="primary"
+              size="md"
+              rounded="xl"
+              show-arrow
+              class="px-6 py-3.5 shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30"
+            >
+              {{ $t('cta.comingSoon.button') }}
+            </CommonCTAButton>
+            <p class="text-sm text-gray-500">
+              {{ $t('cta.comingSoon.note') }}
+            </p>
+          </div>
+          <div
+            v-else
+            class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:items-center"
+          >
+            <CommonCTAButton
+              :href="signupUrl"
               variant="primary"
               size="md"
               rounded="xl"
@@ -239,6 +265,10 @@ const trustChips = computed(() => [
                 </div>
               </div>
             </div>
+            <!-- Stock pictures (config/visual-proof.config.ts): say so until real outputs replace them -->
+            <p class="relative mt-3 text-center text-xs text-gray-500">
+              {{ $t('beforeAfter.illustrativeLabel') }}
+            </p>
           </div>
         </div>
       </div>
@@ -447,9 +477,27 @@ const trustChips = computed(() => [
               {{ finalCtaSub }}
             </p>
 
-            <div class="mt-10 flex flex-col items-center gap-3">
+            <div
+              v-if="comingSoon"
+              class="mt-10 flex flex-col items-center gap-3"
+            >
               <CommonCTAButton
-                :href="saasConfig.signupUrl"
+                to="/help#contact"
+                variant="primary-inverted"
+                size="md"
+                rounded="xl"
+                show-arrow
+                class="px-6 py-3.5"
+              >
+                {{ $t('cta.comingSoon.button') }}
+              </CommonCTAButton>
+            </div>
+            <div
+              v-else
+              class="mt-10 flex flex-col items-center gap-3"
+            >
+              <CommonCTAButton
+                :href="signupUrl"
                 variant="primary-inverted"
                 size="md"
                 rounded="xl"
@@ -466,6 +514,7 @@ const trustChips = computed(() => [
               </p>
             </div>
             <CommonRiskReversalChips
+              v-if="!comingSoon"
               variant="light"
               class="mt-6"
             />
